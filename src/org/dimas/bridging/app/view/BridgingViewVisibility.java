@@ -65,7 +65,62 @@ public class BridgingViewVisibility {
         }
     }
     public void setVisibilitiDefaultBaygon(){
-        addAllPanelUtama();
+        //addAllPanelUtama();
+        /**
+         * MENGGANTI jPanel untuk Extract dengan miliknya BAYGON
+         */
+        //1. Ganti Gambar Sesuai dengan Principal yang aktif
+        ScaleImage scaleImage = new ScaleImage("/org/dimas/bridging/images/logo/baygon2.jpg");
+        //scaleImage.setSize(new Dimension(view.getjPanelSubGeneratePicture().getSize()));
+        scaleImage.setSize(new Dimension(90, 80));
+        view.getjPanelSubGeneratePicture().add(scaleImage);
+        
+        //GENERAL SETTING
+       // view.getjTabbedPaneUtamaConfigAndUtils().remove(view.getjPanelSubKonfigAndUtilBaygon());
+        
+        //Ganti Panel Extract Bawah dengan miliknya POKARI
+        Dimension dimension = new Dimension(view.getjPanelSubGenerateExtract().getPreferredSize());    
+
+        //Default: jPanelSubGenerateExtractKek Selasu Ada
+        try{
+            view.getjPanelSubGenerateExtract().remove(view.getjPanelSubGenerateExtractKek());        
+        } catch(Exception ex){}
+        view.getjPanelSubGenerateExtract().add(view.getjPanelGenerateExtractBaygon1());
+        
+        view.getjPanelSubGenerateExtract().setPreferredSize(dimension);
+        view.getjPanelGenerateExtractBaygon1().setPreferredSize(dimension);
+        view.getjPanelGenerateExtractBaygon1().setLocation(1, 1);
+ 
+//        view.getjTabbedPaneUtamaBackupAndRestore().remove(view.getjPanelSubBackupAndRestoreBackupAndRestoreKek());
+        /**
+         * PANEL RETRIEVE SCYLLA AND IT'S CONTENT
+         */
+        
+        
+        view.getTextPathInputBarangDatang().setEnabled(false);
+        view.getBtnPathInputBarangDatang().setEnabled(false);
+        view.getBtnRetrieveInputBarangDatang().setEnabled(false);
+        
+        view.getTextPathInputReturKePabrik().setEnabled(false);
+        view.getBtnPathInputReturKePabrik().setEnabled(false);
+        view.getBtnRetrieveInputReturKePabrik().setEnabled(false);
+        
+        view.getTextPathInputStokAdjustment().setEnabled(false);
+        view.getBtnPathInputStokAdjustment().setEnabled(false);
+        view.getBtnRetrieveInputStokAdjustment().setEnabled(false);
+        view.getjDateChooseTanggalStokAdjustment().setEnabled(false);
+        
+        view.getjTabbedPaneUtama().add("Generate", view.getjPanelUtamaGenerate());
+        view.getjTabbedPaneUtama().add("Input Scylla", view.getjPanelUtamaInputScylla());        
+        view.getjTabbedPaneUtama().add("Output Baygon", view.getjPanelUtamaOutputBaygon());        
+            view.getjPanelSubOutputBaygon1().setSize(new Dimension(view.getjPanelUtamaOutputBaygon().getSize()));
+            view.getjPanelUtamaOutputBaygon().add(view.getjPanelSubOutputBaygon1());
+       
+            
+        view.getjTabbedPaneUtama().add("Konfig and Utils", view.getjPanelUtamaKonfigAndUtils());
+        //view.getjTabbedPaneUtama().add("Config and Utils", view.getjPanelUtamaConfigAndUtils());
+        view.getjTabbedPaneUtama().setSelectedIndex(0);
+        
         
     }
     public void setVisibilityDefaultKEK(){
@@ -107,6 +162,7 @@ public class BridgingViewVisibility {
         view.getjTabbedPaneUtama().add("Config and Utils", view.getjPanelUtamaConfigAndUtils());
         view.getjTabbedPaneUtama().setSelectedIndex(0);
     }
+    
     public void setVisibilityDefaultPokari(){
         /**
          * MENGGANTI jPanel untuk Extract dengan miliknya POKARI
