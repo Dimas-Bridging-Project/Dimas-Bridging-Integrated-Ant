@@ -44,7 +44,7 @@ public class RestoreTabelTabelPokari {
             runRestoreTabelPokariGroupSales(sourcePath, isOverwrite, isGantiBaru);
             runRestoreTabelPokariProductBrand(sourcePath, isOverwrite, isGantiBaru);
             runRestoreTabelPokariSalesTerritory(sourcePath, isOverwrite, isGantiBaru);
-            runRestoreTabelPokariTeamSales(sourcePath, isOverwrite, isGantiBaru);
+            runRestoreTabelPokariTeamSales(sourcePath, isOverwrite, isGantiBaru);   
             runRestoreTabelPokariTypeSales(sourcePath, isOverwrite, isGantiBaru);
             runRestoreTabelPokariWorkplace(sourcePath, isOverwrite, isGantiBaru);
 

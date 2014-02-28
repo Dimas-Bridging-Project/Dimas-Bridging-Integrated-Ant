@@ -261,6 +261,7 @@ public class BridgingView  extends BridgingViewJFrame{
         getTextTabelTabelPokariGroupSalesTypeGroup().setText("");
         getTextTabelTabelPokariProductBrandBrandId().setText("");
         getTextTabelTabelPokariProductBrandName().setText("");
+        getTextTabelTabelPokariProductBrandHirarchy().setText("");
         getTextTabelTabelPokariSalesTerritoryDescription().setText("");
         getTextTabelTabelPokariSalesTerritoryIdTerritory().setText("");
         getTextTabelTabelPokariTeamSalesName().setText("");

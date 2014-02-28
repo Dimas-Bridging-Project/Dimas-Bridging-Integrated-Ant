@@ -94,7 +94,7 @@ public class BackupTabelTabelPokari {
             for (CustomerGroup item : lst) {
                 printWriter.print(item.getIsDefault() + strDelimeted);
                 printWriter.print(item.getIdGroup() + strDelimeted);
-                printWriter.print(item.getDescription() + "*");
+                printWriter.print(item.getDescription() + strDelimeted +  "*");
                 printWriter.println();
             }
             printWriter.close();
@@ -127,7 +127,7 @@ public class BackupTabelTabelPokari {
             for (CustomerHirarchy item : lst) {
                 printWriter.print(item.getIsDefault() + strDelimeted);
                 printWriter.print(item.getIdHirarchy() + strDelimeted);
-                printWriter.print(item.getDescription() + "*");
+                printWriter.print(item.getDescription() + strDelimeted + "*");
                 printWriter.println();
             }
             printWriter.close();
@@ -159,7 +159,7 @@ public class BackupTabelTabelPokari {
             for (GroupSales item : lst) {
                 printWriter.print(item.getIsDefault() + strDelimeted);
                 printWriter.print(item.getTypeGroup() + strDelimeted);
-                printWriter.print(item.getName() + "*");
+                printWriter.print(item.getName() + strDelimeted + "*");
                 printWriter.println();
             }
             printWriter.close();
@@ -192,7 +192,7 @@ public class BackupTabelTabelPokari {
                 printWriter.print(item.getIsDefault() + strDelimeted);
                 printWriter.print(item.getSzBrandId() + strDelimeted);
                 printWriter.print(item.getSzName() + strDelimeted);
-                printWriter.print(item.getSzHirarchyId() + "*");
+                printWriter.print(item.getSzHirarchyId() + strDelimeted + "*");
                 printWriter.println();
             }
             printWriter.close();
@@ -224,7 +224,7 @@ public class BackupTabelTabelPokari {
             for (SalesTerritory item : lst) {
                 printWriter.print(item.getIsDefault()+ strDelimeted);
                 printWriter.print(item.getIdTerritory() + strDelimeted);
-                printWriter.print(item.getDescription() + "*");
+                printWriter.print(item.getDescription() + strDelimeted + "*");
                 printWriter.println();
             }
             printWriter.close();
@@ -256,7 +256,7 @@ public class BackupTabelTabelPokari {
             for (TeamSales item : lst) {
                 printWriter.print(item.getIsDefault() + strDelimeted);
                 printWriter.print(item.getTeamId() + strDelimeted);
-                printWriter.print(item.getName() + "*");
+                printWriter.print(item.getName() + strDelimeted + "*");
                 printWriter.println();
             }
             printWriter.close();
@@ -288,7 +288,7 @@ public class BackupTabelTabelPokari {
             for (TypeSales item : lst) {
                 printWriter.print(item.getIsDefault() + strDelimeted);
                 printWriter.print(item.getTypeSales() + strDelimeted);
-                printWriter.print(item.getName() + "*");
+                printWriter.print(item.getName() + strDelimeted + "*");
                 printWriter.println();
             }
             printWriter.close();
@@ -320,7 +320,7 @@ public class BackupTabelTabelPokari {
             for (WorkPlace item : lst) {
                 printWriter.print(item.getIsDefault() + strDelimeted);
                 printWriter.print(item.getWorkPlaceId() + strDelimeted);
-                printWriter.print(item.getArea() + "*");
+                printWriter.print(item.getArea() + strDelimeted + "*");
                 printWriter.println();
             }
             printWriter.close();

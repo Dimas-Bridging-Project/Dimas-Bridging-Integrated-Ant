@@ -4549,7 +4549,7 @@
                                               </Group>
                                               <Component id="btnMappingMasterPokariProductSave" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="20" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -4906,7 +4906,7 @@
                                               </Group>
                                               <Component id="btnMappingMasterPokariCustomerSave" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="25" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -6916,11 +6916,13 @@
                                               <Component id="jScrollPane59" alignment="0" pref="845" max="32767" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="btnTabelTabelPokariProductBrandSetDefault" min="-2" pref="109" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="textTabelTabelPokariProductBrandBrandId" min="-2" pref="136" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="textTabelTabelPokariProductBrandName" min="-2" pref="294" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                                  <Component id="textTabelTabelPokariProductBrandName" min="-2" pref="271" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="textTabelTabelPokariProductBrandHirarchy" min="-2" pref="98" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
                                                   <Component id="btnTabelTabelPokariProductBrandSave" min="-2" pref="96" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="btnTabelTabelPokariProductBrandDelete" min="-2" pref="91" max="-2" attributes="0"/>
@@ -6945,8 +6947,9 @@
                                               <Component id="btnTabelTabelPokariProductBrandSave" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="btnTabelTabelPokariProductBrandDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="btnTabelTabelPokariProductBrandSetDefault" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="textTabelTabelPokariProductBrandHirarchy" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                                          <EmptySpace pref="45" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -7013,6 +7016,11 @@
                                 <Component class="javax.swing.JButton" name="btnTabelTabelPokariProductBrandSetDefault">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="Set Default"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JTextField" name="textTabelTabelPokariProductBrandHirarchy">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                                   </Properties>
                                 </Component>
                               </SubComponents>
@@ -7188,7 +7196,7 @@
                                               </Group>
                                               <Component id="btnMapProductSave" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="20" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -7749,7 +7757,7 @@
                                               </Group>
                                               <Component id="btnMapOutletSave" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="25" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -9126,7 +9134,7 @@
                                               <Component id="btnTabelOutletChainDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="btnTabelOutletChainSave" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -9241,7 +9249,7 @@
                                                   <Component id="textTabelOutletLocationNamaLokasi" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace pref="14" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -9352,7 +9360,7 @@
                                               <Component id="btnTabelOutletTypeDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="btnTabelOutletTypeSave" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="18" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>

@@ -510,6 +510,7 @@ public class BridgingControllerActionTabelTabel {
             ProductBrand item = new ProductBrand();
             item.setSzBrandId(controller.getView().getTextTabelTabelPokariProductBrandBrandId().getText().trim().toUpperCase());
             item.setSzName(controller.getView().getTextTabelTabelPokariProductBrandName().getText().trim().toUpperCase());
+            item.setSzHirarchyId(controller.getView().getTextTabelTabelPokariProductBrandHirarchy().getText().trim().toUpperCase());
             if (! item.getSzBrandId().equals("")) {
                 controller.getModel().productBrandDao.saveOrUpdate(item);
                 aksiBtnTabelTabelPokariProductBrandReload();
@@ -645,6 +646,7 @@ public class BridgingControllerActionTabelTabel {
                  item = controller.getModel().tmProductBrand.get(rowIndex);
                 controller.getView().getTextTabelTabelPokariProductBrandBrandId().setText(item.getSzBrandId().trim());
                 controller.getView().getTextTabelTabelPokariProductBrandName().setText(item.getSzName().trim());
+                controller.getView().getTextTabelTabelPokariProductBrandHirarchy().setText(item.getSzHirarchyId().trim());
              }
         }
         public void aksiListTabelTabelPokariSalesTerritorySelected(){

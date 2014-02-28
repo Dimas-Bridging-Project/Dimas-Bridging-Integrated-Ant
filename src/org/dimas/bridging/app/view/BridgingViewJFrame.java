@@ -570,6 +570,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         textTabelTabelPokariProductBrandName = new javax.swing.JTextField();
         jLabel137 = new javax.swing.JLabel();
         btnTabelTabelPokariProductBrandSetDefault = new javax.swing.JButton();
+        textTabelTabelPokariProductBrandHirarchy = new javax.swing.JTextField();
         jPanelUtamaSettingKek = new javax.swing.JPanel();
         jTabbedPaneUtamaSettingKek = new javax.swing.JTabbedPane();
         jPanelSubSettingKekMappingMaster = new javax.swing.JPanel();
@@ -3530,7 +3531,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addComponent(btnMappingMasterPokariProductDelete)
                         .addComponent(btnMappingMasterPokariProductReload))
                     .addComponent(btnMappingMasterPokariProductSave))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPaneSubSettingPokariMappingMaster.addTab("Map Product Pokari", jPanelSubSettingPokariMappingMasterProduct);
@@ -3978,7 +3979,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addComponent(btnMappingMasterPokariCustomerDelete)
                         .addComponent(btnMappingMasterPokariCustomerReload))
                     .addComponent(btnMappingMasterPokariCustomerSave))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPaneSubSettingPokariMappingMaster.addTab("Map Customer", jPanelSubSettingPokariMappingMasterCustomer);
@@ -4744,6 +4745,8 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
 
         btnTabelTabelPokariProductBrandSetDefault.setText("Set Default");
 
+        textTabelTabelPokariProductBrandHirarchy.setText("jTextField1");
+
         javax.swing.GroupLayout jPanelSubSettingPokariTabelTabelProductBrandLayout = new javax.swing.GroupLayout(jPanelSubSettingPokariTabelTabelProductBrand);
         jPanelSubSettingPokariTabelTabelProductBrand.setLayout(jPanelSubSettingPokariTabelTabelProductBrandLayout);
         jPanelSubSettingPokariTabelTabelProductBrandLayout.setHorizontalGroup(
@@ -4754,11 +4757,13 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(jScrollPane59, javax.swing.GroupLayout.DEFAULT_SIZE, 845, Short.MAX_VALUE)
                     .addGroup(jPanelSubSettingPokariTabelTabelProductBrandLayout.createSequentialGroup()
                         .addComponent(btnTabelTabelPokariProductBrandSetDefault, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textTabelTabelPokariProductBrandBrandId, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textTabelTabelPokariProductBrandName, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
+                        .addComponent(textTabelTabelPokariProductBrandName, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textTabelTabelPokariProductBrandHirarchy, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnTabelTabelPokariProductBrandSave, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnTabelTabelPokariProductBrandDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -4778,8 +4783,9 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(textTabelTabelPokariProductBrandName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTabelTabelPokariProductBrandSave)
                     .addComponent(btnTabelTabelPokariProductBrandDelete)
-                    .addComponent(btnTabelTabelPokariProductBrandSetDefault))
-                .addContainerGap(54, Short.MAX_VALUE))
+                    .addComponent(btnTabelTabelPokariProductBrandSetDefault)
+                    .addComponent(textTabelTabelPokariProductBrandHirarchy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jTabbedPaneSubSettingPokariTabelTabel.addTab("Product Brand", jPanelSubSettingPokariTabelTabelProductBrand);
@@ -5143,7 +5149,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addComponent(btnMapProductDelete)
                         .addComponent(btnMapProductReload))
                     .addComponent(btnMapProductSave))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPaneMapping.addTab("Map Product", jPanelMappingMasterPanelUtama);
@@ -5470,7 +5476,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addComponent(btnMapOutletDelete)
                         .addComponent(btnMapOutletReload))
                     .addComponent(btnMapOutletSave))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPaneMapping.addTab("Map Outlet", jPanel63);
@@ -6003,7 +6009,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(textTabelOutletChainNamaChain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTabelOutletChainDelete)
                     .addComponent(btnTabelOutletChainSave))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Outlet Chain", jPanel66);
@@ -6071,7 +6077,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(textTabelOutletLocationKodeLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(textTabelOutletLocationNamaLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Outlet Location", jPanel67);
@@ -6137,7 +6143,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(textTabelOutletTypeNamaType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTabelOutletTypeDelete)
                     .addComponent(btnTabelOutletTypeSave))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Outlet Type", jPanel68);
@@ -8075,7 +8081,11 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     public JTextField getTextTabelTabelPokariProductBrandName() {
         return textTabelTabelPokariProductBrandName;
     }
-
+    public JTextField getTextTabelTabelPokariProductBrandHirarchy(){
+        return textTabelTabelPokariProductBrandHirarchy;
+    }
+            
+            
     public JTextField getTextTabelTabelPokariSalesTerritoryDescription() {
         return textTabelTabelPokariSalesTerritoryDescription;
     }
@@ -9146,6 +9156,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField textTabelTabelPokariGroupSalesName;
     private javax.swing.JTextField textTabelTabelPokariGroupSalesTypeGroup;
     private javax.swing.JTextField textTabelTabelPokariProductBrandBrandId;
+    private javax.swing.JTextField textTabelTabelPokariProductBrandHirarchy;
     private javax.swing.JTextField textTabelTabelPokariProductBrandName;
     private javax.swing.JTextField textTabelTabelPokariSalesTerritoryDescription;
     private javax.swing.JTextField textTabelTabelPokariSalesTerritoryIdTerritory;
