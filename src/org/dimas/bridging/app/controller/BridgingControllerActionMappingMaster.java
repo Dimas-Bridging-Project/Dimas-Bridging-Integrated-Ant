@@ -343,23 +343,23 @@ public class BridgingControllerActionMappingMaster {
                     
                     CustomerGroup itemCustomerGroup = new CustomerGroup();
                     itemCustomerGroup.setIdGroup(item.getSzCustomerGroupId());
-                    controller.getView().getComboMappingMasterPokariCustomerCustomerGroup().setSelectedItem(item);
+                    controller.getView().getComboMappingMasterPokariCustomerCustomerGroup().setSelectedItem(itemCustomerGroup);
                     
                     WorkPlace itemWorkPlace = new WorkPlace();
                     itemWorkPlace.setWorkPlaceId(item.getSzWorkplaceId());
-                    controller.getView().getComboMappingMasterPokariCustomerWorkPlace().setSelectedItem(item);
+                    controller.getView().getComboMappingMasterPokariCustomerWorkPlace().setSelectedItem(itemWorkPlace);
                     
                     CustomerHirarchy itemCustomerHirarchy = new CustomerHirarchy();
                     itemCustomerHirarchy.setIdHirarchy(item.getSzHirarchyId());
-                    controller.getView().getComboMappingMasterPokariCustomerHirarchy().setSelectedItem(item);
+                    controller.getView().getComboMappingMasterPokariCustomerHirarchy().setSelectedItem(itemCustomerHirarchy);
                     
                     SalesTerritory itemSalesTerritory = new SalesTerritory();
                     itemSalesTerritory.setIdTerritory(item.getSzSalesTerritoryId());
-                    controller.getView().getComboMappingMasterPokariCustomerSalesTerritory().setSelectedItem(item);
+                    controller.getView().getComboMappingMasterPokariCustomerSalesTerritory().setSelectedItem(itemSalesTerritory);
                     
-                    SpEmployee itemSpEmployee = new SpEmployee();
+                    SpEmployee itemSpEmployee = new SpEmployee();                    
                     itemSpEmployee.setSzEmployeeId(item.getSzEmployeeId());
-                    controller.getView().getComboMappingMasterPokariCustomerEmployee().setSelectedItem(item);
+                    controller.getView().getComboMappingMasterPokariCustomerEmployee().setSelectedItem(itemSpEmployee);
                     
                     //Penanda
                    controller.getView().getCheckMappingMasterPokariCustomerAktif().setSelected(item.getAktif()!=null? item.getAktif():false);
@@ -452,37 +452,64 @@ public class BridgingControllerActionMappingMaster {
     }
     
     public void aksiBtnMappingMasterPokariProductDelete(){
-             if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus?", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
-                int rowIndex = controller.getView().getTableMappingMasterPokariProduct().getSelectedRow();
-                if (rowIndex >-1) {
-                    MappingProduct item = new MappingProduct();
-                    item = controller.getModel().tmMappingProduct.get(rowIndex);
-                   controller.getModel().mappingProductDao.delete(item);
-                    aksiBtnMappingMasterPokariProductReload();
-                }   
+             int [] rowsIndex = controller.getView().getTableMappingMasterPokariProduct().getSelectedRows();
+             if (rowsIndex.length > 0) {
+                 if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus "  + String.valueOf(rowsIndex.length) +   " record?" +
+                         "\n", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION){
+                   //DELETE dengan Referensi Array
+                   for (int row:rowsIndex){
+                        MappingProduct item = new MappingProduct();
+                        item = controller.getModel().tmMappingProduct.get(row);
+                        controller.getModel().mappingProductDao.delete(item);
+                   }
+                   //Refresh Tampilan
+                   aksiBtnMappingMasterPokariProductReload();                           
+                 }
+                 
              }
+             
+//             if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus?", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
+//                int rowIndex = controller.getView().getTableMappingMasterPokariProduct().getSelectedRow();                
+//                
+//                if (rowIndex >-1) {
+//                    MappingProduct item = new MappingProduct();
+//                    item = controller.getModel().tmMappingProduct.get(rowIndex);
+//                   controller.getModel().mappingProductDao.delete(item);
+//                    aksiBtnMappingMasterPokariProductReload();
+//                }   
+//             }
+             
+             
     }
     public void aksiBtnMappingMasterPokariEmployeeDelete(){
-             if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus?", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
-                int rowIndex = controller.getView().getTableMappingMasterPokariEmployee().getSelectedRow();
-                if (rowIndex >-1) {
-                    SpEmployee item = new SpEmployee();
-                    item = controller.getModel().tmSpEmployee.get(rowIndex);
-                   controller.getModel().spEmployeeDao.delete(item);
+             int [] rowsIndex = controller.getView().getTableMappingMasterPokariEmployee().getSelectedRows();
+             if (rowsIndex.length > 0) {
+                 if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus "  + String.valueOf(rowsIndex.length) +   " record?" +
+                         "\n", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION){
+                     for (int row: rowsIndex){
+                        SpEmployee item = new SpEmployee();
+                        item = controller.getModel().tmSpEmployee.get(row);
+                        controller.getModel().spEmployeeDao.delete(item);
+                     }
                      aksiBtnMappingMasterPokariEmployeeReload();
-                }   
+                 }
              }
     }
+    
     public void aksiBtnMappingMasterPokariCustomerDelete(){
-             if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus?", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
-                int rowIndex = controller.getView().getTableMappingMasterPokariCustomer().getSelectedRow();
-                if (rowIndex >-1) {
-                    ArCustomer item = new ArCustomer();
-                    item = controller.getModel().tmArCustomer.get(rowIndex);
-                   controller.getModel().arCustomerDao.delete(item);
+             int [] rowsIndex = controller.getView().getTableMappingMasterPokariCustomer().getSelectedRows();
+             if (rowsIndex.length > 0) {
+                 if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus "  + String.valueOf(rowsIndex.length) +   " record?" +
+                         "\n", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION){
+                     for (int row: rowsIndex){
+                            ArCustomer item = new ArCustomer();
+                            item = controller.getModel().tmArCustomer.get(row);
+                           controller.getModel().arCustomerDao.delete(item);                     
+                     }
                      aksiBtnMappingMasterPokariCustomerReload();
-                }   
+                 }
              }
+             
     }
 
     public void aksiBtnMappingMasterPokariProductSave(){
@@ -567,13 +594,13 @@ public class BridgingControllerActionMappingMaster {
     }
     public void aksiBtnMappingMasterPokariCustomerSave(){
              ArCustomer item = new ArCustomer();
-              item = controller.getModel().arCustomerSelected; //KASIH DEFAULT DARI SELECTED
+             item = controller.getModel().arCustomerSelected; //KASIH DEFAULT DARI SELECTED
               
              item.setScyCustomerId(controller.getView().getTextMappingMasterPokariCustomerIdScylla().getText().trim().toUpperCase());
              item.setSzCustomerId(controller.getView().getTextMappingMasterPokariCustomerIdPokari().getText().trim().toUpperCase());
              item.setSzName(controller.getView().getTextMappingMasterPokariCustomerName().getText().trim());
              if (item.getSzCustomerId().trim().equals("")) item.setSzCustomerId(item.getScyCustomerId());
-             if (item.getSzName().trim().equals("")) item.setSzName(item.getScyName());
+             if (item.getSzName().trim().equals("")) item.setSzName(item.getScyName());             
              if (item.getScyName()==null) {
                  item.setScyName(item.getSzName());
              } else if (item.getScyName().trim().equals("")) {
@@ -604,6 +631,7 @@ public class BridgingControllerActionMappingMaster {
              if (itemCustomerGroup !=null) {
                  item.setSzCustomerGroupId(itemCustomerGroup.getIdGroup().trim());
              }
+             
              WorkPlace itemWorkPlace = new WorkPlace();
              itemWorkPlace = (WorkPlace)controller.getView().getComboMappingMasterPokariCustomerWorkPlace().getModel().getSelectedItem();
              if (itemWorkPlace !=null) {
