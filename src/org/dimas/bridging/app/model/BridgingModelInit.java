@@ -121,7 +121,9 @@ import org.config.spring.hibernate.model.TblStockId;
 import org.config.spring.hibernate.model.pokari.ArCustomer;
 import org.config.spring.hibernate.model.pokari.CanDDeliveryOrder;
 import org.config.spring.hibernate.model.pokari.CanDDeliveryOrderItemDetail;
+import org.config.spring.hibernate.model.pokari.CanDDeliveryOrderItemDetailPK;
 import org.config.spring.hibernate.model.pokari.CanDDeliveryOrderItemDisc;
+import org.config.spring.hibernate.model.pokari.CanDDeliveryOrderItemDiscPK;
 import org.config.spring.hibernate.model.pokari.CustomerGroup;
 import org.config.spring.hibernate.model.pokari.CustomerHirarchy;
 import org.config.spring.hibernate.model.pokari.GroupSales;
@@ -129,19 +131,26 @@ import org.config.spring.hibernate.model.pokari.MappingProduct;
 import org.config.spring.hibernate.model.pokari.OutputArCustomer;
 import org.config.spring.hibernate.model.pokari.OutputCanDDeliveryOrder;
 import org.config.spring.hibernate.model.pokari.OutputCanDDeliveryOrderItemDetail;
+import org.config.spring.hibernate.model.pokari.OutputCanDDeliveryOrderItemDetailPK;
 import org.config.spring.hibernate.model.pokari.OutputCanDDeliveryOrderItemDisc;
+import org.config.spring.hibernate.model.pokari.OutputCanDDeliveryOrderItemDiscPK;
 import org.config.spring.hibernate.model.pokari.OutputSpEmployee;
 import org.config.spring.hibernate.model.pokari.OutputSpEmployeeTarget;
 import org.config.spring.hibernate.model.pokari.OutputSpEmployeeTargetItemDetail;
+import org.config.spring.hibernate.model.pokari.OutputSpEmployeeTargetItemDetailPK;
+import org.config.spring.hibernate.model.pokari.OutputSpEmployeeTargetPK;
 import org.config.spring.hibernate.model.pokari.PokariProduct;
 import org.config.spring.hibernate.model.pokari.ProductBrand;
 import org.config.spring.hibernate.model.pokari.SalesTerritory;
 import org.config.spring.hibernate.model.pokari.SpEmployee;
 import org.config.spring.hibernate.model.pokari.SpEmployeeTarget;
 import org.config.spring.hibernate.model.pokari.SpEmployeeTargetItemDetail;
+import org.config.spring.hibernate.model.pokari.SpEmployeeTargetItemDetailPK;
+import org.config.spring.hibernate.model.pokari.SpEmployeeTargetPK;
 import org.config.spring.hibernate.model.pokari.TMasterProductPokari;
 import org.config.spring.hibernate.model.pokari.TeamSales;
 import org.config.spring.hibernate.model.pokari.TypeSales;
+import org.config.spring.hibernate.model.pokari.Vehicle;
 import org.config.spring.hibernate.model.pokari.WorkPlace;
 import org.config.spring.hibernate.model.tablemodel.GenericTableModel;
 import org.config.spring.hibernate.model.tablemodel.OutputSpEmployeeTargetTableModel;
@@ -159,7 +168,46 @@ import org.springframework.context.ApplicationContext;
 public class BridgingModelInit {
     protected static final Logger logger = LoggerFactory.getLogger(BridgingModelInit.class);
     
+    //MODEL POKARI
+    public ArCustomer arCustomerSelected =  new ArCustomer();
+    public CanDDeliveryOrder canDDeliveryOrderSelected = new CanDDeliveryOrder();
+    public CanDDeliveryOrderItemDetail canDDeliveryOrderItemDetailSelected = new CanDDeliveryOrderItemDetail();
+    public CanDDeliveryOrderItemDetailPK canDDeliveryOrderItemDetailPKSelected = new CanDDeliveryOrderItemDetailPK();
+    public CanDDeliveryOrderItemDisc canDDeliveryOrderItemDiscSelected = new CanDDeliveryOrderItemDisc();
+    public CanDDeliveryOrderItemDiscPK canDDeliveryOrderItemDiscPKSelected = new CanDDeliveryOrderItemDiscPK();
+    public CustomerGroup customerGroupSelected = new CustomerGroup();
+    public CustomerHirarchy customerHirarchySelected = new CustomerHirarchy();
+    public GroupSales groupSalesSelected = new GroupSales();
+    public MappingProduct mappingProductSelected = new MappingProduct();
+    public OutputArCustomer outputArCustomerSelected = new OutputArCustomer();
+    public OutputCanDDeliveryOrder outputCanDDeliveryOrderSelected = new OutputCanDDeliveryOrder();
+    public OutputCanDDeliveryOrderItemDetail outputCanDDeliveryOrderItemDetailSelected = new OutputCanDDeliveryOrderItemDetail();
+    public OutputCanDDeliveryOrderItemDetailPK outputCanDDeliveryOrderItemDetailPKSelected = new OutputCanDDeliveryOrderItemDetailPK();
+    public OutputCanDDeliveryOrderItemDisc outputCanDDeliveryOrderItemDiscSelected = new OutputCanDDeliveryOrderItemDisc();
+    public OutputCanDDeliveryOrderItemDiscPK outputCanDDeliveryOrderItemDiscPKSelected = new OutputCanDDeliveryOrderItemDiscPK();
+    public OutputSpEmployee outputSpEmployeeSelected = new OutputSpEmployee();
+    public OutputSpEmployeeTarget outputSpEmployeeTargetSelected = new OutputSpEmployeeTarget();
+    public OutputSpEmployeeTargetItemDetail outpustSpEmployeeTargetItemDetailSelected = new OutputSpEmployeeTargetItemDetail();
+    public OutputSpEmployeeTargetItemDetailPK outpustSpEmployeeTargetItemDetailPKSelected = new OutputSpEmployeeTargetItemDetailPK();
+    public OutputSpEmployeeTargetPK outputSpEmployeeTargetPKSelected = new OutputSpEmployeeTargetPK();
+    public PokariProduct pokariProductSelected = new PokariProduct();
+    public ProductBrand productBrandSelected = new ProductBrand();
+    public SalesTerritory salesTerryTorySelected = new SalesTerritory();
+    public SpEmployee spEmployeeSelected = new SpEmployee();
+    public SpEmployeeTarget spEmployeeTargetSelected = new SpEmployeeTarget();
+    public SpEmployeeTargetPK spEmployeeTargetPKSelected = new SpEmployeeTargetPK();
+    public SpEmployeeTargetItemDetail spEmployeeTargetItemDetailSelected = new SpEmployeeTargetItemDetail();
+    public SpEmployeeTargetItemDetailPK spEmployeeTargetItemDetailPKSelected = new SpEmployeeTargetItemDetailPK();
+    public TMasterProductPokari tMasterProductPokariSelected = new TMasterProductPokari();    
+    public TeamSales teamSalesSelected = new TeamSales();
+    public TypeSales typeSalesSelected = new TypeSales();
+    public Vehicle vehicleSelected = new Vehicle();
+    public WorkPlace workplaceSelected = new WorkPlace();
+    
     protected String principal = "";
+    
+    
+    
     /**
      * KEK
      * UNTUK EFISIENSI: APAKAH SUDAH PERNAH MAPPING MASTER KE MEMORY APA BELUM

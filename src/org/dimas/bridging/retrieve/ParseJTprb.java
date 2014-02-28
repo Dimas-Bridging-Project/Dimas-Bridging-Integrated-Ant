@@ -54,8 +54,10 @@ public class ParseJTprb {
                 //Karena jumlah record benar adalah 9 (8 toleransi)
                 if (data.length > 7) {
                     JTprb item = new JTprb();
-                    item.setSalesman(data[0]);
                     JTprbPK jtprbPK = new JTprbPK();
+                    jtprbPK.setSalesman(data[0]);
+                    //Kita sudah memindah salesman code sebagai  primary key
+                    //item.setSalesman(data[0]);
                     
                     jtprbPK.setIdOrder(data[1]);
                     jtprbPK.setPcode(data[2]);

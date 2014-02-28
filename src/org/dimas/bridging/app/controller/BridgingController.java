@@ -28,7 +28,7 @@ public class BridgingController extends BridgingControllerInit {
     public BridgingController(BridgingView view, BridgingModel model) {
             super(view, model);
             //TEST PRINCIPAL
-            getModel().setPrincipal(EnumPrincipal.BAYGON.getStrCode());
+            getModel().setPrincipal(EnumPrincipal.POKARI.getStrCode());
             
             bridgingContollerActionRetrieve = new BridgingControllerActionRetrieve(this);
             bridgingControllerActionExtract = new BridgingControllerActionExtract(this);
@@ -49,8 +49,7 @@ public class BridgingController extends BridgingControllerInit {
             } else {
                 System.err.println("Sementara cuma ada 3");
                 
-            }
-            
+            }            
        
     }
     private void initBaygon(){
@@ -63,8 +62,7 @@ public class BridgingController extends BridgingControllerInit {
     }    
     private void initPokari(){
         view.getViewVisibility().removeAllPanelUtama();
-        view.getViewVisibility().setVisibilityDefaultPokari();        
-        
+        view.getViewVisibility().setVisibilityDefaultPokari();                
     }  
    
     public void aksiReloadAll(){

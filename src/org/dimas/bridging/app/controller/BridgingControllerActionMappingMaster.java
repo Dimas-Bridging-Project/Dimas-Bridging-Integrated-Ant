@@ -310,6 +310,7 @@ public class BridgingControllerActionMappingMaster {
              if (rowIndex > -1) {
                  ArCustomer item = new ArCustomer();
                  item =controller.getModel().tmArCustomer.get(rowIndex);
+                 controller.getModel().arCustomerSelected = item;
                  if (item != null){
                     controller.getView().getTextMappingMasterPokariCustomerIdPokari().setText(item.getSzCustomerId());
                     controller.getView().getTextMappingMasterPokariCustomerIdScylla().setText(item.getScyCustomerId());
@@ -395,6 +396,8 @@ public class BridgingControllerActionMappingMaster {
              if (rowIndex > -1) {
                  SpEmployee item = new SpEmployee();
                  item =controller.getModel().tmSpEmployee.get(rowIndex);
+                 controller.getModel().spEmployeeSelected = item;                 
+                 
                  if (item != null){
                     controller.getView().getTextMappingMasterPokariEmployeeIdPokari().setText(item.getSzEmployeeId());
                     controller.getView().getTextMappingMasterPokariEmployeeIdScylla().setText(item.getScyEmployeeId());
@@ -422,11 +425,14 @@ public class BridgingControllerActionMappingMaster {
                  }
              }
     }
+    
     public void aksiTableMappingMasterPokariProductSelected(){
              int rowIndex =controller.getView().getTableMappingMasterPokariProduct().getSelectedRow();
              if (rowIndex > -1) {
                  MappingProduct item = new MappingProduct();
                  item =controller.getModel().tmMappingProduct.get(rowIndex);
+                 controller.getModel().mappingProductSelected = item;
+                 
                  if (item != null){
                     controller.getView().getTextMappingMasterPokariProductIdBrgScylla().setText(item.getPcodeScylla());
                     controller.getView().getTextMappingMasterPokariProductIdPokari().setText(item.getSzProductId());
@@ -452,7 +458,7 @@ public class BridgingControllerActionMappingMaster {
                     MappingProduct item = new MappingProduct();
                     item = controller.getModel().tmMappingProduct.get(rowIndex);
                    controller.getModel().mappingProductDao.delete(item);
-                     aksiBtnMappingMasterPokariProductReload();
+                    aksiBtnMappingMasterPokariProductReload();
                 }   
              }
     }
@@ -481,11 +487,12 @@ public class BridgingControllerActionMappingMaster {
 
     public void aksiBtnMappingMasterPokariProductSave(){
              MappingProduct item = new MappingProduct();
+             item = controller.getModel().mappingProductSelected; //KASIH DEFAULT DARI SELECTED
              
              item.setPcodeScylla(controller.getView().getTextMappingMasterPokariProductIdBrgScylla().getText().trim().toUpperCase());  
              item.setSzProductId(controller.getView().getTextMappingMasterPokariProductIdPokari().getText().trim().toUpperCase());
              item.setSzProductName(controller.getView().getTextMappingMasterPokariProductNamaBarang().getText().trim());
-             
+
              //NAMUN JIKA KOSONG MAKA AKAN DIAMBIL DARI SCYLLA >> SEBAGAI DEFAULT
              if (item.getSzProductId().trim().equals("")) item.setSzProductId(item.getPcodeScylla());             
              if (item.getSzProductName().trim().equals("")) item.setSzProductName(item.getPnameScylla());
@@ -512,6 +519,7 @@ public class BridgingControllerActionMappingMaster {
     }
     public void aksiBtnMappingMasterPokariEmployeeSave(){
              SpEmployee item = new SpEmployee();
+             item = controller.getModel().spEmployeeSelected; //KASIH DEFAULT DARI SELECTED
              
              item.setScyEmployeeId(controller.getView().getTextMappingMasterPokariEmployeeIdScylla().getText().trim().toUpperCase());
              item.setSzEmployeeId(controller.getView().getTextMappingMasterPokariEmployeeIdPokari().getText().trim().toUpperCase());
@@ -559,7 +567,8 @@ public class BridgingControllerActionMappingMaster {
     }
     public void aksiBtnMappingMasterPokariCustomerSave(){
              ArCustomer item = new ArCustomer();
-             
+              item = controller.getModel().arCustomerSelected; //KASIH DEFAULT DARI SELECTED
+              
              item.setScyCustomerId(controller.getView().getTextMappingMasterPokariCustomerIdScylla().getText().trim().toUpperCase());
              item.setSzCustomerId(controller.getView().getTextMappingMasterPokariCustomerIdPokari().getText().trim().toUpperCase());
              item.setSzName(controller.getView().getTextMappingMasterPokariCustomerName().getText().trim());
@@ -1311,10 +1320,11 @@ public class BridgingControllerActionMappingMaster {
              controller.getView().resetSearchMapProduct();
          }         
          public void aksiListTabelMapProduct(){
-             int rowIndex =controller.getView().getTableMapProduct().getSelectedRow();
+             int rowIndex = controller.getView().getTableMapProduct().getSelectedRow();
              if (rowIndex > -1) {
                  TMasterProduct item = new TMasterProduct();
-                 item =controller.getModel().tmTMasterProduct.get(rowIndex);
+                 item = controller.getModel().tmTMasterProduct.get(rowIndex);                 
+
                  if (item!=null){
                     controller.getView().getTextMapProductAreaId().setText(item.getAreaId());
                     controller.getView().getTextMapProductDistributorId().setText(item.getDistId());

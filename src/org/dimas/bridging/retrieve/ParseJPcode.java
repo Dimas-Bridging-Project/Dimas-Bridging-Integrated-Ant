@@ -49,8 +49,10 @@ public class ParseJPcode {
                 //Karena jumlah record benar adalah 10 (8 toleransi)
                 if (data.length > 8) {
                     JPcode item = new JPcode();
-                    item.setSalesman(data[0]);
                     JPcodePK jpcodePK = new JPcodePK();
+                    //KITA MEMINDAH SALESMAN CODE SEBAGAI PRIMARY KEY
+//                    item.setSalesman(data[0]);
+                    jpcodePK.setSalesman(data[0]);
                     
                     jpcodePK.setIdOrder(data[1]);
                     jpcodePK.setPcode(data[2]);
