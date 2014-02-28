@@ -203,6 +203,9 @@ public class BackupFileMasterPokari {
                 printWriter.print((item.getSzSalesGroup()!=null?item.getSzSalesGroup():"") + strDelimeted);
                 printWriter.print((item.getSzTeamId()!=null?item.getSzTeamId():"") + strDelimeted);
                 printWriter.print((item.getSzVehicleId()!=null?item.getSzVehicleId():"" ) + strDelimeted);
+                printWriter.print((item.getSzVehicleName()!=null?item.getSzVehicleName():"" ) + strDelimeted);
+                printWriter.print(""  + strDelimeted);
+//                printWriter.print((item.getSzPoliceNo()!=null?item.getSzPoliceNo():"" ) + strDelimeted);
                                
                 printWriter.print((item.getBaru()!=null?item.getBaru():"") + strDelimeted);
                 printWriter.print((item.getAllowTransfer()!=null?item.getAllowTransfer():"") + strDelimeted);

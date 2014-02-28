@@ -1456,50 +1456,53 @@ public class BridgingControllerActionMappingMaster {
             }    
          }         
         public void aksiBtnBackupAndRestoreStartRestore(){
-           if (!controller.getView().getTextBackupAndRestoreRestorePath().getText().trim().equals("")) {  
-               int isOverwrite=0;
-               int isGantiBaru=0;
-               
-               if (controller.getView().getCheckBackupAndRestoreRestoreOverwrite().isSelected()) {
-                   isOverwrite=1;
-               }
-               if (controller.getView().getCheckBackupAndRestoreRestoreGantiDenganDataBaru().isSelected()) {
-                   isOverwrite=1;
-               }
-               String tambahanPesan = "Terdapat kesalahan pada";
-               //Restore Tabel TMaster
-                if (controller.getView().getCheckBackupAndRestoreRestoreFileMaster().isSelected()) {
-                    try {
-                        RestoreFileMasterSap fm= new RestoreFileMasterSap();
-                        fm.runRestoreMasterSap(controller.getView().getTextBackupAndRestoreRestorePath().getText().trim(),isOverwrite, isGantiBaru);
-                    } catch(Exception ex){
-                        logger.error("Error Button Restore File Master", ex);
-                        tambahanPesan += " RESTORE FILE MASTER";
+            if (JOptionPane.showConfirmDialog(null, "Yakin akan merestore File Master", "Konfirmasi", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION) {
+                
+                if (!controller.getView().getTextBackupAndRestoreRestorePath().getText().trim().equals("")) {  
+                    int isOverwrite=0;
+                    int isGantiBaru=0;
+
+                    if (controller.getView().getCheckBackupAndRestoreRestoreOverwrite().isSelected()) {
+                        isOverwrite=1;
                     }
-                    aksiReloadMasterSAP();
-                }
-                //Restore Tabel-Tabel
-                if (controller.getView().getCheckBackupAndRestoreRestoreTabelTabel().isSelected()) {
-                    try {
-                        RestoreTabelTabelSap ft = new RestoreTabelTabelSap();
-                        ft.runRestoreTabelTabelSap(controller.getView().getTextBackupAndRestoreRestorePath().getText().trim(),isOverwrite, isGantiBaru);
-                    } catch(Exception ex){
-                        logger.error("Error Button Restore Tabel Tabel", ex);
-                        if (tambahanPesan.equalsIgnoreCase("Terdapat kesalahan pada")) tambahanPesan += " dan ";
-                        tambahanPesan += " RESTORE TABEL-TABEL";
+                    if (controller.getView().getCheckBackupAndRestoreRestoreGantiDenganDataBaru().isSelected()) {
+                        isOverwrite=1;
                     }
-                    //KESALAHAN AWAL: Kesalahan karena
-                    //aksiReloadTabelTabel();
-                    controller.bridgingControllerActionTabelTabel.aksiReloadTabelTabelKek();
-                    controller.bridgingControllerActionMappingMaster.aksiReloadMasterSAP();
-                }
-                 controller.getModel().setCurrentPath(controller.getView().getTextBackupAndRestoreRestorePath().getText().trim());
-                 if (tambahanPesan.equalsIgnoreCase("Terdapat kesalahan pada")) {
-                    JOptionPane.showMessageDialog(null, "Proses RESTORE Tabel-tabel dan Master SAP Selesai...", "Informasi..", JOptionPane.INFORMATION_MESSAGE);
-                 } else {
-                     JOptionPane.showMessageDialog(null, "Proses RESTORE Selesai namun " + tambahanPesan, "Informasi..", JOptionPane.WARNING_MESSAGE);
+                    String tambahanPesan = "Terdapat kesalahan pada";
+                    //Restore Tabel TMaster
+                     if (controller.getView().getCheckBackupAndRestoreRestoreFileMaster().isSelected()) {
+                         try {
+                             RestoreFileMasterSap fm= new RestoreFileMasterSap();
+                             fm.runRestoreMasterSap(controller.getView().getTextBackupAndRestoreRestorePath().getText().trim(),isOverwrite, isGantiBaru);
+                         } catch(Exception ex){
+                             logger.error("Error Button Restore File Master", ex);
+                             tambahanPesan += " RESTORE FILE MASTER";
+                         }
+                         aksiReloadMasterSAP();
+                     }
+                     //Restore Tabel-Tabel
+                     if (controller.getView().getCheckBackupAndRestoreRestoreTabelTabel().isSelected()) {
+                         try {
+                             RestoreTabelTabelSap ft = new RestoreTabelTabelSap();
+                             ft.runRestoreTabelTabelSap(controller.getView().getTextBackupAndRestoreRestorePath().getText().trim(),isOverwrite, isGantiBaru);
+                         } catch(Exception ex){
+                             logger.error("Error Button Restore Tabel Tabel", ex);
+                             if (tambahanPesan.equalsIgnoreCase("Terdapat kesalahan pada")) tambahanPesan += " dan ";
+                             tambahanPesan += " RESTORE TABEL-TABEL";
+                         }
+                         //KESALAHAN AWAL: Kesalahan karena
+                         //aksiReloadTabelTabel();
+                         controller.bridgingControllerActionTabelTabel.aksiReloadTabelTabelKek();
+                         controller.bridgingControllerActionMappingMaster.aksiReloadMasterSAP();
+                     }
+                      controller.getModel().setCurrentPath(controller.getView().getTextBackupAndRestoreRestorePath().getText().trim());
+                      if (tambahanPesan.equalsIgnoreCase("Terdapat kesalahan pada")) {
+                         JOptionPane.showMessageDialog(null, "Proses RESTORE Tabel-tabel dan Master SAP Selesai...", "Informasi..", JOptionPane.INFORMATION_MESSAGE);
+                      } else {
+                          JOptionPane.showMessageDialog(null, "Proses RESTORE Selesai namun " + tambahanPesan, "Informasi..", JOptionPane.WARNING_MESSAGE);
+                      }
                  }
-           }
+            }
            
         }
         
@@ -1565,50 +1568,54 @@ public class BridgingControllerActionMappingMaster {
             }    
         }        
         public void aksiBtnBackupAndRestoreRestoreStartRestorePokari(){
-           if (!controller.getView().getTextBackupAndRestoreRestorePathPokari().getText().trim().equals("")) {  
-               int isOverwrite=0;
-               int isGantiBaru=0;
-               
-               if (controller.getView().getCheckBackupAndRestoreRestoreOverwritePokari().isSelected()) {
-                   isOverwrite=1;
-               }
-               if (controller.getView().getCheckBackupAndRestoreRestoreGantiDenganDataBaruPokari().isSelected()) {
-                   isOverwrite=1;
-               }
-               String tambahanPesan = "Terdapat kesalahan pada";
-               //Restore Tabel TMaster
-                if (controller.getView().getCheckBackupAndRestoreRestoreFileMasterPokari().isSelected()) {
-                    try {
-                        RestoreFileMasterPokari fm= new RestoreFileMasterPokari(this.controller);
-                        fm.runRestoreMasterPokari(controller.getView().getTextBackupAndRestoreRestorePathPokari().getText().trim(),isOverwrite, isGantiBaru);
-                    } catch(Exception ex){
-                        logger.error("Error Button Restore File Master", ex);
-                        tambahanPesan += " RESTORE FILE MASTER";
+            if (JOptionPane.showConfirmDialog(null, "Yakin akan merestore File Master", "Konfirmasi", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION) {
+            
+                if (!controller.getView().getTextBackupAndRestoreRestorePathPokari().getText().trim().equals("")) {  
+                    int isOverwrite=0;
+                    int isGantiBaru=0;
+
+                    if (controller.getView().getCheckBackupAndRestoreRestoreOverwritePokari().isSelected()) {
+                        isOverwrite=1;
                     }
-                    aksiReloadMasterSAP();
-                }
-                //Restore Tabel-Tabel
-                if (controller.getView().getCheckBackupAndRestoreRestoreTabelTabelPokari().isSelected()) {
-                    try {
-                        RestoreTabelTabelPokari ft = new RestoreTabelTabelPokari(this.controller);
-                        ft.runRestoreTabelTabelPokari(controller.getView().getTextBackupAndRestoreRestorePathPokari().getText().trim(),isOverwrite, isGantiBaru);
-                    } catch(Exception ex){
-                        logger.error("Error Button Restore Tabel Tabel", ex);
-                        if (tambahanPesan.equalsIgnoreCase("Terdapat kesalahan pada")) tambahanPesan += " dan ";
-                        tambahanPesan += " RESTORE TABEL-TABEL";
+                    if (controller.getView().getCheckBackupAndRestoreRestoreGantiDenganDataBaruPokari().isSelected()) {
+                        isOverwrite=1;
                     }
-                    //KESALAHAN AWAL: Kesalahan karena
-                    //aksiReloadTabelTabel();
-                    controller.bridgingControllerActionTabelTabel.aksiReloadTabelTabelPokari();
-                    controller.bridgingControllerActionMappingMaster.aksiReloadMasterPokari();
-                }
-                 controller.getModel().setCurrentPath(controller.getView().getTextBackupAndRestoreRestorePathPokari().getText().trim());
-                 if (tambahanPesan.equalsIgnoreCase("Terdapat kesalahan pada")) {
-                    JOptionPane.showMessageDialog(null, "Proses RESTORE Tabel-tabel dan Master POKARI Selesai...", "Informasi..", JOptionPane.INFORMATION_MESSAGE);
-                 } else {
-                     JOptionPane.showMessageDialog(null, "Proses RESTORE Selesai namun " + tambahanPesan, "Informasi..", JOptionPane.WARNING_MESSAGE);
+                    String tambahanPesan = "Terdapat kesalahan pada";
+                    //Restore Tabel TMaster
+                     if (controller.getView().getCheckBackupAndRestoreRestoreFileMasterPokari().isSelected()) {
+                         try {
+                             RestoreFileMasterPokari fm= new RestoreFileMasterPokari(this.controller);
+                             fm.runRestoreMasterPokari(controller.getView().getTextBackupAndRestoreRestorePathPokari().getText().trim(),isOverwrite, isGantiBaru);
+                         } catch(Exception ex){
+                             logger.error("Error Button Restore File Master", ex);
+                             tambahanPesan += " RESTORE FILE MASTER";
+                         }
+                         aksiReloadMasterSAP();
+                     }
+                     //Restore Tabel-Tabel
+                     if (controller.getView().getCheckBackupAndRestoreRestoreTabelTabelPokari().isSelected()) {
+                         try {
+                             RestoreTabelTabelPokari ft = new RestoreTabelTabelPokari(this.controller);
+                             ft.runRestoreTabelTabelPokari(controller.getView().getTextBackupAndRestoreRestorePathPokari().getText().trim(),isOverwrite, isGantiBaru);
+                         } catch(Exception ex){
+                             logger.error("Error Button Restore Tabel Tabel", ex);
+                             if (tambahanPesan.equalsIgnoreCase("Terdapat kesalahan pada")) tambahanPesan += " dan ";
+                             tambahanPesan += " RESTORE TABEL-TABEL";
+                         }
+                         //KESALAHAN AWAL: Kesalahan karena
+                         //aksiReloadTabelTabel();
+                         controller.bridgingControllerActionTabelTabel.aksiReloadTabelTabelPokari();
+                         controller.bridgingControllerActionMappingMaster.aksiReloadMasterPokari();
+                     }
+                      controller.getModel().setCurrentPath(controller.getView().getTextBackupAndRestoreRestorePathPokari().getText().trim());
+                      if (tambahanPesan.equalsIgnoreCase("Terdapat kesalahan pada")) {
+                         JOptionPane.showMessageDialog(null, "Proses RESTORE Tabel-tabel dan Master POKARI Selesai...", "Informasi..", JOptionPane.INFORMATION_MESSAGE);
+                      } else {
+                          JOptionPane.showMessageDialog(null, "Proses RESTORE Selesai namun " + tambahanPesan, "Informasi..", JOptionPane.WARNING_MESSAGE);
+                      }
                  }
-           }
+           
+            }
         }        
 
         
