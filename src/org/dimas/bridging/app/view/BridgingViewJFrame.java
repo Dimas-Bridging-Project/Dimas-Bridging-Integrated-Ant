@@ -38,8 +38,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         //jPanelSubOutputPokari1 = new JPanelSubOutputPokari();
     }
 
-    void initManualConfigureNetbeansGoblok(){
-   
+    void initManualConfigureNetbeansGoblok(){  
     }
 
     public JPanelSubOutputPokari getjPanelSubOutputPokari1() {
@@ -53,13 +52,71 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     public JPanelSubOutputBaygon getjPanelSubOutputBaygon1() {
         return jPanelSubOutputBaygon1;
     }
+   //LABEL RETRIEVE UNTUK INFO
+    public JLabel getjLabelInputScyllaCvOutlet() {
+        return jLabelInputScyllaCvOutlet;
+    }
 
-  
+    public JLabel getjLabelInputScyllaJHeader() {
+        return jLabelInputScyllaJHeader;
+    }
+
+    public JLabel getjLabelInputScyllaJPCode() {
+        return jLabelInputScyllaJPCode;
+    }
+
+    public JLabel getjLabelInputScyllaJTprb() {
+        return jLabelInputScyllaJTprb;
+    }
+
+    public JLabel getjLabelInputScyllaJTpru() {
+        return jLabelInputScyllaJTpru;
+    }
+
+    public JLabel getjLabelInputScyllaMasterProduk() {
+        return jLabelInputScyllaMasterProduk;
+    }
+
+    public JLabel getjLabelInputScyllaOutlet() {
+        return jLabelInputScyllaOutlet;
+    }
     
+    public JLabel getjLabelInputScyllaSalesman() {
+        return jLabelInputScyllaSalesman;
+    }
+    public JLabel getjLabelInputScyllaBarangDatang(){
+        return jLabelInputScyllaBarangDatang;
+    }
+    public JLabel getjLabelInputScyllaReturKePabrik(){
+        return jLabelInputScyllaReturKePabrik;
+    }
+    public JLabel getjLabelInputScyllaStokAdjustment(){
+        return jLabelInputScyllaStokAdjustment;
+    }
+    
+    public JLabel getjLabelInputScyllaStock() {
+        return jLabelInputScyllaStock;
+    }
+    
+    
+    //POKARI
+    public JTextField getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation(){
+        return textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation;
+    }
+            
+    public JButton getBtnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation(){
+        return btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation;
+    }
+    public JButton getBtnGeneralSettingPokariSimpan(){
+        return btnGeneralSettingPokariSimpan;
+    }
+    public JButton getBtnGeneralSettingPokariReload(){
+        return btnGeneralSettingPokariReload;
+    }
+            
     public JPanel getjPanelSubGenerateExtract() {
         return jPanelSubGenerateExtract;
     }
-
     public JPanel getjPanelSubGenerateExtractKek() {
         return jPanelSubGenerateExtractKek;
     }
@@ -125,27 +182,32 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         tableInputMaster = new javax.swing.JTable();
         jPanel23 = new javax.swing.JPanel();
         btnInputMasterReload = new javax.swing.JButton();
+        jLabelInputScyllaMasterProduk = new javax.swing.JLabel();
         jPanelSubInputScyllaStock = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
         btnInputStockReload = new javax.swing.JButton();
+        jLabelInputScyllaStock = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableInputStock = new javax.swing.JTable();
         jPanelSubInputScyllaOutlet = new javax.swing.JPanel();
         jPanel27 = new javax.swing.JPanel();
         btnInputOutletReload = new javax.swing.JButton();
+        jLabelInputScyllaOutlet = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableInputOutlet = new javax.swing.JTable();
         jPanelSubInputScyllaCvOutlet = new javax.swing.JPanel();
         jPanel29 = new javax.swing.JPanel();
         btnInputCvOutletReload = new javax.swing.JButton();
+        jLabelInputScyllaCvOutlet = new javax.swing.JLabel();
         jPanel30 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tableInputCvOutlet = new javax.swing.JTable();
         jPanelSubInputScyllaSalesman = new javax.swing.JPanel();
         jPanel31 = new javax.swing.JPanel();
         btnInputSalesmanReload = new javax.swing.JButton();
+        jLabelInputScyllaSalesman = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tableInputSalesman = new javax.swing.JTable();
@@ -155,6 +217,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputJheaderUbah = new javax.swing.JButton();
         btnInputJheaderBaru = new javax.swing.JButton();
         lblInputJHeaderFooterInfo = new javax.swing.JLabel();
+        jLabelInputScyllaJHeader = new javax.swing.JLabel();
         jPanel34 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         tableInputJheader = new javax.swing.JTable();
@@ -168,18 +231,21 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jPanelSubInputScyllaJPcode = new javax.swing.JPanel();
         jPanel35 = new javax.swing.JPanel();
         btnInputJpcodeReload = new javax.swing.JButton();
+        jLabelInputScyllaJPCode = new javax.swing.JLabel();
         jPanel36 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         tableInputJpcode = new javax.swing.JTable();
         jPanelSubInputScyllaJTprb = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
         btnInputJtprbReload = new javax.swing.JButton();
+        jLabelInputScyllaJTprb = new javax.swing.JLabel();
         jPanel38 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         tableInputJtprb = new javax.swing.JTable();
         jPanelSubInputScyllaJTpru = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
         btnInputJtpruReload = new javax.swing.JButton();
+        jLabelInputScyllaJTpru = new javax.swing.JLabel();
         jPanel40 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         tableInputJtpru = new javax.swing.JTable();
@@ -188,14 +254,17 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         tableInputBarangDatang = new javax.swing.JTable();
         jPanel76 = new javax.swing.JPanel();
         btnInputBarangDatangReload = new javax.swing.JButton();
+        jLabelInputScyllaBarangDatang = new javax.swing.JLabel();
         jPanelSubInputScyllaReturKePabrik = new javax.swing.JPanel();
         jPanel77 = new javax.swing.JPanel();
         btnInputReturKePabrikReload = new javax.swing.JButton();
+        jLabelInputScyllaReturKePabrik = new javax.swing.JLabel();
         jScrollPane28 = new javax.swing.JScrollPane();
         tableInputReturKePabrik = new javax.swing.JTable();
         jPanelSubInputScyllaStokAdjustment = new javax.swing.JPanel();
         jPanel78 = new javax.swing.JPanel();
         btnInputStockAdjustmentReload = new javax.swing.JButton();
+        jLabelInputScyllaStokAdjustment = new javax.swing.JLabel();
         jScrollPane29 = new javax.swing.JScrollPane();
         tableInputStockAdjustment = new javax.swing.JTable();
         jPanelUtamaOutputKEK = new javax.swing.JPanel();
@@ -334,6 +403,13 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         textEmailPassword = new javax.swing.JPasswordField();
         btnGeneralSettingKonfigurasiEmaiSimpan = new javax.swing.JButton();
+        jPanelSubKonfigAndUtilPokari = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation = new javax.swing.JTextField();
+        btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation = new javax.swing.JButton();
+        jLabel129 = new javax.swing.JLabel();
+        btnGeneralSettingPokariSimpan = new javax.swing.JButton();
+        btnGeneralSettingPokariReload = new javax.swing.JButton();
         jPanelUtamaBackupAndRestore = new javax.swing.JPanel();
         jTabbedPaneUtamaBackupAndRestore = new javax.swing.JTabbedPane();
         jPanelSubBackupAndRestoreBackupAndRestoreKek = new javax.swing.JPanel();
@@ -845,21 +921,30 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputMasterReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputMasterReload.setText("Reload");
 
+        jLabelInputScyllaMasterProduk.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaMasterProduk.setText("jLabelInputScyllaMasterProduk");
+
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputMasterReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelInputScyllaMasterProduk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addComponent(btnInputMasterReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel23Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(btnInputMasterReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInputScyllaMasterProduk, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
@@ -869,17 +954,17 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
-                    .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -890,14 +975,14 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             .addGroup(jPanelSubInputScyllaMasterProductLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaMasterProductLayout.setVerticalGroup(
             jPanelSubInputScyllaMasterProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSubInputScyllaMasterProductLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("Product", jPanelSubInputScyllaMasterProduct);
@@ -907,21 +992,30 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputStockReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputStockReload.setText("Reload");
 
+        jLabelInputScyllaStock.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaStock.setText("jLabelInputScyllaStock");
+
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
         jPanel25Layout.setHorizontalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputStockReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelInputScyllaStock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addComponent(btnInputStockReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(btnInputStockReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInputScyllaStock, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel26.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -952,7 +1046,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -965,7 +1059,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanelSubInputScyllaStockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(260, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaStockLayout.setVerticalGroup(
             jPanelSubInputScyllaStockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -974,7 +1068,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("Stock", jPanelSubInputScyllaStock);
@@ -984,21 +1078,29 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputOutletReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputOutletReload.setText("Reload");
 
+        jLabelInputScyllaOutlet.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaOutlet.setText("jLabelInputScyllaOutlet");
+
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel27Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputOutletReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel27Layout.createSequentialGroup()
+                        .addComponent(btnInputOutletReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 785, Short.MAX_VALUE))
+                    .addComponent(jLabelInputScyllaOutlet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel27Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(btnInputOutletReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInputScyllaOutlet, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                .addGap(6, 6, 6))
         );
 
         jPanel28.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1029,7 +1131,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel28Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1042,7 +1144,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanelSubInputScyllaOutletLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaOutletLayout.setVerticalGroup(
             jPanelSubInputScyllaOutletLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1051,7 +1153,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("Outlet", jPanelSubInputScyllaOutlet);
@@ -1061,21 +1163,30 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputCvOutletReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputCvOutletReload.setText("Reload");
 
+        jLabelInputScyllaCvOutlet.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaCvOutlet.setText("jLabelInputScyllaCvOutlet");
+
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
         jPanel29Layout.setHorizontalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputCvOutletReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel29Layout.createSequentialGroup()
+                        .addComponent(btnInputCvOutletReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabelInputScyllaCvOutlet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnInputCvOutletReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInputScyllaCvOutlet, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel30.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1099,14 +1210,14 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 921, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1119,7 +1230,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanelSubInputScyllaCvOutletLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(263, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaCvOutletLayout.setVerticalGroup(
             jPanelSubInputScyllaCvOutletLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1128,7 +1239,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("CvOutlet", jPanelSubInputScyllaCvOutlet);
@@ -1138,21 +1249,31 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputSalesmanReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputSalesmanReload.setText("Reload");
 
+        jLabelInputScyllaSalesman.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaSalesman.setText("jLabelInputScyllaSalesman");
+        jLabelInputScyllaSalesman.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputSalesmanReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(806, Short.MAX_VALUE))
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel31Layout.createSequentialGroup()
+                        .addComponent(btnInputSalesmanReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabelInputScyllaSalesman, javax.swing.GroupLayout.DEFAULT_SIZE, 926, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnInputSalesmanReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInputScyllaSalesman, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel32.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1183,7 +1304,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1196,7 +1317,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanelSubInputScyllaSalesmanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(256, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaSalesmanLayout.setVerticalGroup(
             jPanelSubInputScyllaSalesmanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1204,8 +1325,8 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addComponent(jPanel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPaneUtamaInputScylla.addTab("Salesman", jPanelSubInputScyllaSalesman);
@@ -1227,18 +1348,26 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         lblInputJHeaderFooterInfo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblInputJHeaderFooterInfo.setText("lblInputJHeaderFooterInfo");
 
+        jLabelInputScyllaJHeader.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaJHeader.setText("jLabelInputScyllaJHeader");
+        jLabelInputScyllaJHeader.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
         jPanel33Layout.setHorizontalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputJheaderReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
-                .addComponent(btnInputJheaderBaru, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnInputJheaderUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelInputScyllaJHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel33Layout.createSequentialGroup()
+                        .addComponent(btnInputJheaderReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(btnInputJheaderBaru, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnInputJheaderUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 448, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel33Layout.createSequentialGroup()
                     .addGap(504, 504, 504)
@@ -1253,12 +1382,14 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(btnInputJheaderReload)
                     .addComponent(btnInputJheaderUbah)
                     .addComponent(btnInputJheaderBaru))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInputScyllaJHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel33Layout.createSequentialGroup()
                     .addGap(16, 16, 16)
                     .addComponent(lblInputJHeaderFooterInfo)
-                    .addContainerGap(17, Short.MAX_VALUE)))
+                    .addContainerGap(71, Short.MAX_VALUE)))
         );
 
         jPanel34.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1332,8 +1463,8 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(btnInputJheaderSearch)
                     .addComponent(textInputJHeaderSearchIdOutlet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
         );
 
         javax.swing.GroupLayout jPanelSubInputScyllaJHeaderLayout = new javax.swing.GroupLayout(jPanelSubInputScyllaJHeader);
@@ -1342,19 +1473,19 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             jPanelSubInputScyllaJHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSubInputScyllaJHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelSubInputScyllaJHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addGroup(jPanelSubInputScyllaJHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaJHeaderLayout.setVerticalGroup(
             jPanelSubInputScyllaJHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSubInputScyllaJHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addComponent(jPanel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(77, 77, 77))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("JHeader", new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/List.png")), jPanelSubInputScyllaJHeader); // NOI18N
@@ -1364,21 +1495,30 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputJpcodeReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputJpcodeReload.setText("Reload");
 
+        jLabelInputScyllaJPCode.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaJPCode.setText("jLabelInputScyllaJPCode");
+
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
         jPanel35Layout.setHorizontalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel35Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputJpcodeReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(813, Short.MAX_VALUE))
+                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel35Layout.createSequentialGroup()
+                        .addComponent(btnInputJpcodeReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 801, Short.MAX_VALUE))
+                    .addComponent(jLabelInputScyllaJPCode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel35Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnInputJpcodeReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInputScyllaJPCode, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel36.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1422,7 +1562,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanelSubInputScyllaJPcodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaJPcodeLayout.setVerticalGroup(
             jPanelSubInputScyllaJPcodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1431,7 +1571,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("JPcode", jPanelSubInputScyllaJPcode);
@@ -1441,20 +1581,29 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputJtprbReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputJtprbReload.setText("Reload");
 
+        jLabelInputScyllaJTprb.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaJTprb.setText("jLabelInputScyllaJTprb");
+
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
         jPanel37Layout.setHorizontalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel37Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputJtprbReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(794, Short.MAX_VALUE))
+                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel37Layout.createSequentialGroup()
+                        .addComponent(btnInputJtprbReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 782, Short.MAX_VALUE))
+                    .addComponent(jLabelInputScyllaJTprb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel37Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnInputJtprbReload)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInputScyllaJTprb, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1499,7 +1648,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanelSubInputScyllaJTprbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(268, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaJTprbLayout.setVerticalGroup(
             jPanelSubInputScyllaJTprbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1508,7 +1657,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("JTprb", jPanelSubInputScyllaJTprb);
@@ -1518,21 +1667,30 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputJtpruReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputJtpruReload.setText("Reload");
 
+        jLabelInputScyllaJTpru.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaJTpru.setText("jLabelInputScyllaJTpru");
+
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
         jPanel39Layout.setHorizontalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel39Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputJtpruReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(800, Short.MAX_VALUE))
+                .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel39Layout.createSequentialGroup()
+                        .addComponent(btnInputJtpruReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 788, Short.MAX_VALUE))
+                    .addComponent(jLabelInputScyllaJTpru, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel39Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnInputJtpruReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInputScyllaJTpru, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel40.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1576,7 +1734,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanelSubInputScyllaJTpruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaJTpruLayout.setVerticalGroup(
             jPanelSubInputScyllaJTpruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1585,7 +1743,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("JTpru", jPanelSubInputScyllaJTpru);
@@ -1608,21 +1766,30 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputBarangDatangReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputBarangDatangReload.setText("Reload");
 
+        jLabelInputScyllaBarangDatang.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaBarangDatang.setText("jLabelInputScyllaBarangDatang");
+
         javax.swing.GroupLayout jPanel76Layout = new javax.swing.GroupLayout(jPanel76);
         jPanel76.setLayout(jPanel76Layout);
         jPanel76Layout.setHorizontalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel76Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputBarangDatangReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel76Layout.createSequentialGroup()
+                        .addComponent(btnInputBarangDatangReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabelInputScyllaBarangDatang, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel76Layout.setVerticalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel76Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnInputBarangDatangReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(8, 8, 8)
+                .addComponent(jLabelInputScyllaBarangDatang, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanelSubInputScyllaBarangDatangLayout = new javax.swing.GroupLayout(jPanelSubInputScyllaBarangDatang);
@@ -1630,20 +1797,20 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jPanelSubInputScyllaBarangDatangLayout.setHorizontalGroup(
             jPanelSubInputScyllaBarangDatangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSubInputScyllaBarangDatangLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanelSubInputScyllaBarangDatangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 930, Short.MAX_VALUE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanelSubInputScyllaBarangDatangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel76, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(282, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaBarangDatangLayout.setVerticalGroup(
             jPanelSubInputScyllaBarangDatangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSubInputScyllaBarangDatangLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(19, 19, 19)
                 .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel76, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("Barang Datang", jPanelSubInputScyllaBarangDatang);
@@ -1653,21 +1820,30 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputReturKePabrikReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputReturKePabrikReload.setText("Reload");
 
+        jLabelInputScyllaReturKePabrik.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaReturKePabrik.setText("jLabelInputScyllaReturKePabrik");
+
         javax.swing.GroupLayout jPanel77Layout = new javax.swing.GroupLayout(jPanel77);
         jPanel77.setLayout(jPanel77Layout);
         jPanel77Layout.setHorizontalGroup(
             jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel77Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputReturKePabrikReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel77Layout.createSequentialGroup()
+                        .addComponent(btnInputReturKePabrikReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabelInputScyllaReturKePabrik, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel77Layout.setVerticalGroup(
             jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel77Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnInputReturKePabrikReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(4, 4, 4)
+                .addComponent(jLabelInputScyllaReturKePabrik, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         tableInputReturKePabrik.setModel(new javax.swing.table.DefaultTableModel(
@@ -1688,20 +1864,20 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jPanelSubInputScyllaReturKePabrikLayout.setHorizontalGroup(
             jPanelSubInputScyllaReturKePabrikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSubInputScyllaReturKePabrikLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanelSubInputScyllaReturKePabrikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane28, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanelSubInputScyllaReturKePabrikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 918, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel77, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(294, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaReturKePabrikLayout.setVerticalGroup(
             jPanelSubInputScyllaReturKePabrikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSubInputScyllaReturKePabrikLayout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
-                .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel77, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("Retur ke Pabrik", jPanelSubInputScyllaReturKePabrik);
@@ -1711,21 +1887,30 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnInputStockAdjustmentReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnInputStockAdjustmentReload.setText("Reload");
 
+        jLabelInputScyllaStokAdjustment.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInputScyllaStokAdjustment.setText("jLabelInputScyllaStokAdjustment");
+
         javax.swing.GroupLayout jPanel78Layout = new javax.swing.GroupLayout(jPanel78);
         jPanel78.setLayout(jPanel78Layout);
         jPanel78Layout.setHorizontalGroup(
             jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel78Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInputStockAdjustmentReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel78Layout.createSequentialGroup()
+                        .addComponent(btnInputStockAdjustmentReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 787, Short.MAX_VALUE))
+                    .addComponent(jLabelInputScyllaStokAdjustment, javax.swing.GroupLayout.DEFAULT_SIZE, 919, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel78Layout.setVerticalGroup(
             jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel78Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnInputStockAdjustmentReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInputScyllaStokAdjustment, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         tableInputStockAdjustment.setModel(new javax.swing.table.DefaultTableModel(
@@ -1747,19 +1932,19 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             jPanelSubInputScyllaStokAdjustmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSubInputScyllaStokAdjustmentLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelSubInputScyllaStokAdjustmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 947, Short.MAX_VALUE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addGroup(jPanelSubInputScyllaStokAdjustmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 947, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel78, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(265, Short.MAX_VALUE))
         );
         jPanelSubInputScyllaStokAdjustmentLayout.setVerticalGroup(
             jPanelSubInputScyllaStokAdjustmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSubInputScyllaStokAdjustmentLayout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel78, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaInputScylla.addTab("Stok Adjustment", jPanelSubInputScyllaStokAdjustment);
@@ -1770,13 +1955,13 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             jPanelUtamaInputScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelUtamaInputScyllaLayout.createSequentialGroup()
                 .addComponent(jTabbedPaneUtamaInputScylla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelUtamaInputScyllaLayout.setVerticalGroup(
             jPanelUtamaInputScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelUtamaInputScyllaLayout.createSequentialGroup()
                 .addComponent(jTabbedPaneUtamaInputScylla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 39, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtama.addTab("Input Scylla", jPanelUtamaInputScylla);
@@ -1789,7 +1974,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         );
         jPanelUtamaOutputKEKLayout.setVerticalGroup(
             jPanelUtamaOutputKEKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
         );
 
         jTabbedPaneUtama.addTab("Output KEK", jPanelUtamaOutputKEK);
@@ -1802,7 +1987,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         );
         jPanelUtamaOutputPokariLayout.setVerticalGroup(
             jPanelUtamaOutputPokariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
         );
 
         jTabbedPaneUtama.addTab("Output Pokari", jPanelUtamaOutputPokari);
@@ -1815,7 +2000,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         );
         jPanelUtamaOutputBaygonLayout.setVerticalGroup(
             jPanelUtamaOutputBaygonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
         );
 
         jTabbedPaneUtama.addTab("Output Baygon", jPanelUtamaOutputBaygon);
@@ -1983,7 +2168,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                             .addComponent(textPathInputJHeader)
                             .addComponent(textPathInputJPcode)
                             .addComponent(textPathInputJTprb)
-                            .addComponent(textPathInputJTpru, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textPathInputJTpru, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE))
                         .addGap(41, 41, 41)
                         .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnPathInputJHeader)
@@ -2013,13 +2198,11 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                             .addComponent(btnRetrieveInputMaster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jDateChooseTanggalStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(textPathInputStock, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jDateChooseTanggalStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
                                 .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2038,18 +2221,21 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addComponent(btnRetrieveInputStock, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel34)
-                            .addComponent(jLabel35))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textPathInputStock, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                                .addComponent(jDateChooseTanggalStokAdjustment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(textPathInputStokAdjustment, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(textPathInputReturKePabrik, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textPathInputBarangDatang, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel34)
+                                    .addComponent(jLabel35))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                                        .addComponent(jDateChooseTanggalStokAdjustment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(textPathInputStokAdjustment, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(textPathInputReturKePabrik, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textPathInputBarangDatang, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnPathInputBarangDatang)
@@ -2076,8 +2262,6 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jPanelSubGenerateRetrieveScyllaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnRetrieveInputCvOutlet, btnRetrieveInputMaster, btnRetrieveInputOutlet, btnRetrieveInputSalesman});
 
         jPanelSubGenerateRetrieveScyllaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {textPathInputCvOutlet, textPathInputMaster, textPathInputOutlet, textPathInputSalesman});
-
-        jPanelSubGenerateRetrieveScyllaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {textPathInputStock, textPathInputStokAdjustment});
 
         jPanelSubGenerateRetrieveScyllaLayout.setVerticalGroup(
             jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2120,7 +2304,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textPathInputCvOutlet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(2, 2, 2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
                         .addComponent(textPathInputJHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2433,7 +2617,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addComponent(jPanelSubGeneratePicture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanelSubGenerateButtonRetrieve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(jPanelSubGenerateExtract, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
@@ -2453,7 +2637,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         );
         jPanelUtamaGenerateLayout.setVerticalGroup(
             jPanelUtamaGenerateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
             .addGroup(jPanelUtamaGenerateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelUtamaGenerateLayout.createSequentialGroup()
                     .addContainerGap()
@@ -2538,7 +2722,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textRecordTypeSo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
-                .addGap(0, 8, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel53.setBorder(javax.swing.BorderFactory.createTitledBorder("Warehouse"));
@@ -2579,7 +2763,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textWarehouseWarehouseDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnGeneralSettingSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/save_16x16.png"))); // NOI18N
@@ -2635,7 +2819,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(textDistributorName, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2658,7 +2842,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGeneralSettingSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGeneralSettingReload, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("General Setting", new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/Home.png")), jPanel21); // NOI18N
@@ -2848,7 +3032,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             .addGroup(jPanelSubKonfigAndUtilBaygonLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaConfigAndUtils.addTab("Konfigurasi  & Utilities BAYGON", new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/Equipment.png")), jPanelSubKonfigAndUtilBaygon, ""); // NOI18N
@@ -2904,7 +3088,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textEmailFrom)
                             .addComponent(textEmailPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel54Layout.setVerticalGroup(
             jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2917,7 +3101,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(textEmailPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textEmailTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
@@ -2956,10 +3140,85 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGeneralSettingKonfigurasiEmaiSimpan)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(295, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaConfigAndUtils.addTab("Konfigurasi Email", jPanelSubKonfigAndUtilEmail);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation.setText("jTextField1");
+        textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocationActionPerformed(evt);
+            }
+        });
+
+        btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/folder_add_16x16.png"))); // NOI18N
+
+        jLabel129.setText("Template Output IDOS Location");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel129))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel129)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(176, Short.MAX_VALUE))
+        );
+
+        btnGeneralSettingPokariSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/save_16x16.png"))); // NOI18N
+        btnGeneralSettingPokariSimpan.setMnemonic('S');
+        btnGeneralSettingPokariSimpan.setText("Simpan");
+
+        btnGeneralSettingPokariReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
+        btnGeneralSettingPokariReload.setMnemonic('R');
+        btnGeneralSettingPokariReload.setText("Reload");
+
+        javax.swing.GroupLayout jPanelSubKonfigAndUtilPokariLayout = new javax.swing.GroupLayout(jPanelSubKonfigAndUtilPokari);
+        jPanelSubKonfigAndUtilPokari.setLayout(jPanelSubKonfigAndUtilPokariLayout);
+        jPanelSubKonfigAndUtilPokariLayout.setHorizontalGroup(
+            jPanelSubKonfigAndUtilPokariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSubKonfigAndUtilPokariLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelSubKonfigAndUtilPokariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelSubKonfigAndUtilPokariLayout.createSequentialGroup()
+                        .addComponent(btnGeneralSettingPokariSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnGeneralSettingPokariReload, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(368, Short.MAX_VALUE))
+        );
+        jPanelSubKonfigAndUtilPokariLayout.setVerticalGroup(
+            jPanelSubKonfigAndUtilPokariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSubKonfigAndUtilPokariLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelSubKonfigAndUtilPokariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGeneralSettingPokariSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGeneralSettingPokariReload, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(298, Short.MAX_VALUE))
+        );
+
+        jTabbedPaneUtamaConfigAndUtils.addTab("Konfigurasi & Utilities POKARI", jPanelSubKonfigAndUtilPokari);
 
         javax.swing.GroupLayout jPanelUtamaConfigAndUtilsLayout = new javax.swing.GroupLayout(jPanelUtamaConfigAndUtils);
         jPanelUtamaConfigAndUtils.setLayout(jPanelUtamaConfigAndUtilsLayout);
@@ -2968,18 +3227,18 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             .addGap(0, 1039, Short.MAX_VALUE)
             .addGroup(jPanelUtamaConfigAndUtilsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelUtamaConfigAndUtilsLayout.createSequentialGroup()
-                    .addGap(0, 55, Short.MAX_VALUE)
+                    .addGap(0, 59, Short.MAX_VALUE)
                     .addComponent(jTabbedPaneUtamaConfigAndUtils, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 55, Short.MAX_VALUE)))
+                    .addGap(0, 59, Short.MAX_VALUE)))
         );
         jPanelUtamaConfigAndUtilsLayout.setVerticalGroup(
             jPanelUtamaConfigAndUtilsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
             .addGroup(jPanelUtamaConfigAndUtilsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelUtamaConfigAndUtilsLayout.createSequentialGroup()
-                    .addGap(0, 26, Short.MAX_VALUE)
+                    .addGap(0, 27, Short.MAX_VALUE)
                     .addComponent(jTabbedPaneUtamaConfigAndUtils, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 26, Short.MAX_VALUE)))
+                    .addGap(0, 27, Short.MAX_VALUE)))
         );
 
         jTabbedPaneUtama.addTab("Setting and Utils", jPanelUtamaConfigAndUtils);
@@ -3306,12 +3565,12 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         );
         jPanelUtamaBackupAndRestoreLayout.setVerticalGroup(
             jPanelUtamaBackupAndRestoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
             .addGroup(jPanelUtamaBackupAndRestoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelUtamaBackupAndRestoreLayout.createSequentialGroup()
-                    .addGap(0, 74, Short.MAX_VALUE)
+                    .addGap(0, 84, Short.MAX_VALUE)
                     .addComponent(jTabbedPaneUtamaBackupAndRestore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 75, Short.MAX_VALUE)))
+                    .addGap(0, 85, Short.MAX_VALUE)))
         );
 
         jTabbedPaneUtama.addTab("Backup and Restore", jPanelUtamaBackupAndRestore);
@@ -4822,12 +5081,12 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         );
         jPanelUtamaSettingPokariLayout.setVerticalGroup(
             jPanelUtamaSettingPokariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
             .addGroup(jPanelUtamaSettingPokariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelUtamaSettingPokariLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
                     .addComponent(jTabbedPaneUtamaSettingPokari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(41, Short.MAX_VALUE)))
+                    .addContainerGap(90, Short.MAX_VALUE)))
         );
 
         jTabbedPaneUtama.addTab("Setting Pokari", jPanelUtamaSettingPokari);
@@ -6690,12 +6949,12 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         );
         jPanelUtamaSettingKekLayout.setVerticalGroup(
             jPanelUtamaSettingKekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
             .addGroup(jPanelUtamaSettingKekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelUtamaSettingKekLayout.createSequentialGroup()
-                    .addGap(0, 23, Short.MAX_VALUE)
+                    .addGap(0, 47, Short.MAX_VALUE)
                     .addComponent(jTabbedPaneUtamaSettingKek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 23, Short.MAX_VALUE)))
+                    .addGap(0, 48, Short.MAX_VALUE)))
         );
 
         jTabbedPaneUtama.addTab("Setting KEK", jPanelUtamaSettingKek);
@@ -6719,7 +6978,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanelGenerateExtractPokari1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelGenerateExtractBaygon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 401, Short.MAX_VALUE))
+                .addGap(0, 463, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtama.addTab("Templates1", jPanelUtamaTemplates1);
@@ -6861,6 +7120,10 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioBackupAndRestoreBackupTabDelimetedActionPerformed
 
+    private void textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocationActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -6923,7 +7186,9 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     public JPanel getjPanelSubKonfigAndUtilBaygon() {
         return jPanelSubKonfigAndUtilBaygon;
     }
-
+    public JPanel getjPanelSubKonfigAndUtilPokari(){
+        return jPanelSubKonfigAndUtilPokari;
+    }
     public JPanel getjPanelSubKonfigAndUtilEmail() {
         return jPanelSubKonfigAndUtilEmail;
     }
@@ -8484,6 +8749,8 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnExtractTDatsri;
     private javax.swing.JButton btnExtractTStok;
     private javax.swing.JButton btnGeneralSettingKonfigurasiEmaiSimpan;
+    private javax.swing.JButton btnGeneralSettingPokariReload;
+    private javax.swing.JButton btnGeneralSettingPokariSimpan;
     private javax.swing.JButton btnGeneralSettingReload;
     private javax.swing.JButton btnGeneralSettingSimpan;
     private javax.swing.JButton btnInputBarangDatangReload;
@@ -8542,6 +8809,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnPathInputSalesman;
     private javax.swing.JButton btnPathInputStock;
     private javax.swing.JButton btnPathInputStokAdjustment;
+    private javax.swing.JButton btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation;
     private javax.swing.JButton btnPathOutput;
     private javax.swing.JButton btnRetrieveInputAll;
     private javax.swing.JButton btnRetrieveInputBarangDatang;
@@ -8721,6 +8989,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel126;
     private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
+    private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
@@ -8823,8 +9092,21 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
+    private javax.swing.JLabel jLabelInputScyllaBarangDatang;
+    private javax.swing.JLabel jLabelInputScyllaCvOutlet;
+    private javax.swing.JLabel jLabelInputScyllaJHeader;
+    private javax.swing.JLabel jLabelInputScyllaJPCode;
+    private javax.swing.JLabel jLabelInputScyllaJTprb;
+    private javax.swing.JLabel jLabelInputScyllaJTpru;
+    private javax.swing.JLabel jLabelInputScyllaMasterProduk;
+    private javax.swing.JLabel jLabelInputScyllaOutlet;
+    private javax.swing.JLabel jLabelInputScyllaReturKePabrik;
+    private javax.swing.JLabel jLabelInputScyllaSalesman;
+    private javax.swing.JLabel jLabelInputScyllaStock;
+    private javax.swing.JLabel jLabelInputScyllaStokAdjustment;
     private javax.swing.JPanel jPanel102;
     private javax.swing.JPanel jPanel104;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
@@ -8902,6 +9184,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelSubInputScyllaStokAdjustment;
     private javax.swing.JPanel jPanelSubKonfigAndUtilBaygon;
     private javax.swing.JPanel jPanelSubKonfigAndUtilEmail;
+    private javax.swing.JPanel jPanelSubKonfigAndUtilPokari;
     private javax.swing.JPanel jPanelSubSettingKekMappingMaster;
     private javax.swing.JPanel jPanelSubSettingKekTabelTabel;
     private javax.swing.JPanel jPanelSubSettingPokariMappingMaster;
@@ -9043,6 +9326,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField textInputJHeaderSearchIdOrder;
     private javax.swing.JTextField textInputJHeaderSearchIdOutlet;
     private javax.swing.JTextField textInputJHeaderSearchSalesman;
+    private javax.swing.JTextField textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation;
     private javax.swing.JTextField textMapOutletDistiId;
     private javax.swing.JTextField textMapOutletMSLOutletCode;
     private javax.swing.JTextField textMapOutletMSLOutletName;

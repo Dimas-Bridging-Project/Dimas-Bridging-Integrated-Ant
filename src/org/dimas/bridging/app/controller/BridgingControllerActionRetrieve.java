@@ -4,7 +4,11 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -45,7 +49,13 @@ import org.slf4j.LoggerFactory;
 public class BridgingControllerActionRetrieve {
     private static final Logger logger = LoggerFactory.getLogger(BridgingControllerActionRetrieve.class);   
     private BridgingController controller;
-
+            
+    private String retrieveLogPath;
+    private File retrieveFilePath;
+    private FileWriter fileWriter;                        
+    private BufferedWriter bufferedWriter;
+    private PrintWriter printWriter;
+    
     BridgingControllerActionRetrieve(BridgingController controller) {
         this.controller = controller;
         initAction();
@@ -235,7 +245,7 @@ public class BridgingControllerActionRetrieve {
     /**
      * METHOD FOR ALL
      */
-   public void aksiBtnPathInputStock() {
+    public void aksiBtnPathInputStock() {
             FileFilter filter1 = new ExtensionFileFilter("TXT", new String[] { "TXT"});
             JFileChooser fileChooser1 = new JFileChooser(controller.getModel().getCurrentPath());
             fileChooser1.setFileFilter(filter1);
@@ -249,7 +259,7 @@ public class BridgingControllerActionRetrieve {
                 }               
             }            
     }
-   
+
     public void aksiBtnPathInputAuto() {
         boolean isFileComplete = true;
         JFileChooser fileChooser1 =  new JFileChooser(controller.getModel().getCurrentPath());
@@ -533,6 +543,15 @@ public class BridgingControllerActionRetrieve {
                        + "Upload Outlet.CSV dahulu!!..");
            }
            */
+            printWriter.println("\n\n");
+            printWriter.println("####LOG RETRIEVE CVOUTLET(Salesman, Id Outlet, Nama Outlet)######");
+                      
+            String message = "CvOutlet: ";
+            int jmlRecordSuccess = 0;
+            int jmlRecordFail = 0;
+            int jmlTotal1 = 0;
+            int jmlTotal2 = 0;
+           
             controller.getView().getTextPathInputCvOutlet().setBackground(Color.YELLOW);    
             ParseCvOutlet parse = new ParseCvOutlet(this.controller);
             List<CvOutlet> lst = new ArrayList<>();
@@ -544,12 +563,15 @@ public class BridgingControllerActionRetrieve {
                     } else {
                         controller.getModel().cvOutletDaoMem.saveOrUpdate(itm);
                     }
-                    
-                    
-                    
-                } catch (Exception ex){}
+                    jmlRecordSuccess+=1;
+                } catch (Exception ex){
+                    jmlRecordFail+=1;
+                    printWriter.println("Salesman: " + itm.getSalesman() + ", " + itm.getOutlet() + ", " + itm.getOutlet2().getNama() + ", GAGAL Retrieve!!");
+                }    
             }
             controller.bridgingControllerActionTabelInput.aksiBtnInputCvOutletReload();
+            message = message + "Jml Rec Success: " + Integer.toString(jmlRecordSuccess) + ", Fail: " + Integer.toString(jmlRecordFail);            
+            controller.getView().getjLabelInputScyllaCvOutlet().setText(message);
             
             //Indikator jika berhasil atau gagal     
             if (controller.getModel().tmCvOutlet.getRowCount() > 0) {
@@ -572,7 +594,8 @@ public class BridgingControllerActionRetrieve {
        }
        if (lanjut==true) {       
             if (! controller.getView().getTextPathInputJHeader().getText().trim().equals("")) {
-                 controller.getView().getTextPathInputJHeader().setBackground(Color.YELLOW);    
+
+                controller.getView().getTextPathInputJHeader().setBackground(Color.YELLOW);    
 
                 //Untuk mode Database Memory
                 /*
@@ -584,14 +607,35 @@ public class BridgingControllerActionRetrieve {
                     } catch(Exception ex){}
                 }
                 */ 
+                 
+//                printWriter.println("\n\n");
+//                printWriter.println("####LOG RETRIEVE JHEADER(Salesman, ID Order, Tanggal Transaksi, GROSS, Type Outlet)######");
+//                
+//                String message = "JHeader: ";
+//                int jmlRecordSuccess = 0;
+//                int jmlRecordFail = 0;
+//                int jmlTotal1Success = 0;
+//                int jmlTotal1Fail = 0;
+//                int jmlTotal2Success = 0;
+//                int jmlTotal2Fail = 0;
+                 
                  //Jika Menggunakan Mode Memory maka TMasterProduct, TMasterOutlet, TMasterSalesman harus di load ke Memory
                controller.getModel().loadTMasterProductToMem();
                controller.getModel().loadTMasterOutletToMem();
                controller.getModel().loadTMasterSalesmanToMem();
                 
+               System.out.println("POINT PRODUCT:"  + controller.model.mappingProductDao.findAll().size());
+               System.out.println("POINT PRODUCT MEM:"  + controller.model.mappingProductDaoMem.findAll().size());
+               System.out.println("POINT CUSTOMER:"  + controller.model.arCustomerDao.findAll().size());
+               System.out.println("POINT CUSTOMER MEM:"  + controller.model.arCustomerDaoMem.findAll().size());
+               System.out.println("POINT SALESMAN:"  + controller.model.arCustomerDao.findAll().size());
+               System.out.println("POINT SALESMAN MEM:"  + controller.model.arCustomerDaoMem.findAll().size());
+                
                 ParseJHeader parse = new ParseJHeader(this.controller);
                 List<JHeader> lst = new ArrayList<>();
                 lst = parse.parseJHeader(controller.getView().getTextPathInputJHeader().getText(), controller.getModel().getPrincipal());
+                
+                System.out.println("JHeader Size: " + lst.size());
                 
                 int hitungJumlah = 0;
                 for (JHeader itm: lst) {
@@ -602,17 +646,38 @@ public class BridgingControllerActionRetrieve {
                             //System.out.println(itm.getIdOrder() + "\t" +  itm.getTypeOutlet() + 
                             //        "\t"+  itm.getTypeOutlet());
                             //File MapOutletTidakBisa Masuk secara otomatis jadi harus di masukkan
-                            controller.getModel().jheaderDaoMem.saveOrUpdate(itm);
-                            
+                            controller.getModel().jheaderDaoMem.saveOrUpdate(itm);                            
                             hitungJumlah++;
                         }
+                        
+//                        jmlRecordSuccess+=1;
+//                        jmlTotal1Success += itm.getNetPpn();
+//                        jmlTotal2Success += itm.getGross();
+                        
                     } catch(Exception ex) {
-                        logger.error("error SaveOrUpdate JHeader", ex);
+//                        jmlRecordFail+=1;
+//                        jmlTotal1Fail += itm.getNetPpn();       
+//                        jmlTotal2Fail += itm.getGross();
+//                        
+//                        printWriter.println("Salesman: " + itm.getSalesman() + ", " + itm.getIdOrder() + ", " + itm.getTanggal() + 
+//                                ", " + itm.getGross() +
+//                                ", " + itm.getTypeOutlet() +", GAGAL Retrieve!!");    
+                        
                     }
                 }
                 controller.bridgingControllerActionTabelInput.aksiBtnInputJheaderReload();
+      
+//                NumberFormat nf = NumberFormat.getNumberInstance();
+//                nf.setMinimumFractionDigits(0); //jumlah pecahan dibelakang koma
+//                nf.setMaximumFractionDigits(0); //jumlah pecahan dibelakang koma
+//                message = message + "Rec Db: " + controller.getModel().jheaderDaoMem.findAll().size() + ", Rec: " + Integer.toString(jmlRecordSuccess) + 
+//                        ", Fail: " + Integer.toString(jmlRecordFail) + 
+//                        ",  Net+Ppn: " + String.valueOf(nf.format(jmlTotal1Success)) + 
+//                        " and Fail: " + String.valueOf(nf.format(jmlTotal1Fail) + 
+//                        " Gross: " + String.valueOf(nf.format(jmlTotal2Success)) + 
+//                        " and Fail: " + String.valueOf(nf.format(jmlTotal2Fail)));          
+//                controller.getView().getjLabelInputScyllaJHeader().setText(message);
                 
-                System.out.println(" Jumlah Jheader yang berhasil masuk : " + controller.getModel().jheaderDaoMem.findAll().size() + " dari " + hitungJumlah);
                 
                 //Indikator jika berhasil atau gagal     
                  if (controller.getModel().tmJHeader.getRowCount() > 0) {
@@ -632,7 +697,7 @@ public class BridgingControllerActionRetrieve {
                  } catch(Exception ex) {}
                  try {
                     aksiBtnRetrieveInputJTpru();
-                 } catch(Exception ex){}
+                 } catch(Exception ex){}                 
             }
        }
     }  
@@ -640,6 +705,17 @@ public class BridgingControllerActionRetrieve {
         if (! controller.getView().getTextPathInputJPcode().getText().trim().equals("")) {
              controller.getView().getTextPathInputJPcode().setBackground(Color.YELLOW);    
 
+//            printWriter.println("\n\n");
+//            printWriter.println("####LOG RETRIEVE JPCODE(Salesman, ID Order, Pcode, HargaNoPpn )######");
+//             
+//            String message = "JPCode: ";
+//            int jmlRecordSuccess = 0;
+//            int jmlRecordFail = 0;
+//            int jmlTotal1Success = 0;
+//            int jmlTotal1Fail = 0;
+//            int jmlTotal2Success = 0;
+//            int jmlTotal2Fail = 0;
+             
              ParseJPcode parse = new ParseJPcode(this.controller);
              List<JPcode> lst = new ArrayList<>();
              lst = parse.parseJPcode(controller.getView().getTextPathInputJPcode().getText(), controller.getModel().getPrincipal());
@@ -653,11 +729,27 @@ public class BridgingControllerActionRetrieve {
                         controller.getModel().jpcodeDaoMem.saveOrUpdate(itm);
                         hitungMasuk++;
                     }
-                } catch (Exception ex){}
+//                    jmlRecordSuccess+=1;
+//                    jmlTotal1Success += itm.getHargaNoPpn();
+                    
+                } catch (Exception ex){
+//                    jmlRecordFail+=1;
+//                    jmlTotal1Fail += itm.getHargaNoPpn();     
+//                    printWriter.println("Salesman: " + itm.getJpcodePK().getSalesman() + ", " + itm.getJpcodePK().getIdOrder()  + 
+//                            ", " + itm.getJpcodePK().getPcode() + ", " + itm.getHargaNoPpn() + ", GAGAL Retrieve!!");
+                }
             }
             controller.bridgingControllerActionTabelInput.aksiBtnInputJpcodeReload();
             
-            System.out.println("Jumlah ambil dari Dao : " + controller.getModel().jpcodeDaoMem.findAll().size() + " dari : " + hitungMasuk);
+//            NumberFormat nf = NumberFormat.getNumberInstance();
+//            nf.setMinimumFractionDigits(0); //jumlah pecahan dibelakang koma
+//            nf.setMaximumFractionDigits(0); //jumlah pecahan dibelakang koma
+//            message = message + "Jml Rec Success: " + Integer.toString(jmlRecordSuccess) + ", Fail: " + Integer.toString(jmlRecordFail) + 
+//                    ",  HargaNoPPn Success: " + String.valueOf(nf.format(jmlTotal1Success)) + 
+//                    " and Fail: " + String.valueOf(nf.format(jmlTotal1Fail) );          
+//            controller.getView().getjLabelInputScyllaJPCode().setText(message);
+            
+//            System.out.println("Jumlah ambil dari Dao : " + controller.getModel().jpcodeDaoMem.findAll().size() + " dari : " + hitungMasuk);
             
              //Indikator jika berhasil atau gagal     
              if (controller.getModel().tmJPcode.getRowCount() > 0) {
@@ -673,6 +765,17 @@ public class BridgingControllerActionRetrieve {
     public void aksiBtnRetrieveInputJTprb() {
       if (! controller.getView().getTextPathInputJTprb().getText().trim().equals("")) {
            controller.getView().getTextPathInputJTprb().setBackground(Color.YELLOW);    
+            
+//            printWriter.println("\n\n");
+//            printWriter.println("####LOG RETRIEVE JTPRB(Salesman, ID Order, Pcode, HargaNoPpn)######");
+//  
+//            String message = "JTprb: ";
+//            int jmlRecordSuccess = 0;
+//            int jmlRecordFail = 0;
+//            int jmlTotal1Success = 0;
+//            int jmlTotal1Fail = 0;
+//            int jmlTotal2Success = 0;
+//            int jmlTotal2Fail = 0;
 
            ParseJTprb parse = new ParseJTprb(this.controller);
            List<JTprb> lst = new ArrayList<>();
@@ -684,9 +787,29 @@ public class BridgingControllerActionRetrieve {
                    } else {
                        controller.getModel().jtprbDaoMem.saveOrUpdate(itm);
                    }
-               }catch (Exception ex) {}
+//                    jmlRecordSuccess+=1;
+//                    jmlTotal1Success += itm.getHargaNoPpn();
+                    
+                } catch (Exception ex){
+//                    jmlRecordFail+=1;
+//                    jmlTotal1Fail += itm.getHargaNoPpn(); 
+//                    printWriter.println("Salesman: " + itm.getJtprbPK().getSalesman() + ", " + itm.getJtprbPK().getIdOrder()  +
+//                            ", " + itm.getJtprbPK().getPcode() + ", " + itm.getHargaNoPpn() + ", GAGAL Retrieve!!");                    
+                   
+               }
+               
            }
            controller.bridgingControllerActionTabelInput.aksiBtnInputJtprbReload();
+           
+//            NumberFormat nf = NumberFormat.getNumberInstance();
+//            nf.setMinimumFractionDigits(0); //jumlah pecahan dibelakang koma
+//            nf.setMaximumFractionDigits(0); //jumlah pecahan dibelakang koma
+//            message = message + "Jml Rec Success: " + Integer.toString(jmlRecordSuccess) + ", Fail: " + Integer.toString(jmlRecordFail) + 
+//                    ",  HargaNoPPn Success: " + String.valueOf(nf.format(jmlTotal1Success)) + 
+//                    " and Fail: " + String.valueOf(nf.format(jmlTotal1Fail) );          
+//            controller.getView().getjLabelInputScyllaJTprb().setText(message);
+           
+           
            //Indikator jika berhasil atau gagal     
            if (controller.getModel().tmJTprb.getRowCount() > 0) {
                controller.getView().getTextPathInputJTprb().setBackground(Color.GREEN);
@@ -702,6 +825,17 @@ public class BridgingControllerActionRetrieve {
        if (! controller.getView().getTextPathInputJTpru().getText().trim().equals("")) {
            controller.getView().getTextPathInputJTpru().setBackground(Color.YELLOW);    
 
+//            printWriter.println("\n\n");
+//            printWriter.println("####LOG RETRIEVE JTPRU(Salesman, ID Order, Pcode, HargaNoPpn)######");
+//
+//            String message = "JTpru: ";
+//            int jmlRecordSuccess = 0;
+//            int jmlRecordFail = 0;
+//            int jmlTotal1Success = 0;
+//            int jmlTotal1Fail = 0;
+//            int jmlTotal2Success = 0;
+//            int jmlTotal2Fail = 0;
+           
            ParseJTpru parse = new ParseJTpru(this.controller);
            List<JTpru> lst = new ArrayList<>();
            lst = parse.parseJTpru(controller.getView().getTextPathInputJTpru().getText(), controller.getModel().getPrincipal());
@@ -712,9 +846,24 @@ public class BridgingControllerActionRetrieve {
                    } else {
                        controller.getModel().jtpruDaoMem.saveOrUpdate(itm);
                    }
-               } catch(Exception ex) {}
+                } catch (Exception ex){
+//                    jmlRecordFail+=1;
+//                    jmlTotal1Fail += itm.getHargaNoPpn();                        
+//                    
+//                    printWriter.println("Salesman: " + itm.getJtpruPK().getSalesman() + ", " + itm.getJtpruPK().getIdOrder() + 
+//                            ", " + itm.getJtpruPK().getPcode() + ", " + itm.getHargaNoPpn() +  ", GAGAL Retrieve!!");
+                   
+               }
            }
            controller.bridgingControllerActionTabelInput.aksiBtnInputJtpruReload();
+           
+//            NumberFormat nf = NumberFormat.getNumberInstance();
+//            nf.setMinimumFractionDigits(0); //jumlah pecahan dibelakang koma
+//            nf.setMaximumFractionDigits(0); //jumlah pecahan dibelakang koma
+//            message = message + "Jml Rec Success: " + Integer.toString(jmlRecordSuccess) + ", Fail: " + Integer.toString(jmlRecordFail) + 
+//                    ",  HargaNoPPn Success: " + String.valueOf(nf.format(jmlTotal1Success)) + 
+//                    " and Fail: " + String.valueOf(nf.format(jmlTotal1Fail) );          
+//            controller.getView().getjLabelInputScyllaJTpru().setText(message);
 
            //Indikator jika berhasil atau gagal     
            if (controller.getModel().tmJTpru.getRowCount() > 0) {
@@ -725,8 +874,21 @@ public class BridgingControllerActionRetrieve {
                controller.getView().getTextPathInputJTpru().setBackground(Color.RED);
            }
       }
-  }    
+  } 
+    
     public void aksiBtnRetrieveInputMaster() {
+        /**
+         * FOR KEK
+         */
+        controller.getModel().loadTMasterProductToMem();
+
+        //controller.getModel().loadTMasterProductPokariToMem();
+
+        /**
+         * FOR POKARI
+         */
+        controller.getModel().loadMappingProductToMem();
+        
        if (! controller.getView().getTextPathInputMaster().getText().trim().equals("")) {
             controller.getView().getTextPathInputMaster().setBackground(Color.YELLOW);    
 
@@ -744,17 +906,6 @@ public class BridgingControllerActionRetrieve {
              *  LOAD TMASTERPRODUCT ke dalam Memory 
              */
             
-            /**
-             * FOR KEK
-             */
-            controller.getModel().loadTMasterProductToMem();
-            
-            //controller.getModel().loadTMasterProductPokariToMem();
-            
-            /**
-             * FOR POKARI
-             */
-            controller.getModel().loadMappingProductToMem();
             /**
              * SIMPAN lstProduct ke dalam DATABASE ATAU MEMORY
              * Ingat kita butuh data master product dari memory
@@ -786,18 +937,18 @@ public class BridgingControllerActionRetrieve {
                 controller.getView().getTextPathInputMaster().setBackground(Color.RED);
             }
        }
-    }
-   
+    }   
     public void aksiBtnRetrieveInputOutlet() {
+        
+        controller.getModel().loadTMasterOutletToMem();
+        controller.getModel().loadMappingArCustomerToMem();
+        
       if (! controller.getView().getTextPathInputOutlet().getText().trim().equals("")) {
            controller.getView().getTextPathInputOutlet().setBackground(Color.YELLOW);    
 
            ParseOutlet parse = new ParseOutlet(this.controller);
            List<Outlet> lst = new ArrayList<>();
            lst = parse.parseOutlet(controller.getView().getTextPathInputOutlet().getText(), controller.getModel().getPrincipal());
-
-          controller.getModel().loadTMasterOutletToMem();
-          controller.getModel().loadMappingArCustomerToMem();
 
            for (Outlet itm: lst) {
                try {
@@ -826,6 +977,10 @@ public class BridgingControllerActionRetrieve {
       }
    }   
     public void aksiBtnRetrieveInputSalesman() {
+        
+        controller.getModel().loadTMasterSalesmanToMem();
+        controller.getModel().loadMappingSpEmployeeToMem();
+        
        if (! controller.getView().getTextPathInputSalesman() .getText().trim().equals("")) {
             controller.getView().getTextPathInputSalesman().setBackground(Color.YELLOW);    
             
@@ -833,12 +988,9 @@ public class BridgingControllerActionRetrieve {
             List<Salesman> lst = new ArrayList<>();
             lst = parse.parseSalesman(controller.getView().getTextPathInputSalesman().getText() , controller.getModel().getPrincipal());
 
-            System.out.println("CHECK POINT LUAR : " + lst.size());
+//            System.out.println("CHECK POINT LUAR : " + lst.size());
             
-            controller.getModel().loadTMasterSalesmanToMem();
-            controller.getModel().loadMappingSpEmployeeToMem();
-            
-            System.out.println("CHECK POINT LUAR AFTER : " + lst.size());
+//            System.out.println("CHECK POINT LUAR AFTER : " + lst.size());
             
             
             for (Salesman itm: lst) {
@@ -851,7 +1003,7 @@ public class BridgingControllerActionRetrieve {
                 } catch (Exception ex) {}
             }
             
-            System.out.println("CHECK POINT LUAR AFTER : " + lst.size());
+//            System.out.println("CHECK POINT LUAR AFTER : " + lst.size());
             
             controller.bridgingControllerActionTabelInput.aksiBtnInputSalesmanReload();
             controller.bridgingControllerActionMappingMaster.aksiBtnMapSalesmanReload();
@@ -865,8 +1017,7 @@ public class BridgingControllerActionRetrieve {
                         controller.getView().getTextPathInputSalesman().getText());
                 controller.getView().getTextPathInputSalesman().setBackground(Color.RED);
             }
-       }
-        
+       }        
     }
    
     public void aksiBtnRetrieveInputStock() {
@@ -1013,6 +1164,7 @@ public class BridgingControllerActionRetrieve {
              }
         }        
     }
+    
     public void aksiBtnRetrieveInputAllPokari(){
          if (JOptionPane.showConfirmDialog(null, "Retrieve All akan memerlukan waktu agak lama \n\n "
                  + "Yakin akan melanjutkan?", "Konfirmasi", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
@@ -1163,6 +1315,7 @@ public class BridgingControllerActionRetrieve {
          }  
 
     }
+    
     public void aksiBtnRetrieveInputAll() {        
          if (controller.getModel().getPrincipal().equalsIgnoreCase("KEK")) {
              aksiBtnRetrieveInputAllKek();
@@ -1172,8 +1325,7 @@ public class BridgingControllerActionRetrieve {
          }else {
          }
 
-    }
-            
+    }            
     public void aksiBtnPathInputClearAll() {
          if (JOptionPane.showConfirmDialog(null,"Anda Yakin Akan Hapus Semua Data?"
                  + "\n\nPERHATIAN!!.. \nDATA YANG PERNAH DI UPLOAD AKAN DI HAPUS SEMUA", 

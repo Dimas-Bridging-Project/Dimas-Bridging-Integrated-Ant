@@ -112,8 +112,26 @@ public class KonfigurasiUtils {
             sysvar143.setNilaiString1(emailSubject.toLowerCase().trim());
             sysvarDao.saveOrUpdate(sysvar143);
         
+            
+            
+            
         return pesan;       
     }
+    
+    public String simpanKonfigurasiPokari(String templateOutputIDosLocation){
+            String pesan = "OK";
+           //POKARI KONFIGURASI Selain Email
+          //2.1 
+            Sysvar sysvar211 = new Sysvar();
+            sysvar211.setIdSysvar("_PO_LOC");
+            sysvar211.setDeskripsi("Template Output IDos Location");
+            sysvar211.setTipeData("STR1");
+            sysvar211.setNilaiString1(templateOutputIDosLocation.toLowerCase().trim());
+            sysvarDao.saveOrUpdate(sysvar211);
+        
+        return pesan;
+    }
+    
     public String setFirstKonfigurasiIfEmpty(){
         String pesan = "OK";
         //1.Jika sysvar kosong
@@ -212,6 +230,32 @@ public class KonfigurasiUtils {
         return pesan;
     }
 
+    public String setFirstKonfigurasiIfEmptyPokari(){
+            String pesan = "OK";
+            //POKARI KONFIGURASI Selain Email
+            //2.1 
+            Sysvar sysvar211 = new Sysvar();
+            sysvar211.setIdSysvar("_PO_IDOS_LOC");
+            sysvar211.setDeskripsi("Template Output IDos Location");
+            sysvar211.setTipeData("STR1");
+            sysvar211.setNilaiString1("C:");
+            sysvarDao.saveOrUpdate(sysvar211);
+         return pesan;
+     }    
+    
+    public String setForceFirstKonfigurasiPokari(){
+            String pesan = "OK";
+            //POKARI KONFIGURASI Selain Email
+            //2.1 
+            Sysvar sysvar211 = new Sysvar();
+            sysvar211.setIdSysvar("_PO_IDOS_LOC");
+            sysvar211.setDeskripsi("Template Output IDos Location");
+            sysvar211.setTipeData("STR1");
+            sysvar211.setNilaiString1("C:");
+            sysvarDao.saveOrUpdate(sysvar211);
+         return pesan;
+        
+    }
     public String setForceFirstKonfigurasi(){
         String pesan = "OK";
          //1.1 Set Kode Distributor

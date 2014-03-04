@@ -23,6 +23,9 @@ public class BridgingModel extends BridgingModelInit{
     public void loadMappingProductToMem(){
          if (databaseMode==false){
                 if (isLoadMappingProductToMem==false) {
+                    
+                    System.out.println("POINT AKU PERNAH DIJALANKAN: ");
+                    
                     List<MappingProduct> mappingProducts = new ArrayList<>();
                     mappingProducts = mappingProductDao.findAll();
                     try {                        
@@ -35,6 +38,7 @@ public class BridgingModel extends BridgingModelInit{
                     isLoadMappingProductToMem = true;
                 }
          }       
+         
     }
     public void loadMappingArCustomerToMem(){
          if (databaseMode==false){

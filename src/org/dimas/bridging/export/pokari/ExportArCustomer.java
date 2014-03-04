@@ -7,7 +7,6 @@ package org.dimas.bridging.export.pokari;
 import org.dimas.bridging.export.*;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

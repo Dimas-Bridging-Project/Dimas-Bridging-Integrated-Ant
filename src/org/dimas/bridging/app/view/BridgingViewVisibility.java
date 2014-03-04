@@ -14,8 +14,7 @@ import org.bagus.common.images.ScaleImage;
 public class BridgingViewVisibility {
     private BridgingView view;
     public BridgingViewVisibility(BridgingView view){
-        this.view = view;
-        
+        this.view = view;        
     }
     /**
      * 
@@ -135,12 +134,16 @@ public class BridgingViewVisibility {
         scaleImage.setSize(new Dimension(view.getjPanelSubGeneratePicture().getSize()));
         //scaleImage.setSize(new Dimension(100, 128));
         view.getjPanelSubGeneratePicture().add(scaleImage);
+
+        //GENERAL SETTING
+        view.getjTabbedPaneUtamaConfigAndUtils().remove(view.getjPanelSubKonfigAndUtilPokari());
+        view.getjTabbedPaneUtamaConfigAndUtils().remove(view);
         
         Dimension dimension = new Dimension(view.getjPanelSubGenerateExtract().getPreferredSize());        
         try{
             view.getjPanelSubGenerateExtract().remove(view.getjPanelSubGenerateExtractKek());        
         } catch(Exception ex){}
-        
+
         view.getjPanelSubGenerateExtract().add(view.getjPanelGenerateExtractKek1());        
         view.getjPanelSubGenerateExtract().setPreferredSize(dimension);
         view.getjPanelGenerateExtractKek1().setPreferredSize(dimension);
@@ -148,8 +151,6 @@ public class BridgingViewVisibility {
         
         view.getjTabbedPaneUtamaBackupAndRestore().remove(view.getjPanelSubBackupAndRestoreBackupAndRestorePokari());
 
-        
-        
         view.getjTabbedPaneUtama().add("Generate", view.getjPanelUtamaGenerate());
         view.getjTabbedPaneUtama().add("Input Scylla", view.getjPanelUtamaInputScylla());
 
@@ -160,6 +161,8 @@ public class BridgingViewVisibility {
         view.getjTabbedPaneUtama().add("Setting KEK", view.getjPanelUtamaSettingKek());
         view.getjTabbedPaneUtama().add("Backup and Restore", view.getjPanelUtamaBackupAndRestore());
         view.getjTabbedPaneUtama().add("Config and Utils", view.getjPanelUtamaConfigAndUtils());
+        
+        
         view.getjTabbedPaneUtama().setSelectedIndex(0);
     }
     
@@ -175,6 +178,7 @@ public class BridgingViewVisibility {
         
         //GENERAL SETTING
         view.getjTabbedPaneUtamaConfigAndUtils().remove(view.getjPanelSubKonfigAndUtilBaygon());
+        view.getjTabbedPaneUtamaConfigAndUtils().remove(view);
         
         //Ganti Panel Extract Bawah dengan miliknya POKARI
         Dimension dimension = new Dimension(view.getjPanelSubGenerateExtract().getPreferredSize());    
@@ -186,8 +190,7 @@ public class BridgingViewVisibility {
         
         view.getjPanelSubGenerateExtract().setPreferredSize(dimension);
         view.getjPanelGenerateExtractPokari1().setPreferredSize(dimension);
-        view.getjPanelGenerateExtractPokari1().setLocation(0, 0);
-        
+        view.getjPanelGenerateExtractPokari1().setLocation(0, 0);       
  
         view.getjTabbedPaneUtamaBackupAndRestore().remove(view.getjPanelSubBackupAndRestoreBackupAndRestoreKek());
         /**
@@ -225,6 +228,16 @@ public class BridgingViewVisibility {
         view.getjTabbedPaneUtama().add("Backup and Restore", view.getjPanelUtamaBackupAndRestore());
         view.getjTabbedPaneUtama().add("Config and Utils", view.getjPanelUtamaConfigAndUtils());
         view.getjTabbedPaneUtama().setSelectedIndex(0);
+        
+        //OLEH KARENA EXTRACT FILE EXEL HARUS DIJADIKAN DALAM SATU FILE MAKA SAYA PAKAI EXTRACT ALL
+        view.getjPanelGenerateExtractPokari1().getBtnExtractArCustomer().setEnabled(false);
+        view.getjPanelGenerateExtractPokari1().getBtnExtractCanDDeliveryOrder().setEnabled(false);
+        view.getjPanelGenerateExtractPokari1().getBtnExtractCanDDeliveryOrderItemDetail().setEnabled(false);
+        view.getjPanelGenerateExtractPokari1().getBtnExtractCanDDeliveryOrderItemDetail().setEnabled(false);
+        view.getjPanelGenerateExtractPokari1().getBtnExtractCanDDeliveryOrderItemDisc().setEnabled(false);
+        view.getjPanelGenerateExtractPokari1().getBtnExtractSpEmployee().setEnabled(false);
+        view.getjPanelGenerateExtractPokari1().getBtnExtractSpEmployeeTarget().setEnabled(false);
+        view.getjPanelGenerateExtractPokari1().getBtnExtractSpEmployeeTargetItemDetail().setEnabled(false);
     }
     
     

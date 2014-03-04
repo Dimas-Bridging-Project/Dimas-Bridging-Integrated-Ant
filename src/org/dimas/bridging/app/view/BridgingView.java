@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JTable;
-import org.config.spring.hibernate.model.enumpokari.EnumSzStatus;
 import org.dimas.bridging.app.model.BridgingModel;
 
 /**
@@ -456,7 +455,10 @@ public class BridgingView  extends BridgingViewJFrame{
         getTextEmailFrom().setText("");
         getTextEmailPassword().setText("");
         getTextEmailTo().setText("");
-        getTextEmailSubject().setText("");       
+        getTextEmailSubject().setText("");      
+        
+        //POKARI
+        getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().setText("");
     }
     
     public void resetTeksMappingTipeOutlet(){

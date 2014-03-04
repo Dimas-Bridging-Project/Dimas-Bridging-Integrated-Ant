@@ -304,7 +304,157 @@ public class BridgingControllerActionMappingMaster {
                  aksiTableMappingMasterPokariProductSelected();
              }
          });
+
+        //CHEK BOX MASTER CUSTOMER
+        controller.getView().getCheckMappingMasterPokariCustomerAktif().addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 aksiCheckMappingMasterPokariCustomerAktif();
+             }
+         });
+        controller.getView().getCheckMappingMasterPokariCustomerBaru().addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 aksiCheckMappingMasterPokariCustomerBaru();
+             }
+         });
+        controller.getView().getCheckMappingMasterPokariCustomerDikirim().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 aksiCheckMappingMasterPokariCustomerDikirim();  
+            }
+        });
+         
+        //CHECK BOX MASTER MASTER
+         controller.getView().getCheckMappingMasterPokariProductAktif().addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 aksiCheckMappingMasterPokariProductAktif();
+             }
+         });
+         controller.getView().getCheckMappingMasterPokariProductBaru().addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 aksiCheckMappingMasterPokariProductBaru();
+             }
+         });
+         controller.getView().getCheckMappingMasterPokariProductDikirim().addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 aksiCheckMappingMasterPokariProductDikirim();
+             }
+         });
+         
+         
+         
     }
+    
+    //AKSI CHECKBOX POKARI
+    public void aksiCheckMappingMasterPokariCustomerAktif(){
+            boolean isSelected = controller.getView().getCheckMappingMasterPokariCustomerAktif().isSelected();
+             int [] rowsIndex = controller.getView().getTableMappingMasterPokariCustomer().getSelectedRows();
+             if (rowsIndex.length > 0) {
+                 if (JOptionPane.showConfirmDialog(null, "Yakin Akan Set STATUS Customer AKTIF untuk "  + String.valueOf(rowsIndex.length) +   " record?" +
+                         "\n", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION){
+                   //DELETE dengan Referensi Array
+                   for (int row:rowsIndex){
+                           ArCustomer item = new ArCustomer();
+                           item = controller.getModel().tmArCustomer.get(row);
+                           item.setAktif(isSelected);
+                           controller.getModel().arCustomerDao.saveOrUpdate(item);
+                     }
+                     aksiBtnMappingMasterPokariCustomerReload();
+                 }             
+             }        
+    }
+    public void aksiCheckMappingMasterPokariCustomerBaru(){
+             boolean isSelected = controller.getView().getCheckMappingMasterPokariCustomerBaru().isSelected();
+             int [] rowsIndex = controller.getView().getTableMappingMasterPokariCustomer().getSelectedRows();
+             if (rowsIndex.length > 0) {
+                 if (JOptionPane.showConfirmDialog(null, "Yakin Akan Set STATUS Customer BARU untuk "  + String.valueOf(rowsIndex.length) +   " record?" +
+                         "\n", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION){
+                   //DELETE dengan Referensi Array
+                   for (int row:rowsIndex){
+                           ArCustomer item = new ArCustomer();
+                           item = controller.getModel().tmArCustomer.get(row);
+                           item.setBaru(isSelected);
+                           controller.getModel().arCustomerDao.saveOrUpdate(item);
+                     }
+                     aksiBtnMappingMasterPokariCustomerReload();
+                 }             
+             }                
+    }
+    public void aksiCheckMappingMasterPokariCustomerDikirim(){
+            boolean isSelected = controller.getView().getCheckMappingMasterPokariCustomerDikirim().isSelected();
+             int [] rowsIndex = controller.getView().getTableMappingMasterPokariCustomer().getSelectedRows();
+             if (rowsIndex.length > 0) {
+                 if (JOptionPane.showConfirmDialog(null, "Yakin Akan Set STATUS Customer DIKIRIM/EXTRACT untuk "  + String.valueOf(rowsIndex.length) +   " record?" +
+                         "\n", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION){
+                   //DELETE dengan Referensi Array
+                   for (int row:rowsIndex){
+                           ArCustomer item = new ArCustomer();
+                           item = controller.getModel().tmArCustomer.get(row);
+                           item.setAllowTransfer(isSelected);
+                           controller.getModel().arCustomerDao.saveOrUpdate(item);
+                     }
+                     aksiBtnMappingMasterPokariCustomerReload();
+                 }             
+             }                
+    }
+    
+    public void aksiCheckMappingMasterPokariProductAktif(){
+            boolean isSelected = controller.getView().getCheckMappingMasterPokariProductAktif().isSelected();
+             int [] rowsIndex = controller.getView().getTableMappingMasterPokariProduct().getSelectedRows();
+             if (rowsIndex.length > 0) {
+                 if (JOptionPane.showConfirmDialog(null, "Yakin Akan Set STATUS Product ACTIVE untuk "  + String.valueOf(rowsIndex.length) +   " record?" +
+                         "\n", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION){
+                   //DELETE dengan Referensi Array
+                   for (int row:rowsIndex){
+                           MappingProduct item = new MappingProduct();
+                           item = controller.getModel().tmMappingProduct.get(row);
+                           item.setAktif(isSelected);
+                           controller.getModel().mappingProductDao.saveOrUpdate(item);
+                     }
+                     aksiBtnMappingMasterPokariProductReload();
+                 }             
+             }                
+    }
+    public void aksiCheckMappingMasterPokariProductBaru(){
+            boolean isSelected = controller.getView().getCheckMappingMasterPokariProductBaru().isSelected();
+             int [] rowsIndex = controller.getView().getTableMappingMasterPokariProduct().getSelectedRows();
+             if (rowsIndex.length > 0) {
+                 if (JOptionPane.showConfirmDialog(null, "Yakin Akan Set STATUS Product BARU untuk "  + String.valueOf(rowsIndex.length) +   " record?" +
+                         "\n", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION){
+                   //DELETE dengan Referensi Array
+                   for (int row:rowsIndex){
+                           MappingProduct item = new MappingProduct();
+                           item = controller.getModel().tmMappingProduct.get(row);
+                           item.setBaru(isSelected);
+                           controller.getModel().mappingProductDao.saveOrUpdate(item);
+                     }
+                     aksiBtnMappingMasterPokariProductReload();
+                 }             
+             }                
+        
+    }
+    public void aksiCheckMappingMasterPokariProductDikirim(){
+            boolean isSelected = controller.getView().getCheckMappingMasterPokariProductDikirim().isSelected();
+             int [] rowsIndex = controller.getView().getTableMappingMasterPokariProduct().getSelectedRows();
+             if (rowsIndex.length > 0) {
+                 if (JOptionPane.showConfirmDialog(null, "Yakin Akan Set STATUS Product DIKIRIM/EXTRACT untuk "  + String.valueOf(rowsIndex.length) +   " record?" +
+                         "\n", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION){
+                   //DELETE dengan Referensi Array
+                   for (int row:rowsIndex){
+                           MappingProduct item = new MappingProduct();
+                           item = controller.getModel().tmMappingProduct.get(row);
+                           item.setAllowTransfer(isSelected);
+                           controller.getModel().mappingProductDao.saveOrUpdate(item);
+                     }
+                     aksiBtnMappingMasterPokariProductReload();
+                 }             
+             }                
+    }
+    
     public void aksiTableMappingMasterPokariCustomerSelected(){
              int rowIndex =controller.getView().getTableMappingMasterPokariCustomer().getSelectedRow();
              if (rowIndex > -1) {
@@ -692,6 +842,7 @@ public class BridgingControllerActionMappingMaster {
                  JOptionPane.showMessageDialog(null, "Kode Harus Diisi!!..", "Validasi..", JOptionPane.ERROR_MESSAGE);
              }
     }
+    
     /**
      * POKARI : SEARCH
      */
@@ -735,7 +886,6 @@ public class BridgingControllerActionMappingMaster {
     
     }
     
-    
     public void aksiReloadMaster(){
         aksiReloadMasterPokari();
         aksiReloadMasterSAP();
@@ -745,7 +895,7 @@ public class BridgingControllerActionMappingMaster {
         aksiBtnMappingMasterPokariEmployeeReload();
         aksiBtnMappingMasterPokariProductReload();        
     }
-     public void aksiReloadMasterSAP(){
+    public void aksiReloadMasterSAP(){
         aksiBtnTMasterProductReload();
         aksiBtnMapProductReload();
         
@@ -755,655 +905,652 @@ public class BridgingControllerActionMappingMaster {
         aksiBtnTMasterSalesmanReload();
     }
      
-    //POKARI : RELOAD
-    public void aksiBtnMappingMasterPokariCustomerReload(){
-        //Reload ComboBox
-        initComboBoxMappingMasterPokariCustomerReload();
-        initComboBoxManualMappingMasterPokariCustomerReload();
-        
-        //Reset Text
-        //controller.getView().resetTeksMappingMasterPokari();
-        //Reload Table
-        List<ArCustomer> lst = new ArrayList<>();
-        lst = controller.getModel().arCustomerDao.findAll();
-        controller.getModel().tmArCustomer = new GenericTableModel<>(lst, ArCustomer.class);
-        controller.getView().getTableMappingMasterPokariCustomer().setModel(controller.getModel().tmArCustomer);
-        /**
-         * SET TABLE MODEL BIAR OKE
-         */
-       controller.getView().renderTableModelPokariMappingMasterArCustomer();
-        
-    }
-    public void aksiBtnMappingMasterPokariEmployeeReload(){
-        //Reload ComboBox
-        initComboBoxMappingMasterPokariEmployeeReload();
-        //Reset Text
-        //controller.getView().resetTeksMappingMasterPokari();
-        //Reload Table
-        List<SpEmployee> lst = new ArrayList<>();
-        lst = controller.getModel().spEmployeeDao.findAll();
-        controller.getModel().tmSpEmployee = new GenericTableModel<>(lst, SpEmployee.class);
-        controller.getView().getTableMappingMasterPokariEmployee().setModel(controller.getModel().tmSpEmployee);
-        /**
-         * SET TABLE MODEL BIAR OKE
-         */
-       controller.getView().renderTableModelPokariMappingMasterSpEmployee();
-    }
-    public void aksiBtnMappingMasterPokariProductReload(){
-        //Reload ComboBox
-        initComboBoxMappingMasterPokariProductReload();
-        //Reset Text
-        //controller.getView().resetTeksMappingMasterPokari();
-        //Reload Table
-        List<MappingProduct> lst = new ArrayList<>();
-        lst = controller.getModel().mappingProductDao.findAll();
-        controller.getModel().tmMappingProduct = new GenericTableModel<>(lst, MappingProduct.class);
-        controller.getView().getTableMappingMasterPokariProduct().setModel(controller.getModel().tmMappingProduct);
-        
-        /**
-         * SET TABLE MODEL BIAR OKE
-         */
-       controller.getView().renderTableModelPokariMappingMasterProduct();
-    }
-    
-    //POKARI : COMBOBOX RELOAD
-    public void initComboBoxMappingMasterPokariProductReload(){
-        DefaultComboBoxModel<ProductBrand> cmbProductBrand = new DefaultComboBoxModel<>();
-        for (ProductBrand itm: controller.getModel().productBrandDao.getAll()) {
-            cmbProductBrand.addElement(itm);
-        }             
-        controller.getView().getComboMappingMasterPokariProductBrand().setModel(cmbProductBrand);
-    }     
-    public void initComboBoxMappingMasterPokariCustomerReload(){
-        DefaultComboBoxModel<CustomerGroup> cmbCustomerGroup = new DefaultComboBoxModel<>();
-        for (CustomerGroup itm: controller.getModel().customerGroupDao.getAll()) {
-            cmbCustomerGroup.addElement(itm);
-        }             
-        controller.getView().getComboMappingMasterPokariCustomerCustomerGroup().setModel(cmbCustomerGroup);
-        
-        DefaultComboBoxModel<WorkPlace> cmbWorkPlace = new DefaultComboBoxModel<>();
-        for (WorkPlace itm: controller.getModel().workplaceDao.getAll()) {
-            cmbWorkPlace.addElement(itm);
-        }             
-        controller.getView().getComboMappingMasterPokariCustomerWorkPlace().setModel(cmbWorkPlace);
-        
-        DefaultComboBoxModel<CustomerHirarchy> cmbCustomerHirarchy = new DefaultComboBoxModel<>();
-        for (CustomerHirarchy itm: controller.getModel().customerHirarchyDao.getAll()) {
-            cmbCustomerHirarchy.addElement(itm);
-        }             
-        controller.getView().getComboMappingMasterPokariCustomerHirarchy().setModel(cmbCustomerHirarchy);
-        
-        DefaultComboBoxModel<SalesTerritory> cmbSalesTerritory = new DefaultComboBoxModel<>();
-        for (SalesTerritory itm: controller.getModel().salesTerritoryDao.getAll()) {
-            cmbSalesTerritory.addElement(itm);
-        }             
-        controller.getView().getComboMappingMasterPokariCustomerSalesTerritory().setModel(cmbSalesTerritory);
-        DefaultComboBoxModel<SpEmployee> cmbSpEmployee = new DefaultComboBoxModel<>();
-        for (SpEmployee itm: controller.getModel().spEmployeeDao.getAll()) {
-            cmbSpEmployee.addElement(itm);
-        }             
-        controller.getView().getComboMappingMasterPokariCustomerEmployee().setModel(cmbSpEmployee);
-        
-    }
-    public void initComboBoxManualMappingMasterPokariCustomerReload(){
-        /**
-         * COMBO MANUAL
-         */
-        /**
-         * Status
-         */
-        DefaultComboBoxModel<EnumModelPokari> cmbModelStatus = new DefaultComboBoxModel<>();
-        EnumModelPokari enumModelStatus0 = new EnumModelPokari();
-        enumModelStatus0.setIntCode(EnumSzStatus.NONACTIVE.getIntCode());
-        enumModelStatus0.setStrCode(EnumSzStatus.NONACTIVE.getStrCode());
-        enumModelStatus0.setDescription(EnumSzStatus.NONACTIVE.getDescription());
-        cmbModelStatus.addElement(enumModelStatus0);      
-        EnumModelPokari enumModelStatus1 = new EnumModelPokari();
-        enumModelStatus1.setIntCode(EnumSzStatus.ACTIVE.getIntCode());
-        enumModelStatus1.setStrCode(EnumSzStatus.ACTIVE.getStrCode());
-        enumModelStatus1.setDescription(EnumSzStatus.ACTIVE.getDescription());
-        cmbModelStatus.addElement(enumModelStatus1);
-        EnumModelPokari enumModelStatus2 = new EnumModelPokari();
-        enumModelStatus2.setIntCode(EnumSzStatus.DESTROY.getIntCode());
-        enumModelStatus2.setStrCode(EnumSzStatus.DESTROY.getStrCode());
-        enumModelStatus2.setDescription(EnumSzStatus.DESTROY.getDescription());
-        cmbModelStatus.addElement(enumModelStatus2);
-        controller.getView().getComboMappingMasterPokariCustomerStatus().setModel(cmbModelStatus);
-        
-        /**
-         * DistrChannelId
-         */        
-        DefaultComboBoxModel<EnumModelPokari> cmbModelDistrChannelId = new DefaultComboBoxModel<>();
-        EnumModelPokari enumModelModelDistrChannelId1 =  new EnumModelPokari();
-        enumModelModelDistrChannelId1.setIntCode(EnumSzDistrChannelId.TRADITIONAL_MARKET.getIntCode());
-        enumModelModelDistrChannelId1.setStrCode(EnumSzDistrChannelId.TRADITIONAL_MARKET.getStrCode());
-        enumModelModelDistrChannelId1.setDescription(EnumSzDistrChannelId.TRADITIONAL_MARKET.getDescription());
-        cmbModelDistrChannelId.addElement(enumModelModelDistrChannelId1);
-        EnumModelPokari enumModelModelDistrChannelId2 =  new EnumModelPokari();
-        enumModelModelDistrChannelId2.setIntCode(EnumSzDistrChannelId.MODERN_MARKET.getIntCode());
-        enumModelModelDistrChannelId2.setStrCode(EnumSzDistrChannelId.MODERN_MARKET.getStrCode());
-        enumModelModelDistrChannelId2.setDescription(EnumSzDistrChannelId.MODERN_MARKET.getDescription());
-        cmbModelDistrChannelId.addElement(enumModelModelDistrChannelId2);
-        controller.getView().getComboMappingMasterPokariCustomerDistrChannelId().setModel(cmbModelDistrChannelId);
-        
-        /**
-         * AllowToCredit
-         */
-        DefaultComboBoxModel<EnumModelPokari> cmbModelAllowToCredit = new DefaultComboBoxModel<>();
-        EnumModelPokari enumModelAllowToCredit1 = new EnumModelPokari();
-        enumModelAllowToCredit1.setIntCode(EnumBAllowToCredit.CASH.getIntCode());
-        enumModelAllowToCredit1.setStrCode(EnumBAllowToCredit.CASH.getStrCode());
-        enumModelAllowToCredit1.setDescription(EnumBAllowToCredit.CASH.getDescription());
-        cmbModelAllowToCredit.addElement(enumModelAllowToCredit1);
-        EnumModelPokari enumModelAllowToCredit2 = new EnumModelPokari();
-        enumModelAllowToCredit2.setIntCode(EnumBAllowToCredit.CREDIT.getIntCode());
-        enumModelAllowToCredit2.setStrCode(EnumBAllowToCredit.CREDIT.getStrCode());
-        enumModelAllowToCredit2.setDescription(EnumBAllowToCredit.CREDIT.getDescription());
-        cmbModelAllowToCredit.addElement(enumModelAllowToCredit2);
-        controller.getView().getComboMappingMasterPokariCustomerAllowToCredit().setModel(cmbModelAllowToCredit);
-        /**
-         * PaymentTerm
-         */
-        DefaultComboBoxModel<EnumModelPokari> cmbModelPaymentTermId = new DefaultComboBoxModel<>();
-        EnumModelPokari enumModelPaymentTermId1 = new EnumModelPokari();
-        enumModelPaymentTermId1.setIntCode(EnumPaymentTermId.HARI_0.getIntCode());
-        enumModelPaymentTermId1.setStrCode(EnumPaymentTermId.HARI_0.getStrCode());
-        enumModelPaymentTermId1.setDescription(EnumPaymentTermId.HARI_0.getDescription());
-        cmbModelPaymentTermId.addElement(enumModelPaymentTermId1);
-        EnumModelPokari enumModelPaymentTermId2 = new EnumModelPokari();
-        enumModelPaymentTermId2.setIntCode(EnumPaymentTermId.HARI_7.getIntCode());
-        enumModelPaymentTermId2.setStrCode(EnumPaymentTermId.HARI_7.getStrCode());
-        enumModelPaymentTermId2.setDescription(EnumPaymentTermId.HARI_7.getDescription());
-        cmbModelPaymentTermId.addElement(enumModelPaymentTermId2);
-        EnumModelPokari enumModelPaymentTermId3 = new EnumModelPokari();
-        enumModelPaymentTermId3.setIntCode(EnumPaymentTermId.HARI_10.getIntCode());
-        enumModelPaymentTermId3.setStrCode(EnumPaymentTermId.HARI_10.getStrCode());
-        enumModelPaymentTermId3.setDescription(EnumPaymentTermId.HARI_10.getDescription());
-        cmbModelPaymentTermId.addElement(enumModelPaymentTermId3);
-        EnumModelPokari enumModelPaymentTermId4 = new EnumModelPokari();
-        enumModelPaymentTermId4.setIntCode(EnumPaymentTermId.HARI_14.getIntCode());
-        enumModelPaymentTermId4.setStrCode(EnumPaymentTermId.HARI_14.getStrCode());
-        enumModelPaymentTermId4.setDescription(EnumPaymentTermId.HARI_14.getDescription());
-        cmbModelPaymentTermId.addElement(enumModelPaymentTermId4);
-        EnumModelPokari enumModelPaymentTermId5 = new EnumModelPokari();
-        enumModelPaymentTermId5.setIntCode(EnumPaymentTermId.HARI_21.getIntCode());
-        enumModelPaymentTermId5.setStrCode(EnumPaymentTermId.HARI_21.getStrCode());
-        enumModelPaymentTermId5.setDescription(EnumPaymentTermId.HARI_21.getDescription());
-        cmbModelPaymentTermId.addElement(enumModelPaymentTermId5);
-        
-        controller.getView().getComboMappingMasterPokariCustomerPaymentTermId().setModel(cmbModelPaymentTermId);
-    }
-    public void initComboBoxMappingMasterPokariEmployeeReload(){
-        /**
-         * COMBO FROM ENTITY
-         */
-        DefaultComboBoxModel<WorkPlace> cmbWorkPlace = new DefaultComboBoxModel<>();
-        for (WorkPlace itm: controller.getModel().workplaceDao.getAll()) {
-            cmbWorkPlace.addElement(itm);
-        }             
-        controller.getView().getComboMappingMasterPokariEmployeeWorkplace().setModel(cmbWorkPlace);
-        
-        DefaultComboBoxModel<TypeSales> cmbTypeSales = new DefaultComboBoxModel<>();
-        for (TypeSales itm: controller.getModel().typeSalesDao.getAll()) {
-            cmbTypeSales.addElement(itm);
-        }             
-        controller.getView().getComboMappingMasterPokariEmployeeSalesType().setModel(cmbTypeSales);
-        
-        DefaultComboBoxModel<GroupSales> cmbGroupSales = new DefaultComboBoxModel<>();
-        for (GroupSales itm: controller.getModel().groupSalesDao.getAll()) {
-            cmbGroupSales.addElement(itm);
-        }             
-        controller.getView().getComboMappingMasterPokariEmployeeSalesGroup().setModel(cmbGroupSales);
-        
-        DefaultComboBoxModel<TeamSales> cmbTeamSales = new DefaultComboBoxModel<>();
-        for (TeamSales itm: controller.getModel().teamSalesDao.getAll()) {
-            cmbTeamSales.addElement(itm);
-        }             
-        controller.getView().getComboMappingMasterPokariEmployeeSalesTeam().setModel(cmbTeamSales);
-               
-    }
-    
-    //Reload Kita tidak jadikan satu dengan class BridgingTabelTabelMasterSAP.java karena biar bisa diakses semua 
-    public void aksiBtnTMasterProductReload(){       
-        List<TMasterProduct> lst = new ArrayList<>();
-        lst = controller.getModel().tMasterProductDao.findAll();
-        controller.getModel().tmTMasterProduct = new GenericTableModel<>(lst, TMasterProduct.class);
-        controller.getView().getTableMapProduct().setModel(controller.getModel().tmTMasterProduct);
-    }
-    public void aksiBtnTMasterOutletReload(){
-        List<TMasterOutlet> lst = new ArrayList<>();
-        lst =controller.getModel().tMasterOutletDao.findAll();
-       controller.getModel().tmTMasterOutlet = new GenericTableModel<>(lst,TMasterOutlet.class);
-       controller.getView().getTableMapOutlet().setModel(controller.getModel().tmTMasterOutlet);
-    }
-    public void aksiBtnTMasterSalesmanReload(){
-        List<TMasterSalesman> lst = new ArrayList();
-        lst =controller.getModel().tMasterSalesmanDao.findAll();
-       controller.getModel().tmTMasterSalesman = new GenericTableModel<>(lst, TMasterSalesman.class);
-       controller.getView().getTableMapSalesman().setModel(controller.getModel().tmTMasterSalesman);
-    }
-   
-        
-         //Mapping Master Product, Outlet, Salesman
-         public void aksiBtnMapSalesmanSave(){
-             TMasterSalesman item = new TMasterSalesman();
-             
-             item.setDistiCode(controller.getView().getTextMapSalesmanDistributorId().getText().trim());
-             //item.setSalesIdScy(controller.getView().getTextMapSalesmanSalesmanId().getText().trim());
-             
-             item.setSalesIdSap(controller.getView().getTextMapSalesmanSalesmanId().getText().trim());
-             item.setSalesIdScy(controller.getView().getTextMapSalesmanSalesmanIdScylla().getText().trim());
-             item.setSalesNmSap(controller.getView().getTextMapSalesmanSalesmanName().getText().trim());
-             
-             //Jika tidak diisi maka ngikut kode scylla
-             if (item.getSalesIdScy()==null) item.setSalesIdScy(item.getSalesIdSap());
-             //Nama Salesman Scylla Ngikut
-             if (item.getSalesNm()==null) item.setSalesNm(item.getSalesNmSap());
-             
-             item.setCalamat1(controller.getView().getTextMapSalesmanCAlamat1().getText().trim());
-             item.setCalamat2(controller.getView().getTextMapSalesmanCAlamat2().getText().trim());
-             item.setCkota(controller.getView().getTextMapSalesmanCKota().getText().trim());
-             item.setCtelp(controller.getView().getTextMapSalesmanCTelpon().getText().trim());
-             item.setKodeLevel(controller.getView().getTextMapSalesmanKodeLevel().getText().trim());
-             item.setRpttoCode(controller.getView().getTextMapSalesmanRTTPCode().getText().trim());
-             
-             //Save jika kodenya tidak kosong
-             if (! item.getSalesIdSap().equals("")) {
-                controller.getModel().tMasterSalesmanDao.saveOrUpdate(item);
-                aksiBtnTMasterSalesmanReload();
-             } else {
-                 JOptionPane.showMessageDialog(null, "Kode Harus Diisi!!..", "Validasi..", JOptionPane.ERROR_MESSAGE);
-             }
-             
-             
-         }          
-         public void aksiBtnMapSalesmanDelete(){
-             if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus?", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
-                int rowIndex = controller.getView().getTableMapSalesman().getSelectedRow();
-                if (rowIndex >-1) {
-                    TMasterSalesman item = new TMasterSalesman();
-                    item = controller.getModel().tmTMasterSalesman.get(rowIndex);
-                   controller.getModel().tMasterSalesmanDao.delete(item);
-                     aksiBtnTMasterSalesmanReload();
-                }   
-             }
-         }          
-         public void aksiBtnMapSalesmanReload(){
-             aksiBtnTMasterSalesmanReload();
-             initiatesComboBoxMasterSalesman();
-         }
-         public void aksiListTabelMapSalesman(){
-             int rowIndex =controller.getView().getTableMapSalesman().getSelectedRow();
-             if (rowIndex >-1) {
-                 TMasterSalesman item = new TMasterSalesman();
-                 item =controller.getModel().tmTMasterSalesman.get(rowIndex);
-                 
-                controller.getView().getTextMapSalesmanDistributorId().setText(item.getDistiCode());
-                 
-                controller.getView().getTextMapSalesmanSalesmanIdScylla().setText(item.getSalesIdScy());                 
-                controller.getView().getTextMapSalesmanSalesmanId().setText(item.getSalesIdSap());
-                controller.getView().getTextMapSalesmanSalesmanName().setText(item.getSalesNm());
-                         
-                controller.getView().getTextMapSalesmanCAlamat1().setText(item.getCalamat1());
-                controller.getView().getTextMapSalesmanCAlamat2().setText(item.getCalamat2());
-                controller.getView().getTextMapSalesmanCKota().setText(item.getCkota());
-                controller.getView().getTextMapSalesmanCTelpon().setText(item.getCtelp());
-                controller.getView().getTextMapSalesmanKodeLevel().setText(item.getKodeLevel());
-                controller.getView().getTextMapSalesmanRTTPCode().setText(item.getRpttoCode());
-                 
-             }
-         }
-         
-          
-         public void aksiBtnMapOutletSave(){
-             TMasterOutlet item = new TMasterOutlet();
-             item.setDistiId(controller.getView().getTextMapOutletDistiId().getText().trim());
-             
-             //TOutletPK itemPK = new TOutletPK();
-             //itemPK.setScyOutCode(controller.getView().getTextMapOutletScyOutletCode().getText().trim());
-             //itemPK.setMslsoutCode(controller.getView().getTextMapOutletMSLOutletCode().getText().trim());
-             //item.settOutletPK(itemPK);
-             item.setScyOutCode(controller.getView().getTextMapOutletScyOutletCode().getText().trim());
-             item.setMslsoutCode(controller.getView().getTextMapOutletMSLOutletCode().getText().trim());
-             
-             item.setMslsoutDesc(controller.getView().getTextMapOutletMSLOutletName().getText().trim());
-             
-             TabelOutletType itemTabelOutletType = new TabelOutletType();
-             itemTabelOutletType = (TabelOutletType) controller.getView().getComboMapOutletOutletType().getModel().getSelectedItem();
-             if (itemTabelOutletType!=null) {
-                item.setTypeId(itemTabelOutletType.getKodeType());
-                item.setTypeNm(itemTabelOutletType.getNamaType());
-             }
-             TabelOutletGroup itemTabelOutletGroup = new TabelOutletGroup();
-             itemTabelOutletGroup = (TabelOutletGroup)controller.getView().getComboMapOutletGroupId().getModel().getSelectedItem();
-             if(itemTabelOutletType!=null){
-                 item.setGroupId(itemTabelOutletGroup.getGroupId());
-                 item.setGroupNm(itemTabelOutletGroup.getGroupNm());
-             }
-             TabelOutletSubGroup itemTabelOutletSubGroup = new TabelOutletSubGroup();
-             itemTabelOutletSubGroup = (TabelOutletSubGroup)controller.getView().getComboMapOutletSubGroupId().getModel().getSelectedItem();
-             if (itemTabelOutletSubGroup!=null){
-                 item.setSubGrpId(itemTabelOutletSubGroup.getSubGroupId());
-                 item.setGroupNm(itemTabelOutletSubGroup.getSubGroupNm());
-             }
-             TabelOutletClass itemTabelOutletClass = new TabelOutletClass();
-             itemTabelOutletClass =  (TabelOutletClass)controller.getView().getComboMapOutletClassId().getModel().getSelectedItem();
-             if (itemTabelOutletClass!=null) {
-                 item.setClassId(itemTabelOutletClass.getClassId());
-                 item.setClassNm(itemTabelOutletClass.getClassNm());
-             }
-             TabelOutletSize itemTabelOutletSize = new TabelOutletSize();
-             itemTabelOutletSize = (TabelOutletSize)controller.getView().getComboMapOutletBSizeId().getModel().getSelectedItem();
-             if (itemTabelOutletSize!=null){
-                 item.setBsizeId(itemTabelOutletSize.getKodeSize());
-                 item.setBsizeNm(itemTabelOutletSize.getNamaSize());
-             }
-             TabelOutletLocation itemTabelOutletLocation = new TabelOutletLocation();
-             itemTabelOutletLocation = (TabelOutletLocation)controller.getView().getComboMapOutletLocationId().getModel().getSelectedItem();
-             if(itemTabelOutletLocation!=null){
-                 item.setLokId(itemTabelOutletLocation.getKodeLokasi());
-                 item.setLokNm(itemTabelOutletLocation.getNamaLokasi());
-             }
-             TMasterSalesman itemTSalesman = new TMasterSalesman();
-             itemTSalesman = (TMasterSalesman)controller.getView().getComboMapOutletSalesmanCode().getModel().getSelectedItem();
-             if(itemTSalesman!=null){
-                 item.setSalesCode(itemTSalesman.getSalesIdSap());
-                 item.setSalesNm(itemTSalesman.getSalesNmSap());
-             }
-             TMasterSalesman itemTSalesmanNas = new TMasterSalesman();
-             itemTSalesmanNas =  (TMasterSalesman)controller.getView().getComboMapOutletNasionalSalesmanCode().getModel().getSelectedItem();
-             if (itemTSalesmanNas!=null){
-                 item.setNasSalesCode(itemTSalesmanNas.getNasSalesmanCode());
-                 item.setNasSalesNm(itemTSalesmanNas.getNasSalesmanNm());
-             }
-             TabelKeyAccount itemTabelKeyAccount = new TabelKeyAccount();
-             itemTabelKeyAccount =  (TabelKeyAccount)controller.getView().getComboMapOutletKeyAccountId().getModel().getSelectedItem();
-             if(itemTabelKeyAccount!=null){
-                 item.setKaccId(itemTabelKeyAccount.getKodeKa());
-                 item.setKaccNm(itemTabelKeyAccount.getNamaKa());
-             }
-             
-             item.setBaru(controller.getView().getCheckMapOutletBaru().isSelected());
-             item.setAllowTransfer(controller.getView().getCheckMapOutletDikirim().isSelected());
-             item.setAktif(controller.getView().getCheckMapOutletAktif().isSelected());
+        //POKARI : RELOAD
+        public void aksiBtnMappingMasterPokariCustomerReload(){
+            //Reload ComboBox
+            initComboBoxMappingMasterPokariCustomerReload();
+            initComboBoxManualMappingMasterPokariCustomerReload();
 
-             
-             //Operasi Simpan
-             if (item.getScyOutCode().trim().equals("")){
-                 JOptionPane.showMessageDialog(null, "Kode Scylla Harus Diisi!!..", "Validasi..", JOptionPane.ERROR_MESSAGE);
-             } else {
-               controller.getModel().tMasterOutletDao.saveOrUpdate(item);
-                aksiBtnTMasterOutletReload();
-             }
-             
-             //System.out.println(item.getTypeId());
-             //System.out.println(item.getTypeNm());
-             
-         }    
-         public void aksiBtnMapOutletDelete(){
-             if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus?", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
-                int rowIndex =controller.getView().getTableMapOutlet().getSelectedRow();
-                if (rowIndex >-1) {
-                    TMasterOutlet item = new TMasterOutlet();
-                    item =controller.getModel().tmTMasterOutlet.get(rowIndex);
-                   controller.getModel().tMasterOutletDao.delete(item);
-                    aksiBtnTMasterOutletReload();
-                }   
-             }
-             
-         }
-         public void aksiBtnMapOutletSearch(){
-            String scyId=controller.getView().getTextMapOutletSearchScyOutletCode().getText().trim();
-            String sapId=controller.getView().getTextMapOutletSearchMSLOutletCode().getText().trim();
-            String sapDesc =controller.getView().getTextMapOutletSearchMSLOutletName().getText().trim();
-            
-            Boolean semua =controller.getView().getCheckMapOutletSearchSemua().isSelected();
-            Boolean baruSaja =controller.getView().getCheckMapOutletSearchBaruSaja().isSelected();
-            Boolean dikirimSaja =controller.getView().getCheckMapOutletSearchDikirimSaja().isSelected();
-            Boolean aktifSaja =controller.getView().getCheckMapOutletSearchAktifSaja().isSelected();
-            
+            //Reset Text
+            //controller.getView().resetTeksMappingMasterPokari();
+            //Reload Table
+            List<ArCustomer> lst = new ArrayList<>();
+            lst = controller.getModel().arCustomerDao.findAll();
+            controller.getModel().tmArCustomer = new GenericTableModel<>(lst, ArCustomer.class);
+            controller.getView().getTableMappingMasterPokariCustomer().setModel(controller.getModel().tmArCustomer);
+            /**
+             * SET TABLE MODEL BIAR OKE
+             */
+           controller.getView().renderTableModelPokariMappingMasterArCustomer();
+
+        }
+        public void aksiBtnMappingMasterPokariEmployeeReload(){
+            //Reload ComboBox
+            initComboBoxMappingMasterPokariEmployeeReload();
+            //Reset Text
+            //controller.getView().resetTeksMappingMasterPokari();
+            //Reload Table
+            List<SpEmployee> lst = new ArrayList<>();
+            lst = controller.getModel().spEmployeeDao.findAll();
+            controller.getModel().tmSpEmployee = new GenericTableModel<>(lst, SpEmployee.class);
+            controller.getView().getTableMappingMasterPokariEmployee().setModel(controller.getModel().tmSpEmployee);
+            /**
+             * SET TABLE MODEL BIAR OKE
+             */
+           controller.getView().renderTableModelPokariMappingMasterSpEmployee();
+        }
+        public void aksiBtnMappingMasterPokariProductReload(){
+            //Reload ComboBox
+            initComboBoxMappingMasterPokariProductReload();
+            //Reset Text
+            //controller.getView().resetTeksMappingMasterPokari();
+            //Reload Table
+            List<MappingProduct> lst = new ArrayList<>();
+            lst = controller.getModel().mappingProductDao.findAll();
+            controller.getModel().tmMappingProduct = new GenericTableModel<>(lst, MappingProduct.class);
+            controller.getView().getTableMappingMasterPokariProduct().setModel(controller.getModel().tmMappingProduct);
+
+            /**
+             * SET TABLE MODEL BIAR OKE
+             */
+           controller.getView().renderTableModelPokariMappingMasterProduct();
+        }
+
+        //POKARI : COMBOBOX RELOAD
+        public void initComboBoxMappingMasterPokariProductReload(){
+            DefaultComboBoxModel<ProductBrand> cmbProductBrand = new DefaultComboBoxModel<>();
+            for (ProductBrand itm: controller.getModel().productBrandDao.getAll()) {
+                cmbProductBrand.addElement(itm);
+            }             
+            controller.getView().getComboMappingMasterPokariProductBrand().setModel(cmbProductBrand);
+        }     
+        public void initComboBoxMappingMasterPokariCustomerReload(){
+            DefaultComboBoxModel<CustomerGroup> cmbCustomerGroup = new DefaultComboBoxModel<>();
+            for (CustomerGroup itm: controller.getModel().customerGroupDao.getAll()) {
+                cmbCustomerGroup.addElement(itm);
+            }             
+            controller.getView().getComboMappingMasterPokariCustomerCustomerGroup().setModel(cmbCustomerGroup);
+
+            DefaultComboBoxModel<WorkPlace> cmbWorkPlace = new DefaultComboBoxModel<>();
+            for (WorkPlace itm: controller.getModel().workplaceDao.getAll()) {
+                cmbWorkPlace.addElement(itm);
+            }             
+            controller.getView().getComboMappingMasterPokariCustomerWorkPlace().setModel(cmbWorkPlace);
+
+            DefaultComboBoxModel<CustomerHirarchy> cmbCustomerHirarchy = new DefaultComboBoxModel<>();
+            for (CustomerHirarchy itm: controller.getModel().customerHirarchyDao.getAll()) {
+                cmbCustomerHirarchy.addElement(itm);
+            }             
+            controller.getView().getComboMappingMasterPokariCustomerHirarchy().setModel(cmbCustomerHirarchy);
+
+            DefaultComboBoxModel<SalesTerritory> cmbSalesTerritory = new DefaultComboBoxModel<>();
+            for (SalesTerritory itm: controller.getModel().salesTerritoryDao.getAll()) {
+                cmbSalesTerritory.addElement(itm);
+            }             
+            controller.getView().getComboMappingMasterPokariCustomerSalesTerritory().setModel(cmbSalesTerritory);
+            DefaultComboBoxModel<SpEmployee> cmbSpEmployee = new DefaultComboBoxModel<>();
+            for (SpEmployee itm: controller.getModel().spEmployeeDao.getAll()) {
+                cmbSpEmployee.addElement(itm);
+            }             
+            controller.getView().getComboMappingMasterPokariCustomerEmployee().setModel(cmbSpEmployee);
+
+        }
+        public void initComboBoxManualMappingMasterPokariCustomerReload(){
+            /**
+             * COMBO MANUAL
+             */
+            /**
+             * Status
+             */
+            DefaultComboBoxModel<EnumModelPokari> cmbModelStatus = new DefaultComboBoxModel<>();
+            EnumModelPokari enumModelStatus0 = new EnumModelPokari();
+            enumModelStatus0.setIntCode(EnumSzStatus.NONACTIVE.getIntCode());
+            enumModelStatus0.setStrCode(EnumSzStatus.NONACTIVE.getStrCode());
+            enumModelStatus0.setDescription(EnumSzStatus.NONACTIVE.getDescription());
+            cmbModelStatus.addElement(enumModelStatus0);      
+            EnumModelPokari enumModelStatus1 = new EnumModelPokari();
+            enumModelStatus1.setIntCode(EnumSzStatus.ACTIVE.getIntCode());
+            enumModelStatus1.setStrCode(EnumSzStatus.ACTIVE.getStrCode());
+            enumModelStatus1.setDescription(EnumSzStatus.ACTIVE.getDescription());
+            cmbModelStatus.addElement(enumModelStatus1);
+            EnumModelPokari enumModelStatus2 = new EnumModelPokari();
+            enumModelStatus2.setIntCode(EnumSzStatus.DESTROY.getIntCode());
+            enumModelStatus2.setStrCode(EnumSzStatus.DESTROY.getStrCode());
+            enumModelStatus2.setDescription(EnumSzStatus.DESTROY.getDescription());
+            cmbModelStatus.addElement(enumModelStatus2);
+            controller.getView().getComboMappingMasterPokariCustomerStatus().setModel(cmbModelStatus);
+
+            /**
+             * DistrChannelId
+             */        
+            DefaultComboBoxModel<EnumModelPokari> cmbModelDistrChannelId = new DefaultComboBoxModel<>();
+            EnumModelPokari enumModelModelDistrChannelId1 =  new EnumModelPokari();
+            enumModelModelDistrChannelId1.setIntCode(EnumSzDistrChannelId.TRADITIONAL_MARKET.getIntCode());
+            enumModelModelDistrChannelId1.setStrCode(EnumSzDistrChannelId.TRADITIONAL_MARKET.getStrCode());
+            enumModelModelDistrChannelId1.setDescription(EnumSzDistrChannelId.TRADITIONAL_MARKET.getDescription());
+            cmbModelDistrChannelId.addElement(enumModelModelDistrChannelId1);
+            EnumModelPokari enumModelModelDistrChannelId2 =  new EnumModelPokari();
+            enumModelModelDistrChannelId2.setIntCode(EnumSzDistrChannelId.MODERN_MARKET.getIntCode());
+            enumModelModelDistrChannelId2.setStrCode(EnumSzDistrChannelId.MODERN_MARKET.getStrCode());
+            enumModelModelDistrChannelId2.setDescription(EnumSzDistrChannelId.MODERN_MARKET.getDescription());
+            cmbModelDistrChannelId.addElement(enumModelModelDistrChannelId2);
+            controller.getView().getComboMappingMasterPokariCustomerDistrChannelId().setModel(cmbModelDistrChannelId);
+
+            /**
+             * AllowToCredit
+             */
+            DefaultComboBoxModel<EnumModelPokari> cmbModelAllowToCredit = new DefaultComboBoxModel<>();
+            EnumModelPokari enumModelAllowToCredit1 = new EnumModelPokari();
+            enumModelAllowToCredit1.setIntCode(EnumBAllowToCredit.CASH.getIntCode());
+            enumModelAllowToCredit1.setStrCode(EnumBAllowToCredit.CASH.getStrCode());
+            enumModelAllowToCredit1.setDescription(EnumBAllowToCredit.CASH.getDescription());
+            cmbModelAllowToCredit.addElement(enumModelAllowToCredit1);
+            EnumModelPokari enumModelAllowToCredit2 = new EnumModelPokari();
+            enumModelAllowToCredit2.setIntCode(EnumBAllowToCredit.CREDIT.getIntCode());
+            enumModelAllowToCredit2.setStrCode(EnumBAllowToCredit.CREDIT.getStrCode());
+            enumModelAllowToCredit2.setDescription(EnumBAllowToCredit.CREDIT.getDescription());
+            cmbModelAllowToCredit.addElement(enumModelAllowToCredit2);
+            controller.getView().getComboMappingMasterPokariCustomerAllowToCredit().setModel(cmbModelAllowToCredit);
+            /**
+             * PaymentTerm
+             */
+            DefaultComboBoxModel<EnumModelPokari> cmbModelPaymentTermId = new DefaultComboBoxModel<>();
+            EnumModelPokari enumModelPaymentTermId1 = new EnumModelPokari();
+            enumModelPaymentTermId1.setIntCode(EnumPaymentTermId.HARI_0.getIntCode());
+            enumModelPaymentTermId1.setStrCode(EnumPaymentTermId.HARI_0.getStrCode());
+            enumModelPaymentTermId1.setDescription(EnumPaymentTermId.HARI_0.getDescription());
+            cmbModelPaymentTermId.addElement(enumModelPaymentTermId1);
+            EnumModelPokari enumModelPaymentTermId2 = new EnumModelPokari();
+            enumModelPaymentTermId2.setIntCode(EnumPaymentTermId.HARI_7.getIntCode());
+            enumModelPaymentTermId2.setStrCode(EnumPaymentTermId.HARI_7.getStrCode());
+            enumModelPaymentTermId2.setDescription(EnumPaymentTermId.HARI_7.getDescription());
+            cmbModelPaymentTermId.addElement(enumModelPaymentTermId2);
+            EnumModelPokari enumModelPaymentTermId3 = new EnumModelPokari();
+            enumModelPaymentTermId3.setIntCode(EnumPaymentTermId.HARI_10.getIntCode());
+            enumModelPaymentTermId3.setStrCode(EnumPaymentTermId.HARI_10.getStrCode());
+            enumModelPaymentTermId3.setDescription(EnumPaymentTermId.HARI_10.getDescription());
+            cmbModelPaymentTermId.addElement(enumModelPaymentTermId3);
+            EnumModelPokari enumModelPaymentTermId4 = new EnumModelPokari();
+            enumModelPaymentTermId4.setIntCode(EnumPaymentTermId.HARI_14.getIntCode());
+            enumModelPaymentTermId4.setStrCode(EnumPaymentTermId.HARI_14.getStrCode());
+            enumModelPaymentTermId4.setDescription(EnumPaymentTermId.HARI_14.getDescription());
+            cmbModelPaymentTermId.addElement(enumModelPaymentTermId4);
+            EnumModelPokari enumModelPaymentTermId5 = new EnumModelPokari();
+            enumModelPaymentTermId5.setIntCode(EnumPaymentTermId.HARI_21.getIntCode());
+            enumModelPaymentTermId5.setStrCode(EnumPaymentTermId.HARI_21.getStrCode());
+            enumModelPaymentTermId5.setDescription(EnumPaymentTermId.HARI_21.getDescription());
+            cmbModelPaymentTermId.addElement(enumModelPaymentTermId5);
+
+            controller.getView().getComboMappingMasterPokariCustomerPaymentTermId().setModel(cmbModelPaymentTermId);
+        }
+        public void initComboBoxMappingMasterPokariEmployeeReload(){
+            /**
+             * COMBO FROM ENTITY
+             */
+            DefaultComboBoxModel<WorkPlace> cmbWorkPlace = new DefaultComboBoxModel<>();
+            for (WorkPlace itm: controller.getModel().workplaceDao.getAll()) {
+                cmbWorkPlace.addElement(itm);
+            }             
+            controller.getView().getComboMappingMasterPokariEmployeeWorkplace().setModel(cmbWorkPlace);
+
+            DefaultComboBoxModel<TypeSales> cmbTypeSales = new DefaultComboBoxModel<>();
+            for (TypeSales itm: controller.getModel().typeSalesDao.getAll()) {
+                cmbTypeSales.addElement(itm);
+            }             
+            controller.getView().getComboMappingMasterPokariEmployeeSalesType().setModel(cmbTypeSales);
+
+            DefaultComboBoxModel<GroupSales> cmbGroupSales = new DefaultComboBoxModel<>();
+            for (GroupSales itm: controller.getModel().groupSalesDao.getAll()) {
+                cmbGroupSales.addElement(itm);
+            }             
+            controller.getView().getComboMappingMasterPokariEmployeeSalesGroup().setModel(cmbGroupSales);
+
+            DefaultComboBoxModel<TeamSales> cmbTeamSales = new DefaultComboBoxModel<>();
+            for (TeamSales itm: controller.getModel().teamSalesDao.getAll()) {
+                cmbTeamSales.addElement(itm);
+            }             
+            controller.getView().getComboMappingMasterPokariEmployeeSalesTeam().setModel(cmbTeamSales);
+
+        }
+    
+        //Reload Kita tidak jadikan satu dengan class BridgingTabelTabelMasterSAP.java karena biar bisa diakses semua 
+        public void aksiBtnTMasterProductReload(){       
+            List<TMasterProduct> lst = new ArrayList<>();
+            lst = controller.getModel().tMasterProductDao.findAll();
+            controller.getModel().tmTMasterProduct = new GenericTableModel<>(lst, TMasterProduct.class);
+            controller.getView().getTableMapProduct().setModel(controller.getModel().tmTMasterProduct);
+        }
+        public void aksiBtnTMasterOutletReload(){
             List<TMasterOutlet> lst = new ArrayList<>();
-            lst =controller.getModel().tMasterOutletDao.findById(scyId, sapId, sapDesc, semua, baruSaja, dikirimSaja, aktifSaja);
+            lst =controller.getModel().tMasterOutletDao.findAll();
            controller.getModel().tmTMasterOutlet = new GenericTableModel<>(lst,TMasterOutlet.class);
            controller.getView().getTableMapOutlet().setModel(controller.getModel().tmTMasterOutlet);
-             
-         }
-         public void aksiBtnMapOutletReload(){
-             initiatesComboBoxMasterOutlet();
-             aksiBtnTMasterOutletReload();                  
-             controller.getView().resetSearchMapOutlet();
-         }
-         public void aksiListTabelMapOutlet(){
-             int rowIndex =controller.getView().getTableMapOutlet().getSelectedRow();
-             if (rowIndex > -1) {
-                 TMasterOutlet item = new TMasterOutlet();
-                 item =controller.getModel().tmTMasterOutlet.get(rowIndex);
-                 if (item!=null){
-                    controller.getView().getTextMapOutletDistiId().setText(item.getDistiId());
-                     
-                     //getTextMapOutletScyOutletCode().setText(item.gettOutletPK().getScyOutCode());
-                     //getTextMapOutletMSLOutletCode().setText(item.gettOutletPK().getMslsoutCode());
-                    controller.getView().getTextMapOutletScyOutletCode().setText(item.getScyOutCode());
-                    controller.getView().getTextMapOutletMSLOutletCode().setText(item.getMslsoutCode());
-                     
-                     
-                    controller.getView().getTextMapOutletMSLOutletName().setText(item.getMslsoutDesc());
-                     
-                     TabelOutletType itemTabelOutletType = new TabelOutletType();
-                     itemTabelOutletType.setKodeType(item.getTypeId());
-                     itemTabelOutletType.setNamaType(item.getTypeNm());
-                    controller.getView().getComboMapOutletOutletType().setSelectedItem(itemTabelOutletType);
-                     
-                    TabelOutletGroup itemTabelOutletGroup = new TabelOutletGroup();
-                    itemTabelOutletGroup.setGroupId(item.getGroupId());
-                    itemTabelOutletGroup.setGroupNm(item.getGroupNm());
-                   controller.getView().getComboMapOutletGroupId().setSelectedItem(itemTabelOutletGroup);
-                    
-                    TabelOutletSubGroup itemTabelOutletSubGroup = new TabelOutletSubGroup();
-                    itemTabelOutletSubGroup.setSubGroupId(item.getSubGrpId());
-                    itemTabelOutletSubGroup.setSubGroupNm(item.getSubGrpNm());
-                   controller.getView().getComboMapOutletSubGroupId().setSelectedItem(itemTabelOutletSubGroup);
-                    
-                    TabelOutletClass itemTabelOutletClass = new TabelOutletClass();
-                    itemTabelOutletClass.setClassId(item.getClassId());
-                    itemTabelOutletClass.setClassNm(item.getClassNm());
-                   controller.getView().getComboMapOutletClassId().setSelectedItem(itemTabelOutletClass);
-                    
-                    TabelOutletSize itemTabelOutletSize = new TabelOutletSize();
-                    itemTabelOutletSize.setKodeSize(item.getBsizeId());
-                    itemTabelOutletSize.setNamaSize(item.getBsizeNm());
-                   controller.getView().getComboMapOutletBSizeId().setSelectedItem(itemTabelOutletSize);
-                    
-                    TabelOutletLocation itemTabelOutletLocation = new TabelOutletLocation();
-                    itemTabelOutletLocation.setKodeLokasi(item.getLokId());
-                    itemTabelOutletLocation.setNamaLokasi(item.getLokNm());
-                   controller.getView().getComboMapOutletLocationId().setSelectedItem(itemTabelOutletLocation);
-                    
-                    TMasterSalesman itemTSalesman = new TMasterSalesman();
-                    itemTSalesman.setSalesIdSap(item.getSalesCode());
-                    itemTSalesman.setSalesNmSap(item.getSalesNm());
-                   controller.getView().getComboMapOutletSalesmanCode().setSelectedItem(itemTSalesman);
-                    
-                    TMasterSalesman itemTSalesmanNas = new TMasterSalesman();
-                    itemTSalesmanNas.setNasSalesmanCode(item.getNasSalesCode());
-                    itemTSalesmanNas.setNasSalesmanNm(item.getNasSalesNm());
-                   controller.getView().getComboMapOutletNasionalSalesmanCode().setSelectedItem(itemTSalesmanNas);
-                    
-                    TabelKeyAccount itemTabelKeyAccount = new TabelKeyAccount();
-                    itemTabelKeyAccount.setKodeKa(item.getKaccId());
-                    itemTabelKeyAccount.setNamaKa(item.getKaccNm());
-                   controller.getView().getComboMapOutletKeyAccountId().setSelectedItem(itemTabelKeyAccount);        
-                    
-                    //Penanda
-                   controller.getView().getCheckMapOutletBaru().setSelected(item.getBaru()!=null?item.getBaru():false);
-                   controller.getView().getCheckMapOutletDikirim().setSelected(item.getAllowTransfer()!=null?item.getAllowTransfer():false);
-                   controller.getView().getCheckMapOutletAktif().setSelected(item.getAktif()!=null?item.getAktif():false);
-                     
-                 }
-             }
-         }
-          
-         public void aksiBtnMapProductSearch(){
-            String scyId=controller.getView().getTextMapProductSearchIdBrgScylla().getText().trim();
-            String sapId=controller.getView().getTextMapProductSearchIdSap().getText().trim();
-            String sapDesc =controller.getView().getTextMapProductSearchNamaBarangSAP().getText().trim();
-
-            Boolean semua =controller.getView().getCheckMapProductSearchSemua().isSelected();
-            Boolean baruSaja =controller.getView().getCheckMapProductSearchBaruSaja().isSelected();
-            Boolean dikirimSaja =controller.getView().getCheckMapProductSearchDikirimSaja().isSelected();
-            Boolean bonusSaja =controller.getView().getCheckMapProductSearchBonusSaja().isSelected();
-            Boolean aktifSaja =controller.getView().getCheckMapProductSearchAktifSaja().isSelected();
-            
-            List<TMasterProduct> lst = new ArrayList<>();
-            lst =controller.getModel().tMasterProductDao.findById(scyId, sapId, sapDesc, semua, baruSaja, dikirimSaja, bonusSaja, aktifSaja);
-            controller.getModel().tmTMasterProduct = new GenericTableModel<>(lst,TMasterProduct.class);
-            controller.getView().getTableMapProduct().setModel(controller.getModel().tmTMasterProduct);
-            
-         }
-         public void aksiBtnMapProductSave(){
-             TMasterProduct item = new TMasterProduct();
-             item.setAreaId(controller.getView().getTextMapProductAreaId().getText().trim());
-             item.setDistId(controller.getView().getTextMapProductDistributorId().getText().trim());
-             //Primary
-             item.setPcodeScylla(controller.getView().getTextMapProductIdBrgScylla().getText().trim());
-             
-             item.setPcodeSap(controller.getView().getTextMapProductIdSap().getText().trim());
-             item.setPnameSap(controller.getView().getTextMapProductNamaBarangSAP().getText().trim());
-             
-             TabelProdDivisi itemTabelProdDivisi = new TabelProdDivisi();
-             itemTabelProdDivisi = (TabelProdDivisi)controller.getView().getComboMapProductDivisi().getModel().getSelectedItem();
-             if (itemTabelProdDivisi!=null) {
-                 item.setKodeDivisi(itemTabelProdDivisi.getDivisiId());
-                 item.setNamaDivisi(itemTabelProdDivisi.getDivisiNm());
-             }
-             TabelProdBrand itemTabelProdBrand = new TabelProdBrand();
-             itemTabelProdBrand = (TabelProdBrand)controller.getView().getComboMapProductBrand().getModel().getSelectedItem();
-             if (itemTabelProdBrand!=null){
-                 item.setKodeBrand(itemTabelProdBrand.getBrandId());
-                 item.setNamaBrand(itemTabelProdBrand.getBrandNm());
-             }
-             TabelProdSubBrand itemTabelProdSubBrand = new TabelProdSubBrand();
-             itemTabelProdSubBrand =  (TabelProdSubBrand)controller.getView().getComboMapProductSubBrand().getModel().getSelectedItem();
-             if(itemTabelProdSubBrand!=null){
-                 item.setKodeSubBrand(itemTabelProdSubBrand.getSubBrandId());
-                 item.setNamaSubBrand(itemTabelProdSubBrand.getSubBrandNm());
-             }
-             TabelProdCategory itemTabelProdCategory = new TabelProdCategory();
-             itemTabelProdCategory = (TabelProdCategory)controller.getView().getComboMapProductCategory().getModel().getSelectedItem();
-             if (itemTabelProdCategory!=null){
-                 item.setKodeCategory(itemTabelProdCategory.getCategoryId());
-                 item.setNamaCategory(itemTabelProdCategory.getCategoryNm());
-             }
-             TabelProdSubCategory itemTabelProdSubCategory = new TabelProdSubCategory();
-             itemTabelProdSubCategory = (TabelProdSubCategory)controller.getView().getComboMapProductSubCategory().getModel().getSelectedItem();
-             if (itemTabelProdSubCategory!=null){
-                 item.setKodeSubCategory(itemTabelProdSubCategory.getSubCategoryId());
-                 item.setNamaSubCategory(itemTabelProdSubCategory.getSubCategoryNm());
-             }
-             TabelProdVariance itemTabelProdVariance = new TabelProdVariance();
-             itemTabelProdVariance = (TabelProdVariance)controller.getView().getComboMapProductVariance().getModel().getSelectedItem();
-             if (itemTabelProdVariance!=null){
-                 item.setKodeVariance(itemTabelProdVariance.getVarianceId());
-                 item.setNamaVariance(itemTabelProdVariance.getVarianceNm());
-             }
-             TabelProdSize itemTabelProdSize = new TabelProdSize();
-             itemTabelProdSize = (TabelProdSize)controller.getView().getComboMapProductSize().getModel().getSelectedItem();
-             if (itemTabelProdSize!=null){
-                 item.setKodeSize(itemTabelProdSize.getSizeId());
-                 item.setNamaSize(itemTabelProdSize.getSizeNm());
-             }
-             
-             item.setBaru(controller.getView().getCheckMapProductBaru().isSelected());
-             item.setAllowTransfer(controller.getView().getCheckMapProductDikirim().isSelected());
-             item.setBonus(controller.getView().getCheckMapProductBonus().isSelected());
-             item.setAktif(controller.getView().getCheckMapProductAktif().isSelected());
-             
-             //Dao Simpan
-             if (! item.getPcodeScylla().trim().equals("")) {
-                controller.getModel().tMasterProductDao.saveOrUpdate(item);
-                aksiBtnTMasterProductReload();
-             } else {
-                 JOptionPane.showMessageDialog(null, "Kode Scylla Harus Diisi!!..", "Validasi..", JOptionPane.ERROR_MESSAGE);
-             
-             }
-             
-         }          
-         public void aksiBtnMapProductDelete(){
-             if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus?", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
-                int rowIndex =controller.getView().getTableMapProduct().getSelectedRow();
-                if (rowIndex >-1) {
-                    TMasterProduct item = new TMasterProduct();
-                    item =controller.getModel().tmTMasterProduct.get(rowIndex);
-                   controller.getModel().tMasterProductDao.delete(item);
-                    aksiBtnTMasterProductReload();
-                }   
-             }
-             
-             aksiBtnMapProductReload();
-         }
-         public void aksiBtnMapProductReload(){
-             initiatesComboBoxMasterProduct();
-             aksiBtnTMasterProductReload();
-             
-             controller.getView().resetSearchMapProduct();
-         }         
-         public void aksiListTabelMapProduct(){
-             int rowIndex = controller.getView().getTableMapProduct().getSelectedRow();
-             if (rowIndex > -1) {
-                 TMasterProduct item = new TMasterProduct();
-                 item = controller.getModel().tmTMasterProduct.get(rowIndex);                 
-
-                 if (item!=null){
-                    controller.getView().getTextMapProductAreaId().setText(item.getAreaId());
-                    controller.getView().getTextMapProductDistributorId().setText(item.getDistId());
-                    controller.getView().getTextMapProductIdBrgScylla().setText(item.getPcodeScylla());
-                    controller.getView().getTextMapProductIdSap().setText(item.getPcodeSap());
-                    controller.getView().getTextMapProductNamaBarangSAP().setText(item.getPnameSap());
-
-                    TabelProdDivisi itemTabelProdDivisi = new TabelProdDivisi();
-                    itemTabelProdDivisi.setDivisiId(item.getKodeDivisi());
-                    itemTabelProdDivisi.setDivisiNm(item.getNamaDivisi());
-                   controller.getView().getComboMapProductDivisi().setSelectedItem(itemTabelProdDivisi);
-                    
-                    TabelProdBrand itemTabelProdBrand = new TabelProdBrand();
-                    itemTabelProdBrand.setBrandId(item.getKodeBrand());
-                    itemTabelProdBrand.setBrandNm(item.getNamaBrand());
-                   controller.getView().getComboMapProductBrand().setSelectedItem(itemTabelProdBrand);
-                    
-                    TabelProdSubBrand itemTabelProdSubBrand = new TabelProdSubBrand();
-                    itemTabelProdSubBrand.setSubBrandId(item.getKodeSubBrand());
-                    itemTabelProdSubBrand.setSubBrandNm(item.getNamaSubBrand());
-                   controller.getView().getComboMapProductSubBrand().setSelectedItem(itemTabelProdSubBrand);
-                    
-                    TabelProdCategory itemTabelProdCategory = new TabelProdCategory();
-                    itemTabelProdCategory.setCategoryId(item.getKodeCategory());
-                    itemTabelProdCategory.setCategoryNm(item.getNamaCategory());
-                   controller.getView().getComboMapProductCategory().setSelectedItem(itemTabelProdCategory);
-                    
-                    TabelProdSubCategory itemTabelProdSubCategory = new TabelProdSubCategory();
-                    itemTabelProdSubCategory.setSubCategoryId(item.getKodeSubCategory());
-                    itemTabelProdSubCategory.setSubCategoryNm(item.getNamaCategory());
-                   controller.getView().getComboMapProductSubCategory().setSelectedItem(itemTabelProdSubCategory);
-                    
-                    TabelProdVariance itemTabelProdVariance = new TabelProdVariance();
-                    itemTabelProdVariance.setVarianceId(item.getKodeVariance());
-                    itemTabelProdVariance.setVarianceNm(item.getNamaVariance());
-                   controller.getView().getComboMapProductVariance().setSelectedItem(itemTabelProdVariance);
-                    
-                    TabelProdSize itemTabelProdSize = new TabelProdSize();
-                    itemTabelProdSize.setSizeId(item.getKodeSize());
-                    itemTabelProdSize.setSizeNm(item.getNamaSize());
-                   controller.getView().getComboMapProductSize().setSelectedItem(itemTabelProdVariance);
-                    
-                    //Penanda
-                   controller.getView().getCheckMapProductBaru().setSelected(item.getBaru()!=null?item.getBaru():false);
-                   controller.getView().getCheckMapProductDikirim().setSelected(item.getAllowTransfer()!=null?item.getAllowTransfer():false);
-                   controller.getView().getCheckMapProductBonus().setSelected(item.getBonus()!=null?item.getBonus():false);
-                   controller.getView().getCheckMapProductAktif().setSelected(item.getAktif()!=null?item.getAktif():false);
-                 }
-             }     
-         }
+        }
+        public void aksiBtnTMasterSalesmanReload(){
+            List<TMasterSalesman> lst = new ArrayList();
+            lst =controller.getModel().tMasterSalesmanDao.findAll();
+           controller.getModel().tmTMasterSalesman = new GenericTableModel<>(lst, TMasterSalesman.class);
+           controller.getView().getTableMapSalesman().setModel(controller.getModel().tmTMasterSalesman);
+        }
         
+        //Mapping Master Product, Outlet, Salesman
+        public void aksiBtnMapSalesmanSave(){
+            TMasterSalesman item = new TMasterSalesman();
+
+            item.setDistiCode(controller.getView().getTextMapSalesmanDistributorId().getText().trim());
+            //item.setSalesIdScy(controller.getView().getTextMapSalesmanSalesmanId().getText().trim());
+
+            item.setSalesIdSap(controller.getView().getTextMapSalesmanSalesmanId().getText().trim());
+            item.setSalesIdScy(controller.getView().getTextMapSalesmanSalesmanIdScylla().getText().trim());
+            item.setSalesNmSap(controller.getView().getTextMapSalesmanSalesmanName().getText().trim());
+
+            //Jika tidak diisi maka ngikut kode scylla
+            if (item.getSalesIdScy()==null) item.setSalesIdScy(item.getSalesIdSap());
+            //Nama Salesman Scylla Ngikut
+            if (item.getSalesNm()==null) item.setSalesNm(item.getSalesNmSap());
+
+            item.setCalamat1(controller.getView().getTextMapSalesmanCAlamat1().getText().trim());
+            item.setCalamat2(controller.getView().getTextMapSalesmanCAlamat2().getText().trim());
+            item.setCkota(controller.getView().getTextMapSalesmanCKota().getText().trim());
+            item.setCtelp(controller.getView().getTextMapSalesmanCTelpon().getText().trim());
+            item.setKodeLevel(controller.getView().getTextMapSalesmanKodeLevel().getText().trim());
+            item.setRpttoCode(controller.getView().getTextMapSalesmanRTTPCode().getText().trim());
+
+            //Save jika kodenya tidak kosong
+            if (! item.getSalesIdSap().equals("")) {
+               controller.getModel().tMasterSalesmanDao.saveOrUpdate(item);
+               aksiBtnTMasterSalesmanReload();
+            } else {
+                JOptionPane.showMessageDialog(null, "Kode Harus Diisi!!..", "Validasi..", JOptionPane.ERROR_MESSAGE);
+            }
+
+
+        }          
+        public void aksiBtnMapSalesmanDelete(){
+            if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus?", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
+               int rowIndex = controller.getView().getTableMapSalesman().getSelectedRow();
+               if (rowIndex >-1) {
+                   TMasterSalesman item = new TMasterSalesman();
+                   item = controller.getModel().tmTMasterSalesman.get(rowIndex);
+                  controller.getModel().tMasterSalesmanDao.delete(item);
+                    aksiBtnTMasterSalesmanReload();
+               }   
+            }
+        }          
+        public void aksiBtnMapSalesmanReload(){
+            aksiBtnTMasterSalesmanReload();
+            initiatesComboBoxMasterSalesman();
+        }
+        public void aksiListTabelMapSalesman(){
+            int rowIndex =controller.getView().getTableMapSalesman().getSelectedRow();
+            if (rowIndex >-1) {
+                TMasterSalesman item = new TMasterSalesman();
+                item =controller.getModel().tmTMasterSalesman.get(rowIndex);
+
+               controller.getView().getTextMapSalesmanDistributorId().setText(item.getDistiCode());
+
+               controller.getView().getTextMapSalesmanSalesmanIdScylla().setText(item.getSalesIdScy());                 
+               controller.getView().getTextMapSalesmanSalesmanId().setText(item.getSalesIdSap());
+               controller.getView().getTextMapSalesmanSalesmanName().setText(item.getSalesNm());
+
+               controller.getView().getTextMapSalesmanCAlamat1().setText(item.getCalamat1());
+               controller.getView().getTextMapSalesmanCAlamat2().setText(item.getCalamat2());
+               controller.getView().getTextMapSalesmanCKota().setText(item.getCkota());
+               controller.getView().getTextMapSalesmanCTelpon().setText(item.getCtelp());
+               controller.getView().getTextMapSalesmanKodeLevel().setText(item.getKodeLevel());
+               controller.getView().getTextMapSalesmanRTTPCode().setText(item.getRpttoCode());
+
+            }
+        }
+
+        public void aksiBtnMapOutletSave(){
+            TMasterOutlet item = new TMasterOutlet();
+            item.setDistiId(controller.getView().getTextMapOutletDistiId().getText().trim());
+
+            //TOutletPK itemPK = new TOutletPK();
+            //itemPK.setScyOutCode(controller.getView().getTextMapOutletScyOutletCode().getText().trim());
+            //itemPK.setMslsoutCode(controller.getView().getTextMapOutletMSLOutletCode().getText().trim());
+            //item.settOutletPK(itemPK);
+            item.setScyOutCode(controller.getView().getTextMapOutletScyOutletCode().getText().trim());
+            item.setMslsoutCode(controller.getView().getTextMapOutletMSLOutletCode().getText().trim());
+
+            item.setMslsoutDesc(controller.getView().getTextMapOutletMSLOutletName().getText().trim());
+
+            TabelOutletType itemTabelOutletType = new TabelOutletType();
+            itemTabelOutletType = (TabelOutletType) controller.getView().getComboMapOutletOutletType().getModel().getSelectedItem();
+            if (itemTabelOutletType!=null) {
+               item.setTypeId(itemTabelOutletType.getKodeType());
+               item.setTypeNm(itemTabelOutletType.getNamaType());
+            }
+            TabelOutletGroup itemTabelOutletGroup = new TabelOutletGroup();
+            itemTabelOutletGroup = (TabelOutletGroup)controller.getView().getComboMapOutletGroupId().getModel().getSelectedItem();
+            if(itemTabelOutletType!=null){
+                item.setGroupId(itemTabelOutletGroup.getGroupId());
+                item.setGroupNm(itemTabelOutletGroup.getGroupNm());
+            }
+            TabelOutletSubGroup itemTabelOutletSubGroup = new TabelOutletSubGroup();
+            itemTabelOutletSubGroup = (TabelOutletSubGroup)controller.getView().getComboMapOutletSubGroupId().getModel().getSelectedItem();
+            if (itemTabelOutletSubGroup!=null){
+                item.setSubGrpId(itemTabelOutletSubGroup.getSubGroupId());
+                item.setGroupNm(itemTabelOutletSubGroup.getSubGroupNm());
+            }
+            TabelOutletClass itemTabelOutletClass = new TabelOutletClass();
+            itemTabelOutletClass =  (TabelOutletClass)controller.getView().getComboMapOutletClassId().getModel().getSelectedItem();
+            if (itemTabelOutletClass!=null) {
+                item.setClassId(itemTabelOutletClass.getClassId());
+                item.setClassNm(itemTabelOutletClass.getClassNm());
+            }
+            TabelOutletSize itemTabelOutletSize = new TabelOutletSize();
+            itemTabelOutletSize = (TabelOutletSize)controller.getView().getComboMapOutletBSizeId().getModel().getSelectedItem();
+            if (itemTabelOutletSize!=null){
+                item.setBsizeId(itemTabelOutletSize.getKodeSize());
+                item.setBsizeNm(itemTabelOutletSize.getNamaSize());
+            }
+            TabelOutletLocation itemTabelOutletLocation = new TabelOutletLocation();
+            itemTabelOutletLocation = (TabelOutletLocation)controller.getView().getComboMapOutletLocationId().getModel().getSelectedItem();
+            if(itemTabelOutletLocation!=null){
+                item.setLokId(itemTabelOutletLocation.getKodeLokasi());
+                item.setLokNm(itemTabelOutletLocation.getNamaLokasi());
+            }
+            TMasterSalesman itemTSalesman = new TMasterSalesman();
+            itemTSalesman = (TMasterSalesman)controller.getView().getComboMapOutletSalesmanCode().getModel().getSelectedItem();
+            if(itemTSalesman!=null){
+                item.setSalesCode(itemTSalesman.getSalesIdSap());
+                item.setSalesNm(itemTSalesman.getSalesNmSap());
+            }
+            TMasterSalesman itemTSalesmanNas = new TMasterSalesman();
+            itemTSalesmanNas =  (TMasterSalesman)controller.getView().getComboMapOutletNasionalSalesmanCode().getModel().getSelectedItem();
+            if (itemTSalesmanNas!=null){
+                item.setNasSalesCode(itemTSalesmanNas.getNasSalesmanCode());
+                item.setNasSalesNm(itemTSalesmanNas.getNasSalesmanNm());
+            }
+            TabelKeyAccount itemTabelKeyAccount = new TabelKeyAccount();
+            itemTabelKeyAccount =  (TabelKeyAccount)controller.getView().getComboMapOutletKeyAccountId().getModel().getSelectedItem();
+            if(itemTabelKeyAccount!=null){
+                item.setKaccId(itemTabelKeyAccount.getKodeKa());
+                item.setKaccNm(itemTabelKeyAccount.getNamaKa());
+            }
+
+            item.setBaru(controller.getView().getCheckMapOutletBaru().isSelected());
+            item.setAllowTransfer(controller.getView().getCheckMapOutletDikirim().isSelected());
+            item.setAktif(controller.getView().getCheckMapOutletAktif().isSelected());
+
+
+            //Operasi Simpan
+            if (item.getScyOutCode().trim().equals("")){
+                JOptionPane.showMessageDialog(null, "Kode Scylla Harus Diisi!!..", "Validasi..", JOptionPane.ERROR_MESSAGE);
+            } else {
+              controller.getModel().tMasterOutletDao.saveOrUpdate(item);
+               aksiBtnTMasterOutletReload();
+            }
+
+            //System.out.println(item.getTypeId());
+            //System.out.println(item.getTypeNm());
+
+        }    
+        public void aksiBtnMapOutletDelete(){
+            if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus?", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
+               int rowIndex =controller.getView().getTableMapOutlet().getSelectedRow();
+               if (rowIndex >-1) {
+                   TMasterOutlet item = new TMasterOutlet();
+                   item =controller.getModel().tmTMasterOutlet.get(rowIndex);
+                  controller.getModel().tMasterOutletDao.delete(item);
+                   aksiBtnTMasterOutletReload();
+               }   
+            }
+
+        }
+        public void aksiBtnMapOutletSearch(){
+           String scyId=controller.getView().getTextMapOutletSearchScyOutletCode().getText().trim();
+           String sapId=controller.getView().getTextMapOutletSearchMSLOutletCode().getText().trim();
+           String sapDesc =controller.getView().getTextMapOutletSearchMSLOutletName().getText().trim();
+
+           Boolean semua =controller.getView().getCheckMapOutletSearchSemua().isSelected();
+           Boolean baruSaja =controller.getView().getCheckMapOutletSearchBaruSaja().isSelected();
+           Boolean dikirimSaja =controller.getView().getCheckMapOutletSearchDikirimSaja().isSelected();
+           Boolean aktifSaja =controller.getView().getCheckMapOutletSearchAktifSaja().isSelected();
+
+           List<TMasterOutlet> lst = new ArrayList<>();
+           lst =controller.getModel().tMasterOutletDao.findById(scyId, sapId, sapDesc, semua, baruSaja, dikirimSaja, aktifSaja);
+          controller.getModel().tmTMasterOutlet = new GenericTableModel<>(lst,TMasterOutlet.class);
+          controller.getView().getTableMapOutlet().setModel(controller.getModel().tmTMasterOutlet);
+
+        }
+        public void aksiBtnMapOutletReload(){
+            initiatesComboBoxMasterOutlet();
+            aksiBtnTMasterOutletReload();                  
+            controller.getView().resetSearchMapOutlet();
+        }
+        public void aksiListTabelMapOutlet(){
+            int rowIndex =controller.getView().getTableMapOutlet().getSelectedRow();
+            if (rowIndex > -1) {
+                TMasterOutlet item = new TMasterOutlet();
+                item =controller.getModel().tmTMasterOutlet.get(rowIndex);
+                if (item!=null){
+                   controller.getView().getTextMapOutletDistiId().setText(item.getDistiId());
+
+                    //getTextMapOutletScyOutletCode().setText(item.gettOutletPK().getScyOutCode());
+                    //getTextMapOutletMSLOutletCode().setText(item.gettOutletPK().getMslsoutCode());
+                   controller.getView().getTextMapOutletScyOutletCode().setText(item.getScyOutCode());
+                   controller.getView().getTextMapOutletMSLOutletCode().setText(item.getMslsoutCode());
+
+
+                   controller.getView().getTextMapOutletMSLOutletName().setText(item.getMslsoutDesc());
+
+                    TabelOutletType itemTabelOutletType = new TabelOutletType();
+                    itemTabelOutletType.setKodeType(item.getTypeId());
+                    itemTabelOutletType.setNamaType(item.getTypeNm());
+                   controller.getView().getComboMapOutletOutletType().setSelectedItem(itemTabelOutletType);
+
+                   TabelOutletGroup itemTabelOutletGroup = new TabelOutletGroup();
+                   itemTabelOutletGroup.setGroupId(item.getGroupId());
+                   itemTabelOutletGroup.setGroupNm(item.getGroupNm());
+                  controller.getView().getComboMapOutletGroupId().setSelectedItem(itemTabelOutletGroup);
+
+                   TabelOutletSubGroup itemTabelOutletSubGroup = new TabelOutletSubGroup();
+                   itemTabelOutletSubGroup.setSubGroupId(item.getSubGrpId());
+                   itemTabelOutletSubGroup.setSubGroupNm(item.getSubGrpNm());
+                  controller.getView().getComboMapOutletSubGroupId().setSelectedItem(itemTabelOutletSubGroup);
+
+                   TabelOutletClass itemTabelOutletClass = new TabelOutletClass();
+                   itemTabelOutletClass.setClassId(item.getClassId());
+                   itemTabelOutletClass.setClassNm(item.getClassNm());
+                  controller.getView().getComboMapOutletClassId().setSelectedItem(itemTabelOutletClass);
+
+                   TabelOutletSize itemTabelOutletSize = new TabelOutletSize();
+                   itemTabelOutletSize.setKodeSize(item.getBsizeId());
+                   itemTabelOutletSize.setNamaSize(item.getBsizeNm());
+                  controller.getView().getComboMapOutletBSizeId().setSelectedItem(itemTabelOutletSize);
+
+                   TabelOutletLocation itemTabelOutletLocation = new TabelOutletLocation();
+                   itemTabelOutletLocation.setKodeLokasi(item.getLokId());
+                   itemTabelOutletLocation.setNamaLokasi(item.getLokNm());
+                  controller.getView().getComboMapOutletLocationId().setSelectedItem(itemTabelOutletLocation);
+
+                   TMasterSalesman itemTSalesman = new TMasterSalesman();
+                   itemTSalesman.setSalesIdSap(item.getSalesCode());
+                   itemTSalesman.setSalesNmSap(item.getSalesNm());
+                  controller.getView().getComboMapOutletSalesmanCode().setSelectedItem(itemTSalesman);
+
+                   TMasterSalesman itemTSalesmanNas = new TMasterSalesman();
+                   itemTSalesmanNas.setNasSalesmanCode(item.getNasSalesCode());
+                   itemTSalesmanNas.setNasSalesmanNm(item.getNasSalesNm());
+                  controller.getView().getComboMapOutletNasionalSalesmanCode().setSelectedItem(itemTSalesmanNas);
+
+                   TabelKeyAccount itemTabelKeyAccount = new TabelKeyAccount();
+                   itemTabelKeyAccount.setKodeKa(item.getKaccId());
+                   itemTabelKeyAccount.setNamaKa(item.getKaccNm());
+                  controller.getView().getComboMapOutletKeyAccountId().setSelectedItem(itemTabelKeyAccount);        
+
+                   //Penanda
+                  controller.getView().getCheckMapOutletBaru().setSelected(item.getBaru()!=null?item.getBaru():false);
+                  controller.getView().getCheckMapOutletDikirim().setSelected(item.getAllowTransfer()!=null?item.getAllowTransfer():false);
+                  controller.getView().getCheckMapOutletAktif().setSelected(item.getAktif()!=null?item.getAktif():false);
+
+                }
+            }
+        }
+
+        public void aksiBtnMapProductSearch(){
+           String scyId=controller.getView().getTextMapProductSearchIdBrgScylla().getText().trim();
+           String sapId=controller.getView().getTextMapProductSearchIdSap().getText().trim();
+           String sapDesc =controller.getView().getTextMapProductSearchNamaBarangSAP().getText().trim();
+
+           Boolean semua =controller.getView().getCheckMapProductSearchSemua().isSelected();
+           Boolean baruSaja =controller.getView().getCheckMapProductSearchBaruSaja().isSelected();
+           Boolean dikirimSaja =controller.getView().getCheckMapProductSearchDikirimSaja().isSelected();
+           Boolean bonusSaja =controller.getView().getCheckMapProductSearchBonusSaja().isSelected();
+           Boolean aktifSaja =controller.getView().getCheckMapProductSearchAktifSaja().isSelected();
+
+           List<TMasterProduct> lst = new ArrayList<>();
+           lst =controller.getModel().tMasterProductDao.findById(scyId, sapId, sapDesc, semua, baruSaja, dikirimSaja, bonusSaja, aktifSaja);
+           controller.getModel().tmTMasterProduct = new GenericTableModel<>(lst,TMasterProduct.class);
+           controller.getView().getTableMapProduct().setModel(controller.getModel().tmTMasterProduct);
+
+        }
+        public void aksiBtnMapProductSave(){
+            TMasterProduct item = new TMasterProduct();
+            item.setAreaId(controller.getView().getTextMapProductAreaId().getText().trim());
+            item.setDistId(controller.getView().getTextMapProductDistributorId().getText().trim());
+            //Primary
+            item.setPcodeScylla(controller.getView().getTextMapProductIdBrgScylla().getText().trim());
+
+            item.setPcodeSap(controller.getView().getTextMapProductIdSap().getText().trim());
+            item.setPnameSap(controller.getView().getTextMapProductNamaBarangSAP().getText().trim());
+
+            TabelProdDivisi itemTabelProdDivisi = new TabelProdDivisi();
+            itemTabelProdDivisi = (TabelProdDivisi)controller.getView().getComboMapProductDivisi().getModel().getSelectedItem();
+            if (itemTabelProdDivisi!=null) {
+                item.setKodeDivisi(itemTabelProdDivisi.getDivisiId());
+                item.setNamaDivisi(itemTabelProdDivisi.getDivisiNm());
+            }
+            TabelProdBrand itemTabelProdBrand = new TabelProdBrand();
+            itemTabelProdBrand = (TabelProdBrand)controller.getView().getComboMapProductBrand().getModel().getSelectedItem();
+            if (itemTabelProdBrand!=null){
+                item.setKodeBrand(itemTabelProdBrand.getBrandId());
+                item.setNamaBrand(itemTabelProdBrand.getBrandNm());
+            }
+            TabelProdSubBrand itemTabelProdSubBrand = new TabelProdSubBrand();
+            itemTabelProdSubBrand =  (TabelProdSubBrand)controller.getView().getComboMapProductSubBrand().getModel().getSelectedItem();
+            if(itemTabelProdSubBrand!=null){
+                item.setKodeSubBrand(itemTabelProdSubBrand.getSubBrandId());
+                item.setNamaSubBrand(itemTabelProdSubBrand.getSubBrandNm());
+            }
+            TabelProdCategory itemTabelProdCategory = new TabelProdCategory();
+            itemTabelProdCategory = (TabelProdCategory)controller.getView().getComboMapProductCategory().getModel().getSelectedItem();
+            if (itemTabelProdCategory!=null){
+                item.setKodeCategory(itemTabelProdCategory.getCategoryId());
+                item.setNamaCategory(itemTabelProdCategory.getCategoryNm());
+            }
+            TabelProdSubCategory itemTabelProdSubCategory = new TabelProdSubCategory();
+            itemTabelProdSubCategory = (TabelProdSubCategory)controller.getView().getComboMapProductSubCategory().getModel().getSelectedItem();
+            if (itemTabelProdSubCategory!=null){
+                item.setKodeSubCategory(itemTabelProdSubCategory.getSubCategoryId());
+                item.setNamaSubCategory(itemTabelProdSubCategory.getSubCategoryNm());
+            }
+            TabelProdVariance itemTabelProdVariance = new TabelProdVariance();
+            itemTabelProdVariance = (TabelProdVariance)controller.getView().getComboMapProductVariance().getModel().getSelectedItem();
+            if (itemTabelProdVariance!=null){
+                item.setKodeVariance(itemTabelProdVariance.getVarianceId());
+                item.setNamaVariance(itemTabelProdVariance.getVarianceNm());
+            }
+            TabelProdSize itemTabelProdSize = new TabelProdSize();
+            itemTabelProdSize = (TabelProdSize)controller.getView().getComboMapProductSize().getModel().getSelectedItem();
+            if (itemTabelProdSize!=null){
+                item.setKodeSize(itemTabelProdSize.getSizeId());
+                item.setNamaSize(itemTabelProdSize.getSizeNm());
+            }
+
+            item.setBaru(controller.getView().getCheckMapProductBaru().isSelected());
+            item.setAllowTransfer(controller.getView().getCheckMapProductDikirim().isSelected());
+            item.setBonus(controller.getView().getCheckMapProductBonus().isSelected());
+            item.setAktif(controller.getView().getCheckMapProductAktif().isSelected());
+
+            //Dao Simpan
+            if (! item.getPcodeScylla().trim().equals("")) {
+               controller.getModel().tMasterProductDao.saveOrUpdate(item);
+               aksiBtnTMasterProductReload();
+            } else {
+                JOptionPane.showMessageDialog(null, "Kode Scylla Harus Diisi!!..", "Validasi..", JOptionPane.ERROR_MESSAGE);
+
+            }
+
+        }          
+        public void aksiBtnMapProductDelete(){
+            if (JOptionPane.showConfirmDialog(null, "Yakin Akan Hapus?", "Konfirmasi..", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION) {
+               int rowIndex =controller.getView().getTableMapProduct().getSelectedRow();
+               if (rowIndex >-1) {
+                   TMasterProduct item = new TMasterProduct();
+                   item =controller.getModel().tmTMasterProduct.get(rowIndex);
+                  controller.getModel().tMasterProductDao.delete(item);
+                   aksiBtnTMasterProductReload();
+               }   
+            }
+
+            aksiBtnMapProductReload();
+        }
+        public void aksiBtnMapProductReload(){
+            initiatesComboBoxMasterProduct();
+            aksiBtnTMasterProductReload();
+
+            controller.getView().resetSearchMapProduct();
+        }         
+        public void aksiListTabelMapProduct(){
+            int rowIndex = controller.getView().getTableMapProduct().getSelectedRow();
+            if (rowIndex > -1) {
+                TMasterProduct item = new TMasterProduct();
+                item = controller.getModel().tmTMasterProduct.get(rowIndex);                 
+
+                if (item!=null){
+                   controller.getView().getTextMapProductAreaId().setText(item.getAreaId());
+                   controller.getView().getTextMapProductDistributorId().setText(item.getDistId());
+                   controller.getView().getTextMapProductIdBrgScylla().setText(item.getPcodeScylla());
+                   controller.getView().getTextMapProductIdSap().setText(item.getPcodeSap());
+                   controller.getView().getTextMapProductNamaBarangSAP().setText(item.getPnameSap());
+
+                   TabelProdDivisi itemTabelProdDivisi = new TabelProdDivisi();
+                   itemTabelProdDivisi.setDivisiId(item.getKodeDivisi());
+                   itemTabelProdDivisi.setDivisiNm(item.getNamaDivisi());
+                  controller.getView().getComboMapProductDivisi().setSelectedItem(itemTabelProdDivisi);
+
+                   TabelProdBrand itemTabelProdBrand = new TabelProdBrand();
+                   itemTabelProdBrand.setBrandId(item.getKodeBrand());
+                   itemTabelProdBrand.setBrandNm(item.getNamaBrand());
+                  controller.getView().getComboMapProductBrand().setSelectedItem(itemTabelProdBrand);
+
+                   TabelProdSubBrand itemTabelProdSubBrand = new TabelProdSubBrand();
+                   itemTabelProdSubBrand.setSubBrandId(item.getKodeSubBrand());
+                   itemTabelProdSubBrand.setSubBrandNm(item.getNamaSubBrand());
+                  controller.getView().getComboMapProductSubBrand().setSelectedItem(itemTabelProdSubBrand);
+
+                   TabelProdCategory itemTabelProdCategory = new TabelProdCategory();
+                   itemTabelProdCategory.setCategoryId(item.getKodeCategory());
+                   itemTabelProdCategory.setCategoryNm(item.getNamaCategory());
+                  controller.getView().getComboMapProductCategory().setSelectedItem(itemTabelProdCategory);
+
+                   TabelProdSubCategory itemTabelProdSubCategory = new TabelProdSubCategory();
+                   itemTabelProdSubCategory.setSubCategoryId(item.getKodeSubCategory());
+                   itemTabelProdSubCategory.setSubCategoryNm(item.getNamaCategory());
+                  controller.getView().getComboMapProductSubCategory().setSelectedItem(itemTabelProdSubCategory);
+
+                   TabelProdVariance itemTabelProdVariance = new TabelProdVariance();
+                   itemTabelProdVariance.setVarianceId(item.getKodeVariance());
+                   itemTabelProdVariance.setVarianceNm(item.getNamaVariance());
+                  controller.getView().getComboMapProductVariance().setSelectedItem(itemTabelProdVariance);
+
+                   TabelProdSize itemTabelProdSize = new TabelProdSize();
+                   itemTabelProdSize.setSizeId(item.getKodeSize());
+                   itemTabelProdSize.setSizeNm(item.getNamaSize());
+                  controller.getView().getComboMapProductSize().setSelectedItem(itemTabelProdVariance);
+
+                   //Penanda
+                  controller.getView().getCheckMapProductBaru().setSelected(item.getBaru()!=null?item.getBaru():false);
+                  controller.getView().getCheckMapProductDikirim().setSelected(item.getAllowTransfer()!=null?item.getAllowTransfer():false);
+                  controller.getView().getCheckMapProductBonus().setSelected(item.getBonus()!=null?item.getBonus():false);
+                  controller.getView().getCheckMapProductAktif().setSelected(item.getAktif()!=null?item.getAktif():false);
+                }
+            }     
+        }
          
         //KEK : BACKUP AND RESTORE         
         public void aksiBtnBackupAndRestoreBackupPath(){
@@ -1617,131 +1764,129 @@ public class BridgingControllerActionMappingMaster {
            
             }
         }        
-
         
-         public void initiatesComboBoxMasterOutlet(){
-             //1. Key Account
-             DefaultComboBoxModel<TabelKeyAccount> cmTabelKeyAccount = new DefaultComboBoxModel<>();
-             List<TabelKeyAccount> lst = controller.getModel().tabelKeyAccountDao.findAll();
-             for (TabelKeyAccount itm: lst) {
-                 cmTabelKeyAccount.addElement(itm);
-             }             
-             controller.getView().getComboMapOutletKeyAccountId().setModel(cmTabelKeyAccount);             
-             
-             DefaultComboBoxModel<TabelOutletType> cmbTabelOutletType = new DefaultComboBoxModel<>();
-             List<TabelOutletType> lstTabelOutletType = controller.getModel().tabelOutletTypeDao.getAll();
-             for (TabelOutletType itm: lstTabelOutletType) {
-                 cmbTabelOutletType.addElement(itm);
-             }             
-             controller.getView().getComboMapOutletOutletType().setModel(cmbTabelOutletType);
-             
-             DefaultComboBoxModel<TabelOutletGroup> cmbTabelOutletGroup = new DefaultComboBoxModel<>();
-             List<TabelOutletGroup> lstTabelOutletGroup = controller.getModel().tabelOutletGroupDao.getAll();
-             for (TabelOutletGroup itm: lstTabelOutletGroup) {
-                 cmbTabelOutletGroup.addElement(itm);
-             }             
-             controller.getView().getComboMapOutletGroupId().setModel(cmbTabelOutletGroup);
-             
-             DefaultComboBoxModel<TabelOutletSubGroup> cmbTabelOutletSubGroup = new DefaultComboBoxModel<>();
-             List<TabelOutletSubGroup> lstTabelOutletSubGroup = controller.getModel().tabelOutletSubGroupDao.getAll();
-             for (TabelOutletSubGroup itm: lstTabelOutletSubGroup) {
-                 cmbTabelOutletSubGroup.addElement(itm);
-             }             
-             controller.getView().getComboMapOutletSubGroupId().setModel(cmbTabelOutletSubGroup);
-             
-             DefaultComboBoxModel<TabelOutletClass> cmbTabelOutletClass = new DefaultComboBoxModel<>();
-             List<TabelOutletClass> lstTabelOutletClass = controller.getModel().tabelOutletClassDao.getAll();
-             for (TabelOutletClass itm: lstTabelOutletClass) {
-                 cmbTabelOutletClass.addElement(itm);
-             }             
-             controller.getView().getComboMapOutletClassId().setModel(cmbTabelOutletClass);
-             
-             DefaultComboBoxModel<TabelOutletSize> cmbTabelOutletSize = new DefaultComboBoxModel<>();
-             List<TabelOutletSize> lstTabelOutletSize = controller.getModel().tabelOutletSizeDao.getAll();
-             for (TabelOutletSize itm: lstTabelOutletSize) {
-                 cmbTabelOutletSize.addElement(itm);
-             }             
-             controller.getView().getComboMapOutletBSizeId().setModel(cmbTabelOutletSize);
+        public void initiatesComboBoxMasterOutlet(){
+            //1. Key Account
+            DefaultComboBoxModel<TabelKeyAccount> cmTabelKeyAccount = new DefaultComboBoxModel<>();
+            List<TabelKeyAccount> lst = controller.getModel().tabelKeyAccountDao.findAll();
+            for (TabelKeyAccount itm: lst) {
+                cmTabelKeyAccount.addElement(itm);
+            }             
+            controller.getView().getComboMapOutletKeyAccountId().setModel(cmTabelKeyAccount);             
 
-             DefaultComboBoxModel<TabelOutletLocation> cmbTabelOutletLocation = new DefaultComboBoxModel<>();
-             List<TabelOutletLocation> lstTabelOutletLocation = controller.getModel().tabelOutletLocationDao.getAll();
-             for (TabelOutletLocation itm: lstTabelOutletLocation) {
-                 cmbTabelOutletLocation.addElement(itm);
-             }             
-             controller.getView().getComboMapOutletLocationId().setModel(cmbTabelOutletLocation);
-             
-             //Area Statis Aja
-             DefaultComboBoxModel<TabelOutletArea> cmbTabelOutletArea = new DefaultComboBoxModel<>();
-             List<TabelOutletArea> lstTabelOutletArea = controller.getModel().tabelOutletAreaDao.getAll();
-             for (TabelOutletArea itm: lstTabelOutletArea) {
-                 cmbTabelOutletArea.addElement(itm);
-             }             
-             controller.getView().getComboMapOutletAreaId().setModel(cmbTabelOutletArea);
-             
-             //Tabel Salesman
-             DefaultComboBoxModel<TMasterSalesman> cmbTSalesman = new DefaultComboBoxModel<>();
-             List<TMasterSalesman> lstTSalesman = controller.getModel().tMasterSalesmanDao.getAll();
-             for (TMasterSalesman itm: lstTSalesman) {
-                 cmbTSalesman.addElement(itm);
-             }             
-             controller.getView().getComboMapOutletSalesmanCode().setModel(cmbTSalesman);
-             
-             //Tabel Salesman Nasional Code
-             controller.getView().getComboMapOutletNasionalSalesmanCode().setModel(cmbTSalesman);
-                          
-         }        
-         public void initiatesComboBoxMasterSalesman(){
-         }
-         public void initiatesComboBoxMasterProduct(){
-             DefaultComboBoxModel<TabelProdDivisi> cmbTabelProdDivisi = new DefaultComboBoxModel<>();
-             List<TabelProdDivisi> lstTabelProdDivisi = controller.getModel().tabelProdDivisiDao.getAll();
-             for (TabelProdDivisi itm: lstTabelProdDivisi) {
-                 cmbTabelProdDivisi.addElement(itm);
-             }             
-             controller.getView().getComboMapProductDivisi().setModel(cmbTabelProdDivisi);
-             
-             DefaultComboBoxModel<TabelProdBrand> cmbTabelProdBrand = new DefaultComboBoxModel<>();
-             List<TabelProdBrand> lstTabelProdBrand = controller.getModel().tabelProdBrandDao.getAll();
-             for (TabelProdBrand itm: lstTabelProdBrand) {
-                 cmbTabelProdBrand.addElement(itm);
-             }             
-             controller.getView().getComboMapProductBrand().setModel(cmbTabelProdBrand);
-             
-             DefaultComboBoxModel<TabelProdSubBrand> cmbTabelProdSubBrand = new DefaultComboBoxModel<>();
-             List<TabelProdSubBrand> lstTabelProdSubBrand = controller.getModel().tabelProdSubBrandDao.getAll();
-             for (TabelProdSubBrand itm: lstTabelProdSubBrand) {
-                 cmbTabelProdSubBrand.addElement(itm);
-             }             
-             controller.getView().getComboMapProductSubBrand().setModel(cmbTabelProdSubBrand);
-             
-             DefaultComboBoxModel<TabelProdCategory> cmbTabelProdCategory = new DefaultComboBoxModel<>();
-             List<TabelProdCategory> lstTabelProdCategory  = controller.getModel().tabelProdCategoryDao.getAll();
-             for (TabelProdCategory itm: lstTabelProdCategory) {
-                 cmbTabelProdCategory.addElement(itm);
-             }
-             controller.getView().getComboMapProductCategory().setModel(cmbTabelProdCategory);
-                     
-             DefaultComboBoxModel<TabelProdSubCategory> cmbTabelProdSubCategory = new DefaultComboBoxModel<>();
-             List<TabelProdSubCategory> lstTabelProdSubCategory = controller.getModel().tabelProdSubCategoryDao.getAll();
-             for (TabelProdSubCategory itm: lstTabelProdSubCategory) {
-                 cmbTabelProdSubCategory.addElement(itm);
-             }             
-             controller.getView().getComboMapProductSubCategory().setModel(cmbTabelProdSubCategory);
+            DefaultComboBoxModel<TabelOutletType> cmbTabelOutletType = new DefaultComboBoxModel<>();
+            List<TabelOutletType> lstTabelOutletType = controller.getModel().tabelOutletTypeDao.getAll();
+            for (TabelOutletType itm: lstTabelOutletType) {
+                cmbTabelOutletType.addElement(itm);
+            }             
+            controller.getView().getComboMapOutletOutletType().setModel(cmbTabelOutletType);
 
-             DefaultComboBoxModel<TabelProdVariance> cmbTabelProdVariance = new DefaultComboBoxModel<>();
-             List<TabelProdVariance> lstTabelProdVariance = controller.getModel().tabelProdVarianceDao.getAll();
-             for (TabelProdVariance itm: lstTabelProdVariance) {
-                 cmbTabelProdVariance.addElement(itm);
-             }             
-             controller.getView().getComboMapProductVariance().setModel(cmbTabelProdVariance);
-             
-             DefaultComboBoxModel<TabelProdSize> cmbTabelProdSize = new DefaultComboBoxModel<>();
-             List<TabelProdSize> lstTabelProdSize = controller.getModel().tabelProdSizeDao.getAll();
-             for (TabelProdSize itm: lstTabelProdSize) {
-                 cmbTabelProdSize.addElement(itm);
-             }             
-             controller.getView().getComboMapProductSize().setModel(cmbTabelProdSize);             
-         }
+            DefaultComboBoxModel<TabelOutletGroup> cmbTabelOutletGroup = new DefaultComboBoxModel<>();
+            List<TabelOutletGroup> lstTabelOutletGroup = controller.getModel().tabelOutletGroupDao.getAll();
+            for (TabelOutletGroup itm: lstTabelOutletGroup) {
+                cmbTabelOutletGroup.addElement(itm);
+            }             
+            controller.getView().getComboMapOutletGroupId().setModel(cmbTabelOutletGroup);
 
+            DefaultComboBoxModel<TabelOutletSubGroup> cmbTabelOutletSubGroup = new DefaultComboBoxModel<>();
+            List<TabelOutletSubGroup> lstTabelOutletSubGroup = controller.getModel().tabelOutletSubGroupDao.getAll();
+            for (TabelOutletSubGroup itm: lstTabelOutletSubGroup) {
+                cmbTabelOutletSubGroup.addElement(itm);
+            }             
+            controller.getView().getComboMapOutletSubGroupId().setModel(cmbTabelOutletSubGroup);
+
+            DefaultComboBoxModel<TabelOutletClass> cmbTabelOutletClass = new DefaultComboBoxModel<>();
+            List<TabelOutletClass> lstTabelOutletClass = controller.getModel().tabelOutletClassDao.getAll();
+            for (TabelOutletClass itm: lstTabelOutletClass) {
+                cmbTabelOutletClass.addElement(itm);
+            }             
+            controller.getView().getComboMapOutletClassId().setModel(cmbTabelOutletClass);
+
+            DefaultComboBoxModel<TabelOutletSize> cmbTabelOutletSize = new DefaultComboBoxModel<>();
+            List<TabelOutletSize> lstTabelOutletSize = controller.getModel().tabelOutletSizeDao.getAll();
+            for (TabelOutletSize itm: lstTabelOutletSize) {
+                cmbTabelOutletSize.addElement(itm);
+            }             
+            controller.getView().getComboMapOutletBSizeId().setModel(cmbTabelOutletSize);
+
+            DefaultComboBoxModel<TabelOutletLocation> cmbTabelOutletLocation = new DefaultComboBoxModel<>();
+            List<TabelOutletLocation> lstTabelOutletLocation = controller.getModel().tabelOutletLocationDao.getAll();
+            for (TabelOutletLocation itm: lstTabelOutletLocation) {
+                cmbTabelOutletLocation.addElement(itm);
+            }             
+            controller.getView().getComboMapOutletLocationId().setModel(cmbTabelOutletLocation);
+
+            //Area Statis Aja
+            DefaultComboBoxModel<TabelOutletArea> cmbTabelOutletArea = new DefaultComboBoxModel<>();
+            List<TabelOutletArea> lstTabelOutletArea = controller.getModel().tabelOutletAreaDao.getAll();
+            for (TabelOutletArea itm: lstTabelOutletArea) {
+                cmbTabelOutletArea.addElement(itm);
+            }             
+            controller.getView().getComboMapOutletAreaId().setModel(cmbTabelOutletArea);
+
+            //Tabel Salesman
+            DefaultComboBoxModel<TMasterSalesman> cmbTSalesman = new DefaultComboBoxModel<>();
+            List<TMasterSalesman> lstTSalesman = controller.getModel().tMasterSalesmanDao.getAll();
+            for (TMasterSalesman itm: lstTSalesman) {
+                cmbTSalesman.addElement(itm);
+            }             
+            controller.getView().getComboMapOutletSalesmanCode().setModel(cmbTSalesman);
+
+            //Tabel Salesman Nasional Code
+            controller.getView().getComboMapOutletNasionalSalesmanCode().setModel(cmbTSalesman);
+
+        }        
+        public void initiatesComboBoxMasterSalesman(){
+        }
+        public void initiatesComboBoxMasterProduct(){
+            DefaultComboBoxModel<TabelProdDivisi> cmbTabelProdDivisi = new DefaultComboBoxModel<>();
+            List<TabelProdDivisi> lstTabelProdDivisi = controller.getModel().tabelProdDivisiDao.getAll();
+            for (TabelProdDivisi itm: lstTabelProdDivisi) {
+                cmbTabelProdDivisi.addElement(itm);
+            }             
+            controller.getView().getComboMapProductDivisi().setModel(cmbTabelProdDivisi);
+
+            DefaultComboBoxModel<TabelProdBrand> cmbTabelProdBrand = new DefaultComboBoxModel<>();
+            List<TabelProdBrand> lstTabelProdBrand = controller.getModel().tabelProdBrandDao.getAll();
+            for (TabelProdBrand itm: lstTabelProdBrand) {
+                cmbTabelProdBrand.addElement(itm);
+            }             
+            controller.getView().getComboMapProductBrand().setModel(cmbTabelProdBrand);
+
+            DefaultComboBoxModel<TabelProdSubBrand> cmbTabelProdSubBrand = new DefaultComboBoxModel<>();
+            List<TabelProdSubBrand> lstTabelProdSubBrand = controller.getModel().tabelProdSubBrandDao.getAll();
+            for (TabelProdSubBrand itm: lstTabelProdSubBrand) {
+                cmbTabelProdSubBrand.addElement(itm);
+            }             
+            controller.getView().getComboMapProductSubBrand().setModel(cmbTabelProdSubBrand);
+
+            DefaultComboBoxModel<TabelProdCategory> cmbTabelProdCategory = new DefaultComboBoxModel<>();
+            List<TabelProdCategory> lstTabelProdCategory  = controller.getModel().tabelProdCategoryDao.getAll();
+            for (TabelProdCategory itm: lstTabelProdCategory) {
+                cmbTabelProdCategory.addElement(itm);
+            }
+            controller.getView().getComboMapProductCategory().setModel(cmbTabelProdCategory);
+
+            DefaultComboBoxModel<TabelProdSubCategory> cmbTabelProdSubCategory = new DefaultComboBoxModel<>();
+            List<TabelProdSubCategory> lstTabelProdSubCategory = controller.getModel().tabelProdSubCategoryDao.getAll();
+            for (TabelProdSubCategory itm: lstTabelProdSubCategory) {
+                cmbTabelProdSubCategory.addElement(itm);
+            }             
+            controller.getView().getComboMapProductSubCategory().setModel(cmbTabelProdSubCategory);
+
+            DefaultComboBoxModel<TabelProdVariance> cmbTabelProdVariance = new DefaultComboBoxModel<>();
+            List<TabelProdVariance> lstTabelProdVariance = controller.getModel().tabelProdVarianceDao.getAll();
+            for (TabelProdVariance itm: lstTabelProdVariance) {
+                cmbTabelProdVariance.addElement(itm);
+            }             
+            controller.getView().getComboMapProductVariance().setModel(cmbTabelProdVariance);
+
+            DefaultComboBoxModel<TabelProdSize> cmbTabelProdSize = new DefaultComboBoxModel<>();
+            List<TabelProdSize> lstTabelProdSize = controller.getModel().tabelProdSizeDao.getAll();
+            for (TabelProdSize itm: lstTabelProdSize) {
+                cmbTabelProdSize.addElement(itm);
+            }             
+            controller.getView().getComboMapProductSize().setModel(cmbTabelProdSize);             
+        }
         
 }
