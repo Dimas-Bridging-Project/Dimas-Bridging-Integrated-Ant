@@ -40,7 +40,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
 
     void initManualConfigureNetbeansGoblok(){  
     }
-
+    
     public JPanelSubOutputPokari getjPanelSubOutputPokari1() {
         return jPanelSubOutputPokari1;
     }
@@ -52,6 +52,19 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     public JPanelSubOutputBaygon getjPanelSubOutputBaygon1() {
         return jPanelSubOutputBaygon1;
     }
+    
+    //############################
+    public JPanel getJPanelMappingMasterPokariCustomerDetail(){
+        return jPanelMappingMasterPokariCustomerDetail;
+    }
+    
+    public JPanel getJPanelMappingMasterPokariEmployeeDetail(){
+        return jPanelMappingMasterPokariEmployeeDetail;
+    }
+    public JPanel getJPanelMappingMasterPokariProdukDetail(){
+        return jPanelMappingMasterPokariProdukDetail;
+    }
+    
    //LABEL RETRIEVE UNTUK INFO
     public JLabel getjLabelInputScyllaCvOutlet() {
         return jLabelInputScyllaCvOutlet;
@@ -456,7 +469,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnMappingMasterPokariProductSave = new javax.swing.JButton();
         btnMappingMasterPokariProductDelete = new javax.swing.JButton();
         jLabel87 = new javax.swing.JLabel();
-        jPanelSubSettingPokariMappingMasterProductDetail = new javax.swing.JPanel();
+        jPanelMappingMasterPokariProdukDetail = new javax.swing.JPanel();
         textMappingMasterPokariProductIdBrgScylla = new javax.swing.JTextField();
         textMappingMasterPokariProductIdPokari = new javax.swing.JTextField();
         jLabel91 = new javax.swing.JLabel();
@@ -483,7 +496,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         btnMappingMasterPokariCustomerSave = new javax.swing.JButton();
         btnMappingMasterPokariCustomerDelete = new javax.swing.JButton();
         jLabel100 = new javax.swing.JLabel();
-        jPanel102 = new javax.swing.JPanel();
+        jPanelMappingMasterPokariCustomerDetail = new javax.swing.JPanel();
         jLabel101 = new javax.swing.JLabel();
         textMappingMasterPokariCustomerIdPokari = new javax.swing.JTextField();
         textMappingMasterPokariCustomerName = new javax.swing.JTextField();
@@ -550,7 +563,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jScrollPane48 = new javax.swing.JScrollPane();
         tableMappingMasterPokariEmployee = new javax.swing.JTable();
         jLabel115 = new javax.swing.JLabel();
-        jPanel104 = new javax.swing.JPanel();
+        jPanelMappingMasterPokariEmployeeDetail = new javax.swing.JPanel();
         jLabel117 = new javax.swing.JLabel();
         jLabel118 = new javax.swing.JLabel();
         textMappingMasterPokariEmployeeIdPokari = new javax.swing.JTextField();
@@ -2165,38 +2178,23 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textPathInputJHeader)
+                            .addComponent(textPathInputJHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
                             .addComponent(textPathInputJPcode)
                             .addComponent(textPathInputJTprb)
-                            .addComponent(textPathInputJTpru, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE))
-                        .addGap(41, 41, 41)
+                            .addComponent(textPathInputJTpru, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPathInputJHeader)
-                            .addComponent(btnPathInputJPcode)
                             .addComponent(btnPathInputJTprb)
-                            .addComponent(btnPathInputJTpru))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btnPathInputJPcode)
+                            .addComponent(btnPathInputJTpru)
+                            .addComponent(btnPathInputJHeader))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRetrieveInputJPcode)
                             .addComponent(btnRetrieveInputJHeader)
                             .addComponent(btnRetrieveInputJTprb)
-                            .addComponent(btnRetrieveInputJTpru))
-                        .addGap(10, 10, 10))
-                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                        .addGap(658, 658, 658)
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPathInputOutlet)
-                            .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnPathInputMaster)
-                                .addComponent(btnPathInputSalesman, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(btnPathInputCvOutlet))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRetrieveInputCvOutlet)
-                            .addComponent(btnRetrieveInputOutlet)
-                            .addComponent(btnRetrieveInputSalesman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRetrieveInputMaster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnRetrieveInputJTpru)
+                            .addComponent(btnRetrieveInputJPcode))
+                        .addGap(14, 14, 14))
                     .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
                         .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
@@ -2215,11 +2213,27 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                                     .addComponent(textPathInputOutlet, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(textPathInputSalesman)
                                     .addComponent(textPathInputMaster, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPathInputStock)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRetrieveInputStock, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                                .addGap(0, 5, Short.MAX_VALUE)
+                                .addComponent(btnPathInputStock)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnRetrieveInputStock, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnPathInputOutlet)
+                                    .addComponent(btnPathInputSalesman)
+                                    .addComponent(btnPathInputCvOutlet))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnRetrieveInputSalesman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnRetrieveInputOutlet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnRetrieveInputCvOutlet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                                .addComponent(btnPathInputMaster)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnRetrieveInputMaster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
                         .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(textPathInputStock, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2249,8 +2263,8 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                                     .addComponent(btnRetrieveInputReturKePabrik)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnRetrieveInputStokAdjustment, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
+                                .addComponent(btnRetrieveInputStokAdjustment, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
         );
 
         jPanelSubGenerateRetrieveScyllaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnRetrieveInputBarangDatang, btnRetrieveInputJHeader, btnRetrieveInputJPcode, btnRetrieveInputJTprb, btnRetrieveInputJTpru, btnRetrieveInputReturKePabrik, btnRetrieveInputStock, btnRetrieveInputStokAdjustment});
@@ -2259,101 +2273,72 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
 
         jPanelSubGenerateRetrieveScyllaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel27, jLabel34, jLabel35});
 
-        jPanelSubGenerateRetrieveScyllaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnRetrieveInputCvOutlet, btnRetrieveInputMaster, btnRetrieveInputOutlet, btnRetrieveInputSalesman});
-
         jPanelSubGenerateRetrieveScyllaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {textPathInputCvOutlet, textPathInputMaster, textPathInputOutlet, textPathInputSalesman});
 
         jPanelSubGenerateRetrieveScyllaLayout.setVerticalGroup(
             jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnPathInputMaster)
-                                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                                        .addGap(2, 2, 2)
-                                        .addComponent(btnRetrieveInputMaster)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnRetrieveInputSalesman, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnPathInputSalesman))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPathInputOutlet)
-                            .addComponent(btnRetrieveInputOutlet))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRetrieveInputCvOutlet)
-                            .addComponent(btnPathInputCvOutlet)))
-                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(textPathInputMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textPathInputSalesman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textPathInputOutlet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textPathInputCvOutlet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(2, 2, 2)))
+                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRetrieveInputMaster)
+                    .addComponent(btnPathInputMaster)
+                    .addComponent(textPathInputMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                        .addComponent(textPathInputJHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textPathInputJPcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
-                        .addComponent(textPathInputJTprb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addComponent(textPathInputJTpru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnPathInputJHeader)
-                                    .addComponent(btnRetrieveInputJHeader))
-                                .addGap(2, 2, 2)
-                                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnPathInputJPcode)
-                                    .addComponent(btnRetrieveInputJPcode))
-                                .addGap(2, 2, 2)
-                                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnPathInputJTprb)
-                                    .addComponent(btnRetrieveInputJTprb))
-                                .addGap(2, 2, 2)
-                                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnPathInputJTpru)
-                                    .addComponent(btnRetrieveInputJTpru)))
-                            .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(btnRetrieveInputSalesman, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPathInputSalesman)
+                    .addComponent(textPathInputSalesman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnPathInputOutlet)
+                    .addComponent(btnRetrieveInputOutlet)
+                    .addComponent(textPathInputOutlet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRetrieveInputCvOutlet)
+                    .addComponent(btnPathInputCvOutlet)
+                    .addComponent(textPathInputCvOutlet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnRetrieveInputStock))
-                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
-                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooseTanggalStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textPathInputStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnPathInputStock)
-                            .addComponent(jLabel2))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textPathInputJHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPathInputJHeader)
+                    .addComponent(btnRetrieveInputJHeader))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                        .addComponent(textPathInputJPcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textPathInputJTprb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                        .addComponent(btnPathInputJPcode)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnPathInputJTprb)))
+                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnPathInputJTpru)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(textPathInputJTpru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRetrieveInputStock)
+                    .addComponent(btnPathInputStock)
+                    .addComponent(textPathInputStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDateChooseTanggalStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
                         .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2386,6 +2371,14 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                             .addComponent(textPathInputStokAdjustment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jDateChooseTanggalStokAdjustment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(21, 21, 21))))
+            .addGroup(jPanelSubGenerateRetrieveScyllaLayout.createSequentialGroup()
+                .addGap(202, 202, 202)
+                .addComponent(btnRetrieveInputJPcode)
+                .addGap(9, 9, 9)
+                .addComponent(btnRetrieveInputJTprb)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRetrieveInputJTpru)
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         jPanelSubGenerateRetrieveScyllaLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel1, jLabel2, jLabel27, jLabel3, jLabel34, jLabel35, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9});
@@ -2605,19 +2598,21 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addGroup(jPanelSubGenerateRetrieveAndExtractLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanelSubGenerateButtonRetrieve, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanelSubGeneratePicture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanelSubGenerateRetrieveAndExtractLayout.setVerticalGroup(
             jPanelSubGenerateRetrieveAndExtractLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSubGenerateRetrieveAndExtractLayout.createSequentialGroup()
                 .addGroup(jPanelSubGenerateRetrieveAndExtractLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelSubGenerateRetrieveScylla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelSubGenerateRetrieveAndExtractLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanelSubGeneratePicture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanelSubGenerateButtonRetrieve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addComponent(jPanelSubGenerateButtonRetrieve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE))
+                    .addGroup(jPanelSubGenerateRetrieveAndExtractLayout.createSequentialGroup()
+                        .addComponent(jPanelSubGenerateRetrieveScylla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jPanelSubGenerateExtract, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
@@ -3604,7 +3599,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jLabel87.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel87.setText("MAP PRODUCT");
 
-        jPanelSubSettingPokariMappingMasterProductDetail.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelMappingMasterPokariProdukDetail.setBorder(javax.swing.BorderFactory.createTitledBorder("0 of 0 records"));
 
         textMappingMasterPokariProductIdBrgScylla.setBackground(new java.awt.Color(0, 255, 51));
         textMappingMasterPokariProductIdBrgScylla.setText("jTextField16");
@@ -3629,30 +3624,30 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
 
         checkMappingMasterPokariProductAktif.setText("Aktif");
 
-        javax.swing.GroupLayout jPanelSubSettingPokariMappingMasterProductDetailLayout = new javax.swing.GroupLayout(jPanelSubSettingPokariMappingMasterProductDetail);
-        jPanelSubSettingPokariMappingMasterProductDetail.setLayout(jPanelSubSettingPokariMappingMasterProductDetailLayout);
-        jPanelSubSettingPokariMappingMasterProductDetailLayout.setHorizontalGroup(
-            jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelMappingMasterPokariProdukDetailLayout = new javax.swing.GroupLayout(jPanelMappingMasterPokariProdukDetail);
+        jPanelMappingMasterPokariProdukDetail.setLayout(jPanelMappingMasterPokariProdukDetailLayout);
+        jPanelMappingMasterPokariProdukDetailLayout.setHorizontalGroup(
+            jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createSequentialGroup()
-                        .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createSequentialGroup()
+                        .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel93)
                             .addComponent(textMappingMasterPokariProductIdBrgScylla, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel94)
                             .addComponent(textMappingMasterPokariProductIdPokari, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel95)
                             .addComponent(textMappingMasterPokariProductNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(comboMappingMasterPokariProductBrand, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel91, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)))
-                    .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createSequentialGroup()
+                    .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createSequentialGroup()
                         .addComponent(checkMappingMasterPokariProductBaru)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(checkMappingMasterPokariProductDikirim)
@@ -3660,31 +3655,31 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addComponent(checkMappingMasterPokariProductAktif)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanelSubSettingPokariMappingMasterProductDetailLayout.setVerticalGroup(
-            jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createSequentialGroup()
+        jPanelMappingMasterPokariProdukDetailLayout.setVerticalGroup(
+            jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createSequentialGroup()
-                        .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createSequentialGroup()
+                        .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel94)
                             .addComponent(jLabel95)
                             .addComponent(jLabel91))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(textMappingMasterPokariProductIdPokari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textMappingMasterPokariProductNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboMappingMasterPokariProductBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createSequentialGroup()
+                    .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createSequentialGroup()
                         .addComponent(jLabel93)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textMappingMasterPokariProductIdBrgScylla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelSubSettingPokariMappingMasterProductDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelMappingMasterPokariProdukDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(checkMappingMasterPokariProductBaru)
                     .addComponent(checkMappingMasterPokariProductDikirim)
                     .addComponent(checkMappingMasterPokariProductAktif))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         textMappingMasterPokariProductSearchIdBrgScylla.setBackground(new java.awt.Color(51, 255, 51));
@@ -3744,7 +3739,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addComponent(btnMappingMasterPokariProductDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(615, 615, 615)
                         .addComponent(btnMappingMasterPokariProductReload, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanelSubSettingPokariMappingMasterProductDetail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelMappingMasterPokariProdukDetail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSubSettingPokariMappingMasterProductLayout.createSequentialGroup()
                         .addComponent(textMappingMasterPokariProductSearchIdBrgScylla, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -3781,16 +3776,16 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(checkMappingMasterPokariProductSearchAktifSaja)
                     .addComponent(checkMappingMasterPokariProductSearchSemua))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelSubSettingPokariMappingMasterProductDetail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelMappingMasterPokariProdukDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelSubSettingPokariMappingMasterProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelSubSettingPokariMappingMasterProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnMappingMasterPokariProductDelete)
                         .addComponent(btnMappingMasterPokariProductReload))
                     .addComponent(btnMappingMasterPokariProductSave))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         jTabbedPaneSubSettingPokariMappingMaster.addTab("Map Product Pokari", jPanelSubSettingPokariMappingMasterProduct);
@@ -3821,7 +3816,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jLabel100.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel100.setText("AR CUSTOMER");
 
-        jPanel102.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelMappingMasterPokariCustomerDetail.setBorder(javax.swing.BorderFactory.createTitledBorder("0 of 0 records"));
 
         jLabel101.setText("POKARI ID");
 
@@ -3926,100 +3921,100 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
 
         jLabel128.setText("dtmRegisteredDate");
 
-        javax.swing.GroupLayout jPanel102Layout = new javax.swing.GroupLayout(jPanel102);
-        jPanel102.setLayout(jPanel102Layout);
-        jPanel102Layout.setHorizontalGroup(
-            jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel102Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelMappingMasterPokariCustomerDetailLayout = new javax.swing.GroupLayout(jPanelMappingMasterPokariCustomerDetail);
+        jPanelMappingMasterPokariCustomerDetail.setLayout(jPanelMappingMasterPokariCustomerDetailLayout);
+        jPanelMappingMasterPokariCustomerDetailLayout.setHorizontalGroup(
+            jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel102Layout.createSequentialGroup()
-                        .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
+                        .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(textMappingMasterPokariCustomerDistrict, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel114, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(textMappingMasterPokariCustomerIdScylla, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel102Layout.createSequentialGroup()
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel102Layout.createSequentialGroup()
+                        .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                                         .addGap(1, 1, 1)
                                         .addComponent(textMappingMasterPokariCustomerIdPokari, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel101))
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel102Layout.createSequentialGroup()
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel102))
-                                    .addGroup(jPanel102Layout.createSequentialGroup()
+                                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                                         .addGap(12, 12, 12)
                                         .addComponent(textMappingMasterPokariCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textMappingMasterPokariCustomerAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel88))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textMappingMasterPokariCustomerState, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel89))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textMappingMasterPokariCustomerCity, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel90))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel102Layout.createSequentialGroup()
+                            .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                                 .addComponent(textMappingMasterPokariCustomerZipCode, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textMappingMasterPokariCustomerPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel97))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textMappingMasterPokariCustomerFax, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel98))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel99)
                                     .addComponent(textMappingMasterPokariCustomerContact, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel106)
                                     .addComponent(textMappingMasterPokariCustomerEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(comboMappingMasterPokariCustomerStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel113))
                                 .addGap(123, 123, 123))))
-                    .addGroup(jPanel102Layout.createSequentialGroup()
-                        .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
+                        .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(comboMappingMasterPokariCustomerDistrChannelId, javax.swing.GroupLayout.Alignment.LEADING, 0, 127, Short.MAX_VALUE)
                                 .addComponent(comboMappingMasterPokariCustomerCustomerGroup, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel107, javax.swing.GroupLayout.Alignment.LEADING))
                             .addComponent(jLabel116))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel108)
                             .addComponent(comboMappingMasterPokariCustomerAllowToCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel119)
                             .addComponent(comboMappingMasterPokariCustomerWorkPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel103)
                             .addComponent(textMappingMasterPokariCustomerLimitCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel120)
                             .addComponent(comboMappingMasterPokariCustomerHirarchy, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel104)
                             .addComponent(comboMappingMasterPokariCustomerPaymentTermId, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel124)
                             .addComponent(comboMappingMasterPokariCustomerSalesTerritory, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel102Layout.createSequentialGroup()
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel105)
-                                    .addGroup(jPanel102Layout.createSequentialGroup()
+                                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                                         .addComponent(comboMappingMasterPokariCustomerEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(checkMappingMasterPokariCustomerBaru)
@@ -4028,29 +4023,29 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(checkMappingMasterPokariCustomerAktif)))
                                 .addContainerGap())
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel102Layout.createSequentialGroup()
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel127)
                                     .addComponent(textMappingMasterPokariCustomerNPWP, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel102Layout.createSequentialGroup()
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                                         .addComponent(textMappingMasterPokariCustomerRegisteredDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(32, 32, 32))
-                                    .addGroup(jPanel102Layout.createSequentialGroup()
+                                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                                         .addComponent(jLabel128)
                                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                    .addGroup(jPanel102Layout.createSequentialGroup()
+                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                         .addComponent(jLabel92)
                         .addGap(55, 55, 55)
                         .addComponent(jLabel96)
                         .addContainerGap())))
         );
-        jPanel102Layout.setVerticalGroup(
-            jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel102Layout.createSequentialGroup()
+        jPanelMappingMasterPokariCustomerDetailLayout.setVerticalGroup(
+            jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel101)
                     .addComponent(jLabel102)
                     .addComponent(jLabel114)
@@ -4058,7 +4053,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel89)
                     .addComponent(jLabel90))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textMappingMasterPokariCustomerIdPokari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textMappingMasterPokariCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textMappingMasterPokariCustomerIdScylla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4066,7 +4061,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(textMappingMasterPokariCustomerState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textMappingMasterPokariCustomerCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel92)
                     .addComponent(jLabel96)
                     .addComponent(jLabel97)
@@ -4075,7 +4070,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel106)
                     .addComponent(jLabel113))
                 .addGap(5, 5, 5)
-                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textMappingMasterPokariCustomerDistrict, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textMappingMasterPokariCustomerZipCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textMappingMasterPokariCustomerPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4084,7 +4079,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(textMappingMasterPokariCustomerEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboMappingMasterPokariCustomerStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel116)
                     .addComponent(jLabel119)
                     .addComponent(jLabel120)
@@ -4092,37 +4087,37 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel127)
                     .addComponent(jLabel128, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel102Layout.createSequentialGroup()
-                        .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
+                        .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(comboMappingMasterPokariCustomerDistrChannelId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboMappingMasterPokariCustomerAllowToCredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textMappingMasterPokariCustomerLimitCredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboMappingMasterPokariCustomerPaymentTermId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textMappingMasterPokariCustomerNPWP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel102Layout.createSequentialGroup()
-                                    .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
+                                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel107)
                                         .addComponent(jLabel108))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(comboMappingMasterPokariCustomerCustomerGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(comboMappingMasterPokariCustomerWorkPlace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel102Layout.createSequentialGroup()
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                                     .addComponent(jLabel103)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(comboMappingMasterPokariCustomerHirarchy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel102Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                                 .addComponent(jLabel104)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(comboMappingMasterPokariCustomerSalesTerritory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel102Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMappingMasterPokariCustomerDetailLayout.createSequentialGroup()
                                 .addComponent(jLabel105)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanelMappingMasterPokariCustomerDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(comboMappingMasterPokariCustomerEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(checkMappingMasterPokariCustomerBaru)
                                     .addComponent(checkMappingMasterPokariCustomerDikirim)
@@ -4183,12 +4178,15 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelSubSettingPokariMappingMasterCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelSubSettingPokariMappingMasterCustomerLayout.createSequentialGroup()
+                        .addComponent(jPanelMappingMasterPokariCustomerDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 964, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanelSubSettingPokariMappingMasterCustomerLayout.createSequentialGroup()
                         .addComponent(textMappingMasterPokariCustomerSearchIdScylla, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(textMappingMasterPokariCustomerSearchIdPokari, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textMappingMasterPokariCustomerSearchName, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                         .addComponent(checkMappingMasterPokariCustomerSearchSemua)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(checkMappingMasterPokariCustomerSearchBaruSaja)
@@ -4210,10 +4208,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSubSettingPokariMappingMasterCustomerLayout.createSequentialGroup()
                         .addComponent(jScrollPane47)
-                        .addContainerGap())
-                    .addGroup(jPanelSubSettingPokariMappingMasterCustomerLayout.createSequentialGroup()
-                        .addComponent(jPanel102, javax.swing.GroupLayout.PREFERRED_SIZE, 964, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())))
         );
         jPanelSubSettingPokariMappingMasterCustomerLayout.setVerticalGroup(
             jPanelSubSettingPokariMappingMasterCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4229,16 +4224,16 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(checkMappingMasterPokariCustomerSearchAktifSaja)
                     .addComponent(checkMappingMasterPokariCustomerSearchSemua))
                 .addGap(2, 2, 2)
-                .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel102, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelMappingMasterPokariCustomerDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelSubSettingPokariMappingMasterCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelSubSettingPokariMappingMasterCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnMappingMasterPokariCustomerDelete)
                         .addComponent(btnMappingMasterPokariCustomerReload))
                     .addComponent(btnMappingMasterPokariCustomerSave))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jTabbedPaneSubSettingPokariMappingMaster.addTab("Map Customer", jPanelSubSettingPokariMappingMasterCustomer);
@@ -4268,7 +4263,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jLabel115.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel115.setText("MAP SALESMAN/EMPLOYEE");
 
-        jPanel104.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelMappingMasterPokariEmployeeDetail.setBorder(javax.swing.BorderFactory.createTitledBorder("0 of 0 records"));
 
         jLabel117.setText("ID POKARI");
 
@@ -4311,61 +4306,61 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
 
         comboMappingMasterPokariEmployeeSalesTeam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        javax.swing.GroupLayout jPanel104Layout = new javax.swing.GroupLayout(jPanel104);
-        jPanel104.setLayout(jPanel104Layout);
-        jPanel104Layout.setHorizontalGroup(
-            jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel104Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelMappingMasterPokariEmployeeDetailLayout = new javax.swing.GroupLayout(jPanelMappingMasterPokariEmployeeDetail);
+        jPanelMappingMasterPokariEmployeeDetail.setLayout(jPanelMappingMasterPokariEmployeeDetailLayout);
+        jPanelMappingMasterPokariEmployeeDetailLayout.setHorizontalGroup(
+            jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel104Layout.createSequentialGroup()
-                        .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createSequentialGroup()
+                        .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel125, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(textMappingMasterPokariEmployeeIdScylla, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel117)
                             .addComponent(textMappingMasterPokariEmployeeIdPokari, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel118, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textMappingMasterPokariEmployeeName, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel121, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(textMappingMasterPokariEmployeeVehicleId, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel122)
                             .addComponent(textMappingMasterPokariEmployeeVehicleName, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel123)
                             .addComponent(textMappingMasterPokariEmployeePoliceNo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(113, 113, 113))
-                    .addGroup(jPanel104Layout.createSequentialGroup()
-                        .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createSequentialGroup()
+                        .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(comboMappingMasterPokariEmployeeWorkplace, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel109))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(comboMappingMasterPokariEmployeeSalesType, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel110))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(comboMappingMasterPokariEmployeeSalesGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel111))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(comboMappingMasterPokariEmployeeSalesTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel112))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
-        jPanel104Layout.setVerticalGroup(
-            jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel104Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanelMappingMasterPokariEmployeeDetailLayout.setVerticalGroup(
+            jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel117)
                     .addComponent(jLabel118)
                     .addComponent(jLabel121)
@@ -4373,7 +4368,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel123)
                     .addComponent(jLabel125))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textMappingMasterPokariEmployeeIdPokari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textMappingMasterPokariEmployeeName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textMappingMasterPokariEmployeeVehicleId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4381,24 +4376,23 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                     .addComponent(textMappingMasterPokariEmployeePoliceNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textMappingMasterPokariEmployeeIdScylla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel104Layout.createSequentialGroup()
+                .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createSequentialGroup()
                         .addComponent(jLabel109)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(comboMappingMasterPokariEmployeeWorkplace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel104Layout.createSequentialGroup()
+                    .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createSequentialGroup()
                         .addComponent(jLabel110)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(comboMappingMasterPokariEmployeeSalesType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel104Layout.createSequentialGroup()
+                    .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createSequentialGroup()
                         .addComponent(jLabel111)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(comboMappingMasterPokariEmployeeSalesGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel104Layout.createSequentialGroup()
+                    .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createSequentialGroup()
                         .addComponent(jLabel112)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboMappingMasterPokariEmployeeSalesTeam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(comboMappingMasterPokariEmployeeSalesTeam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         btnMappingMasterPokariEmployeeReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
@@ -4426,7 +4420,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                                 .addGap(20, 20, 20))
                             .addGroup(jPanelSubSettingPokariMappingMasterEmployeeLayout.createSequentialGroup()
                                 .addGroup(jPanelSubSettingPokariMappingMasterEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel104, javax.swing.GroupLayout.PREFERRED_SIZE, 965, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanelMappingMasterPokariEmployeeDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 965, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 965, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(41, 41, 41))
@@ -4438,8 +4432,8 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel104, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelMappingMasterPokariEmployeeDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanelSubSettingPokariMappingMasterEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelSubSettingPokariMappingMasterEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnMappingMasterPokariEmployeeDelete)
@@ -4461,10 +4455,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         );
         jPanelSubSettingPokariMappingMasterLayout.setVerticalGroup(
             jPanelSubSettingPokariMappingMasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSubSettingPokariMappingMasterLayout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jTabbedPaneSubSettingPokariMappingMaster, javax.swing.GroupLayout.PREFERRED_SIZE, 537, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jTabbedPaneSubSettingPokariMappingMaster, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 594, Short.MAX_VALUE)
         );
 
         jTabbedPaneUtamaSettingPokari.addTab("Mapping Master", new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/Database.png")), jPanelSubSettingPokariMappingMaster); // NOI18N
@@ -5063,7 +5054,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             .addGroup(jPanelSubSettingPokariTabelTabelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPaneSubSettingPokariTabelTabel, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaSettingPokari.addTab("Tabel-Tabel", new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/Database.png")), jPanelSubSettingPokariTabelTabel); // NOI18N
@@ -5085,8 +5076,8 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             .addGroup(jPanelUtamaSettingPokariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelUtamaSettingPokariLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
-                    .addComponent(jTabbedPaneUtamaSettingPokari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(90, Short.MAX_VALUE)))
+                    .addComponent(jTabbedPaneUtamaSettingPokari, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(52, Short.MAX_VALUE)))
         );
 
         jTabbedPaneUtama.addTab("Setting Pokari", jPanelUtamaSettingPokari);
@@ -9104,8 +9095,6 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelInputScyllaSalesman;
     private javax.swing.JLabel jLabelInputScyllaStock;
     private javax.swing.JLabel jLabelInputScyllaStokAdjustment;
-    private javax.swing.JPanel jPanel102;
-    private javax.swing.JPanel jPanel104;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
@@ -9162,6 +9151,9 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private org.dimas.bridging.app.view.JPanelGenerateExtractKek jPanelGenerateExtractKek1;
     private org.dimas.bridging.app.view.JPanelGenerateExtractPokari jPanelGenerateExtractPokari1;
     private javax.swing.JPanel jPanelMappingMasterPanelUtama;
+    private javax.swing.JPanel jPanelMappingMasterPokariCustomerDetail;
+    private javax.swing.JPanel jPanelMappingMasterPokariEmployeeDetail;
+    private javax.swing.JPanel jPanelMappingMasterPokariProdukDetail;
     private javax.swing.JPanel jPanelSubBackupAndRestoreBackupAndRestoreKek;
     private javax.swing.JPanel jPanelSubBackupAndRestoreBackupAndRestorePokari;
     private javax.swing.JPanel jPanelSubGenerateButtonRetrieve;
@@ -9191,7 +9183,6 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelSubSettingPokariMappingMasterCustomer;
     private javax.swing.JPanel jPanelSubSettingPokariMappingMasterEmployee;
     private javax.swing.JPanel jPanelSubSettingPokariMappingMasterProduct;
-    private javax.swing.JPanel jPanelSubSettingPokariMappingMasterProductDetail;
     private javax.swing.JPanel jPanelSubSettingPokariTabelTabel;
     private javax.swing.JPanel jPanelSubSettingPokariTabelTabelCustomerGroup;
     private javax.swing.JPanel jPanelSubSettingPokariTabelTabelCustomerHirarchy;

@@ -4,12 +4,14 @@ import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import org.bagus.common.parser.csv.FileManager;
 import org.config.spring.hibernate.model.JHeader;
 import org.config.spring.hibernate.model.ScyBDItem;
 import org.config.spring.hibernate.model.ScyPenyesuaianItem;
@@ -312,41 +314,130 @@ public class BridgingControllerActionExtract {
      * WE START TO DECLARE METHOD ACTION
      */    
    public void aksiBtnExtractAllPokari(){
-       try {
-            controller.getView().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            aksiBtnExtractArCustomerPokari();
-            aksiBtnExtractCanDDeliveryOrderItemDetailPokari();
-            aksiBtnExtractCanDDeliveryOrderItemDiscPokari();            
-            aksiBtnExtractCanDDeliveryOrderPokari();
-            
-            aksiBtnExtractSpEmployeePokari();
-            
-            
-//            aksiBtnExtractSpEmployeeTargetItemDetailPokari();
-//            aksiBtnExtractSpEmployeeTargetPokari();
-            
-            //JOptionPane.showMessageDialog(this, "Extract Data Suksess..", "Info..", JOptionPane.INFORMATION_MESSAGE);
-            /**
-             * SORRY EMAIL IS STILL MANUALLY
-             */
-            //controller.getView().getBtnKirimByEmail().setEnabled(true);
-            if (JOptionPane.showConfirmDialog(null, "Extract Data Suksess..\n\n "
-                    + "Buka File Explorer Hasil Extract?", "Konfimasi", JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION) {
-                //Buka File Exploref
-                File localFilePath = new File(controller.getView().getTextPathOutput().getText());
-                java.awt.Desktop.getDesktop().open(localFilePath);
-            }
-                
-       }catch(Exception ex) {
-           logger.error("method aksiBtnExtractAll", ex);
-       }finally {
-            controller.getView().setCursor(Cursor.getDefaultCursor());          
-       } 
+       List<String> templateKurang = new ArrayList<String>();
        
+       if (JOptionPane.showConfirmDialog(null, "Proses extract akan memakan waktu yang agak lama!.. Lanjutkan Extract?", "Konfirmasi", 
+               JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.OK_OPTION){
+       
+            //1. COPY FILE TEMPLATE IDos: I am using Spring framework
+            String inputDirString = controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().getText().trim();
+            String outputDirString = controller.getView().getTextPathOutput().getText().trim();
+
+            if (! inputDirString.trim().substring(inputDirString.trim().length()-1, inputDirString.trim().length()).equals(File.separator)) 
+                inputDirString += File.separator;
+
+            if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
+                outputDirString += File.separator;
+            //1. ArCustomer
+            String inputFileString = inputDirString + "Ar_Customer (Master Otlet).xls";
+            String outputFileString = outputDirString + "Ar_Customer (Master Otlet).xls";
+            FileManager fileManager = new FileManager();
+            try {
+                 fileManager.copy(inputFileString, outputFileString, true);
+            } catch(Exception ex){
+                templateKurang.add("Ar_Customer (Master Otlet).xlsx");
+                logger.error("Extract: Error Copy ArCustomer template");
+            }
+            //2. CanDDeliveryOrder
+            inputFileString = inputDirString + "Can_DDeliveryOrder (Transaksi DO-Return).xls";
+            outputFileString = outputDirString + "Can_DDeliveryOrder (Transaksi DO-Return).xls";
+            fileManager = new FileManager();
+            try {
+                 fileManager.copy(inputFileString, outputFileString, true);
+            } catch(Exception ex){
+                templateKurang.add("Can_DDeliveryOrder (Transaksi DO-Return).xls");
+                logger.error("Extract: Error Copy CanDDeliveryOrder template");
+            }
+            //3. SpEmployee
+            inputFileString = inputDirString + "Sp_Employee (Master Salesman).xls";
+            outputFileString = outputDirString + "Sp_Employee (Master Salesman).xls";
+            fileManager = new FileManager();
+            try {
+                 fileManager.copy(inputFileString, outputFileString, true);
+            } catch(Exception ex){
+                templateKurang.add("Sp_Employee (Master Salesman).xls");
+                logger.error("Extract: Error Copy SpEmployee template");
+            }
+            //4. SpEmployeeTarget>> Tidak Wajib
+            inputFileString = inputDirString + "Sp_EmployeeTarget (Target Salesman).xls";
+            outputFileString = outputDirString + "Sp_EmployeeTarget (Target Salesman).xls";
+            fileManager = new FileManager();
+            try {
+                 fileManager.copy(inputFileString, outputFileString, true);
+            } catch(Exception ex){
+                logger.error("Extract: Error Copy SpEmployeeTarget template");
+            }
+
+            if (templateKurang.size()>0) {
+                String message = "";
+                int pencacah = 1;
+                for (String item: templateKurang) {
+                    message += pencacah++ + ". " + item.trim() + "\n";
+                }
+                
+                JOptionPane.showMessageDialog(null, "Template file berikut tidak bisa tercopy ke folder extract \n" +
+                        message + "\n Cek File tersebut pada: \n" + inputDirString, "Warning", JOptionPane.ERROR_MESSAGE);
+            } else {
+            
+
+                   try {
+                        controller.getView().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+                        try {
+                            aksiBtnExtractArCustomerPokari();
+                        } catch(Exception ex){}
+
+                        try {
+                            aksiBtnExtractCanDDeliveryOrderItemDetailPokari();
+                        }catch(Exception ex){}
+
+                        try {
+                            aksiBtnExtractCanDDeliveryOrderItemDiscPokari();            
+                        }catch(Exception ex){}
+
+                        try {
+                            aksiBtnExtractCanDDeliveryOrderPokari();
+                        }catch(Exception ex){}
+
+                        try{
+                            aksiBtnExtractSpEmployeePokari();
+                        } catch(Exception ex){}
+
+            //            aksiBtnExtractSpEmployeeTargetItemDetailPokari();
+            //            aksiBtnExtractSpEmployeeTargetPokari();
+
+                        //JOptionPane.showMessageDialog(this, "Extract Data Suksess..", "Info..", JOptionPane.INFORMATION_MESSAGE);
+            //     * SORRY EMAIL IS STILL MANUALLY
+                        //controller.getView().getBtnKirimByEmail().setEnabled(true);
+                        if (JOptionPane.showConfirmDialog(null, "Extract Data Suksess..\n\n "
+                                + "Buka File Explorer Hasil Extract?", "Konfimasi", JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION) {
+                            //Buka File Exploref
+                            File localFilePath = new File(controller.getView().getTextPathOutput().getText());
+                            java.awt.Desktop.getDesktop().open(localFilePath);
+                        }
+
+                   }catch(Exception ex) {
+                       logger.error("method aksiBtnExtractAll", ex);
+                   }finally {
+                        controller.getView().setCursor(Cursor.getDefaultCursor());          
+                   } 
+                   
+         }       
+       }       
     }
+   
    public void aksiBtnExtractArCustomerPokari(){
          if ((! controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText().trim().equals("")) 
                  && (controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate()!=null)) {
+             
+            String message = "ArCustomer: ";
+            int jmlRecordSuccess = 0;
+            int jmlRecordFail = 0;
+            int jmlTotal1Success = 0;
+            int jmlTotal1Fail = 0;
+            int jmlTotal2Success = 0;
+            int jmlTotal2Fail = 0;
+            
             Calendar cal = Calendar.getInstance();
             cal.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
             /**
@@ -362,14 +453,18 @@ public class BridgingControllerActionExtract {
  */            
             List<ArCustomer> lst = new ArrayList<>();
             lst =  controller.getModel().arCustomerDaoMem.findAll();
+
+            String outputDirString = controller.getView().getTextPathOutput().getText().trim();            
+            if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
+                outputDirString += File.separator;
+            String outputFileString = outputDirString + "Ar_Customer (Master Otlet).xls";
             
             ExportArCustomer f = new ExportArCustomer();
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
             List<OutputArCustomer> outputArCustomers = new ArrayList<>();
-            outputArCustomers = f.exportFromListToFileExel(
-                    controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText() 
-                    + prefix +"ArCustomer.xls", controller.getView().getjDateChooserExtract().getDate(),  lst);
+//            outputArCustomers = f.exportFromListToFileExel(outputFileString, controller.getView().getjDateChooserExtract().getDate(),  lst);
+            outputArCustomers = f.exportFromListToFileExelUsingTemplate(outputFileString,  lst);
             
             for (OutputArCustomer output: outputArCustomers ) {
                 try {
@@ -378,12 +473,31 @@ public class BridgingControllerActionExtract {
                     } else {
                         controller.getModel().outputArCustomerDaoMem.saveOrUpdate(output);                               
                     }
+                    jmlRecordSuccess+=1;
+//                    jmlTotal1Success += output.getNetValue();
+//                    jmlTotal2Success += output.getGrossValue();
+                    
                 } catch (Exception ex){
+                    jmlRecordFail+=1;
+//                    jmlTotal1Fail += output.getNetValue();
+//                    jmlTotal2Fail += output.getGrossValue();
+                    
                     logger.error("proses DAO saveOrUpdate pada method aksiBtnExtractArCustomerPokari", ex);
                 }
             }
             controller.bridgingControllerActionTabelOutput.aksiBtnOutputPokariArCustomerReload();
-                             
+                
+                NumberFormat nf = NumberFormat.getNumberInstance();
+                nf.setMinimumFractionDigits(0); //jumlah pecahan dibelakang koma
+                nf.setMaximumFractionDigits(0); //jumlah pecahan dibelakang koma
+                message = message + "Jml Rec Success: " + Integer.toString(jmlRecordSuccess) + ", Fail: " + Integer.toString(jmlRecordFail) 
+                        + ",  NET Success: " + String.valueOf(nf.format(jmlTotal1Success)) 
+                        + " and Fail: " + String.valueOf(nf.format(jmlTotal1Fail)) 
+                        + ",  GROSS Success: " + String.valueOf(nf.format(jmlTotal2Success)) 
+                        + " and Fail: " + String.valueOf(nf.format(jmlTotal2Fail)) 
+                        ;          
+                    controller.getView().getjPanelSubOutputPokari1().getLabelOutputPokariArCustomerFooter().setText(message); 
+            
         } else {
             JOptionPane.showMessageDialog(null, "PATH OUTPUT atau TANGGAL MUNGKIN KOSONG");
         }
@@ -391,8 +505,23 @@ public class BridgingControllerActionExtract {
    public void aksiBtnExtractCanDDeliveryOrderPokari(){
          if ((! controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText().trim().equals("")) 
                  && (controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate()!=null)) {
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
+             
+            String message = "CanDDeliveryOrder: ";
+            int jmlRecordSuccess = 0;
+            int jmlRecordFail = 0;
+            int jmlTotal1Success = 0;
+            int jmlTotal1Fail = 0;
+            int jmlTotal2Success = 0;
+            int jmlTotal2Fail = 0;
+             
+//            Calendar cal = Calendar.getInstance();
+//            cal.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
+
+            Calendar cal1 = Calendar.getInstance();
+            cal1.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
+            Calendar cal2 = Calendar.getInstance();
+            cal2.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
+            
             /**
              * KEGIATAN WAJIB
              */
@@ -404,14 +533,23 @@ public class BridgingControllerActionExtract {
  */                        
             //List<CanDDeliveryOrder> lst = new ArrayList<>();
             List<JHeader> lst = new ArrayList<>();
-            lst = controller.getModel().jheaderDaoMem.findAll();
+            //SORTIR TANGGAL PAKE DAO DISINI
+            lst = controller.getModel().jheaderDaoMem.findAllByDate(cal1.getTime(), cal2.getTime());
+//            lst = controller.getModel().jheaderDaoMem.findAll();
+            
+            System.out.println("CanDDeliveryOrder rec: " + lst.size());
+ 
+            String outputDirString = controller.getView().getTextPathOutput().getText().trim();            
+            if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
+                outputDirString += File.separator;
+            String outputFileString = outputDirString + "Can_DDeliveryOrder (Transaksi DO-Return).xls";
+            
             
             ExportCanDDeliveryOrder f = new ExportCanDDeliveryOrder();
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
-            List<OutputCanDDeliveryOrder> outputs = f.exportFromListToFileExel(
-                    controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText() 
-                    + prefix +"CanDDeliveryOrder.xls", controller.getView().getjDateChooserExtract().getDate(),  lst);
+//            List<OutputCanDDeliveryOrder> outputs = f.exportFromListToFileExel(outputFileString, controller.getView().getjDateChooserExtract().getDate(),  lst);
+            List<OutputCanDDeliveryOrder> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst);
             
             for (OutputCanDDeliveryOrder output:  outputs) {
                 try {
@@ -420,11 +558,29 @@ public class BridgingControllerActionExtract {
                     } else {
                         controller.getModel().outputCanDDeliveryOrderDaoMem.saveOrUpdate(output);                               
                     }
+                    jmlRecordSuccess+=1;
+//                    jmlTotal1Success += output.getNetValue();
+//                    jmlTotal2Success += output.getGrossValue();
+                    
                 } catch (Exception ex){
+                    jmlRecordFail+=1;
+//                    jmlTotal1Fail += output.getNetValue();
+//                    jmlTotal2Fail += output.getGrossValue();
+
                     logger.error("proses DAO saveOrUpdate pada method OutputCanDDeliveryOrder", ex);
                 }
             }
             controller.bridgingControllerActionTabelOutput.aksiBtnOutputPokariCanDDeliveryOrderReload();
+                NumberFormat nf = NumberFormat.getNumberInstance();
+                nf.setMinimumFractionDigits(0); //jumlah pecahan dibelakang koma
+                nf.setMaximumFractionDigits(0); //jumlah pecahan dibelakang koma
+                message = message + "Jml Rec Success: " + Integer.toString(jmlRecordSuccess) + ", Fail: " + Integer.toString(jmlRecordFail) 
+                        + ",  NET Success: " + String.valueOf(nf.format(jmlTotal1Success)) 
+                        + " and Fail: " + String.valueOf(nf.format(jmlTotal1Fail)) 
+                        + ",  GROSS Success: " + String.valueOf(nf.format(jmlTotal2Success)) 
+                        + " and Fail: " + String.valueOf(nf.format(jmlTotal2Fail)) 
+                        ;          
+                    controller.getView().getjPanelSubOutputPokari1().getLabelOutputPokariCanDDeliveryOrderFooter().setText(message); 
                              
         } else {
             JOptionPane.showMessageDialog(null, "PATH OUTPUT atau TANGGAL MUNGKIN KOSONG");
@@ -433,8 +589,20 @@ public class BridgingControllerActionExtract {
    public void aksiBtnExtractCanDDeliveryOrderItemDetailPokari(){
          if ((! controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText().trim().equals("")) 
                  && (controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate()!=null)) {
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
+             
+            String message = "CanDDeliveryOrderItemDetail: ";
+            int jmlRecordSuccess = 0;
+            int jmlRecordFail = 0;
+            int jmlTotal1Success = 0;
+            int jmlTotal1Fail = 0;
+            int jmlTotal2Success = 0;
+            int jmlTotal2Fail = 0;
+             
+            Calendar cal1 = Calendar.getInstance();
+            cal1.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
+            Calendar cal2 = Calendar.getInstance();
+            cal2.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
+            
             /**
              * KEGIATAN WAJIB
              */
@@ -446,14 +614,18 @@ public class BridgingControllerActionExtract {
  */            
 //            List<CanDDeliveryOrderItemDetail> lst = new ArrayList<>();
             List<JHeader> lst = new ArrayList<>();
-            lst = controller.getModel().jheaderDaoMem.findAll();
+            lst = controller.getModel().jheaderDaoMem.findAllByDate(cal1.getTime(), cal2.getTime());
+            
+            String outputDirString = controller.getView().getTextPathOutput().getText().trim();            
+            if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
+                outputDirString += File.separator;
+            String outputFileString = outputDirString + "Can_DDeliveryOrder (Transaksi DO-Return).xls";
             
             ExportCanDDeliveryOrderItemDetail f = new ExportCanDDeliveryOrderItemDetail();
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
-            List<OutputCanDDeliveryOrderItemDetail> outputs = f.exportFromListToFileExel(
-                    controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText() 
-                    + prefix +"CanDDeliveryOrderItemDetail.xls", controller.getView().getjDateChooserExtract().getDate(),  lst);
+//            List<OutputCanDDeliveryOrderItemDetail> outputs = f.exportFromListToFileExel(outputFileString, controller.getView().getjDateChooserExtract().getDate(),  lst);
+            List<OutputCanDDeliveryOrderItemDetail> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst);
             
             for (OutputCanDDeliveryOrderItemDetail output:  outputs) {
                 try {
@@ -462,21 +634,55 @@ public class BridgingControllerActionExtract {
                     } else {
                         controller.getModel().outputCanDDeliveryOrderItemDetailDaoMem.saveOrUpdate(output);                               
                     }
+                    jmlRecordSuccess+=1;
+                    jmlTotal1Success += output.getDecPrice()*output.getDecQty();
+//                    jmlTotal2Success += output.getGrossValue();
+                    
                 } catch (Exception ex){
+                    jmlRecordFail+=1;
+                    jmlTotal1Fail += output.getDecPrice()*output.getDecQty();
+//                    jmlTotal2Fail += output.getGrossValue();
+
                     logger.error("proses DAO saveOrUpdate pada method CanDDeliveryOrderItemDetail", ex);
                 }
             }
             controller.bridgingControllerActionTabelOutput.aksiBtnOutputPokariCanDDeliveryOrderDetailReload();
-                             
+                NumberFormat nf = NumberFormat.getNumberInstance();
+                nf.setMinimumFractionDigits(0); //jumlah pecahan dibelakang koma
+                nf.setMaximumFractionDigits(0); //jumlah pecahan dibelakang koma
+                message = message + "Jml Rec Success: " + Integer.toString(jmlRecordSuccess) + ", Fail: " + Integer.toString(jmlRecordFail) 
+                        + ",  NET Success: " + String.valueOf(nf.format(jmlTotal1Success)) 
+                        + " and Fail: " + String.valueOf(nf.format(jmlTotal1Fail)) 
+                        + ",  GROSS Success: " + String.valueOf(nf.format(jmlTotal2Success)) 
+                        + " and Fail: " + String.valueOf(nf.format(jmlTotal2Fail)) 
+                        ;          
+                    controller.getView().getjPanelSubOutputPokari1().getLabelOutputPokariCanDDeliveryOrderDetailFooter().setText(message); 
+                                    
         } else {
             JOptionPane.showMessageDialog(null, "PATH OUTPUT atau TANGGAL MUNGKIN KOSONG");
         }
    }
-   public void aksiBtnExtractCanDDeliveryOrderItemDiscPokari(){
+
+    /**
+     *Dokumen
+     */
+    public void aksiBtnExtractCanDDeliveryOrderItemDiscPokari(){
          if ((! controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText().trim().equals("")) 
                  && (controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate()!=null)) {
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
+             
+            String message = "CanDDeliveryOrderItemDisc: ";
+            int jmlRecordSuccess = 0;
+            int jmlRecordFail = 0;
+            int jmlTotal1Success = 0;
+            int jmlTotal1Fail = 0;
+            int jmlTotal2Success = 0;
+            int jmlTotal2Fail = 0;
+             
+            Calendar cal1 = Calendar.getInstance();
+            cal1.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
+            Calendar cal2 = Calendar.getInstance();
+            cal2.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
+            
             /**
              * KEGIATAN WAJIB
              */
@@ -489,14 +695,17 @@ public class BridgingControllerActionExtract {
  */            
 //            List<CanDDeliveryOrderItemDisc> lst = new ArrayList<>();
             List<JHeader> lst = new ArrayList<>();
-            lst = controller.getModel().jheaderDaoMem.findAll();
+            lst = controller.getModel().jheaderDaoMem.findAllByDate(cal1.getTime(), cal2.getTime());
+
+            String outputDirString = controller.getView().getTextPathOutput().getText().trim();            
+            if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
+                outputDirString += File.separator;
+            String outputFileString = outputDirString + "Can_DDeliveryOrder (Transaksi DO-Return).xls";
             
             ExportCanDDeliveryOrderItemDisc f = new ExportCanDDeliveryOrderItemDisc();
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
-            List<OutputCanDDeliveryOrderItemDisc> outputs = f.exportFromListToFileExel(
-                    controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText() 
-                    + prefix +"CanDDeliveryOrderItemDisc.xls", controller.getView().getjDateChooserExtract().getDate(),  lst);
+            List<OutputCanDDeliveryOrderItemDisc> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString,lst);
             
             for (OutputCanDDeliveryOrderItemDisc output: outputs  ) {
                 try {
@@ -505,12 +714,30 @@ public class BridgingControllerActionExtract {
                     } else {
                         controller.getModel().outputCanDDeliveryOrderItemDiscDaoMem.saveOrUpdate(output);                               
                     }
+                    jmlRecordSuccess+=1;
+                    jmlTotal1Success += output.getDecDisc();
+//                    jmlTotal2Success += output.getGrossValue();
+                    
                 } catch (Exception ex){
+                    jmlRecordFail+=1;
+                    jmlTotal1Fail += output.getDecDisc();
+//                    jmlTotal2Fail += output.getGrossValue();
+
                     logger.error("proses DAO saveOrUpdate pada method ", ex);
                 }
             }
             controller.bridgingControllerActionTabelOutput.aksiBtnOutputPokariCanDDeliveryOrderDiscReload();
-                             
+                NumberFormat nf = NumberFormat.getNumberInstance();
+                nf.setMinimumFractionDigits(0); //jumlah pecahan dibelakang koma
+                nf.setMaximumFractionDigits(0); //jumlah pecahan dibelakang koma
+                message = message + "Jml Rec Success: " + Integer.toString(jmlRecordSuccess) + ", Fail: " + Integer.toString(jmlRecordFail) 
+                        + ",  NET Success: " + String.valueOf(nf.format(jmlTotal1Success)) 
+                        + " and Fail: " + String.valueOf(nf.format(jmlTotal1Fail)) 
+                        + ",  GROSS Success: " + String.valueOf(nf.format(jmlTotal2Success)) 
+                        + " and Fail: " + String.valueOf(nf.format(jmlTotal2Fail)) 
+                        ;          
+                    controller.getView().getjPanelSubOutputPokari1().getLabelOutputPokariCanDDeliveryOrderDiscFooter().setText(message); 
+                                                                 
         } else {
             JOptionPane.showMessageDialog(null, "PATH OUTPUT atau TANGGAL MUNGKIN KOSONG");
         }
@@ -518,6 +745,15 @@ public class BridgingControllerActionExtract {
    public void aksiBtnExtractSpEmployeePokari(){
          if ((! controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText().trim().equals("")) 
                  && (controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate()!=null)) {
+             
+            String message = "SpEmployee: ";
+            int jmlRecordSuccess = 0;
+            int jmlRecordFail = 0;
+            int jmlTotal1Success = 0;
+            int jmlTotal1Fail = 0;
+            int jmlTotal2Success = 0;
+            int jmlTotal2Fail = 0;
+             
             Calendar cal = Calendar.getInstance();
             cal.setTime(controller.getView().getjPanelGenerateExtractPokari1().getjDateChooserExtract().getDate());
             /**
@@ -531,13 +767,16 @@ public class BridgingControllerActionExtract {
  */            
             List<SpEmployee> lst = new ArrayList<>();
             lst = controller.getModel().spEmployeeDaoMem.findAll();
+
+            String outputDirString = controller.getView().getTextPathOutput().getText().trim();            
+            if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
+                outputDirString += File.separator;
+            String outputFileString = outputDirString + "Sp_Employee (Master Salesman).xls";
             
             ExportSpEmployee f = new ExportSpEmployee();
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
-            List<OutputSpEmployee> outputs = f.exportFromListToFileExel(
-                    controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText() 
-                    + prefix +"SpEmployee.xls", controller.getView().getjDateChooserExtract().getDate(),  lst);
+            List<OutputSpEmployee> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst);
             
             for (OutputSpEmployee output: outputs ) {
                 try {
@@ -546,11 +785,29 @@ public class BridgingControllerActionExtract {
                     } else {
                         controller.getModel().outputSpEmployeeDaoMem.saveOrUpdate(output);                               
                     }
+                    jmlRecordSuccess+=1;
+//                    jmlTotal1Success += output.getDecDisc();
+//                    jmlTotal2Success += output.getGrossValue();
+                    
                 } catch (Exception ex){
+                    jmlRecordFail+=1;
+//                    jmlTotal1Fail += output.getDecDisc();
+//                    jmlTotal2Fail += output.getGrossValue();
+
                     logger.error("proses DAO saveOrUpdate pada method SpEmployee", ex);
                 }
             }
             controller.bridgingControllerActionTabelOutput.aksiBtnOutputPokariSpEmployeeReload();
+                NumberFormat nf = NumberFormat.getNumberInstance();
+                nf.setMinimumFractionDigits(0); //jumlah pecahan dibelakang koma
+                nf.setMaximumFractionDigits(0); //jumlah pecahan dibelakang koma
+                message = message + "Jml Rec Success: " + Integer.toString(jmlRecordSuccess) + ", Fail: " + Integer.toString(jmlRecordFail) 
+                        + ",  NET Success: " + String.valueOf(nf.format(jmlTotal1Success)) 
+                        + " and Fail: " + String.valueOf(nf.format(jmlTotal1Fail)) 
+                        + ",  GROSS Success: " + String.valueOf(nf.format(jmlTotal2Success)) 
+                        + " and Fail: " + String.valueOf(nf.format(jmlTotal2Fail)) 
+                        ;          
+                    controller.getView().getjPanelSubOutputPokari1().getLabelOutputPokariSpEmployeeFooter().setText(message); 
                              
         } else {
             JOptionPane.showMessageDialog(null, "PATH OUTPUT atau TANGGAL MUNGKIN KOSONG");
@@ -570,15 +827,16 @@ public class BridgingControllerActionExtract {
             //Jika Menggunakan Mode Memory maka TMasterProduct, TMasterOutlet, TMasterSalesman harus di load ke Memory
             //Sourcenya
             List<SpEmployeeTarget> lst = new ArrayList<>();
-/**
- * SOURCE :
- */            
+            
+            String outputDirString = controller.getView().getTextPathOutput().getText().trim();            
+            if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
+                outputDirString += File.separator;
+            String outputFileString = outputDirString + "Sp_EmployeeTarget (Target Salesman).xls";
+            
             ExportSpEmployeeTarget f = new ExportSpEmployeeTarget();
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
-            List<OutputSpEmployeeTarget> outputs = f.exportFromListToFileExel(
-                    controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText() 
-                    + prefix +"SpEmployeeTarget.xls", controller.getView().getjDateChooserExtract().getDate(),  lst);
+            List<OutputSpEmployeeTarget> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst);
             
             for (OutputSpEmployeeTarget output:  outputs) {
                 try {
@@ -611,15 +869,16 @@ public class BridgingControllerActionExtract {
             //Jika Menggunakan Mode Memory maka TMasterProduct, TMasterOutlet, TMasterSalesman harus di load ke Memory
             //Sourcenya
             List<SpEmployeeTargetItemDetail> lst = new ArrayList<>();
-/**
- * SOURCE :
- */            
+            
+            String outputDirString = controller.getView().getTextPathOutput().getText().trim();            
+            if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
+                outputDirString += File.separator;
+            String outputFileString = outputDirString + "Sp_EmployeeTarget (Target Salesman).xls";
+            
             ExportSpEmployeeTargetItemDetail f = new ExportSpEmployeeTargetItemDetail();
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
-            List<OutputSpEmployeeTargetItemDetail> outputs = f.exportFromListToFileExel(
-                    controller.getView().getjPanelGenerateExtractPokari1().getTextPathOutput().getText() 
-                    + prefix +"SpEmployeeTargetItemDetail.xls", controller.getView().getjDateChooserExtract().getDate(),  lst);
+            List<OutputSpEmployeeTargetItemDetail> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst);
             
             for (OutputSpEmployeeTargetItemDetail output:  outputs) {
                 try {

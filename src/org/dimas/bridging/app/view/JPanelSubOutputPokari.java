@@ -204,7 +204,9 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
         btnOutputPokariArCustomerReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnOutputPokariArCustomerReload.setText("Reload");
 
+        labelOutputPokariArCustomerFooter.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelOutputPokariArCustomerFooter.setText("jLabel87");
+        labelOutputPokariArCustomerFooter.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel73Layout = new javax.swing.GroupLayout(jPanel73);
         jPanel73.setLayout(jPanel73Layout);
@@ -214,17 +216,21 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(btnOutputPokariArCustomerReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelOutputPokariArCustomerFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelOutputPokariArCustomerFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel73Layout.setVerticalGroup(
             jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel73Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOutputPokariArCustomerReload)
-                    .addComponent(labelOutputPokariArCustomerFooter))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel73Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(labelOutputPokariArCustomerFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel73Layout.createSequentialGroup()
+                        .addComponent(btnOutputPokariArCustomerReload)
+                        .addGap(0, 32, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jPanel74.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -277,7 +283,7 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addComponent(jPanel74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaOutputPokari.addTab("Ar Customer", jPanelOutputPokariArCustomer);
@@ -287,7 +293,9 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
         btnOutputPokariCanDDeliveryOrderReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnOutputPokariCanDDeliveryOrderReload.setText("Reload");
 
+        labelOutputPokariCanDDeliveryOrderFooter.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelOutputPokariCanDDeliveryOrderFooter.setText("jLabel87");
+        labelOutputPokariCanDDeliveryOrderFooter.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel75Layout = new javax.swing.GroupLayout(jPanel75);
         jPanel75.setLayout(jPanel75Layout);
@@ -297,17 +305,17 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(btnOutputPokariCanDDeliveryOrderReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelOutputPokariCanDDeliveryOrderFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelOutputPokariCanDDeliveryOrderFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel75Layout.setVerticalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel75Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOutputPokariCanDDeliveryOrderReload)
-                    .addComponent(labelOutputPokariCanDDeliveryOrderFooter))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelOutputPokariCanDDeliveryOrderFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOutputPokariCanDDeliveryOrderReload))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jPanel79.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -360,7 +368,7 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addComponent(jPanel79, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaOutputPokari.addTab("Can DDeliveryOrder", jPanelOutputPokariCanDDeliveryOrder);
@@ -370,7 +378,9 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
         btnOutputPokariCanDDeliveryOrderDetailReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnOutputPokariCanDDeliveryOrderDetailReload.setText("Reload");
 
+        labelOutputPokariCanDDeliveryOrderDetailFooter.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelOutputPokariCanDDeliveryOrderDetailFooter.setText("jLabel87");
+        labelOutputPokariCanDDeliveryOrderDetailFooter.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel80Layout = new javax.swing.GroupLayout(jPanel80);
         jPanel80.setLayout(jPanel80Layout);
@@ -379,18 +389,22 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
             .addGroup(jPanel80Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnOutputPokariCanDDeliveryOrderDetailReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelOutputPokariCanDDeliveryOrderDetailFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(labelOutputPokariCanDDeliveryOrderDetailFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel80Layout.setVerticalGroup(
             jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel80Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOutputPokariCanDDeliveryOrderDetailReload)
-                    .addComponent(labelOutputPokariCanDDeliveryOrderDetailFooter))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel80Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(labelOutputPokariCanDDeliveryOrderDetailFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel80Layout.createSequentialGroup()
+                        .addComponent(btnOutputPokariCanDDeliveryOrderDetailReload)
+                        .addGap(0, 24, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jPanel81.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -453,7 +467,9 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
         btnOutputPokariSpEmployeeReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnOutputPokariSpEmployeeReload.setText("Reload");
 
+        labelOutputPokariSpEmployeeFooter.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelOutputPokariSpEmployeeFooter.setText("jLabel87");
+        labelOutputPokariSpEmployeeFooter.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel82Layout = new javax.swing.GroupLayout(jPanel82);
         jPanel82.setLayout(jPanel82Layout);
@@ -463,17 +479,21 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(btnOutputPokariSpEmployeeReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelOutputPokariSpEmployeeFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelOutputPokariSpEmployeeFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 769, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel82Layout.setVerticalGroup(
             jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel82Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOutputPokariSpEmployeeReload)
-                    .addComponent(labelOutputPokariSpEmployeeFooter))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel82Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(labelOutputPokariSpEmployeeFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel82Layout.createSequentialGroup()
+                        .addComponent(btnOutputPokariSpEmployeeReload)
+                        .addGap(0, 32, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jPanel93.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -526,7 +546,7 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addComponent(jPanel93, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel82, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaOutputPokari.addTab("Sp Employee", jPanelOutputPokariSpEmployee);
@@ -536,7 +556,9 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
         btnOutputPokariEmployeeTargetReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnOutputPokariEmployeeTargetReload.setText("Reload");
 
+        labelOutputPokariEmployeeTargetFooter.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelOutputPokariEmployeeTargetFooter.setText("jLabel87");
+        labelOutputPokariEmployeeTargetFooter.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel94Layout = new javax.swing.GroupLayout(jPanel94);
         jPanel94.setLayout(jPanel94Layout);
@@ -546,17 +568,17 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(btnOutputPokariEmployeeTargetReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelOutputPokariEmployeeTargetFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelOutputPokariEmployeeTargetFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 804, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel94Layout.setVerticalGroup(
             jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel94Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOutputPokariEmployeeTargetReload)
-                    .addComponent(labelOutputPokariEmployeeTargetFooter))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelOutputPokariEmployeeTargetFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOutputPokariEmployeeTargetReload))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel95.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -609,7 +631,7 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addComponent(jPanel95, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel94, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaOutputPokari.addTab("Sp EmployeeTarget", jPanelOutputPokariSpEmployeeTarget);
@@ -619,7 +641,9 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
         btnOutputPokariEmployeeTargetItemDetailReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnOutputPokariEmployeeTargetItemDetailReload.setText("Reload");
 
+        labelOutputPokariEmployeeTargetDetailFooter.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelOutputPokariEmployeeTargetDetailFooter.setText("jLabel87");
+        labelOutputPokariEmployeeTargetDetailFooter.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel96Layout = new javax.swing.GroupLayout(jPanel96);
         jPanel96.setLayout(jPanel96Layout);
@@ -629,7 +653,7 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(btnOutputPokariEmployeeTargetItemDetailReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelOutputPokariEmployeeTargetDetailFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelOutputPokariEmployeeTargetDetailFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 785, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel96Layout.setVerticalGroup(
@@ -638,8 +662,8 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnOutputPokariEmployeeTargetItemDetailReload)
-                    .addComponent(labelOutputPokariEmployeeTargetDetailFooter))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(labelOutputPokariEmployeeTargetDetailFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel97.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -692,7 +716,7 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addComponent(jPanel97, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel96, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaOutputPokari.addTab("Sp EmployeeTargetDetail", jPanelOutputPokariSpEmployeeTargetDetail);
@@ -702,7 +726,9 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
         btnOutputPokariCanDDeliveryOrderDiscReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/sync_16x16.png"))); // NOI18N
         btnOutputPokariCanDDeliveryOrderDiscReload.setText("Reload");
 
+        labelOutputPokariCanDDeliveryOrderDiscFooter.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelOutputPokariCanDDeliveryOrderDiscFooter.setText("jLabel87");
+        labelOutputPokariCanDDeliveryOrderDiscFooter.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel100Layout = new javax.swing.GroupLayout(jPanel100);
         jPanel100.setLayout(jPanel100Layout);
@@ -711,8 +737,8 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
             .addGroup(jPanel100Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnOutputPokariCanDDeliveryOrderDiscReload, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelOutputPokariCanDDeliveryOrderDiscFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(labelOutputPokariCanDDeliveryOrderDiscFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel100Layout.setVerticalGroup(
@@ -721,8 +747,8 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnOutputPokariCanDDeliveryOrderDiscReload)
-                    .addComponent(labelOutputPokariCanDDeliveryOrderDiscFooter))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(labelOutputPokariCanDDeliveryOrderDiscFooter, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel101.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -775,7 +801,7 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
                 .addComponent(jPanel101, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel100, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaOutputPokari.addTab("Can DDeliveryOrder Disc", jPanelOutputPokariCanDDeliveryOrderDisc);
@@ -793,11 +819,11 @@ public class JPanelSubOutputPokari extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 655, Short.MAX_VALUE)
+            .addGap(0, 688, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jTabbedPaneUtamaOutputPokari)
+                    .addComponent(jTabbedPaneUtamaOutputPokari, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
                     .addContainerGap()))
         );
     }// </editor-fold>//GEN-END:initComponents

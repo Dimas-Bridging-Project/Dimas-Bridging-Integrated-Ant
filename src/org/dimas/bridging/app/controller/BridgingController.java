@@ -1,5 +1,11 @@
 package org.dimas.bridging.app.controller;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
 import org.config.spring.hibernate.model.enumgeneral.EnumPrincipal;
 import org.dimas.bridging.app.model.BridgingModel;
 import org.dimas.bridging.app.view.BridgingView;
@@ -19,6 +25,12 @@ public class BridgingController extends BridgingControllerInit {
         BridgingControllerActionTabelOutput bridgingControllerActionTabelOutput;
         BridgingControllerActionTabelTabel bridgingControllerActionTabelTabel;
         BridgingControllerActionMappingMaster bridgingControllerActionMappingMaster;
+
+    public String retrieveLogPath;
+    public File retrieveFilePath;
+    public FileWriter fileWriter;                        
+    public BufferedWriter bufferedWriter;
+    public PrintWriter printWriter;
         
 	/**
 	 * bridgingView 
@@ -29,6 +41,7 @@ public class BridgingController extends BridgingControllerInit {
             super(view, model);
             //TEST PRINCIPAL
             getModel().setPrincipal(EnumPrincipal.POKARI.getStrCode());
+            this.getView().setTitle("Dimas Kediri >> Bridging All >> " + getModel().getPrincipal() + " >>  update: 13 Mar 2014" );
             
             bridgingContollerActionRetrieve = new BridgingControllerActionRetrieve(this);
             bridgingControllerActionExtract = new BridgingControllerActionExtract(this);
@@ -49,9 +62,17 @@ public class BridgingController extends BridgingControllerInit {
             } else {
                 System.err.println("Sementara cuma ada 3");
                 
-            }            
+            }    
+            initLocalLogger();
        
     }
+    private void initLocalLogger(){
+             //Inisilaisasi file untuk log
+            retrieveLogPath = System.getProperty("user.home");
+            retrieveFilePath = new File(retrieveLogPath + "/bridging-integrated-log.txt");            
+        
+    }
+    
     private void initBaygon(){
         view.getViewVisibility().removeAllPanelUtama();
         view.getViewVisibility().setVisibilitiDefaultBaygon();

@@ -1,170 +1,294 @@
-/*C5627*/SET SCHEMA PUBLIC
+/*C2*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C3*/SET SCHEMA PUBLIC
+create table ar_customer (scy_customer_id varchar(20) not null, aktif bit, allow_transfer bit, b_allow_to_credit bit, baru bit, dec_limit_credit double, dtm_register_date date, scy_name varchar(60), sz_address varchar(60), sz_city varchar(30), sz_contact varchar(30), sz_customer_group_id varchar(20), sz_customer_id varchar(20), sz_distr_channel_id varchar(20), sz_district varchar(50), sz_email varchar(60), sz_employee_id varchar(20), sz_FAX varchar(30), sz_hirarchy_id varchar(20), sz_npwp varchar(50), sz_name varchar(60), sz_payment_term_id varchar(20), sz_phone1 varchar(30), sz_phone2 varchar(30), sz_sales_territory_id varchar(20), sz_state varchar(30), sz_status varchar(30), sz_workplace_id varchar(20), sz_zip_code varchar(30), primary key (scy_customer_id))
+create table can_ddelivery (sz_doc_id varchar(20) not null, dtm_created date, dtm_doc date, dtm_last_updated date, sz_employee_id varchar(20), sz_manual_id varchar(50), sz_order_type_id varchar(20), sz_sales_id varchar(20), sz_vehicle_id varchar(20), sz_workplace_id varchar(20), primary key (sz_doc_id))
+create table can_ddelivery_order_item_detail (sh_item_number integer not null, sz_doc_id varchar(20) not null, sz_product_id varchar(20) not null, dec_price double, dec_qty integer, primary key (sh_item_number, sz_doc_id, sz_product_id))
+create table can_ddelivery_order_item_disc (sh_item_number integer not null, sz_doc_id varchar(20) not null, dec_disc double, primary key (sh_item_number, sz_doc_id))
+create table customer_group (id_group varchar(20) not null, description varchar(50), is_default bit, primary key (id_group))
+create table customer_hirarchy (id_hirarchy varchar(50) not null, description varchar(100), is_default bit, primary key (id_hirarchy))
+create table cv_outlet (outlet varchar(6) not null, salesman varchar(3), hari varchar(1), kunjungan varchar(1), primary key (outlet))
+create table group_sales (type_group varchar(20) not null, is_default bit, name varchar(50), primary key (type_group))
+create table jheader (id_order varchar(255) not null, disc_atas_faktur integer, gross integer, kredit integer, net_ppn integer, no_faktur_retur varchar(255), npwp varchar(255), outlet varchar(255), ppn integer, promo_brg integer, promo_uang integer, saldo integer, sales_id2 varchar(255), salesman varchar(255), tanggal date, ter_retur integer, terbayar integer, tipe_bayar varchar(255), type_outlet varchar(255), transdate2 date, primary key (id_order))
+create table jpcode (id_order varchar(255) not null, pcode varchar(255) not null, salesman varchar(255) not null, harga_no_ppn integer, hrg_jual_karton_no_ppn integer, hrg_jual_lsn_no_ppn integer, jenis varchar(255), qty_in_fib varchar(17), qty_in_sat integer, tipe_faktur_retur varchar(255), primary key (id_order, pcode, salesman))
+create table jtprb (id_order varchar(255) not null, pcode varchar(255) not null, salesman varchar(255) not null, harga_no_ppn integer, hrg_jual_karton_no_ppn integer, hrg_jual_lsn_no_ppn integer, jenis varchar(255), qty_in_fib varchar(17), qty_in_sat integer, tipe_faktur_retur varchar(255), primary key (id_order, pcode, salesman))
+create table jtpru (id_order varchar(255) not null, pcode varchar(255) not null, salesman varchar(255) not null, harga_no_ppn integer, tipe varchar(255), primary key (id_order, pcode, salesman))
+create table map_tipe_outlet (id_tipe_outlet_scy varchar(10) not null, deskripsi varchar(50), tipe_outlet varchar(10), primary key (id_tipe_outlet_scy))
+create table mapping_product (pcode_scylla varchar(15) not null, aktif bit, allow_transfer bit, baru bit, bonus bit, pname_scylla varchar(60), sz_brand_id varchar(20), sz_product_id varchar(20), sz_product_name varchar(60), primary key (pcode_scylla))
+create table outlet (outlet varchar(6) not null, alm1_rmh varchar(25), alm1_toko varchar(25), alm2_rmh varchar(25), alm2_toko varchar(25), contact_pr varchar(25), ds varchar(2), fl_pjk varchar(1), flag_kab varchar(1), grp varchar(3), kota_rmh varchar(20), kota_toko varchar(20), limit_k integer, lmt_flg varchar(1), m varchar(1), nama varchar(30), no_fax varchar(20), pay_flg varchar(1), pk varchar(2), ps varchar(2), tlp_toko varchar(20), trm varchar(2), ty varchar(2), user_def1 varchar(30), user_def2 varchar(30), vd varchar(2), primary key (outlet))
+create table output_ar_customer (sz_customer_id varchar(20) not null, aktif bit, allow_transfer bit, b_allow_to_credit bit, baru bit, dec_limit_credit double, dtm_register_date date, sz_address varchar(60), sz_city varchar(30), sz_contract varchar(30), sz_customer_group_id varchar(20), sz_distr_channel_id varchar(20), sz_district varchar(50), sz_email varchar(60), sz_employee_id varchar(20), sz_FAX varchar(30), sz_hirarchy_id varchar(20), sz_npwp varchar(50), sz_name varchar(60), sz_payment_term_id varchar(20), sz_phone1 varchar(30), sz_phone2 varchar(30), sz_sales_territory_id varchar(20), sz_state varchar(30), sz_status varchar(30), sz_workplace_id varchar(20), sz_zip_code varchar(30), primary key (sz_customer_id))
+create table output_can_ddelivery (sz_doc_id varchar(20) not null, dtm_created date, dtm_doc date, dtm_last_updated date, sz_customer_id varchar(20), sz_employee_id varchar(20), sz_manual_id varchar(50), sz_order_type_id varchar(20), sz_sales_id varchar(20), sz_vehicle_id varchar(20), sz_workplace_id varchar(20), primary key (sz_doc_id))
+create table output_can_ddelivery_order_item_detail (sh_item_number integer not null, sz_doc_id varchar(20) not null, sz_product_id varchar(20) not null, dec_price double, dec_qty integer, primary key (sh_item_number, sz_doc_id, sz_product_id))
+create table output_can_ddelivery_order_item_disc (sh_item_number integer not null, sz_doc_id varchar(20) not null, dec_disc double, primary key (sh_item_number, sz_doc_id))
+create table output_sp_employee (sz_employee_id varchar(20) not null, aktif bit, allow_transfer bit, baru bit, sz_name varchar(50), sz_police_no varchar(50), sz_sales_group varchar(20), sz_Sales_Type varchar(20), sz_team_id varchar(20), sz_vehicle_id varchar(20), sz_vehicle_name varchar(60), sz_workplace_id varchar(20), primary key (sz_employee_id))
+create table output_sp_employee_target (sz_month varchar(20) not null, sz_year varchar(20) not null, int_working_day integer, sz_workplace_id varchar(20), primary key (sz_month, sz_year))
+create table output_sp_employee_target_item_detail (sz_brand_id varchar(20) not null, sz_employee_id varchar(20) not null, sz_month varchar(20) not null, sz_year varchar(20) not null, dec_qty double, sz_workplace_id varchar(20), primary key (sz_brand_id, sz_employee_id, sz_month, sz_year))
+create table product_brand (sz_brand_id varchar(20) not null, is_default bit, sz_hirarchy_id varchar(20), sz_name varchar(50), primary key (sz_brand_id))
+create table produk (pcode varchar(6) not null, aktif varchar(1), beli_krt integer, bm_beli integer, bm_jual varchar(255), br varchar(4), brt_krt varchar(9), conv_fact1 integer, conv_fact2 integer, jatah varchar(1), jual_krt integer, jual_lsn integer, jual_pcs integer, kt varchar(4), lebar varchar(5), lns varchar(3), lst_sat varchar(7), main varchar(1), nama_brg varchar(30) not null, nm_lap1 varchar(6), nm_lap2 varchar(6), panjang varchar(5), pk varchar(2), t_def1 varchar(5), t_def2 varchar(5), t_def3 varchar(5), t_def4 varchar(5), t_def5 varchar(5), tinggi varchar(5), ukuran varchar(10), user_def1 varchar(30), user_def2 varchar(30), variant varchar(10), dv varchar(2), primary key (pcode))
+create table sales_territory (id_territory varchar(20) not null, description varchar(50), is_default bit, primary key (id_territory))
+create table salesman (salesman varchar(3) not null, alamat1 varchar(25), alamat2 varchar(25), bonus varchar(1), gaji integer, gudang varchar(2), kota varchar(20), opr varchar(1), pddk varchar(10), team varchar(4), tgl_lahir date, tgl_masuk date, nama_sls varchar(20), primary key (salesman))
+create table scy_bd_item (no_dokumen varchar(15) not null, pcode varchar(15) not null, convfact1 integer, convfact2 integer, hrg_beli integer, jml_barang integer, jml_barang_pcs integer, jml_barang_str varchar(25), jumlah_rupiah integer, nama_barang varchar(50), no_faktur varchar(15), no_kirim varchar(15), persen_disc double, rp_disc integer, tgl_faktur date, tgl_jtempo date, tgl_kirim date, tgl_terima date, uom varchar(255), primary key (no_dokumen, pcode))
+create table scy_penyesuaian_item (no_dokumen varchar(15) not null, pcode varchar(15) not null, adj_brg_bs_rp integer, convfact1 integer, convfact2 integer, adj_brg_baik_karton integer, adj_brg_baik_pcs integer, adj_brg_baik_rp integer, adj_brg_baik_str varchar(255), adj_brg_bs_karton integer, adj_brg_bs_pcs integer, adj_brg_bs_str varchar(255), kode_gudang varchar(15), nama_barang varchar(50), tanggal_penyesuaian date, primary key (no_dokumen, pcode))
+create table scy_retur_pabrik_item (no_dokumen varchar(15) not null, pcode varchar(15) not null, convfact1 integer, convfact2 integer, hrg_beli integer, jml_barang integer, jml_barang_pcs integer, jml_barang_str varchar(25), jumlah_rupiah integer, nama_barang varchar(50), no_kirim varchar(15), no_retur varchar(15), persen_disc double, rp_disc integer, tgl_jtempo date, tgl_kirim date, tgl_retur date, tgl_terima date, uom varchar(255), primary key (no_dokumen, pcode))
+create table sp_employee (scy_employee_id varchar(15) not null, aktif bit, allow_transfer bit, baru bit, bonus bit, scy_name varchar(50), sz_employee_id varchar(20), sz_name varchar(50), sz_police_no varchar(50), sz_sales_group varchar(20), sz_Sales_Type varchar(20), sz_team_id varchar(20), sz_vehicle_id varchar(20), sz_vehicle_name varchar(60), sz_workplace_id varchar(20), primary key (scy_employee_id))
+create table sp_employee_target (sz_month varchar(20) not null, sz_year varchar(20) not null, int_working_day integer, sz_workplace_id varchar(20), primary key (sz_month, sz_year))
+create table sp_employee_target_item_detail (sz_brand_id varchar(20) not null, sz_employee_id varchar(20) not null, sz_month varchar(20) not null, sz_year varchar(20) not null, dec_qty double, sz_workplace_id varchar(20), primary key (sz_brand_id, sz_employee_id, sz_month, sz_year))
+create table stock (pcode varchar(7) not null, tanggal_stock date not null, convfact1 integer, convfact2 integer, harga_beli integer, harga_jual integer, isi_per_lsn varchar(7), nama_barang varchar(31), on_cust_order varchar(14), ppn_bm_beli integer, rpp_13 double, total_stock varchar(14), total_stock_in_pcs integer, week_stock integer, wk_cover double, primary key (pcode, tanggal_stock))
+create table sysvar (id_sysvar varchar(10) not null, deskripsi varchar(100), group_sysvar varchar(10), nilai_bol1 bit, nilai_bol2 bit, nilai_date1 date, nilai_date2 date, nilai_double1 double, nilai_double2 double, nilai_int1 integer, nilai_int2 integer, nilai_string1 varchar(200), nilai_string2 varchar(200), nilai_time1 time, nilai_time2 time, notes varchar(200), tipe_data varchar(10), primary key (id_sysvar))
+create table t_adjustment (item_code varchar(25) not null, trans_no varchar(50) not null, disti_code varchar(25), qty_adj integer, reason varchar(150), sku_qty integer, trans_date date, primary key (item_code, trans_no))
+create table t_classout (kode_class varchar(25) not null, kode_group varchar(25), kode_sub_group varchar(25), nama_class varchar(50), nama_group varchar(50), nama_sub_group varchar(50), primary key (kode_class))
+create table t_dastri (item_code varchar(25) not null, trans_no varchar(50) not null, distri_code varchar(25), nppm_amt integer, quantity integer, sku_qty integer, total_sales integer, trans_date date, unit_price integer, uom1 varchar(15), uom2 varchar(15), uom3 varchar(15), primary key (item_code, trans_no))
+create table t_datdpr (item_code varchar(25) not null, trans_no varchar(50) not null, disti_code varchar(25), do_date date, dono varchar(50), fbonus bit, quantity integer, sku_qty integer, trans_date date, unit_price integer, uom1 varchar(15), uom2 varchar(15), uom3 varchar(15), primary key (item_code, trans_no))
+create table t_datdsl (item_code varchar(25) not null, trans_no varchar(50) not null, disc_amt1 integer, disc_amt2 integer, disc_amt3 integer, disc_amt4 integer, disc_amt5 integer, disc_amt6 integer, disc_item integer, disc_item_pct integer, disc_item_val integer, disti_code varchar(25), fbonus bit, nppn_amt integer, outlet_code varchar(25), quantity integer, salesman_code varchar(25), sku_qty integer, total_sales integer, trans_date date, unit_price integer, uom1 varchar(15), uom2 varchar(15), uom3 varchar(15), primary key (item_code, trans_no))
+create table t_datdsr (item_code varchar(25) not null, trans_no varchar(50) not null, disti_code varchar(25), fbonus bit, nppn_amt integer, outlet_code varchar(25), quantity integer, salesman_code varchar(25), sku_qty integer, total_sales integer, trans_date date, unit_price integer, uom1 varchar(15), uom2 varchar(15), uom3 varchar(15), primary key (item_code, trans_no))
+create table t_master_outlet (scy_out_code varchar(15) not null, aktif bit, allow_transfer bit, area_id varchar(25), area_nm varchar(50), baru bit, bsize_id varchar(25), bsize_nm varchar(50), chain_id varchar(25), chain_nm varchar(50), class_id varchar(25), class_nm varchar(50), disti_id varchar(25), distiNm varchar(50), group_id varchar(25), group_nm varchar(50), kaccId varchar(25), kaccNm varchar(50), lok_id varchar(25), lok_nm varchar(50), mslsout_code varchar(25), mslsout_desc varchar(100), nas_sales_code varchar(25), nas_sales_nm varchar(50), sales_code varchar(25), sales_nm varchar(50), sub_grp_id varchar(25), sub_grp_nm varchar(50), type_id varchar(25), type_nm varchar(50), primary key (scy_out_code))
+create table t_master_product (pcode_scylla varchar(15) not null, aktif bit, allow_transfer bit, area_id varchar(25), area_nm varchar(50), baru bit, bonus bit, dist_id varchar(25), dist_nm varchar(50), kode_brand varchar(15), kode_category varchar(15), kode_divisi varchar(15), kode_size varchar(15), kode_sub_brand varchar(15), kode_sub_categery varchar(15), kode_variance varchar(15), nama_brand varchar(35), nama_category varchar(35), nama_divisi varchar(35), nama_size varchar(35), nama_sub_brand varchar(35), nama_sub_category varchar(35), nama_variance varchar(35), pcode_sap varchar(25), pname_sap varchar(50), primary key (pcode_scylla))
+create table t_master_product_pokari (pcode_scylla varchar(15) not null, aktif bit, allow_transfer bit, area_id varchar(25), area_nm varchar(50), baru bit, bonus bit, dist_id varchar(25), dist_nm varchar(50), kode_brand varchar(15), kode_category varchar(15), kode_divisi varchar(15), kode_size varchar(15), kode_sub_brand varchar(15), kode_sub_categery varchar(15), kode_variance varchar(15), nama_brand varchar(35), nama_category varchar(35), nama_divisi varchar(35), nama_size varchar(35), nama_sub_brand varchar(35), nama_sub_category varchar(35), nama_variance varchar(35), pcode_sap varchar(25), pname_sap varchar(50), primary key (pcode_scylla))
+create table t_master_salesman (sales_id_scy varchar(15) not null, aktif bit, allow_transfer bit, baru bit, calamat1 varchar(50), calamat2 varchar(50), ckota varchar(25), cpos varchar(25), ctelp varchar(25), disti_code varchar(25), disti_name varchar(25), kode_level varchar(25), nas_salesman_code varchar(25), nas_sales_nm varchar(50), rptto_code varchar(25), sales_id_sap varchar(25), sales_nm varchar(50), sales_nm_sap varchar(50), primary key (sales_id_scy))
+create table t_outlet (scy_out_code varchar(15) not null, aktif bit, allow_transfer bit, area_id varchar(25), area_nm varchar(50), baru bit, bsize_id varchar(25), bsize_nm varchar(50), chain_id varchar(25), chain_nm varchar(50), class_id varchar(25), class_nm varchar(50), disti_id varchar(25), distiNm varchar(50), group_id varchar(25), group_nm varchar(50), kaccId varchar(25), kaccNm varchar(50), lok_id varchar(25), lok_nm varchar(50), mslsout_code varchar(25), mslsout_desc varchar(100), nas_sales_code varchar(25), nas_sales_nm varchar(50), sales_code varchar(25), sales_nm varchar(50), sub_grp_id varchar(25), sub_grp_nm varchar(50), type_id varchar(25), type_nm varchar(50), primary key (scy_out_code))
+create table t_salesman (sales_id_scy varchar(15) not null, aktif bit, allow_transfer bit, baru bit, calamat1 varchar(50), calamat2 varchar(50), ckota varchar(25), cpos varchar(25), ctelp varchar(25), disti_code varchar(25), disti_name varchar(25), kode_level varchar(25), nas_salesman_code varchar(25), nas_sales_nm varchar(50), rptto_code varchar(25), sales_id_sap varchar(25), sales_nm varchar(50), sales_nm_sap varchar(50), primary key (sales_id_scy))
+create table t_stock (item_code varchar(25) not null, disti_code varchar(25), proc_date date, qty_in_transit integer, qty_on_hand integer, primary key (item_code))
+create table tabel_key_account (kode_ka varchar(15) not null, keterangan varchar(100), nama_ka varchar(50), primary key (kode_ka))
+create table tabel_outlet_area (area_id varchar(15) not null, area_nm varchar(15), primary key (area_id))
+create table tabel_outlet_chain (kode_chain varchar(15) not null, nama_chain varchar(50), primary key (kode_chain))
+create table tabel_outlet_class (class_id varchar(15) not null, class_nm varchar(50), primary key (class_id))
+create table tabel_outlet_group (group_id varchar(15) not null, group_nm varchar(50), primary key (group_id))
+create table tabel_outlet_location (kode_lokasi varchar(15) not null, nama_lokasi varchar(50), primary key (kode_lokasi))
+create table tabel_outlet_size (kode_size varchar(15) not null, nama_size varchar(50), primary key (kode_size))
+create table tabel_outlet_sub_group (sub_group_id varchar(15) not null, sub_group_name varchar(50), primary key (sub_group_id))
+create table tabel_outlet_type (kode_type varchar(15) not null, nama_type varchar(50), primary key (kode_type))
+create table tabel_prod_brand (brand_id varchar(15) not null, brand_nm varchar(50), primary key (brand_id))
+create table tabel_prod_category (category_id varchar(15) not null, category_nm varchar(50), primary key (category_id))
+create table tabel_prod_divisi (divisi_id varchar(15) not null, divisi_nm varchar(50), primary key (divisi_id))
+create table tabel_prod_size (size_id varchar(15) not null, size_nm varchar(15), primary key (size_id))
+create table tabel_prod_sub_brand (sub_brand_id varchar(15) not null, sub_brand_nam varchar(50), primary key (sub_brand_id))
+create table tabel_prod_sub_category (sub_category_id varchar(15) not null, sub_category_nam varchar(50), primary key (sub_category_id))
+create table tabel_prod_variance (variance_id varchar(15) not null, variance_nm varchar(50), primary key (variance_id))
+create table tbl_client_id (client_code varchar(20) not null, client_status varchar(10), distributor_code varchar(10), record_type varchar(12), reserved_field2 varchar(20), reserved_field3 varchar(20), salesman_code varchar(10), primary key (client_code))
+create table tbl_sales_id (distributor_product_code varchar(20) not null, invoice_number varchar(20) not null, salesman_code varchar(20) not null, city varchar(50), client_code varchar(20), client_name varchar(70), delivery_address varchar(70), distributor_code varchar(10), ean_code varchar(20), fraction integer, gross_value double, net_value double, outlet_type_code varchar(20), outlet_type_desc varchar(50), product_description varchar(100), qty integer, record_type varchar(12), reserved_field2 varchar(50), reserved_field3 varchar(100), salesman_name varchar(50), scj_product_code varchar(20), warehouse_code varchar(20), warehouse_name varchar(50), zip_code varchar(10), tanggal date, primary key (distributor_product_code, invoice_number, salesman_code))
+create table tbl_so_id (distributor_product_code varchar(20) not null, invoice_number varchar(20) not null, salesman_code varchar(20) not null, city varchar(50), client_code varchar(20), client_name varchar(70), delivery_address varchar(70), distributor_code varchar(10), ean_code varchar(20), fraction integer, gross_value double, net_value double, order_number varchar(50), outlet_type_code varchar(20), outlet_type_desc varchar(50), product_description varchar(100), qty integer, record_type varchar(12), reserved_field1 varchar(100), salesman_name varchar(50), scj_product_code varchar(20), warehouse_code varchar(20), warehouse_name varchar(50), zip_code varchar(10), tanggal date, primary key (distributor_product_code, invoice_number, salesman_code))
+create table tbl_stock_id (distributor_product_code varchar(20) not null, bonus_sample integer, distributor_code varchar(10), ean_code varchar(20), ex_do integer, fraction varchar(12), others integer, qty integer, record_type varchar(12), reserved_field varchar(20), sales_qty integer, scj_product_code varchar(20), warehouse_code varchar(20), tanggal date, primary key (distributor_product_code))
+create table team_sales (team_id varchar(20) not null, is_default bit, name varchar(50), primary key (team_id))
+create table type_sales (type_sales varchar(20) not null, is_default bit, name varchar(50), primary key (type_sales))
+create table workplace (workplace_id varchar(20) not null, area varchar(50), is_default bit, primary key (workplace_id))
+alter table cv_outlet add constraint FK9DC2A1596C7F72DA foreign key (outlet) references outlet
+alter table jheader add constraint FK9E896B779B6BA0F0 foreign key (outlet) references t_master_outlet
+alter table jheader add constraint FK9E896B77E012335E foreign key (outlet) references ar_customer
+alter table jheader add constraint FK9E896B774E1114F2 foreign key (salesman) references t_master_salesman
+alter table jheader add constraint FK9E896B77B717D91B foreign key (salesman) references sp_employee
+alter table jpcode add constraint FKBB3AA833FCF5C401 foreign key (id_order) references jheader
+alter table jpcode add constraint FKBB3AA83349CF4D36 foreign key (pcode) references t_master_product
+alter table jpcode add constraint FKBB3AA833B04F914A foreign key (pcode) references produk
+alter table jpcode add constraint FKBB3AA833A25379C0 foreign key (pcode) references mapping_product
+alter table jtprb add constraint FK60C2916FCF5C401 foreign key (id_order) references jheader
+alter table jtprb add constraint FK60C291649CF4D36 foreign key (pcode) references t_master_product
+alter table jtprb add constraint FK60C2916B04F914A foreign key (pcode) references produk
+alter table jtprb add constraint FK60C2916A25379C0 foreign key (pcode) references mapping_product
+alter table jtpru add constraint FK60C2929FCF5C401 foreign key (id_order) references jheader
+alter table jtpru add constraint FK60C2929B04F914A foreign key (pcode) references produk
+alter table outlet add constraint FKC411080DE012335E foreign key (outlet) references ar_customer
+alter table produk add constraint FKC599382D49CF4D36 foreign key (pcode) references t_master_product
+alter table produk add constraint FKC599382DA25379C0 foreign key (pcode) references mapping_product
+alter table salesman add constraint FK737430CEB717D91B foreign key (salesman) references sp_employee
+alter table scy_bd_item add constraint FKEC3EAADA49CF4D36 foreign key (pcode) references t_master_product
+alter table scy_penyesuaian_item add constraint FK823B80EC49CF4D36 foreign key (pcode) references t_master_product
+alter table scy_retur_pabrik_item add constraint FK7802D89849CF4D36 foreign key (pcode) references t_master_product
+alter table stock add constraint FK68AF71649CF4D36 foreign key (pcode) references t_master_product
+alter table stock add constraint FK68AF716B04F914A foreign key (pcode) references produk
+DISCONNECT
+/*C4*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_DIST_CODE','Kode Distributor dari Principal',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'DIMAS01',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5628*/SET SCHEMA PUBLIC
+/*C6*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_DIST_NAME','Nama Distributor dari Principal',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CV. Dimas Kediri',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5629*/SET SCHEMA PUBLIC
+/*C7*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_REC_SLS','Record Type Sales dari Principal',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'DDCSALESLN02',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5630*/SET SCHEMA PUBLIC
+/*C8*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_REC_STK','Record Type Stock dari Principal',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'DDCSTOCKLN02',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5631*/SET SCHEMA PUBLIC
+/*C9*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_REC_CLN','Record Type Client dari Principal',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'DDCCLIENLN02',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5632*/SET SCHEMA PUBLIC
+/*C10*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_REC_SO','Record Type Sales Order dari Principal',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'DDCORDERLN02',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5633*/SET SCHEMA PUBLIC
+/*C11*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_WH_CODE','Kode Gudang',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'UTM',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5634*/SET SCHEMA PUBLIC
+/*C12*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_WH_DESC','Deskripsi Gudang',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'GUDANG UTAMA',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5635*/SET SCHEMA PUBLIC
+/*C13*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_EM_FROM','From Email',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ferrys.dimas@gmail.com',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5636*/SET SCHEMA PUBLIC
+/*C14*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_EM_PASS','From Email',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5637*/SET SCHEMA PUBLIC
+/*C15*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_EM_TO','Beberapa alamat Email yang dituju',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ferrys.dimas@gmail.com;dimasferry@yahoo.co.id;',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5638*/SET SCHEMA PUBLIC
+/*C16*/SET SCHEMA PUBLIC
+INSERT INTO SYSVAR VALUES('_EM_SUB','Subject atau Judul Email',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Data Dimas Tanggal : ',NULL,NULL,NULL,NULL,'STR1')
+COMMIT
 DISCONNECT
-/*C5639*/SET SCHEMA PUBLIC
+/*C17*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5640*/SET SCHEMA PUBLIC
+/*C18*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5641*/SET SCHEMA PUBLIC
+/*C19*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5642*/SET SCHEMA PUBLIC
+/*C20*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5643*/SET SCHEMA PUBLIC
+/*C21*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5644*/SET SCHEMA PUBLIC
+/*C22*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5645*/SET SCHEMA PUBLIC
+/*C23*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5646*/SET SCHEMA PUBLIC
+/*C24*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5647*/SET SCHEMA PUBLIC
+/*C25*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5648*/SET SCHEMA PUBLIC
+/*C26*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5649*/SET SCHEMA PUBLIC
+/*C27*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5650*/SET SCHEMA PUBLIC
+/*C28*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5651*/SET SCHEMA PUBLIC
+/*C29*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5652*/SET SCHEMA PUBLIC
+/*C30*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5653*/SET SCHEMA PUBLIC
+/*C31*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5654*/SET SCHEMA PUBLIC
+/*C32*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5655*/SET SCHEMA PUBLIC
+/*C33*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5656*/SET SCHEMA PUBLIC
+/*C34*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5657*/SET SCHEMA PUBLIC
+/*C35*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5658*/SET SCHEMA PUBLIC
+/*C36*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5659*/SET SCHEMA PUBLIC
+/*C37*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5660*/SET SCHEMA PUBLIC
+/*C38*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5661*/SET SCHEMA PUBLIC
+/*C39*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5662*/SET SCHEMA PUBLIC
+/*C40*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5663*/SET SCHEMA PUBLIC
+/*C41*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5664*/SET SCHEMA PUBLIC
+/*C42*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5665*/SET SCHEMA PUBLIC
+/*C43*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5666*/SET SCHEMA PUBLIC
+/*C44*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5667*/SET SCHEMA PUBLIC
+/*C45*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5668*/SET SCHEMA PUBLIC
+/*C46*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5669*/SET SCHEMA PUBLIC
+/*C47*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5670*/SET SCHEMA PUBLIC
+/*C48*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5671*/SET SCHEMA PUBLIC
+/*C49*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5672*/SET SCHEMA PUBLIC
+/*C50*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5673*/SET SCHEMA PUBLIC
+/*C51*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5674*/SET SCHEMA PUBLIC
+/*C52*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5675*/SET SCHEMA PUBLIC
+/*C53*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5676*/SET SCHEMA PUBLIC
+/*C54*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5677*/SET SCHEMA PUBLIC
+/*C55*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5678*/SET SCHEMA PUBLIC
+/*C56*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5679*/SET SCHEMA PUBLIC
+/*C57*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5680*/SET SCHEMA PUBLIC
+/*C58*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5681*/SET SCHEMA PUBLIC
+/*C59*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5682*/SET SCHEMA PUBLIC
+/*C60*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5683*/SET SCHEMA PUBLIC
+/*C61*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5684*/SET SCHEMA PUBLIC
+/*C62*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5685*/SET SCHEMA PUBLIC
+/*C63*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5686*/SET SCHEMA PUBLIC
+/*C64*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5687*/SET SCHEMA PUBLIC
+/*C65*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5688*/SET SCHEMA PUBLIC
+/*C66*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5689*/SET SCHEMA PUBLIC
+/*C67*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5690*/SET SCHEMA PUBLIC
+/*C68*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5691*/SET SCHEMA PUBLIC
+/*C69*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5692*/SET SCHEMA PUBLIC
+/*C70*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5693*/SET SCHEMA PUBLIC
+/*C71*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5694*/SET SCHEMA PUBLIC
+/*C72*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5695*/SET SCHEMA PUBLIC
+/*C73*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5696*/SET SCHEMA PUBLIC
+/*C74*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5697*/SET SCHEMA PUBLIC
+/*C75*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5698*/SET SCHEMA PUBLIC
+/*C76*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5699*/SET SCHEMA PUBLIC
+/*C77*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5700*/SET SCHEMA PUBLIC
+/*C78*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5701*/SET SCHEMA PUBLIC
+/*C79*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5702*/SET SCHEMA PUBLIC
+/*C80*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5703*/SET SCHEMA PUBLIC
+/*C81*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5704*/SET SCHEMA PUBLIC
+/*C82*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5705*/SET SCHEMA PUBLIC
+/*C83*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5706*/SET SCHEMA PUBLIC
+/*C84*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5707*/SET SCHEMA PUBLIC
+/*C85*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5708*/SET SCHEMA PUBLIC
+/*C86*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5709*/SET SCHEMA PUBLIC
+/*C87*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5710*/SET SCHEMA PUBLIC
+/*C88*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C5711*/SET SCHEMA PUBLIC
+/*C89*/SET SCHEMA PUBLIC
 DISCONNECT

@@ -93,7 +93,7 @@ public class BridgingControllerActionParameterSystem {
          });            
     }
     
-    //KONFIGURASI POKARI
+        //KONFIGURASI POKARI
         public void aksiBtnGeneralSettingPokariSimpan(){
                 KonfigurasiUtils konfigUtils = new KonfigurasiUtils();
                 konfigUtils.simpanKonfigurasiPokari(controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().getText().trim());
@@ -156,98 +156,100 @@ public class BridgingControllerActionParameterSystem {
                         JOptionPane.showMessageDialog(null, "File Template Berikut Tidak Ada: \n"
                                 + message, "Warning", JOptionPane.ERROR_MESSAGE);                        
                     }
-                    controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().setText(theFilePath);                                        
+                    controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().setText(theFilePath);    
+                    
+                    JOptionPane.showMessageDialog(null, theFilePath);
                     
                 }               
             }              
         }
 
-            //SORRY: KITA MENARUHNYA DISINI --> KESALAHAN AWAL KITA TIDAK MENARUH PADA MODEL
-             //General Setting / Parameter Sistem
-             public void aksiBtnGeneralSettingReload() {
-                    //Konfigurasi
-                    Sysvar sysvar;
-                    
-                    sysvar = controller.getModel().sysvarDao.findById("_DIST_CODE");
-                    if (sysvar !=null) 
-                       controller.getView().getTextDistributorCode().setText(sysvar.getNilaiString1());
-                    sysvar =controller.getModel().sysvarDao.findById("_DIST_NAME");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextDistributorName().setText(sysvar.getNilaiString1());
+        //SORRY: KITA MENARUHNYA DISINI --> KESALAHAN AWAL KITA TIDAK MENARUH PADA MODEL
+         //General Setting / Parameter Sistem
+         public void aksiBtnGeneralSettingReload() {
+                //Konfigurasi
+                Sysvar sysvar;
 
-                    sysvar =controller.getModel().sysvarDao.findById("_REC_SLS");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextRecordTypeSales().setText(sysvar.getNilaiString1());
-                    sysvar =controller.getModel().sysvarDao.findById("_REC_STK");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextRecordTypeStock().setText(sysvar.getNilaiString1());
-                    sysvar =controller.getModel().sysvarDao.findById("_REC_CLN");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextRecordTypeClient().setText(sysvar.getNilaiString1());
-                    sysvar =controller.getModel().sysvarDao.findById("_REC_SO");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextRecordTypeSo().setText(sysvar.getNilaiString1());
-                    sysvar =controller.getModel().sysvarDao.findById("_WH_CODE");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextWarehouseWarehouseCode().setText(sysvar.getNilaiString1());
-                    sysvar =controller.getModel().sysvarDao.findById("_WH_DESC");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextWarehouseWarehouseDescription().setText(sysvar.getNilaiString1());
+                sysvar = controller.getModel().sysvarDao.findById("_DIST_CODE");
+                if (sysvar !=null) 
+                   controller.getView().getTextDistributorCode().setText(sysvar.getNilaiString1());
+                sysvar =controller.getModel().sysvarDao.findById("_DIST_NAME");
 
-                    sysvar =controller.getModel().sysvarDao.findById("_EM_FROM");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextEmailFrom().setText(sysvar.getNilaiString1());
+                if (sysvar !=null) 
+                   controller.getView().getTextDistributorName().setText(sysvar.getNilaiString1());
 
-                    sysvar =controller.getModel().sysvarDao.findById("_EM_PASS");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextEmailPassword().setText(sysvar.getNilaiString1());
+                sysvar =controller.getModel().sysvarDao.findById("_REC_SLS");
 
-                    sysvar =controller.getModel().sysvarDao.findById("_EM_TO");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextEmailTo().setText(sysvar.getNilaiString1());
-                    sysvar =controller.getModel().sysvarDao.findById("_EM_SUB");
-                    
-                    if (sysvar !=null) 
-                       controller.getView().getTextEmailSubject().setText(sysvar.getNilaiString1());
+                if (sysvar !=null) 
+                   controller.getView().getTextRecordTypeSales().setText(sysvar.getNilaiString1());
+                sysvar =controller.getModel().sysvarDao.findById("_REC_STK");
 
-                    sysvar =controller.getModel().sysvarDao.findById("_TPR_NoB");                    
-                    if (sysvar !=null) 
-                        controller.getView().getCheckTprbDiluarBarang().setSelected(sysvar.getNilaiBol1());
-                    
-                    //POKARI
-                    sysvar = controller.getModel().sysvarDao.findById("");
-                    if (sysvar != null)
-                        controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().setText(sysvar.getNilaiString1());
-                    
-             }
-             
-             public void aksiBtnGeneralSettingSimpan() {
-                KonfigurasiUtils konfigUtils = new KonfigurasiUtils();
-                String passEmail = new String(controller.getView().getTextEmailPassword().getPassword());
+                if (sysvar !=null) 
+                   controller.getView().getTextRecordTypeStock().setText(sysvar.getNilaiString1());
+                sysvar =controller.getModel().sysvarDao.findById("_REC_CLN");
 
-                konfigUtils.simpanKonfigurasi(controller.getView().getTextDistributorCode().getText(),controller.getView().getTextDistributorName().getText(),controller.getView().getTextRecordTypeSales().getText(), 
-                       controller.getView().getTextRecordTypeStock().getText(),controller.getView().getTextRecordTypeClient().getText(),controller.getView().getTextRecordTypeSo().getText(), 
-                       controller.getView().getTextWarehouseWarehouseCode().getText(),controller.getView().getTextWarehouseWarehouseDescription().getText(), 
-                       controller.getView().getTextEmailFrom().getText(),controller.getView().getTextEmailTo().getText(),controller.getView().getTextEmailSubject().getText(), 
-                        passEmail);
-                
-             }
-             public void aksiBtnGeneralSettingKonfigurasiEmaiSimpan(){
-                 /**
-                  * HAHAHA PAKE SAMA AJA
-                  */
-                 aksiBtnGeneralSettingSimpan();
-             }
+                if (sysvar !=null) 
+                   controller.getView().getTextRecordTypeClient().setText(sysvar.getNilaiString1());
+                sysvar =controller.getModel().sysvarDao.findById("_REC_SO");
+
+                if (sysvar !=null) 
+                   controller.getView().getTextRecordTypeSo().setText(sysvar.getNilaiString1());
+                sysvar =controller.getModel().sysvarDao.findById("_WH_CODE");
+
+                if (sysvar !=null) 
+                   controller.getView().getTextWarehouseWarehouseCode().setText(sysvar.getNilaiString1());
+                sysvar =controller.getModel().sysvarDao.findById("_WH_DESC");
+
+                if (sysvar !=null) 
+                   controller.getView().getTextWarehouseWarehouseDescription().setText(sysvar.getNilaiString1());
+
+                sysvar =controller.getModel().sysvarDao.findById("_EM_FROM");
+
+                if (sysvar !=null) 
+                   controller.getView().getTextEmailFrom().setText(sysvar.getNilaiString1());
+
+                sysvar =controller.getModel().sysvarDao.findById("_EM_PASS");
+
+                if (sysvar !=null) 
+                   controller.getView().getTextEmailPassword().setText(sysvar.getNilaiString1());
+
+                sysvar =controller.getModel().sysvarDao.findById("_EM_TO");
+
+                if (sysvar !=null) 
+                   controller.getView().getTextEmailTo().setText(sysvar.getNilaiString1());
+                sysvar =controller.getModel().sysvarDao.findById("_EM_SUB");
+
+                if (sysvar !=null) 
+                   controller.getView().getTextEmailSubject().setText(sysvar.getNilaiString1());
+
+                sysvar =controller.getModel().sysvarDao.findById("_TPR_NoB");                    
+                if (sysvar !=null) 
+                    controller.getView().getCheckTprbDiluarBarang().setSelected(sysvar.getNilaiBol1());
+
+                //POKARI
+                sysvar = controller.getModel().sysvarDao.findById("");
+                if (sysvar != null)
+                    controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().setText(sysvar.getNilaiString1());
+
+         }
+
+         public void aksiBtnGeneralSettingSimpan() {
+            KonfigurasiUtils konfigUtils = new KonfigurasiUtils();
+            String passEmail = new String(controller.getView().getTextEmailPassword().getPassword());
+
+            konfigUtils.simpanKonfigurasi(controller.getView().getTextDistributorCode().getText(),controller.getView().getTextDistributorName().getText(),controller.getView().getTextRecordTypeSales().getText(), 
+                   controller.getView().getTextRecordTypeStock().getText(),controller.getView().getTextRecordTypeClient().getText(),controller.getView().getTextRecordTypeSo().getText(), 
+                   controller.getView().getTextWarehouseWarehouseCode().getText(),controller.getView().getTextWarehouseWarehouseDescription().getText(), 
+                   controller.getView().getTextEmailFrom().getText(),controller.getView().getTextEmailTo().getText(),controller.getView().getTextEmailSubject().getText(), 
+                    passEmail);
+
+         }
+         public void aksiBtnGeneralSettingKonfigurasiEmaiSimpan(){
+             /**
+              * HAHAHA PAKE SAMA AJA
+              */
+             aksiBtnGeneralSettingSimpan();
+         }
              
     
     public void aksiBtnMapTipeOutletHapus() {

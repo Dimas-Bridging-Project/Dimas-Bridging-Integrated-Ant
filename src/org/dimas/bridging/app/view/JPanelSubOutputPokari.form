@@ -28,11 +28,11 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="655" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="688" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTabbedPaneUtamaOutputPokari" max="32767" attributes="0"/>
+                  <Component id="jTabbedPaneUtamaOutputPokari" pref="664" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -73,7 +73,7 @@
                       <Component id="jPanel74" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel73" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -95,7 +95,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnOutputPokariArCustomerReload" min="-2" pref="132" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="labelOutputPokariArCustomerFooter" min="-2" pref="205" max="-2" attributes="0"/>
+                          <Component id="labelOutputPokariArCustomerFooter" min="-2" pref="774" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -104,11 +104,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnOutputPokariArCustomerReload" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelOutputPokariArCustomerFooter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                  <Component id="labelOutputPokariArCustomerFooter" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="btnOutputPokariArCustomerReload" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -124,7 +130,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelOutputPokariArCustomerFooter">
                   <Properties>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="jLabel87"/>
+                    <Property name="verticalAlignment" type="int" value="1"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -213,7 +221,7 @@
                       <Component id="jPanel79" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel75" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -235,7 +243,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnOutputPokariCanDDeliveryOrderReload" min="-2" pref="132" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="labelOutputPokariCanDDeliveryOrderFooter" min="-2" pref="205" max="-2" attributes="0"/>
+                          <Component id="labelOutputPokariCanDDeliveryOrderFooter" min="-2" pref="781" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -244,11 +252,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnOutputPokariCanDDeliveryOrderReload" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelOutputPokariCanDDeliveryOrderFooter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="labelOutputPokariCanDDeliveryOrderFooter" min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="btnOutputPokariCanDDeliveryOrderReload" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="34" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -264,7 +272,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelOutputPokariCanDDeliveryOrderFooter">
                   <Properties>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="jLabel87"/>
+                    <Property name="verticalAlignment" type="int" value="1"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -374,8 +384,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnOutputPokariCanDDeliveryOrderDetailReload" min="-2" pref="132" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="labelOutputPokariCanDDeliveryOrderDetailFooter" min="-2" pref="205" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="labelOutputPokariCanDDeliveryOrderDetailFooter" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -384,11 +394,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnOutputPokariCanDDeliveryOrderDetailReload" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelOutputPokariCanDDeliveryOrderDetailFooter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                  <Component id="labelOutputPokariCanDDeliveryOrderDetailFooter" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="btnOutputPokariCanDDeliveryOrderDetailReload" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -404,7 +420,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelOutputPokariCanDDeliveryOrderDetailFooter">
                   <Properties>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="jLabel87"/>
+                    <Property name="verticalAlignment" type="int" value="1"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -493,7 +511,7 @@
                       <Component id="jPanel93" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel82" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -515,7 +533,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnOutputPokariSpEmployeeReload" min="-2" pref="132" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="labelOutputPokariSpEmployeeFooter" min="-2" pref="205" max="-2" attributes="0"/>
+                          <Component id="labelOutputPokariSpEmployeeFooter" min="-2" pref="769" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -524,11 +542,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnOutputPokariSpEmployeeReload" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelOutputPokariSpEmployeeFooter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                  <Component id="labelOutputPokariSpEmployeeFooter" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="btnOutputPokariSpEmployeeReload" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -544,7 +568,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelOutputPokariSpEmployeeFooter">
                   <Properties>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="jLabel87"/>
+                    <Property name="verticalAlignment" type="int" value="1"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -633,7 +659,7 @@
                       <Component id="jPanel95" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel94" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="42" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -655,7 +681,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnOutputPokariEmployeeTargetReload" min="-2" pref="132" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="labelOutputPokariEmployeeTargetFooter" min="-2" pref="205" max="-2" attributes="0"/>
+                          <Component id="labelOutputPokariEmployeeTargetFooter" min="-2" pref="804" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -664,11 +690,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnOutputPokariEmployeeTargetReload" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelOutputPokariEmployeeTargetFooter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="labelOutputPokariEmployeeTargetFooter" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Component id="btnOutputPokariEmployeeTargetReload" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="21" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -684,7 +710,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelOutputPokariEmployeeTargetFooter">
                   <Properties>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="jLabel87"/>
+                    <Property name="verticalAlignment" type="int" value="1"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -773,7 +801,7 @@
                       <Component id="jPanel97" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel96" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -795,7 +823,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnOutputPokariEmployeeTargetItemDetailReload" min="-2" pref="132" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="labelOutputPokariEmployeeTargetDetailFooter" min="-2" pref="205" max="-2" attributes="0"/>
+                          <Component id="labelOutputPokariEmployeeTargetDetailFooter" min="-2" pref="785" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -806,9 +834,9 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnOutputPokariEmployeeTargetItemDetailReload" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelOutputPokariEmployeeTargetDetailFooter" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelOutputPokariEmployeeTargetDetailFooter" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="21" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -824,7 +852,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelOutputPokariEmployeeTargetDetailFooter">
                   <Properties>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="jLabel87"/>
+                    <Property name="verticalAlignment" type="int" value="1"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -913,7 +943,7 @@
                       <Component id="jPanel101" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel100" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -934,8 +964,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnOutputPokariCanDDeliveryOrderDiscReload" min="-2" pref="132" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="labelOutputPokariCanDDeliveryOrderDiscFooter" min="-2" pref="205" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="labelOutputPokariCanDDeliveryOrderDiscFooter" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -946,9 +976,9 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnOutputPokariCanDDeliveryOrderDiscReload" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelOutputPokariCanDDeliveryOrderDiscFooter" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelOutputPokariCanDDeliveryOrderDiscFooter" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="21" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -964,7 +994,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelOutputPokariCanDDeliveryOrderDiscFooter">
                   <Properties>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="jLabel87"/>
+                    <Property name="verticalAlignment" type="int" value="1"/>
                   </Properties>
                 </Component>
               </SubComponents>

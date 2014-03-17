@@ -6,9 +6,10 @@ package org.dimas.bridging.export.pokari;
 
 import org.dimas.bridging.export.*;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
+import static java.lang.System.out;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -44,7 +45,75 @@ public class ExportSpEmployee {
 //            appContext = ApplicationContextProvider.getInstance().getApplicationContext();
 //            sysvarDao = (SysvarDaoInter) appContext.getBean("SysvarDaoBean");
     }
-    public List<OutputSpEmployee> exportFromListToFileExel(String filePathDestination, Date tglTransaksi, List<SpEmployee> lst){
+    
+    public List<OutputSpEmployee> exportFromListToFileExelUsingTemplate(String filePathDestination, List<SpEmployee> lst){
+        List<OutputSpEmployee> list = new ArrayList<>();
+        //FileWriter fileWriter = null;
+        FileInputStream file = null;
+        logger.info("Starting export OutputSpEmployee " + filePathDestination);
+        try {
+            file = new FileInputStream(new File(filePathDestination));            
+            
+            HSSFWorkbook workbook = new HSSFWorkbook(file);
+            HSSFSheet sheet = workbook.getSheet("Template Sp_Employee");
+            Cell cell = null;                   
+        
+            
+            //System.out.print(lst.size());
+            Locale localeId = new Locale("in", "ID"); //Localization Indonesian
+            //String pattern = "EEEE, dd MMM yyyy"; // Jumat, 10 Sep 2013            
+            String pattern = "dd-MM-yyyy"; // 10-09-2013            
+            SimpleDateFormat sdf = new SimpleDateFormat(pattern, localeId);
+            
+            int lastRow= 1;
+            for (SpEmployee obj: lst) {
+//                if (obj.getAllowTransfer()==true){                
+                        try {
+                            lastRow++;
+                            OutputSpEmployee itemOut = new OutputSpEmployee();
+                            
+                            Row dataRow = sheet.createRow(lastRow);
+                            dataRow.createCell(1).setCellValue(obj.getSzEmployeeId()); itemOut.setSzEmployeeId(obj.getSzEmployeeId());
+                            dataRow.createCell(2).setCellValue(obj.getSzName()); itemOut.setSzName(obj.getSzName());
+                            dataRow.createCell(3).setCellValue(obj.getSzWorkplaceId()); itemOut.setSzWorkplaceId(obj.getSzWorkplaceId());
+                            dataRow.createCell(4).setCellValue(obj.getSzSalesType()); itemOut.setSzSalesType(obj.getSzSalesType());
+                            dataRow.createCell(5).setCellValue(obj.getSzSalesGroup()); itemOut.setSzSalesGroup(obj.getSzSalesGroup());
+                            dataRow.createCell(6).setCellValue(obj.getSzTeamId()); itemOut.setSzTeamId(obj.getSzTeamId());
+                            dataRow.createCell(7).setCellValue(obj.getSzVehicleId()); itemOut.setSzVehicleId(obj.getSzVehicleId());
+                            dataRow.createCell(8).setCellValue(obj.getSzVehicleName()); itemOut.setSzVehicleName(obj.getSzVehicleName());
+                            dataRow.createCell(9).setCellValue(obj.getSzPoliceNo()); itemOut.setSzPoliceNo(obj.getSzPoliceNo());
+                            
+                            list.add(itemOut);
+                        } catch(Exception ex){
+                            logger.error("exportFromListToFileExelUsingTemplate " );
+                        }
+                }
+                
+
+//            }
+            
+            file.close();
+            FileOutputStream out =new FileOutputStream(new File(filePathDestination));
+            workbook.write(out);
+            out.close();           
+            
+            System.out.println("OutputSpEmployee Excel written successfully..");            
+            
+        } catch (IOException ex) {
+            logger.error("FileWriter pada method ExportToExel", ex);
+        } finally {
+            try {
+                //fileWriter.close();
+                out.close();
+            } catch (Exception ex) {
+                logger.error("Finally FileWriter pada method ExportToExel", ex);
+            }
+        }
+        
+        return list;                
+    }
+    
+    public List<OutputSpEmployee> exportFromListToFileExel(String filePathDestination, List<SpEmployee> lst){
         List<OutputSpEmployee> list = new ArrayList<>();
         //FileWriter fileWriter = null;
         FileOutputStream out = null;

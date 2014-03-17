@@ -6,8 +6,8 @@ package org.dimas.bridging.export.pokari;
 
 import org.dimas.bridging.export.*;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,9 +23,10 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.config.spring.hibernate.model.JHeader;
 import org.config.spring.hibernate.model.JPcode;
-import org.config.spring.hibernate.model.pokari.ArCustomer;
-import org.config.spring.hibernate.model.pokari.CanDDeliveryOrderItemDisc;
+import org.config.spring.hibernate.model.JTprb;
+import org.config.spring.hibernate.model.JTpru;
 import org.config.spring.hibernate.model.pokari.OutputCanDDeliveryOrderItemDisc;
+import org.config.spring.hibernate.model.pokari.OutputCanDDeliveryOrderItemDiscPK;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,7 +48,102 @@ public class ExportCanDDeliveryOrderItemDisc {
 //            appContext = ApplicationContextProvider.getInstance().getApplicationContext();
 //            sysvarDao = (SysvarDaoInter) appContext.getBean("SysvarDaoBean");
     }
-    public List<OutputCanDDeliveryOrderItemDisc> exportFromListToFileExel(String filePathDestination, Date tglTransaksi, List<JHeader> lst){
+      public List<OutputCanDDeliveryOrderItemDisc> exportFromListToFileExelUsingTemplate(String filePathDestination, List<JHeader> lst){
+        List<OutputCanDDeliveryOrderItemDisc> list = new ArrayList<>();
+        //FileWriter fileWriter = null;
+        FileInputStream file = null;
+        FileOutputStream out = null;
+        logger.info("Starting OutputCanDDeliveryOrderItemDisc");
+        try {
+            file = new FileInputStream(new File(filePathDestination));            
+            HSSFWorkbook workbook = new HSSFWorkbook(file);
+            HSSFSheet sheet = workbook.getSheet("Can_DDeliveryOrderItemDisc");
+            Cell cell = null;                   
+            
+//            data.put(2, new Object[] {"","szDocId", "shItemNumber", "decDisc"});
+            //printWriter.println("disticode,transdate,transno,outletcode,salesmancode,itemcode,quantity,uom,unitprice,fbonus,discamt1,discamt2,discamt3,discamt4,discamt5,discamt6,discitem,discitempct,discitemval,skuqty,nppnamt,totalsales"); 
+
+            
+            //System.out.print(lst.size());
+            Locale localeId = new Locale("in", "ID"); //Localization Indonesian
+            //String pattern = "EEEE, dd MMM yyyy"; // Jumat, 10 Sep 2013            
+            String pattern = "dd-MM-yyyy"; // 10-09-2013            
+            SimpleDateFormat sdf = new SimpleDateFormat(pattern, localeId);
+            
+              int lastRow= 1;
+              for (JHeader item: lst){
+                    
+                    int itemNumber = 0;
+                    List<JTprb> lstDetail = new ArrayList<>(item.getJtprbSet());
+                    for (JTprb itm: lstDetail){
+                        try {
+                            lastRow++;
+                            
+                            OutputCanDDeliveryOrderItemDisc itemOut = new OutputCanDDeliveryOrderItemDisc();
+                            OutputCanDDeliveryOrderItemDiscPK itemOutPK = new OutputCanDDeliveryOrderItemDiscPK();
+                            
+                            Row dataRow = sheet.createRow(lastRow);
+                            dataRow.createCell(1).setCellValue(itm.getJtprbPK().getIdOrder()); itemOutPK.setSzDocId(itm.getJtprbPK().getIdOrder());
+                            dataRow.createCell(2).setCellValue(itemNumber); itemOutPK.setShItemNumber(itemNumber);
+                            dataRow.createCell(6).setCellValue(itm.getHargaNoPpn()); itemOut.setDecDisc(itm.getHargaNoPpn().doubleValue());
+                            
+                            itemOut.setOutputCanDDeliveryOrderItemDiscPK(itemOutPK);
+                            list.add(itemOut);
+                            
+                            itemNumber ++;    
+                        } catch(Exception ex){                         
+                            logger.error(ex.toString());
+                        }
+//                        data.put(lastRow, new Object[] {"","szDocId", "shItemNumber", "decDisc"});
+                    }
+                    List<JTpru> lstDetail2 = new ArrayList<>(item.getJtpruSet());
+                    for (JTpru itm: lstDetail2){
+                        try {
+                            lastRow++;
+                            
+                            OutputCanDDeliveryOrderItemDisc itemOut = new OutputCanDDeliveryOrderItemDisc();
+                            OutputCanDDeliveryOrderItemDiscPK itemOutPK = new OutputCanDDeliveryOrderItemDiscPK();
+                            
+                            Row dataRow = sheet.createRow(lastRow);
+                            dataRow.createCell(1).setCellValue(itm.getJtpruPK().getIdOrder()); itemOutPK.setSzDocId(itm.getJtpruPK().getIdOrder());                 
+                            dataRow.createCell(2).setCellValue(itemNumber); itemOutPK.setShItemNumber(itemNumber);
+                            dataRow.createCell(6).setCellValue(itm.getHargaNoPpn()); itemOut.setDecDisc(itm.getHargaNoPpn().doubleValue());
+                            
+                            itemOut.setOutputCanDDeliveryOrderItemDiscPK(itemOutPK);
+                            list.add(itemOut);
+                            
+                            itemNumber++;    
+                        } catch(Exception ex){                         
+                            logger.error(ex.toString());
+                        }
+//                        data.put(lastRow, new Object[] {"","szDocId", "shItemNumber", "decDisc"});
+                    }
+                    
+              }
+            
+            file.close();
+            out =new FileOutputStream(new File(filePathDestination));
+            workbook.write(out);
+            out.close();     
+            
+            System.out.println("OutputCanDDeliveryOrderItemDisc written successfully..");            
+            
+        } catch (IOException ex) {
+            logger.error("FileWriter pada method ExportToExel", ex);
+        } finally {
+            try {
+                //fileWriter.close();
+                out.close();
+            } catch (IOException ex) {
+                logger.error("Finally FileWriter pada method ExportToExel", ex);
+            }
+        }
+        
+        return list;                
+    }
+  
+    
+    public List<OutputCanDDeliveryOrderItemDisc> exportFromListToFileExel(String filePathDestination, List<JHeader> lst){
         List<OutputCanDDeliveryOrderItemDisc> list = new ArrayList<>();
         //FileWriter fileWriter = null;
         FileOutputStream out = null;

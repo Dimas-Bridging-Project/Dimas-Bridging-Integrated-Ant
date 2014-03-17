@@ -2012,7 +2012,7 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                                  <EmptySpace pref="42" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2020,15 +2020,18 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jPanelSubGenerateRetrieveScylla" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jPanelSubGeneratePicture" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jPanelSubGenerateButtonRetrieve" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace pref="98" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jPanelSubGenerateRetrieveScylla" max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="16" max="32767" attributes="0"/>
                                   <Component id="jPanelSubGenerateExtract" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                               </Group>
@@ -2062,45 +2065,26 @@
                                               </Group>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="textPathInputJHeader" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="textPathInputJHeader" alignment="0" pref="432" max="32767" attributes="0"/>
                                                   <Component id="textPathInputJPcode" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="textPathInputJTprb" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="textPathInputJTpru" alignment="0" pref="432" max="32767" attributes="0"/>
+                                                  <Component id="textPathInputJTpru" alignment="1" max="32767" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="btnPathInputJHeader" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="btnPathInputJPcode" min="-2" max="-2" attributes="0"/>
                                                   <Component id="btnPathInputJTprb" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="btnPathInputJTpru" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btnPathInputJPcode" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btnPathInputJTpru" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btnPathInputJHeader" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="btnRetrieveInputJPcode" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="btnRetrieveInputJHeader" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="btnRetrieveInputJTprb" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="btnRetrieveInputJTpru" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btnRetrieveInputJTpru" linkSize="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btnRetrieveInputJPcode" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="658" pref="658" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="btnPathInputOutlet" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="btnPathInputMaster" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="btnPathInputSalesman" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="btnPathInputCvOutlet" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="btnRetrieveInputCvOutlet" linkSize="10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="btnRetrieveInputOutlet" linkSize="10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="btnRetrieveInputSalesman" linkSize="10" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="btnRetrieveInputMaster" linkSize="10" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
@@ -2125,11 +2109,33 @@
                                                       </Group>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="btnPathInputStock" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnRetrieveInputStock" linkSize="1" min="-2" pref="83" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
+                                                      <Component id="btnPathInputStock" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="btnRetrieveInputStock" linkSize="1" min="-2" pref="83" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="btnPathInputOutlet" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="btnPathInputSalesman" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="btnPathInputCvOutlet" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="btnRetrieveInputSalesman" max="32767" attributes="0"/>
+                                                          <Component id="btnRetrieveInputOutlet" max="32767" attributes="0"/>
+                                                          <Component id="btnRetrieveInputCvOutlet" alignment="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="btnPathInputMaster" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="btnRetrieveInputMaster" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
@@ -2171,130 +2177,90 @@
                                                       <Component id="btnRetrieveInputStokAdjustment" linkSize="1" min="-2" pref="80" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="btnRetrieveInputMaster" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnPathInputMaster" min="-2" max="-2" attributes="0"/>
+                                          <Component id="textPathInputMaster" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel1" linkSize="7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="btnRetrieveInputSalesman" min="-2" pref="22" max="-2" attributes="0"/>
+                                          <Component id="btnPathInputSalesman" min="-2" max="-2" attributes="0"/>
+                                          <Component id="textPathInputSalesman" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel3" linkSize="7" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="btnPathInputOutlet" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnRetrieveInputOutlet" min="-2" max="-2" attributes="0"/>
+                                          <Component id="textPathInputOutlet" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" linkSize="7" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="btnRetrieveInputCvOutlet" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnPathInputCvOutlet" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="textPathInputCvOutlet" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel5" linkSize="7" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel6" linkSize="7" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Component id="textPathInputJHeader" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnPathInputJHeader" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnRetrieveInputJHeader" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="btnPathInputMaster" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                              <Component id="btnRetrieveInputMaster" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="btnRetrieveInputSalesman" min="-2" pref="22" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="btnPathInputSalesman" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel7" linkSize="7" min="-2" pref="25" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel8" linkSize="7" min="-2" pref="25" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="textPathInputJPcode" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="textPathInputJTprb" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="btnPathInputJPcode" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btnPathInputJTprb" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="btnPathInputOutlet" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="btnRetrieveInputOutlet" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="btnRetrieveInputCvOutlet" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="btnPathInputCvOutlet" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btnPathInputJTpru" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel9" linkSize="7" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel1" linkSize="7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="textPathInputMaster" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel3" linkSize="7" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                                  <Component id="textPathInputSalesman" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel4" linkSize="7" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                                  <Component id="textPathInputOutlet" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel5" linkSize="7" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                                  <Component id="textPathInputCvOutlet" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                                              <Component id="textPathInputJTpru" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="textPathInputJHeader" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="textPathInputJPcode" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                              <Component id="textPathInputJTprb" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                              <Component id="textPathInputJTpru" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="btnPathInputJHeader" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="btnRetrieveInputJHeader" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="btnPathInputJPcode" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="btnRetrieveInputJPcode" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="btnPathInputJTprb" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="btnRetrieveInputJTprb" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="btnPathInputJTpru" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="btnRetrieveInputJTpru" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jLabel6" linkSize="7" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="jLabel7" linkSize="7" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="jLabel8" linkSize="7" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="jLabel9" linkSize="7" min="-2" pref="25" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="btnRetrieveInputStock" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnPathInputStock" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="textPathInputStock" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jDateChooseTanggalStock" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" linkSize="7" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="btnRetrieveInputStock" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jDateChooseTanggalStock" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="textPathInputStock" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="btnPathInputStock" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel2" linkSize="7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -2338,6 +2304,15 @@
                                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="202" pref="202" max="-2" attributes="0"/>
+                                      <Component id="btnRetrieveInputJPcode" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                      <Component id="btnRetrieveInputJTprb" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnRetrieveInputJTpru" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="169" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -4715,8 +4690,8 @@
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                              <Component id="jTabbedPaneUtamaSettingPokari" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="90" max="32767" attributes="0"/>
+                              <Component id="jTabbedPaneUtamaSettingPokari" min="-2" pref="633" max="-2" attributes="0"/>
+                              <EmptySpace pref="52" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -4756,11 +4731,7 @@
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                  <Component id="jTabbedPaneSubSettingPokariMappingMaster" pref="537" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jTabbedPaneSubSettingPokariMappingMaster" alignment="1" pref="594" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
@@ -4794,7 +4765,7 @@
                                                   <EmptySpace min="-2" pref="615" max="-2" attributes="0"/>
                                                   <Component id="btnMappingMasterPokariProductReload" min="-2" pref="122" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="jPanelSubSettingPokariMappingMasterProductDetail" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jPanelMappingMasterPokariProdukDetail" alignment="0" max="32767" attributes="0"/>
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Component id="textMappingMasterPokariProductSearchIdBrgScylla" min="-2" pref="76" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -4836,9 +4807,9 @@
                                               <Component id="checkMappingMasterPokariProductSearchSemua" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jScrollPane40" min="-2" pref="302" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane40" min="-2" pref="252" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jPanelSubSettingPokariMappingMasterProductDetail" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jPanelMappingMasterPokariProdukDetail" min="-2" pref="121" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -4847,7 +4818,7 @@
                                               </Group>
                                               <Component id="btnMappingMasterPokariProductSave" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="101" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -4901,11 +4872,11 @@
                                     <Property name="text" type="java.lang.String" value="MAP PRODUCT"/>
                                   </Properties>
                                 </Component>
-                                <Container class="javax.swing.JPanel" name="jPanelSubSettingPokariMappingMasterProductDetail">
+                                <Container class="javax.swing.JPanel" name="jPanelMappingMasterPokariProdukDetail">
                                   <Properties>
                                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                                        <EtchetBorder/>
+                                      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                        <TitledBorder title="0 of 0 records"/>
                                       </Border>
                                     </Property>
                                   </Properties>
@@ -4979,7 +4950,7 @@
                                                   <Component id="checkMappingMasterPokariProductDikirim" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="checkMappingMasterPokariProductAktif" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace pref="18" max="32767" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
@@ -5139,12 +5110,16 @@
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
+                                                  <Component id="jPanelMappingMasterPokariCustomerDetail" min="-2" pref="964" max="-2" attributes="0"/>
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
                                                   <Component id="textMappingMasterPokariCustomerSearchIdScylla" min="-2" pref="88" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                                   <Component id="textMappingMasterPokariCustomerSearchIdPokari" min="-2" pref="106" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="textMappingMasterPokariCustomerSearchName" min="-2" pref="159" max="-2" attributes="0"/>
-                                                  <EmptySpace pref="53" max="32767" attributes="0"/>
+                                                  <EmptySpace pref="79" max="32767" attributes="0"/>
                                                   <Component id="checkMappingMasterPokariCustomerSearchSemua" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="checkMappingMasterPokariCustomerSearchBaruSaja" min="-2" max="-2" attributes="0"/>
@@ -5170,10 +5145,6 @@
                                                   <Component id="jScrollPane47" max="32767" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                               </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jPanel102" min="-2" pref="964" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -5193,9 +5164,9 @@
                                               <Component id="checkMappingMasterPokariCustomerSearchSemua" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane47" min="-2" pref="199" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane47" min="-2" pref="187" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jPanel102" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jPanelMappingMasterPokariCustomerDetail" min="-2" pref="271" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -5204,7 +5175,7 @@
                                               </Group>
                                               <Component id="btnMappingMasterPokariCustomerSave" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="25" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -5261,11 +5232,11 @@
                                     <Property name="text" type="java.lang.String" value="AR CUSTOMER"/>
                                   </Properties>
                                 </Component>
-                                <Container class="javax.swing.JPanel" name="jPanel102">
+                                <Container class="javax.swing.JPanel" name="jPanelMappingMasterPokariCustomerDetail">
                                   <Properties>
                                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                                        <EtchetBorder/>
+                                      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                        <TitledBorder title="0 of 0 records"/>
                                       </Border>
                                     </Property>
                                   </Properties>
@@ -5959,7 +5930,7 @@
                                                       </Group>
                                                       <Group type="102" attributes="0">
                                                           <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="jPanel104" alignment="0" min="-2" pref="965" max="-2" attributes="0"/>
+                                                              <Component id="jPanelMappingMasterPokariEmployeeDetail" alignment="0" min="-2" pref="965" max="-2" attributes="0"/>
                                                               <Component id="jScrollPane48" min="-2" pref="965" max="-2" attributes="0"/>
                                                           </Group>
                                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -5978,8 +5949,8 @@
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="jScrollPane48" min="-2" pref="313" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jPanel104" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jPanelMappingMasterPokariEmployeeDetail" min="-2" pref="149" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                                   <Component id="btnMappingMasterPokariEmployeeDelete" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -6041,11 +6012,11 @@
                                     <Property name="text" type="java.lang.String" value="MAP SALESMAN/EMPLOYEE"/>
                                   </Properties>
                                 </Component>
-                                <Container class="javax.swing.JPanel" name="jPanel104">
+                                <Container class="javax.swing.JPanel" name="jPanelMappingMasterPokariEmployeeDetail">
                                   <Properties>
                                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                                        <EtchetBorder/>
+                                      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                        <TitledBorder title="0 of 0 records"/>
                                       </Border>
                                     </Property>
                                   </Properties>
@@ -6117,7 +6088,7 @@
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="jLabel117" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel118" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -6158,7 +6129,6 @@
                                                       <Component id="comboMappingMasterPokariEmployeeSalesTeam" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
@@ -6344,7 +6314,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jTabbedPaneSubSettingPokariTabelTabel" min="-2" pref="530" max="-2" attributes="0"/>
-                                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                                  <EmptySpace pref="52" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

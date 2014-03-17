@@ -17,7 +17,6 @@ import org.slf4j.LoggerFactory;
 /*
  * @author yhawin
  */
-
 public class ParseJPcode {    
     private static final Logger logger = LoggerFactory.getLogger(ParseJPcode.class);
     BridgingController controller;
@@ -60,14 +59,27 @@ public class ParseJPcode {
                   
                     item.setQtyInFib(data[3]);
                     
+                    //karena dipake dibawahnya
+                    item.setTipeFakturRetur(data[9]);                    
+                    
                     if (! data[4].equals(""))
                         item.setQtyInSat(Integer.parseInt(data[4]));
                     if(! data[5].equals("")) 
                         item.setHrgJualKartonNoPpn(Integer.parseInt(data[5]));
                     if (! data[6].equals(""))
                         item.setHrgJualLsnNoPpn(Integer.parseInt(data[6]));
-                    if (! data[7].equals(""))
-                        item.setHargaNoPpn(Integer.parseInt(data[7]));
+                    if (! data[7].equals("")){
+                        item.setHargaNoPpn(Integer.parseInt(data[7]));                        
+                        try {
+                            if (item.getTipeFakturRetur().trim().equalsIgnoreCase("R")){
+                                item.setHargaNoPpn(-Integer.parseInt(data[7]));                            
+                            }   
+                        }catch(Exception ex){
+                            logger.error("JPCode Gagal Set Minus pada HargaNoPpn");
+                        }
+                    }    
+                    
+                    
                     item.setJenis(data[8]);
                     item.setTipeFakturRetur(data[9]);
 
@@ -93,7 +105,6 @@ public class ParseJPcode {
 
         return lst;        
     }
-
     
     public static void main(String [] args) throws FileNotFoundException, IOException {
     }

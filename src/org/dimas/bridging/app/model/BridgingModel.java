@@ -22,12 +22,12 @@ import static org.dimas.bridging.app.model.BridgingModelInit.logger;
 public class BridgingModel extends BridgingModelInit{
     public void loadMappingProductToMem(){
          if (databaseMode==false){
-                if (isLoadMappingProductToMem==false) {
-                    
-                    System.out.println("POINT AKU PERNAH DIJALANKAN: ");
-                    
+                if (isLoadMappingProductToMem==false) {                    
                     List<MappingProduct> mappingProducts = new ArrayList<>();
                     mappingProducts = mappingProductDao.findAll();
+                    
+//                    System.out.println("OKE MAPPING: " + mappingProducts.size());
+                    
                     try {                        
                         for (MappingProduct mappingProduct: mappingProducts){
                             mappingProductDaoMem.saveOrUpdate(mappingProduct);
@@ -35,6 +35,9 @@ public class BridgingModel extends BridgingModelInit{
                     } catch(Exception ex){
                         logger.error("error MappingProductDao --> MappingProductDaoMem", ex);
                     }
+                    
+//                    System.out.println("OKE MAMPPING AFTER : " + mappingProductDaoMem.getAll().size());
+                    
                     isLoadMappingProductToMem = true;
                 }
          }       

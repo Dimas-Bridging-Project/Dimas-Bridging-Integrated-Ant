@@ -63,9 +63,19 @@ public class ParseJTpru {
                     jtpruPK.setPcode(data[2]);
                     item.setJtpruPK(jtpruPK);
                     
-                    if (! data[3].equals(""))
-                        item.setHargaNoPpn(Integer.parseInt(data[3]));
+                    //Tipe faktur retur atau tidak karena dipake dibawahnya
                     item.setTipe(data[4]);
+                    
+                    if (! data[3].equals("")){
+                        item.setHargaNoPpn(Integer.parseInt(data[3]));
+                        try {
+                            if (item.getTipe().trim().equalsIgnoreCase("R")){
+                                item.setHargaNoPpn(-Integer.parseInt(data[3]));                            
+                            }
+                        }catch(Exception ex){
+                            logger.error("JTpru gagal set minus pada HargaNoPPn");
+                        }
+                    }
 
                     if (item !=null) 
                             lst.add(item);

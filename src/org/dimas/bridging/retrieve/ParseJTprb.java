@@ -59,6 +59,9 @@ public class ParseJTprb {
                     //Kita sudah memindah salesman code sebagai  primary key
                     //item.setSalesman(data[0]);
                     
+                    //karena dipake dibawahnya
+                    item.setTipeFakturRetur(data[8]);
+                    
                     jtprbPK.setIdOrder(data[1]);
                     jtprbPK.setPcode(data[2]);
                     item.setJtprbPK(jtprbPK);
@@ -78,6 +81,14 @@ public class ParseJTprb {
                     //Harga Jual PcsNoPPn
                     Integer intHargaJualPcsNoPpn = item.getHrgJualLsnNoPpn()/12;
                     Integer intHargaNoPpn = intHargaJualPcsNoPpn * item.getQtyInSat();
+                    //Hati hati dengan output
+                    try {
+                        if (item.getTipeFakturRetur().trim().equalsIgnoreCase("R")){
+                            intHargaNoPpn = -intHargaNoPpn;
+                        }
+                    } catch(Exception ex){
+                            logger.error("JTPrb Gagal Set Minus pada HargaNoPPN");
+                    }
                     item.setHargaNoPpn(intHargaNoPpn);
                     
                     item.setJenis(data[7]);

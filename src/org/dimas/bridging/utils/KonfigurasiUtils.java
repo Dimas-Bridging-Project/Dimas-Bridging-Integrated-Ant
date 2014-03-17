@@ -126,7 +126,7 @@ public class KonfigurasiUtils {
             sysvar211.setIdSysvar("_PO_LOC");
             sysvar211.setDeskripsi("Template Output IDos Location");
             sysvar211.setTipeData("STR1");
-            sysvar211.setNilaiString1(templateOutputIDosLocation.toLowerCase().trim());
+            sysvar211.setNilaiString1(templateOutputIDosLocation.trim());
             sysvarDao.saveOrUpdate(sysvar211);
         
         return pesan;

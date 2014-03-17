@@ -525,6 +525,10 @@ public class BridgingControllerActionMappingMaster {
                    itemDistrChannelId.setStrCode(item.getSzDistrChannelId());
                    controller.getView().getComboMappingMasterPokariCustomerDistrChannelId().setSelectedItem(itemDistrChannelId);
                    
+                   //record
+                   int rowCount = controller.getModel().tmArCustomer.getRowCount();
+                   controller.getView().getJPanelMappingMasterPokariCustomerDetail().setBorder(javax.swing.BorderFactory.createTitledBorder(rowIndex+1 + " of "+ rowCount + " records"));
+                   
                    EnumModelPokari itemAllowToCredit = new EnumModelPokari();     
                    itemAllowToCredit.setStrCode(EnumBAllowToCredit.CASH.getStrCode());
                    if (item.getbAllowToCredit() != null){                       
@@ -571,11 +575,14 @@ public class BridgingControllerActionMappingMaster {
                     TeamSales itemTeamSales = new TeamSales();
                     itemTeamSales.setTeamId(item.getSzTeamId());
                     controller.getView().getComboMappingMasterPokariEmployeeSalesTeam().setSelectedItem(itemTeamSales);
+
+                    //record
+                   int rowCount = controller.getModel().tmSpEmployee.getRowCount();
+                   controller.getView().getJPanelMappingMasterPokariEmployeeDetail().setBorder(javax.swing.BorderFactory.createTitledBorder(rowIndex+1 + " of "+ rowCount + " records"));
                      
                  }
              }
-    }
-    
+    }    
     public void aksiTableMappingMasterPokariProductSelected(){
              int rowIndex =controller.getView().getTableMappingMasterPokariProduct().getSelectedRow();
              if (rowIndex > -1) {
@@ -596,6 +603,9 @@ public class BridgingControllerActionMappingMaster {
                    controller.getView().getCheckMappingMasterPokariProductAktif().setSelected(item.getAktif()!=null? item.getAktif():false);
                    controller.getView().getCheckMappingMasterPokariProductBaru().setSelected(item.getBaru()!=null? item.getBaru():false);
                    controller.getView().getCheckMappingMasterPokariProductDikirim().setSelected(item.getAllowTransfer()!=null?item.getAllowTransfer():false);
+                   //record
+                   int rowCount = controller.getModel().tmMappingProduct.getRowCount();
+                   controller.getView().getJPanelMappingMasterPokariProdukDetail().setBorder(javax.swing.BorderFactory.createTitledBorder(rowIndex+1 + " of "+ rowCount + " records"));
                      
                  }
              }
