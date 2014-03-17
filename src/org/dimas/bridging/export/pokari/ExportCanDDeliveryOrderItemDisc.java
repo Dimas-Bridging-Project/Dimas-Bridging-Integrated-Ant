@@ -48,7 +48,7 @@ public class ExportCanDDeliveryOrderItemDisc {
 //            appContext = ApplicationContextProvider.getInstance().getApplicationContext();
 //            sysvarDao = (SysvarDaoInter) appContext.getBean("SysvarDaoBean");
     }
-      public List<OutputCanDDeliveryOrderItemDisc> exportFromListToFileExelUsingTemplate(String filePathDestination, List<JHeader> lst){
+      public List<OutputCanDDeliveryOrderItemDisc> exportFromListToFileExelUsingTemplate(String filePathDestination, List<JHeader> lst, String prefixFaktur){
         List<OutputCanDDeliveryOrderItemDisc> list = new ArrayList<>();
         //FileWriter fileWriter = null;
         FileInputStream file = null;
@@ -83,7 +83,7 @@ public class ExportCanDDeliveryOrderItemDisc {
                             OutputCanDDeliveryOrderItemDiscPK itemOutPK = new OutputCanDDeliveryOrderItemDiscPK();
                             
                             Row dataRow = sheet.createRow(lastRow);
-                            dataRow.createCell(1).setCellValue(itm.getJtprbPK().getIdOrder()); itemOutPK.setSzDocId(itm.getJtprbPK().getIdOrder());
+                            dataRow.createCell(1).setCellValue(prefixFaktur + itm.getJtprbPK().getIdOrder()); itemOutPK.setSzDocId( prefixFaktur + itm.getJtprbPK().getIdOrder());
                             dataRow.createCell(2).setCellValue(itemNumber); itemOutPK.setShItemNumber(itemNumber);
                             dataRow.createCell(6).setCellValue(itm.getHargaNoPpn()); itemOut.setDecDisc(itm.getHargaNoPpn().doubleValue());
                             

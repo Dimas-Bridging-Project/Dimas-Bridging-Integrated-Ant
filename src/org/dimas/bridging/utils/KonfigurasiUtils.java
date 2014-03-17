@@ -118,7 +118,7 @@ public class KonfigurasiUtils {
         return pesan;       
     }
     
-    public String simpanKonfigurasiPokari(String templateOutputIDosLocation){
+    public String simpanKonfigurasiPokari(String templateOutputIDosLocation, String prefixInvoice){
             String pesan = "OK";
            //POKARI KONFIGURASI Selain Email
           //2.1 
@@ -129,6 +129,12 @@ public class KonfigurasiUtils {
             sysvar211.setNilaiString1(templateOutputIDosLocation.trim());
             sysvarDao.saveOrUpdate(sysvar211);
         
+            Sysvar sysvar212 = new Sysvar();
+            sysvar212.setIdSysvar("_PO_PRE");
+            sysvar212.setDeskripsi("Prefix pada iDos Faktur");
+            sysvar212.setTipeData("STR1");
+            sysvar212.setNilaiString1(prefixInvoice.trim());
+            sysvarDao.saveOrUpdate(sysvar212);
         return pesan;
     }
     
@@ -240,6 +246,14 @@ public class KonfigurasiUtils {
             sysvar211.setTipeData("STR1");
             sysvar211.setNilaiString1("C:");
             sysvarDao.saveOrUpdate(sysvar211);
+            
+            Sysvar sysvar212 = new Sysvar();
+            sysvar212.setIdSysvar("_PO_PREFIX_INV");
+            sysvar212.setDeskripsi("Prefix pada iDos Faktur");
+            sysvar212.setTipeData("STR1");
+            sysvar212.setNilaiString1("0000-");
+            sysvarDao.saveOrUpdate(sysvar212);
+            
          return pesan;
      }    
     
@@ -253,6 +267,14 @@ public class KonfigurasiUtils {
             sysvar211.setTipeData("STR1");
             sysvar211.setNilaiString1("C:");
             sysvarDao.saveOrUpdate(sysvar211);
+            
+            Sysvar sysvar212 = new Sysvar();
+            sysvar212.setIdSysvar("_PO_PREFIX_INV");
+            sysvar212.setDeskripsi("Prefix pada iDos Output Faktur");
+            sysvar212.setTipeData("STR1");
+            sysvar212.setNilaiString1("0000-");
+            sysvarDao.saveOrUpdate(sysvar212);
+            
          return pesan;
         
     }

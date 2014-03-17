@@ -116,7 +116,11 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     public JTextField getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation(){
         return textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation;
     }
-            
+    
+    public JTextField getTextKonfigurasiAndUtilitiesPokariPrefixFaktur(){
+        return textKonfigurasiAndUtilitiesPokariPrefixFaktur;
+    }
+    
     public JButton getBtnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation(){
         return btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation;
     }
@@ -421,6 +425,8 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation = new javax.swing.JTextField();
         btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation = new javax.swing.JButton();
         jLabel129 = new javax.swing.JLabel();
+        jLabel130 = new javax.swing.JLabel();
+        textKonfigurasiAndUtilitiesPokariPrefixFaktur = new javax.swing.JTextField();
         btnGeneralSettingPokariSimpan = new javax.swing.JButton();
         btnGeneralSettingPokariReload = new javax.swing.JButton();
         jPanelUtamaBackupAndRestore = new javax.swing.JPanel();
@@ -2837,7 +2843,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGeneralSettingSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGeneralSettingReload, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("General Setting", new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/Home.png")), jPanel21); // NOI18N
@@ -3027,7 +3033,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
             .addGroup(jPanelSubKonfigAndUtilBaygonLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaConfigAndUtils.addTab("Konfigurasi  & Utilities BAYGON", new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/Equipment.png")), jPanelSubKonfigAndUtilBaygon, ""); // NOI18N
@@ -3135,7 +3141,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGeneralSettingKonfigurasiEmaiSimpan)
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addContainerGap(303, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaConfigAndUtils.addTab("Konfigurasi Email", jPanelSubKonfigAndUtilEmail);
@@ -3153,18 +3159,30 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
 
         jLabel129.setText("Template Output IDOS Location");
 
+        jLabel130.setText("Prefix atau Kode Awalan pada Faktur");
+
+        textKonfigurasiAndUtilitiesPokariPrefixFaktur.setText("jTextField1");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel129))
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel129)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel130))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(textKonfigurasiAndUtilitiesPokariPrefixFaktur, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -3176,7 +3194,11 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(jLabel130)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textKonfigurasiAndUtilitiesPokariPrefixFaktur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
 
         btnGeneralSettingPokariSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dimas/bridging/images/save_16x16.png"))); // NOI18N
@@ -3210,7 +3232,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanelSubKonfigAndUtilPokariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGeneralSettingPokariSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGeneralSettingPokariReload, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtamaConfigAndUtils.addTab("Konfigurasi & Utilities POKARI", jPanelSubKonfigAndUtilPokari);
@@ -3219,21 +3241,17 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jPanelUtamaConfigAndUtils.setLayout(jPanelUtamaConfigAndUtilsLayout);
         jPanelUtamaConfigAndUtilsLayout.setHorizontalGroup(
             jPanelUtamaConfigAndUtilsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1039, Short.MAX_VALUE)
-            .addGroup(jPanelUtamaConfigAndUtilsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelUtamaConfigAndUtilsLayout.createSequentialGroup()
-                    .addGap(0, 59, Short.MAX_VALUE)
-                    .addComponent(jTabbedPaneUtamaConfigAndUtils, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 59, Short.MAX_VALUE)))
+            .addGroup(jPanelUtamaConfigAndUtilsLayout.createSequentialGroup()
+                .addGap(0, 59, Short.MAX_VALUE)
+                .addComponent(jTabbedPaneUtamaConfigAndUtils, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 59, Short.MAX_VALUE))
         );
         jPanelUtamaConfigAndUtilsLayout.setVerticalGroup(
             jPanelUtamaConfigAndUtilsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
-            .addGroup(jPanelUtamaConfigAndUtilsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelUtamaConfigAndUtilsLayout.createSequentialGroup()
-                    .addGap(0, 27, Short.MAX_VALUE)
-                    .addComponent(jTabbedPaneUtamaConfigAndUtils, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 27, Short.MAX_VALUE)))
+            .addGroup(jPanelUtamaConfigAndUtilsLayout.createSequentialGroup()
+                .addGap(0, 25, Short.MAX_VALUE)
+                .addComponent(jTabbedPaneUtamaConfigAndUtils, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
         jTabbedPaneUtama.addTab("Setting and Utils", jPanelUtamaConfigAndUtils);
@@ -4359,7 +4377,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
         jPanelMappingMasterPokariEmployeeDetailLayout.setVerticalGroup(
             jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanelMappingMasterPokariEmployeeDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel117)
                     .addComponent(jLabel118)
@@ -4432,7 +4450,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelMappingMasterPokariEmployeeDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelMappingMasterPokariEmployeeDetail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanelSubSettingPokariMappingMasterEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelSubSettingPokariMappingMasterEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -8982,6 +9000,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
     private javax.swing.JLabel jLabel133;
@@ -9317,6 +9336,7 @@ public class BridgingViewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField textInputJHeaderSearchIdOrder;
     private javax.swing.JTextField textInputJHeaderSearchIdOutlet;
     private javax.swing.JTextField textInputJHeaderSearchSalesman;
+    private javax.swing.JTextField textKonfigurasiAndUtilitiesPokariPrefixFaktur;
     private javax.swing.JTextField textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation;
     private javax.swing.JTextField textMapOutletDistiId;
     private javax.swing.JTextField textMapOutletMSLOutletCode;

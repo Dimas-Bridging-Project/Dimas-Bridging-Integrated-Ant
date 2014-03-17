@@ -11,12 +11,15 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileFilter;
+import org.bagus.common.filefilter.ExtensionFileFilter;
 import org.bagus.common.parser.csv.FileManager;
 import org.config.spring.hibernate.model.JHeader;
 import org.config.spring.hibernate.model.ScyBDItem;
 import org.config.spring.hibernate.model.ScyPenyesuaianItem;
 import org.config.spring.hibernate.model.ScyReturPabrikItem;
 import org.config.spring.hibernate.model.Stock;
+import org.config.spring.hibernate.model.Sysvar;
 import org.config.spring.hibernate.model.TAdjstk;
 import org.config.spring.hibernate.model.TDatdpr;
 import org.config.spring.hibernate.model.TDatdsl;
@@ -313,6 +316,53 @@ public class BridgingControllerActionExtract {
     /**
      * WE START TO DECLARE METHOD ACTION
      */    
+    public boolean isFileTemplateExits(String path){
+        boolean ada = true;
+                    
+                    String theFilePath = path;
+//                    controller.getModel().setCurrentPath(theFilePath);
+                    
+                    //JIKA FILE YANG DIBUTUHKAN ADA MAKA AKAN DISET LOKASI YANG BENAR : JIKA TIDAK ADA MAKA TAMPIL PESAN
+                    boolean templateKurang = false;
+                    List<String> listMessageFilePathKurang = new ArrayList<>();
+                    
+                    File file1 = new File(theFilePath + File.separator + "Ar_Customer (Master Otlet).xls");
+                    if (! file1.exists()){
+                        templateKurang = true;
+                        listMessageFilePathKurang.add("Ar_Customer (Master Otlet).xls");
+                        //messageFilePathKurang[0] = "Ar_Customer (Master Otlet).xlsx";
+                    }
+                    File file2 = new File(theFilePath + File.separator + "Can_DDeliveryOrder (Transaksi DO-Return).xls");
+                    if (! file2.exists()){
+                        templateKurang = true;
+                        listMessageFilePathKurang.add("Can_DDeliveryOrder (Transaksi DO-Return).xls");
+                    }
+                    File file3 = new File(theFilePath + File.separator + "Sp_Employee (Master Salesman).xls");
+                    if (! file3.exists()){
+                        templateKurang = true;
+                        listMessageFilePathKurang.add("Sp_Employee (Master Salesman).xls");
+                    }
+                    File file4 = new File(theFilePath + File.separator + "Sp_EmployeeTarget (Target Salesman).xls");
+                    if (! file4.exists()){
+                        templateKurang = true;
+                        listMessageFilePathKurang.add("Sp_EmployeeTarget (Target Salesman).xls");
+                    }
+                    
+                    if (templateKurang){
+                        String message = "";
+                        int pencacah = 1;
+                        for (String item: listMessageFilePathKurang) {
+                            message += pencacah++ + ". " + item.trim() + "\n";
+                        }
+                        JOptionPane.showMessageDialog(null, "File Template Berikut Tidak Ada: \n"
+                                + message, "Warning", JOptionPane.ERROR_MESSAGE);          
+                        ada = false;
+                    }
+                    
+                    
+                
+        return ada;
+    }
    public void aksiBtnExtractAllPokari(){
        List<String> templateKurang = new ArrayList<String>();
        
@@ -323,6 +373,9 @@ public class BridgingControllerActionExtract {
             String inputDirString = controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().getText().trim();
             String outputDirString = controller.getView().getTextPathOutput().getText().trim();
 
+            //KONFIRMASI KEBERADAAN FILE Template
+            isFileTemplateExits(inputDirString);
+            
             if (! inputDirString.trim().substring(inputDirString.trim().length()-1, inputDirString.trim().length()).equals(File.separator)) 
                 inputDirString += File.separator;
 
@@ -536,8 +589,13 @@ public class BridgingControllerActionExtract {
             //SORTIR TANGGAL PAKE DAO DISINI
             lst = controller.getModel().jheaderDaoMem.findAllByDate(cal1.getTime(), cal2.getTime());
 //            lst = controller.getModel().jheaderDaoMem.findAll();
-            
-            System.out.println("CanDDeliveryOrder rec: " + lst.size());
+            //PREFIX FAKTUR
+            Sysvar sysvar; 
+            String prefixFaktur = "0000-";
+            sysvar = controller.getModel().sysvarDao.findById("_PO_PRE");
+            if (sysvar != null) { 
+               prefixFaktur = sysvar.getNilaiString1();
+            }
  
             String outputDirString = controller.getView().getTextPathOutput().getText().trim();            
             if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
@@ -549,7 +607,7 @@ public class BridgingControllerActionExtract {
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
 //            List<OutputCanDDeliveryOrder> outputs = f.exportFromListToFileExel(outputFileString, controller.getView().getjDateChooserExtract().getDate(),  lst);
-            List<OutputCanDDeliveryOrder> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst);
+            List<OutputCanDDeliveryOrder> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst, prefixFaktur);
             
             for (OutputCanDDeliveryOrder output:  outputs) {
                 try {
@@ -616,6 +674,14 @@ public class BridgingControllerActionExtract {
             List<JHeader> lst = new ArrayList<>();
             lst = controller.getModel().jheaderDaoMem.findAllByDate(cal1.getTime(), cal2.getTime());
             
+            //PREFIX FAKTUR
+            Sysvar sysvar; 
+            String prefixFaktur = "0000-";
+            sysvar = controller.getModel().sysvarDao.findById("_PO_PRE");
+            if (sysvar != null) { 
+               prefixFaktur = sysvar.getNilaiString1();
+            }
+            
             String outputDirString = controller.getView().getTextPathOutput().getText().trim();            
             if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
                 outputDirString += File.separator;
@@ -625,7 +691,7 @@ public class BridgingControllerActionExtract {
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
 //            List<OutputCanDDeliveryOrderItemDetail> outputs = f.exportFromListToFileExel(outputFileString, controller.getView().getjDateChooserExtract().getDate(),  lst);
-            List<OutputCanDDeliveryOrderItemDetail> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst);
+            List<OutputCanDDeliveryOrderItemDetail> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst, prefixFaktur);
             
             for (OutputCanDDeliveryOrderItemDetail output:  outputs) {
                 try {
@@ -697,6 +763,14 @@ public class BridgingControllerActionExtract {
             List<JHeader> lst = new ArrayList<>();
             lst = controller.getModel().jheaderDaoMem.findAllByDate(cal1.getTime(), cal2.getTime());
 
+            //PREFIX FAKTUR
+            Sysvar sysvar; 
+            String prefixFaktur = "0000-";
+            sysvar = controller.getModel().sysvarDao.findById("_PO_PRE");
+            if (sysvar != null) { 
+               prefixFaktur = sysvar.getNilaiString1();
+            }
+             
             String outputDirString = controller.getView().getTextPathOutput().getText().trim();            
             if (!outputDirString.trim().substring(outputDirString.trim().length()-1,outputDirString.trim().length()).equals(File.separator)) 
                 outputDirString += File.separator;
@@ -705,7 +779,7 @@ public class BridgingControllerActionExtract {
             ExportCanDDeliveryOrderItemDisc f = new ExportCanDDeliveryOrderItemDisc();
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
-            List<OutputCanDDeliveryOrderItemDisc> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString,lst);
+            List<OutputCanDDeliveryOrderItemDisc> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString,lst, prefixFaktur);
             
             for (OutputCanDDeliveryOrderItemDisc output: outputs  ) {
                 try {

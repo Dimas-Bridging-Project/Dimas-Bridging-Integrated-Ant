@@ -3067,25 +3067,19 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1039" max="32767" attributes="0"/>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="59" max="32767" attributes="0"/>
-                              <Component id="jTabbedPaneUtamaConfigAndUtils" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="59" max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="59" max="32767" attributes="0"/>
+                          <Component id="jTabbedPaneUtamaConfigAndUtils" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="59" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="690" max="32767" attributes="0"/>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
-                              <Component id="jTabbedPaneUtamaConfigAndUtils" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
+                          <Component id="jTabbedPaneUtamaConfigAndUtils" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3132,7 +3126,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jTabbedPane4" min="-2" pref="515" max="-2" attributes="0"/>
-                                  <EmptySpace pref="70" max="32767" attributes="0"/>
+                                  <EmptySpace pref="74" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3221,7 +3215,7 @@
                                               <Component id="btnGeneralSettingSimpan" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                               <Component id="btnGeneralSettingReload" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="95" max="32767" attributes="0"/>
+                                          <EmptySpace pref="103" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -3807,7 +3801,7 @@
                                   <Component id="jPanel54" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnGeneralSettingKonfigurasiEmaiSimpan" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="295" max="32767" attributes="0"/>
+                                  <EmptySpace pref="303" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3995,7 +3989,7 @@
                                       <Component id="btnGeneralSettingPokariSimpan" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                       <Component id="btnGeneralSettingPokariReload" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="298" max="32767" attributes="0"/>
+                                  <EmptySpace pref="302" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4014,14 +4008,26 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation" min="-2" pref="473" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation" min="-2" pref="33" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation" min="-2" pref="473" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation" min="-2" pref="33" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jLabel129" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <Component id="jLabel129" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="jLabel130" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="textKonfigurasiAndUtilitiesPokariPrefixFaktur" min="-2" pref="252" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                       <EmptySpace pref="17" max="32767" attributes="0"/>
                                   </Group>
@@ -4037,7 +4043,11 @@
                                           <Component id="btnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation" min="-2" pref="26" max="-2" attributes="0"/>
                                           <Component id="textKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="176" max="32767" attributes="0"/>
+                                      <EmptySpace pref="76" max="32767" attributes="0"/>
+                                      <Component id="jLabel130" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="textKonfigurasiAndUtilitiesPokariPrefixFaktur" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -4061,6 +4071,16 @@
                             <Component class="javax.swing.JLabel" name="jLabel129">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Template Output IDOS Location"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel130">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="Prefix atau Kode Awalan pada Faktur"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="textKonfigurasiAndUtilitiesPokariPrefixFaktur">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="jTextField1"/>
                               </Properties>
                             </Component>
                           </SubComponents>
@@ -5949,7 +5969,7 @@
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="jScrollPane48" min="-2" pref="313" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jPanelMappingMasterPokariEmployeeDetail" min="-2" pref="149" max="-2" attributes="0"/>
+                                          <Component id="jPanelMappingMasterPokariEmployeeDetail" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -6088,7 +6108,7 @@
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <EmptySpace pref="16" max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="jLabel117" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel118" alignment="3" min="-2" max="-2" attributes="0"/>

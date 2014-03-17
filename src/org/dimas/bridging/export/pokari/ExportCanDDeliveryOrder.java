@@ -35,21 +35,22 @@ public class ExportCanDDeliveryOrder {
     private static final Logger logger = LoggerFactory.getLogger(ExportCanDDeliveryOrder.class);
     
 //    ApplicationContext appContext;
-//    SysvarDaoInter sysvarDao;
 
     public ExportCanDDeliveryOrder() {
         initiates();
     }  
     
     public void initiates(){
+        
     }
-    public List<OutputCanDDeliveryOrder> exportFromListToFileExelUsingTemplate(String filePathDestination, List<JHeader> lst){
+    public List<OutputCanDDeliveryOrder> exportFromListToFileExelUsingTemplate(String filePathDestination, List<JHeader> lst, String prefixFaktur){
        
         List<OutputCanDDeliveryOrder> list = new ArrayList<>();
         //FileWriter fileWriter = null;
         FileInputStream file = null;
         FileOutputStream out = null;
         logger.info("Starting OutputCanDDeliveryOrder");
+        
         try {
 
             file = new FileInputStream(new File(filePathDestination));            
@@ -71,8 +72,8 @@ public class ExportCanDDeliveryOrder {
                         lastRow++;
                         
                         OutputCanDDeliveryOrder itemOut = new OutputCanDDeliveryOrder();
-
-                        String szDocId = item.getIdOrder(); itemOut.setSzDocId("3600-" + item.getIdOrder());
+                        
+                        String szDocId = item.getIdOrder(); itemOut.setSzDocId(prefixFaktur + item.getIdOrder());
                         String szCustomerId = item.getArCustomer().getSzCustomerId(); itemOut.setSzCustomerId(item.getArCustomer().getSzCustomerId());
                         String szEmployeeId = item.getSpEmployee().getSzEmployeeId(); itemOut.setSzEmployeeId(item.getSpEmployee().getSzEmployeeId());
                         String szVehicleId = item.getSpEmployee().getSzVehicleId(); itemOut.setSzVehicleId(item.getSpEmployee().getSzVehicleId());
@@ -94,7 +95,7 @@ public class ExportCanDDeliveryOrder {
                         String dtmCreated = sdf2.format(item.getTanggal()); itemOut.setDtmCreated(item.getTanggal());
                         String dtmLastUpdated = sdf2.format(item.getTanggal()); itemOut.setDtmLastUpdated(item.getTanggal());
                         String szWorkplaceId = item.getArCustomer().getSzWorkplaceId(); itemOut.setSzWorkPlaceId(item.getArCustomer().getSzWorkplaceId());
-                        String szManualId = item.getIdOrder(); itemOut.setSzManualId("3600-" + item.getIdOrder());
+                        String szManualId = item.getIdOrder(); itemOut.setSzManualId(prefixFaktur + item.getIdOrder());
                         String szSalesId = item.getSpEmployee().getSzEmployeeId(); itemOut.setSzSalesId(item.getSpEmployee().getSzEmployeeId());
 
                         Row dataRow = sheet.createRow(lastRow);

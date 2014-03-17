@@ -459,6 +459,7 @@ public class BridgingView  extends BridgingViewJFrame{
         
         //POKARI
         getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().setText("");
+        getTextKonfigurasiAndUtilitiesPokariPrefixFaktur().setText("");
     }
     
     public void resetTeksMappingTipeOutlet(){

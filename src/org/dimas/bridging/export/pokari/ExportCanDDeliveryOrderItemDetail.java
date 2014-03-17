@@ -47,7 +47,7 @@ public class ExportCanDDeliveryOrderItemDetail {
 //            sysvarDao = (SysvarDaoInter) appContext.getBean("SysvarDaoBean");
     }
 
-    public List<OutputCanDDeliveryOrderItemDetail> exportFromListToFileExelUsingTemplate(String filePathDestination, List<JHeader> lst){
+    public List<OutputCanDDeliveryOrderItemDetail> exportFromListToFileExelUsingTemplate(String filePathDestination, List<JHeader> lst, String prefixFaktur){
         List<OutputCanDDeliveryOrderItemDetail> list = new ArrayList<>();
         //FileWriter fileWriter = null;
         FileInputStream file = null;
@@ -84,7 +84,7 @@ public class ExportCanDDeliveryOrderItemDetail {
                             OutputCanDDeliveryOrderItemDetailPK itemOutPK = new OutputCanDDeliveryOrderItemDetailPK();
                             
                             Row dataRow = sheet.createRow(lastRow); 
-                            dataRow.createCell(1).setCellValue(itm.getJpcodePK().getIdOrder()); itemOutPK.setSzDocId(itm.getJpcodePK().getIdOrder());
+                            dataRow.createCell(1).setCellValue(prefixFaktur + itm.getJpcodePK().getIdOrder()); itemOutPK.setSzDocId(prefixFaktur + itm.getJpcodePK().getIdOrder());
                             dataRow.createCell(2).setCellValue(itemNumber); itemOutPK.setShItemNumber(itemNumber);
                             dataRow.createCell(3).setCellValue(itm.getMappingProduct().getSzProductId()); itemOutPK.setSzProductId(itm.getMappingProduct().getSzProductId());
                             dataRow.createCell(4).setCellValue(itm.getQtyInSat()); itemOut.setDecQty(itm.getQtyInSat());

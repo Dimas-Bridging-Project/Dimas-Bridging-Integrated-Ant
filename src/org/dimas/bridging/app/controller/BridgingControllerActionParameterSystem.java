@@ -96,19 +96,24 @@ public class BridgingControllerActionParameterSystem {
         //KONFIGURASI POKARI
         public void aksiBtnGeneralSettingPokariSimpan(){
                 KonfigurasiUtils konfigUtils = new KonfigurasiUtils();
-                konfigUtils.simpanKonfigurasiPokari(controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().getText().trim());
+                konfigUtils.simpanKonfigurasiPokari(controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().getText().trim(),
+                        controller.getView().getTextKonfigurasiAndUtilitiesPokariPrefixFaktur().getText().trim());
                     
         }
         public void aksiBtnGeneralSettingPokariReload(){
                     Sysvar sysvar;                    
                     sysvar = controller.getModel().sysvarDao.findById("_PO_LOC");
                     if (sysvar !=null) 
-                       controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().setText(sysvar.getNilaiString1());            
-            
+                       controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().setText(sysvar.getNilaiString1());
+                    
+                    sysvar = controller.getModel().sysvarDao.findById("_PO_PRE");
+                    if (sysvar != null) { 
+                       controller.getView().getTextKonfigurasiAndUtilitiesPokariPrefixFaktur().setText(sysvar.getNilaiString1());
+                    }
         }
                 
         public void aksiBtnPathKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation(){
-            FileFilter filter1 = new ExtensionFileFilter("XLSX", new String[] { "XLSX"});
+            FileFilter filter1 = new ExtensionFileFilter("XLS", new String[] { "XLS"});
             JFileChooser fileChooser1 = new JFileChooser(controller.getModel().getCurrentPath());
             //SUPAYA YANG DI HASILKAN HANYA DIREKTORY SAJA
             fileChooser1.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -125,26 +130,26 @@ public class BridgingControllerActionParameterSystem {
                     boolean templateKurang = false;
                     List<String> listMessageFilePathKurang = new ArrayList<>();
                     
-                    File file1 = new File(theFilePath + File.separator + "Ar_Customer (Master Otlet).xlsx");
+                    File file1 = new File(theFilePath + File.separator + "Ar_Customer (Master Otlet).xls");
                     if (! file1.exists()){
                         templateKurang = true;
-                        listMessageFilePathKurang.add("Ar_Customer (Master Otlet).xlsx");
+                        listMessageFilePathKurang.add("Ar_Customer (Master Otlet).xls");
                         //messageFilePathKurang[0] = "Ar_Customer (Master Otlet).xlsx";
                     }
-                    File file2 = new File(theFilePath + File.separator + "Can_DDeliveryOrder (Transaksi DO-Return).xlsx");
+                    File file2 = new File(theFilePath + File.separator + "Can_DDeliveryOrder (Transaksi DO-Return).xls");
                     if (! file2.exists()){
                         templateKurang = true;
-                        listMessageFilePathKurang.add("Can_DDeliveryOrder (Transaksi DO-Return).xlsx");
+                        listMessageFilePathKurang.add("Can_DDeliveryOrder (Transaksi DO-Return).xls");
                     }
-                    File file3 = new File(theFilePath + File.separator + "Sp_Employee (Master Salesman).xlsx");
+                    File file3 = new File(theFilePath + File.separator + "Sp_Employee (Master Salesman).xls");
                     if (! file3.exists()){
                         templateKurang = true;
-                        listMessageFilePathKurang.add("Sp_Employee (Master Salesman).xlsx");
+                        listMessageFilePathKurang.add("Sp_Employee (Master Salesman).xls");
                     }
-                    File file4 = new File(theFilePath + File.separator + "Sp_EmployeeTarget (Target Salesman).xlsx");
+                    File file4 = new File(theFilePath + File.separator + "Sp_EmployeeTarget (Target Salesman).xls");
                     if (! file4.exists()){
                         templateKurang = true;
-                        listMessageFilePathKurang.add("Sp_EmployeeTarget (Target Salesman).xlsx");
+                        listMessageFilePathKurang.add("Sp_EmployeeTarget (Target Salesman).xls");
                     }
                     
                     if (templateKurang){
@@ -158,7 +163,7 @@ public class BridgingControllerActionParameterSystem {
                     }
                     controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().setText(theFilePath);    
                     
-                    JOptionPane.showMessageDialog(null, theFilePath);
+//                    JOptionPane.showMessageDialog(null, theFilePath);
                     
                 }               
             }              
@@ -227,9 +232,13 @@ public class BridgingControllerActionParameterSystem {
                     controller.getView().getCheckTprbDiluarBarang().setSelected(sysvar.getNilaiBol1());
 
                 //POKARI
-                sysvar = controller.getModel().sysvarDao.findById("");
+                sysvar = controller.getModel().sysvarDao.findById("_PO_LOC");
                 if (sysvar != null)
                     controller.getView().getTextKonfigurasiAndUtilitiesPokariTemplateOutputIdosLocation().setText(sysvar.getNilaiString1());
+                
+                sysvar = controller.getModel().sysvarDao.findById("_PO_PRE");
+                if (sysvar != null)
+                    controller.getView().getTextKonfigurasiAndUtilitiesPokariPrefixFaktur().setText(sysvar.getNilaiString1());
 
          }
 
