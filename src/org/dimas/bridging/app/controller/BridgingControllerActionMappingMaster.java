@@ -576,6 +576,11 @@ public class BridgingControllerActionMappingMaster {
                     itemTeamSales.setTeamId(item.getSzTeamId());
                     controller.getView().getComboMappingMasterPokariEmployeeSalesTeam().setSelectedItem(itemTeamSales);
 
+                    //Penanda
+                   controller.getView().getCheckMappingMasterPokariSpEmployeeAktif().setSelected(item.getAktif()!=null? item.getAktif():false);
+                   controller.getView().getCheckMappingMasterPokariSpEmployeeBaru().setSelected(item.getBaru()!=null? item.getBaru():false);
+                   controller.getView().getCheckMappingMasterPokariSpEmployeeDikirim().setSelected(item.getAllowTransfer()!=null?item.getAllowTransfer():false);
+
                     //record
                    int rowCount = controller.getModel().tmSpEmployee.getRowCount();
                    controller.getView().getJPanelMappingMasterPokariEmployeeDetail().setBorder(javax.swing.BorderFactory.createTitledBorder(rowIndex+1 + " of "+ rowCount + " records"));
@@ -738,6 +743,10 @@ public class BridgingControllerActionMappingMaster {
              if (itemTeamSales !=null) {
                  item.setSzTeamId(itemTeamSales.getTeamId().trim());
              }
+             
+             item.setBaru(controller.getView().getCheckMappingMasterPokariSpEmployeeBaru().isSelected());              
+             item.setAktif(controller.getView().getCheckMappingMasterPokariSpEmployeeAktif().isSelected());
+             item.setAllowTransfer(controller.getView().getCheckMappingMasterPokariSpEmployeeDikirim().isSelected());
              
 
 //             item.set(controller.getView().getTextMappingMasterPokari.getText().trim());              
@@ -979,6 +988,8 @@ public class BridgingControllerActionMappingMaster {
             for (CustomerGroup itm: controller.getModel().customerGroupDao.getAll()) {
                 cmbCustomerGroup.addElement(itm);
             }             
+            CustomerGroup itmCustGroup = new CustomerGroup(); itmCustGroup.setIdGroup(""); itmCustGroup.setDescription("K O S O N G");
+            cmbCustomerGroup.addElement(itmCustGroup);
             controller.getView().getComboMappingMasterPokariCustomerCustomerGroup().setModel(cmbCustomerGroup);
 
             DefaultComboBoxModel<WorkPlace> cmbWorkPlace = new DefaultComboBoxModel<>();
@@ -1796,15 +1807,24 @@ public class BridgingControllerActionMappingMaster {
             for (TabelOutletGroup itm: lstTabelOutletGroup) {
                 cmbTabelOutletGroup.addElement(itm);
             }             
+            //Kosong
+//            TabelOutletGroup groupKosong = new TabelOutletGroup();
+//            groupKosong.setGroupId("111");groupKosong.setGroupNm("Kosong");
+//            cmbTabelOutletGroup.addElement(groupKosong);
             controller.getView().getComboMapOutletGroupId().setModel(cmbTabelOutletGroup);
-
+            
             DefaultComboBoxModel<TabelOutletSubGroup> cmbTabelOutletSubGroup = new DefaultComboBoxModel<>();
             List<TabelOutletSubGroup> lstTabelOutletSubGroup = controller.getModel().tabelOutletSubGroupDao.getAll();
             for (TabelOutletSubGroup itm: lstTabelOutletSubGroup) {
                 cmbTabelOutletSubGroup.addElement(itm);
             }             
+            //Kosong
+//            TabelOutletSubGroup subGroupKosong = new TabelOutletSubGroup();
+//            subGroupKosong.setSubGroupId("222");subGroupKosong.setSubGroupNm("Kosong");
+//            cmbTabelOutletSubGroup.addElement(subGroupKosong);
             controller.getView().getComboMapOutletSubGroupId().setModel(cmbTabelOutletSubGroup);
-
+            
+            
             DefaultComboBoxModel<TabelOutletClass> cmbTabelOutletClass = new DefaultComboBoxModel<>();
             List<TabelOutletClass> lstTabelOutletClass = controller.getModel().tabelOutletClassDao.getAll();
             for (TabelOutletClass itm: lstTabelOutletClass) {

@@ -63,7 +63,7 @@ public class ExportArCustomer {
              * CREATE EXEL USING POI
              */
             HSSFWorkbook workbook = new HSSFWorkbook(file);
-            HSSFSheet sheet = workbook.getSheet("Template Ar_Customer");
+            HSSFSheet sheet = workbook.getSheet("Ar_Customer");
             Cell cell = null;        
             
             Locale localeId = new Locale("in", "ID"); //Localization Indonesian
@@ -71,7 +71,7 @@ public class ExportArCustomer {
             String pattern = "dd-MM-yyyy"; // 10-09-2013            
             SimpleDateFormat sdf = new SimpleDateFormat(pattern, localeId);
             
-            int lastRow= 1;
+            int lastRow= 0;
             for (ArCustomer obj: lst) {
                 if (obj.getAllowTransfer()==true){
                         try {
@@ -93,29 +93,29 @@ public class ExportArCustomer {
                             OutputArCustomer itemOut = new OutputArCustomer();
                             
                             Row dataRow = sheet.createRow(lastRow);
-                            dataRow.createCell(2).setCellValue(obj.getSzCustomerId()); itemOut.setSzCustomerId(obj.getSzCustomerId());
-                            dataRow.createCell(3).setCellValue(obj.getSzName()); itemOut.setSzName(obj.getSzName());
-                            dataRow.createCell(4).setCellValue(obj.getSzAddress()); itemOut.setSzAddress(obj.getSzAddress());
-                            dataRow.createCell(5).setCellValue(obj.getSzZipCode()); itemOut.setSzZipCode(obj.getSzZipCode());
-                            dataRow.createCell(6).setCellValue(obj.getSzState()); itemOut.setSzState(obj.getSzState());
-                            dataRow.createCell(7).setCellValue(obj.getSzCity()); itemOut.setSzCity(obj.getSzCity());
-                            dataRow.createCell(8).setCellValue(obj.getSzDistrict()); itemOut.setSzDistrict(obj.getSzDistrict());
-                            dataRow.createCell(9).setCellValue(obj.getSzPhone1()); itemOut.setSzPhone1(obj.getSzPhone1());
-                            dataRow.createCell(10).setCellValue(obj.getSzPhone2()); itemOut.setSzPhone2(obj.getSzPhone2());
-                            dataRow.createCell(11).setCellValue(obj.getSzFax()); itemOut.setSzFax(obj.getSzFax());
-                            dataRow.createCell(12).setCellValue(obj.getSzContact()); itemOut.setSzContract(obj.getSzContact());
-                            dataRow.createCell(13).setCellValue(obj.getSzEmail()); itemOut.setSzEmail(obj.getSzEmail());
-                            dataRow.createCell(14).setCellValue(obj.getSzStatus()); itemOut.setSzStatus(obj.getSzStatus());
-                            dataRow.createCell(15).setCellValue(obj.getSzDistrChannelId()); itemOut.setSzDistrChannelId(obj.getSzDistrChannelId());
-                            dataRow.createCell(16).setCellValue(bolAllowtoCredit); itemOut.setbAllowToCredit(obj.getbAllowToCredit());
-                            dataRow.createCell(17).setCellValue(obj.getDecLimitCredit()); itemOut.setDecLimitCredit(obj.getDecLimitCredit());
-                            dataRow.createCell(18).setCellValue(obj.getSzPaymentTermId() + " Hari"); itemOut.setSzPaymentTermId(obj.getSzPaymentTermId() +" Hari");
-                            dataRow.createCell(19).setCellValue(obj.getSzHirarchyId()); itemOut.setSzHirarchyId(obj.getSzHirarchyId());
-                            dataRow.createCell(20).setCellValue(obj.getSzSalesTerritoryId()); itemOut.setSzSalesTerritoryId(obj.getSzSalesTerritoryId());
-                            dataRow.createCell(21).setCellValue(obj.getSzEmployeeId()); itemOut.setSzEmployeeId(obj.getSzEmployeeId());
-                            dataRow.createCell(22).setCellValue(obj.getSzCustomerGroupId()); itemOut.setSzCustomerGroupId(obj.getSzCustomerGroupId());
-                            dataRow.createCell(23).setCellValue(obj.getSzNPWP()); itemOut.setSzNPWP(obj.getSzNPWP());
-                            dataRow.createCell(24).setCellValue(strRegisterdate); itemOut.setDtmRegisterDate(obj.getDtmRegisterDate());
+                            dataRow.createCell(0).setCellValue(obj.getSzCustomerId()); itemOut.setSzCustomerId(obj.getSzCustomerId());
+                            dataRow.createCell(1).setCellValue(obj.getSzName()); itemOut.setSzName(obj.getSzName());
+                            dataRow.createCell(2).setCellValue(obj.getSzAddress()); itemOut.setSzAddress(obj.getSzAddress());
+                            dataRow.createCell(3).setCellValue(obj.getSzZipCode()); itemOut.setSzZipCode(obj.getSzZipCode());
+                            dataRow.createCell(4).setCellValue(obj.getSzState()); itemOut.setSzState(obj.getSzState());
+                            dataRow.createCell(5).setCellValue(obj.getSzCity()); itemOut.setSzCity(obj.getSzCity());
+                            dataRow.createCell(6).setCellValue(obj.getSzDistrict()); itemOut.setSzDistrict(obj.getSzDistrict());
+                            dataRow.createCell(7).setCellValue(obj.getSzPhone1()); itemOut.setSzPhone1(obj.getSzPhone1());
+                            dataRow.createCell(8).setCellValue(obj.getSzPhone2()); itemOut.setSzPhone2(obj.getSzPhone2());
+                            dataRow.createCell(9).setCellValue(obj.getSzFax()); itemOut.setSzFax(obj.getSzFax());
+                            dataRow.createCell(10).setCellValue(obj.getSzContact()); itemOut.setSzContract(obj.getSzContact());
+                            dataRow.createCell(11).setCellValue(obj.getSzEmail()); itemOut.setSzEmail(obj.getSzEmail());
+                            dataRow.createCell(12).setCellValue(obj.getSzStatus()); itemOut.setSzStatus(obj.getSzStatus());
+                            dataRow.createCell(13).setCellValue(obj.getSzDistrChannelId()); itemOut.setSzDistrChannelId(obj.getSzDistrChannelId());
+                            dataRow.createCell(14).setCellValue(bolAllowtoCredit); itemOut.setbAllowToCredit(obj.getbAllowToCredit());
+                            dataRow.createCell(15).setCellValue(obj.getDecLimitCredit()); itemOut.setDecLimitCredit(obj.getDecLimitCredit());
+                            dataRow.createCell(16).setCellValue(obj.getSzPaymentTermId() + " Hari"); itemOut.setSzPaymentTermId(obj.getSzPaymentTermId() +" Hari");
+                            dataRow.createCell(17).setCellValue(obj.getSzHirarchyId()); itemOut.setSzHirarchyId(obj.getSzHirarchyId());
+                            dataRow.createCell(18).setCellValue(obj.getSzSalesTerritoryId()); itemOut.setSzSalesTerritoryId(obj.getSzSalesTerritoryId());
+                            dataRow.createCell(19).setCellValue(obj.getSzEmployeeId()); itemOut.setSzEmployeeId(obj.getSzEmployeeId());
+                            dataRow.createCell(20).setCellValue(obj.getSzCustomerGroupId()); itemOut.setSzCustomerGroupId(obj.getSzCustomerGroupId());
+                            dataRow.createCell(21).setCellValue(obj.getSzNPWP()); itemOut.setSzNPWP(obj.getSzNPWP());
+                            dataRow.createCell(22).setCellValue(strRegisterdate); itemOut.setDtmRegisterDate(obj.getDtmRegisterDate());
                             
                             //ADD TO LIST
                             list.add(itemOut);

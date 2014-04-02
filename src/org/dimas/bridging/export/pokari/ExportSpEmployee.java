@@ -55,7 +55,7 @@ public class ExportSpEmployee {
             file = new FileInputStream(new File(filePathDestination));            
             
             HSSFWorkbook workbook = new HSSFWorkbook(file);
-            HSSFSheet sheet = workbook.getSheet("Template Sp_Employee");
+            HSSFSheet sheet = workbook.getSheet("Sp_Employee");
             Cell cell = null;                   
         
             
@@ -65,32 +65,35 @@ public class ExportSpEmployee {
             String pattern = "dd-MM-yyyy"; // 10-09-2013            
             SimpleDateFormat sdf = new SimpleDateFormat(pattern, localeId);
             
-            int lastRow= 1;
+            int lastRow= 0;
             for (SpEmployee obj: lst) {
-//                if (obj.getAllowTransfer()==true){                
-                        try {
+                    try {
+                        if (obj.getAllowTransfer()== Boolean.TRUE){                
                             lastRow++;
                             OutputSpEmployee itemOut = new OutputSpEmployee();
-                            
-                            Row dataRow = sheet.createRow(lastRow);
-                            dataRow.createCell(1).setCellValue(obj.getSzEmployeeId()); itemOut.setSzEmployeeId(obj.getSzEmployeeId());
-                            dataRow.createCell(2).setCellValue(obj.getSzName()); itemOut.setSzName(obj.getSzName());
-                            dataRow.createCell(3).setCellValue(obj.getSzWorkplaceId()); itemOut.setSzWorkplaceId(obj.getSzWorkplaceId());
-                            dataRow.createCell(4).setCellValue(obj.getSzSalesType()); itemOut.setSzSalesType(obj.getSzSalesType());
-                            dataRow.createCell(5).setCellValue(obj.getSzSalesGroup()); itemOut.setSzSalesGroup(obj.getSzSalesGroup());
-                            dataRow.createCell(6).setCellValue(obj.getSzTeamId()); itemOut.setSzTeamId(obj.getSzTeamId());
-                            dataRow.createCell(7).setCellValue(obj.getSzVehicleId()); itemOut.setSzVehicleId(obj.getSzVehicleId());
-                            dataRow.createCell(8).setCellValue(obj.getSzVehicleName()); itemOut.setSzVehicleName(obj.getSzVehicleName());
-                            dataRow.createCell(9).setCellValue(obj.getSzPoliceNo()); itemOut.setSzPoliceNo(obj.getSzPoliceNo());
-                            
-                            list.add(itemOut);
-                        } catch(Exception ex){
-                            logger.error("exportFromListToFileExelUsingTemplate " );
-                        }
-                }
-                
 
-//            }
+                            Row dataRow = sheet.createRow(lastRow);
+                            dataRow.createCell(0).setCellValue(obj.getSzEmployeeId()); itemOut.setSzEmployeeId(obj.getSzEmployeeId());
+                            dataRow.createCell(1).setCellValue(obj.getSzName()); itemOut.setSzName(obj.getSzName());
+                            dataRow.createCell(2).setCellValue(obj.getSzWorkplaceId()); itemOut.setSzWorkplaceId(obj.getSzWorkplaceId());
+                            dataRow.createCell(3).setCellValue(obj.getSzSalesType()); itemOut.setSzSalesType(obj.getSzSalesType());
+                            dataRow.createCell(4).setCellValue(obj.getSzSalesGroup()); itemOut.setSzSalesGroup(obj.getSzSalesGroup());
+                            dataRow.createCell(5).setCellValue(obj.getSzTeamId()); itemOut.setSzTeamId(obj.getSzTeamId());
+                            dataRow.createCell(6).setCellValue(obj.getSzVehicleId()); itemOut.setSzVehicleId(obj.getSzVehicleId());
+                            dataRow.createCell(7).setCellValue(obj.getSzVehicleName()); itemOut.setSzVehicleName(obj.getSzVehicleName());
+                            dataRow.createCell(8).setCellValue(obj.getSzPoliceNo()); itemOut.setSzPoliceNo(obj.getSzPoliceNo());
+
+                            itemOut.setAktif(obj.getAktif());
+                            itemOut.setBaru(obj.getBaru());
+                            itemOut.setAllowTransfer(obj.getAllowTransfer());
+
+                            list.add(itemOut);
+                        }
+                    } catch(Exception ex){
+                        logger.error("exportFromListToFileExelUsingTemplate " );
+                    }
+
+            }
             
             file.close();
             FileOutputStream out =new FileOutputStream(new File(filePathDestination));

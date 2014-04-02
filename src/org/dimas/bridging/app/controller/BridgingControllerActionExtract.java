@@ -11,9 +11,8 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.filechooser.FileFilter;
-import org.bagus.common.filefilter.ExtensionFileFilter;
 import org.bagus.common.parser.csv.FileManager;
+import org.config.spring.hibernate.dao.pokari.OutputArCustomerDao;
 import org.config.spring.hibernate.model.JHeader;
 import org.config.spring.hibernate.model.ScyBDItem;
 import org.config.spring.hibernate.model.ScyPenyesuaianItem;
@@ -519,6 +518,12 @@ public class BridgingControllerActionExtract {
 //            outputArCustomers = f.exportFromListToFileExel(outputFileString, controller.getView().getjDateChooserExtract().getDate(),  lst);
             outputArCustomers = f.exportFromListToFileExelUsingTemplate(outputFileString,  lst);
             
+            //HAPUS OUTPUT DULU SEBELUM DITAMBAH
+            List<OutputArCustomer> listOutputArCustomer = new ArrayList<OutputArCustomer>();
+            listOutputArCustomer = controller.getModel().outputArCustomerDaoMem.findAll();
+            for (OutputArCustomer o: listOutputArCustomer){
+                controller.getModel().outputArCustomerDaoMem.delete(o);
+            }        
             for (OutputArCustomer output: outputArCustomers ) {
                 try {
                     if (controller.getModel().getDatabaseMode()==true) {
@@ -609,6 +614,12 @@ public class BridgingControllerActionExtract {
 //            List<OutputCanDDeliveryOrder> outputs = f.exportFromListToFileExel(outputFileString, controller.getView().getjDateChooserExtract().getDate(),  lst);
             List<OutputCanDDeliveryOrder> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst, prefixFaktur);
             
+            //HAPUS OUTPUT DULU SEBELUM DITAMBAH
+            List<OutputCanDDeliveryOrder> listOutputOutputCanDDeliveryOrder = new ArrayList<OutputCanDDeliveryOrder>();
+            listOutputOutputCanDDeliveryOrder = controller.getModel().outputCanDDeliveryOrderDaoMem.findAll();
+            for (OutputCanDDeliveryOrder o: listOutputOutputCanDDeliveryOrder){
+                controller.getModel().outputCanDDeliveryOrderDaoMem.delete(o);
+            }
             for (OutputCanDDeliveryOrder output:  outputs) {
                 try {
                     if (controller.getModel().getDatabaseMode()==true) {
@@ -692,6 +703,11 @@ public class BridgingControllerActionExtract {
             //prefix= controller.getView().getTextDistributorCode().getText();
 //            List<OutputCanDDeliveryOrderItemDetail> outputs = f.exportFromListToFileExel(outputFileString, controller.getView().getjDateChooserExtract().getDate(),  lst);
             List<OutputCanDDeliveryOrderItemDetail> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst, prefixFaktur);
+
+            //HAPUS OUTPUT DULU SEBELUM DITAMBAH
+            List<OutputCanDDeliveryOrderItemDetail> listOutputOutputCanDDeliveryOrderItemDetail = new ArrayList<OutputCanDDeliveryOrderItemDetail>();
+            listOutputOutputCanDDeliveryOrderItemDetail = controller.getModel().outputCanDDeliveryOrderItemDetailDaoMem.findAll();
+            controller.getModel().outputCanDDeliveryOrderItemDetailDaoMem.deleteAll(listOutputOutputCanDDeliveryOrderItemDetail);
             
             for (OutputCanDDeliveryOrderItemDetail output:  outputs) {
                 try {
@@ -780,7 +796,13 @@ public class BridgingControllerActionExtract {
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
             List<OutputCanDDeliveryOrderItemDisc> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString,lst, prefixFaktur);
-            
+
+            //HAPUS OUTPUT DULU SEBELUM DITAMBAH
+            List<OutputCanDDeliveryOrderItemDisc> listOutputOutputCanDDeliveryOrderItemDisc = new ArrayList<OutputCanDDeliveryOrderItemDisc>();
+            listOutputOutputCanDDeliveryOrderItemDisc = controller.getModel().outputCanDDeliveryOrderItemDiscDaoMem.findAll();
+            for (OutputCanDDeliveryOrderItemDisc o: listOutputOutputCanDDeliveryOrderItemDisc){
+                controller.getModel().outputCanDDeliveryOrderItemDiscDaoMem.delete(o);
+            }
             for (OutputCanDDeliveryOrderItemDisc output: outputs  ) {
                 try {
                     if (controller.getModel().getDatabaseMode()==true) {
@@ -851,7 +873,13 @@ public class BridgingControllerActionExtract {
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
             List<OutputSpEmployee> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst);
-            
+
+            //HAPUS OUTPUT DULU SEBELUM DITAMBAH
+            List<OutputSpEmployee> listOutputSpEmployee = new ArrayList<OutputSpEmployee>();
+            listOutputSpEmployee = controller.getModel().outputSpEmployeeDaoMem.findAll();
+            for (OutputSpEmployee o: listOutputSpEmployee){
+                controller.getModel().outputSpEmployeeDaoMem.delete(o);
+            }
             for (OutputSpEmployee output: outputs ) {
                 try {
                     if (controller.getModel().getDatabaseMode()==true) {
@@ -911,7 +939,13 @@ public class BridgingControllerActionExtract {
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
             List<OutputSpEmployeeTarget> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst);
-            
+
+            //HAPUS OUTPUT DULU SEBELUM DITAMBAH
+            List<OutputSpEmployeeTarget> listOutputSpEmployeeTarget = new ArrayList<OutputSpEmployeeTarget>();
+            listOutputSpEmployeeTarget = controller.getModel().outputSpEmployeeTargetDaoMem.findAll();
+            for (OutputSpEmployeeTarget o: listOutputSpEmployeeTarget){
+                controller.getModel().outputSpEmployeeTargetDaoMem.delete(o);
+            }
             for (OutputSpEmployeeTarget output:  outputs) {
                 try {
                     if (controller.getModel().getDatabaseMode()==true) {
@@ -953,7 +987,13 @@ public class BridgingControllerActionExtract {
             String prefix = "";
             //prefix= controller.getView().getTextDistributorCode().getText();
             List<OutputSpEmployeeTargetItemDetail> outputs = f.exportFromListToFileExelUsingTemplate(outputFileString, lst);
-            
+
+            //HAPUS OUTPUT DULU SEBELUM DITAMBAH
+            List<OutputSpEmployeeTargetItemDetail> listOutputSpEmployeeTargetItemDetail = new ArrayList<OutputSpEmployeeTargetItemDetail>();
+            listOutputSpEmployeeTargetItemDetail = controller.getModel().outputSpEmployeeTargetItemDetailDaoMem.findAll();
+            for (OutputSpEmployeeTargetItemDetail o: listOutputSpEmployeeTargetItemDetail){
+                controller.getModel().outputSpEmployeeTargetItemDetailDaoMem.delete(o);
+            }
             for (OutputSpEmployeeTargetItemDetail output:  outputs) {
                 try {
                     if (controller.getModel().getDatabaseMode()==true) {
@@ -970,7 +1010,7 @@ public class BridgingControllerActionExtract {
         } else {
             JOptionPane.showMessageDialog(null, "PATH OUTPUT atau TANGGAL MUNGKIN KOSONG");
         }
-   }
+   } 
    public void aksiBtnKirimByEmailPokari(){
    }
    

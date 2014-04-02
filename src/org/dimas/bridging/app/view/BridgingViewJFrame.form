@@ -5969,7 +5969,7 @@
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="jScrollPane48" min="-2" pref="313" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jPanelMappingMasterPokariEmployeeDetail" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jPanelMappingMasterPokariEmployeeDetail" min="-2" pref="149" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -6048,38 +6048,6 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jLabel125" max="32767" attributes="0"/>
-                                                          <Component id="textMappingMasterPokariEmployeeIdScylla" min="-2" pref="126" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel117" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="textMappingMasterPokariEmployeeIdPokari" min="-2" pref="124" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel118" min="-2" pref="159" max="-2" attributes="0"/>
-                                                          <Component id="textMappingMasterPokariEmployeeName" min="-2" pref="186" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel121" max="32767" attributes="0"/>
-                                                          <Component id="textMappingMasterPokariEmployeeVehicleId" pref="0" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="textMappingMasterPokariEmployeeVehicleName" min="-2" pref="176" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel123" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="textMappingMasterPokariEmployeePoliceNo" min="-2" pref="115" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Component id="comboMappingMasterPokariEmployeeWorkplace" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
                                                           <Component id="jLabel109" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -6096,10 +6064,59 @@
                                                       </Group>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="comboMappingMasterPokariEmployeeSalesTeam" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                                                          <Component id="jLabel112" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jLabel112" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="32767" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="comboMappingMasterPokariEmployeeSalesTeam" min="-2" pref="127" max="-2" attributes="0"/>
+                                                              <EmptySpace min="97" max="32767" attributes="0"/>
+                                                          </Group>
                                                       </Group>
-                                                      <EmptySpace max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Group type="102" attributes="0">
+                                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                              <Component id="checkMappingMasterPokariSpEmployeeBaru" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="checkMappingMasterPokariSpEmployeeDikirim" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="checkMappingMasterPokariSpEmployeeAktif" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" attributes="0">
+                                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                                  <Component id="jLabel125" max="32767" attributes="0"/>
+                                                                  <Component id="textMappingMasterPokariEmployeeIdScylla" min="-2" pref="126" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jLabel117" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="textMappingMasterPokariEmployeeIdPokari" min="-2" pref="124" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jLabel118" min="-2" pref="159" max="-2" attributes="0"/>
+                                                                  <Component id="textMappingMasterPokariEmployeeName" min="-2" pref="186" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jLabel121" max="32767" attributes="0"/>
+                                                                  <Component id="textMappingMasterPokariEmployeeVehicleId" pref="0" max="32767" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="textMappingMasterPokariEmployeeVehicleName" min="-2" pref="176" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jLabel123" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="textMappingMasterPokariEmployeePoliceNo" min="-2" pref="115" max="-2" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -6108,7 +6125,7 @@
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace pref="16" max="32767" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="jLabel117" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel118" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -6146,7 +6163,14 @@
                                                   <Group type="102" attributes="0">
                                                       <Component id="jLabel112" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="comboMappingMasterPokariEmployeeSalesTeam" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="3" attributes="0">
+                                                          <Component id="comboMappingMasterPokariEmployeeSalesTeam" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                                                              <Component id="checkMappingMasterPokariSpEmployeeBaru" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="checkMappingMasterPokariSpEmployeeDikirim" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="checkMappingMasterPokariSpEmployeeAktif" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -6283,6 +6307,21 @@
                                             <StringItem index="3" value="Item 4"/>
                                           </StringArray>
                                         </Property>
+                                      </Properties>
+                                    </Component>
+                                    <Component class="javax.swing.JCheckBox" name="checkMappingMasterPokariSpEmployeeBaru">
+                                      <Properties>
+                                        <Property name="text" type="java.lang.String" value="Baru"/>
+                                      </Properties>
+                                    </Component>
+                                    <Component class="javax.swing.JCheckBox" name="checkMappingMasterPokariSpEmployeeDikirim">
+                                      <Properties>
+                                        <Property name="text" type="java.lang.String" value="Dikirim"/>
+                                      </Properties>
+                                    </Component>
+                                    <Component class="javax.swing.JCheckBox" name="checkMappingMasterPokariSpEmployeeAktif">
+                                      <Properties>
+                                        <Property name="text" type="java.lang.String" value="Aktif"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>

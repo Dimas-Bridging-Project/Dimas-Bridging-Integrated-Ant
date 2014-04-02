@@ -56,7 +56,7 @@ public class ExportCanDDeliveryOrder {
             file = new FileInputStream(new File(filePathDestination));            
 
             HSSFWorkbook workbook = new HSSFWorkbook(file);
-            HSSFSheet sheet = workbook.getSheet("Template Can_DDeliveryOrder");
+            HSSFSheet sheet = workbook.getSheet("Can_DDeliveryOrder");
             Cell cell = null;                   
 
             
@@ -66,14 +66,16 @@ public class ExportCanDDeliveryOrder {
             SimpleDateFormat sdf = new SimpleDateFormat(pattern, localeId);
             String pattern2 = "M/d/yyyy";
             SimpleDateFormat sdf2 = new SimpleDateFormat(pattern2);
-            int lastRow= 1;
+            
+            int lastRow= 0;
             for (JHeader item: lst){
-                    try {                                        
+                try {                                        
+//                    if (item.getArCustomer().getAllowTransfer()== Boolean.TRUE && item.getSpEmployee().getAllowTransfer() == Boolean.TRUE){
                         lastRow++;
-                        
+
                         OutputCanDDeliveryOrder itemOut = new OutputCanDDeliveryOrder();
-                        
-                        String szDocId = item.getIdOrder(); itemOut.setSzDocId(prefixFaktur + item.getIdOrder());
+
+                        String szDocId = prefixFaktur + item.getIdOrder(); itemOut.setSzDocId(prefixFaktur + item.getIdOrder());
                         String szCustomerId = item.getArCustomer().getSzCustomerId(); itemOut.setSzCustomerId(item.getArCustomer().getSzCustomerId());
                         String szEmployeeId = item.getSpEmployee().getSzEmployeeId(); itemOut.setSzEmployeeId(item.getSpEmployee().getSzEmployeeId());
                         String szVehicleId = item.getSpEmployee().getSzVehicleId(); itemOut.setSzVehicleId(item.getSpEmployee().getSzVehicleId());
@@ -90,33 +92,35 @@ public class ExportCanDDeliveryOrder {
 
                             break; //I JUST NEED ONE ITERATIONS
                         }
-    
+
                         String dtmDoc = sdf2.format(item.getTanggal()); itemOut.setDtmDoc(item.getTanggal());
                         String dtmCreated = sdf2.format(item.getTanggal()); itemOut.setDtmCreated(item.getTanggal());
                         String dtmLastUpdated = sdf2.format(item.getTanggal()); itemOut.setDtmLastUpdated(item.getTanggal());
                         String szWorkplaceId = item.getArCustomer().getSzWorkplaceId(); itemOut.setSzWorkPlaceId(item.getArCustomer().getSzWorkplaceId());
-                        String szManualId = item.getIdOrder(); itemOut.setSzManualId(prefixFaktur + item.getIdOrder());
+                        String szManualId = prefixFaktur + item.getIdOrder(); itemOut.setSzManualId(prefixFaktur + item.getIdOrder());
                         String szSalesId = item.getSpEmployee().getSzEmployeeId(); itemOut.setSzSalesId(item.getSpEmployee().getSzEmployeeId());
 
                         Row dataRow = sheet.createRow(lastRow);
-                        dataRow.createCell(1).setCellValue(szDocId);                    
-                        dataRow.createCell(2).setCellValue(szCustomerId);                    
-                        dataRow.createCell(3).setCellValue(szEmployeeId);                    
-                        dataRow.createCell(4).setCellValue(szVehicleId);                    
-                        dataRow.createCell(5).setCellValue(szOrderTypeId);    
-                        
-                        dataRow.createCell(12).setCellValue(dtmDoc);                                            
-                        dataRow.createCell(13).setCellValue(dtmCreated);                                            
-                        dataRow.createCell(14).setCellValue(dtmLastUpdated);                    
-                        dataRow.createCell(15).setCellValue(szWorkplaceId);                    
-                        dataRow.createCell(17).setCellValue(szManualId);                    
-                        dataRow.createCell(18).setCellValue(szEmployeeId);                    
-                        
+                        dataRow.createCell(0).setCellValue(szDocId);                    
+                        dataRow.createCell(1).setCellValue(szCustomerId);                    
+                        dataRow.createCell(2).setCellValue(szEmployeeId);                    
+                        dataRow.createCell(3).setCellValue(szVehicleId);                    
+                        dataRow.createCell(4).setCellValue(szOrderTypeId);    
+
+                        dataRow.createCell(5).setCellValue(dtmDoc);                                            
+                        dataRow.createCell(6).setCellValue(dtmCreated);                                            
+                        dataRow.createCell(7).setCellValue(dtmLastUpdated);                    
+                        dataRow.createCell(8).setCellValue(szWorkplaceId);                    
+                        dataRow.createCell(9).setCellValue(szManualId);                    
+                        dataRow.createCell(10).setCellValue(szEmployeeId);                    
+
                         list.add(itemOut);
-                        
-                    } catch(Exception ex){
-                        logger.error("ExportCanDDeliveryOrder.java" + ex.toString());
-                    }
+//                    }    
+
+                } catch(Exception ex){
+                    logger.error("ExportCanDDeliveryOrder.java" + ex.toString());
+                }
+
 
             }
             

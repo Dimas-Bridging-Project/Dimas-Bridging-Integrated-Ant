@@ -68,16 +68,40 @@ public class ParseJTprb {
                     
                     item.setQtyInFib(data[3]);
                     item.setQtyInSat(0);
-                    if (! data[4].equals(""))
+                    if (! data[4].equals("")) {
                         item.setQtyInSat(Integer.parseInt(data[4]));
+                        try {
+                            if (item.getTipeFakturRetur().trim().equalsIgnoreCase("R")){
+                                item.setQtyInSat(-Integer.parseInt(data[4]));                                
+                             }
+                        } catch(Exception ex){
+                                logger.error("JTPrb Gagal Set Minus pada Qty");
+                        }
+                    }    
                     item.setHrgJualKartonNoPpn(0);
                     
-                    if(! data[5].equals("")) 
+                    if(! data[5].equals("")){
                         item.setHrgJualKartonNoPpn(Integer.parseInt(data[5]));
-                    
+                        try {
+                            if (item.getTipeFakturRetur().trim().equalsIgnoreCase("R")){
+                                item.setHrgJualKartonNoPpn(-Integer.parseInt(data[5]));
+                             }
+                        } catch(Exception ex){
+                                logger.error("JTPrb Gagal Set Minus pada Harga PerKarton");
+                        }                        
+                    }
                     item.setHargaNoPpn(0);
-                    if (! data[6].equals(""))
+                    if (! data[6].equals("")){
                         item.setHrgJualLsnNoPpn(Integer.parseInt(data[6]));
+                        try {
+                            if (item.getTipeFakturRetur().trim().equalsIgnoreCase("R")){
+                                item.setHrgJualLsnNoPpn(-Integer.parseInt(data[6])); 
+                             }
+                        } catch(Exception ex){
+                                logger.error("JTPrb Gagal Set Minus pada Harga Perlusin");
+                        }
+                        
+                    }    
                     //Harga Jual PcsNoPPn
                     Integer intHargaJualPcsNoPpn = item.getHrgJualLsnNoPpn()/12;
                     Integer intHargaNoPpn = intHargaJualPcsNoPpn * item.getQtyInSat();

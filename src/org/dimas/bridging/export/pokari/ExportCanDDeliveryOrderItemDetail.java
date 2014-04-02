@@ -59,7 +59,7 @@ public class ExportCanDDeliveryOrderItemDetail {
              */
             file = new FileInputStream(new File(filePathDestination));            
             HSSFWorkbook workbook = new HSSFWorkbook(file);
-            HSSFSheet sheet = workbook.getSheet("Template Can_DDeliveryOrderItem");
+            HSSFSheet sheet = workbook.getSheet("Can_DDeliveryOrderItem");
             Cell cell = null;        
 //            data.put(2, new Object[] {"","szDocId", "shItemNumber", "szProductId", "decQty", "decPrice"});
             
@@ -69,55 +69,57 @@ public class ExportCanDDeliveryOrderItemDetail {
             String pattern = "dd-MM-yyyy"; // 10-09-2013            
             SimpleDateFormat sdf = new SimpleDateFormat(pattern, localeId);
             
-            int lastRow= 1;
+            int lastRow= 0;
               for (JHeader item: lst){
-                    //PERSENTASE VOLUME DISKON
                     Double doubleDiskonAtasFakturPersen = (double)item.getDisAtasFaktur()/(double)item.getGross() * 100;
 
                     List<JPcode> lstDetail = new ArrayList<>(item.getJpcodeSet());
                     int itemNumber = 0;
+                    
                     for (JPcode itm: lstDetail){
                         try {
-                            lastRow++;
-                            
-                            OutputCanDDeliveryOrderItemDetail itemOut = new OutputCanDDeliveryOrderItemDetail();
-                            OutputCanDDeliveryOrderItemDetailPK itemOutPK = new OutputCanDDeliveryOrderItemDetailPK();
-                            
-                            Row dataRow = sheet.createRow(lastRow); 
-                            dataRow.createCell(1).setCellValue(prefixFaktur + itm.getJpcodePK().getIdOrder()); itemOutPK.setSzDocId(prefixFaktur + itm.getJpcodePK().getIdOrder());
-                            dataRow.createCell(2).setCellValue(itemNumber); itemOutPK.setShItemNumber(itemNumber);
-                            dataRow.createCell(3).setCellValue(itm.getMappingProduct().getSzProductId()); itemOutPK.setSzProductId(itm.getMappingProduct().getSzProductId());
-                            dataRow.createCell(4).setCellValue(itm.getQtyInSat()); itemOut.setDecQty(itm.getQtyInSat());
-                            
-                            //PERHITUNGAN NET DAN DISKON
-                            Double doubleHargaNoPpn = Double.valueOf(String.valueOf(itm.getHargaNoPpn()));                            
-                            Double grossValueFromNoPpn =  doubleHargaNoPpn ;
-                            Double grossValueFromWithPpn = doubleHargaNoPpn + (doubleHargaNoPpn*0.1);
-                                                        
-                            Double doubleDiskonAtasFakturPecahan = (double)doubleDiskonAtasFakturPersen/100;
-                            //OTOMATIS MINUS KARENA  itmJPcode.getHargaNoPpn() bernilai Plus atau Minus
-                            Double doubleDiskonAtasFakturBarangTertentuRupiah = doubleDiskonAtasFakturPecahan * itm.getHargaNoPpn();
-                            Integer intDiskonAtasFakturBarangTertentuRupiah = doubleDiskonAtasFakturBarangTertentuRupiah.intValue();                           
-                            Integer intTotalDisc = intDiskonAtasFakturBarangTertentuRupiah;
+//                            if (item.getArCustomer().getAllowTransfer() == Boolean.TRUE && item.getSpEmployee().getAllowTransfer() == Boolean.TRUE){                    //PERSENTASE VOLUME DISKON
+                                lastRow++;
 
-                            Double doubleTotalDisc = (double) intTotalDisc;
-                            Double doubleNetSalesNoPpn = grossValueFromNoPpn - doubleTotalDisc;
-                            Double doubleNetSalesWithPpn = doubleNetSalesNoPpn + (doubleNetSalesNoPpn * 0.1);
-                            
-                            Integer intHrgJualPerPiece = itm.getHrgJualLsnNoPpn()/12;
-                            Double doubleHrgJualPerPiece = intHrgJualPerPiece.doubleValue();
-                            dataRow.createCell(5).setCellValue(intHrgJualPerPiece);  itemOut.setDecPrice(doubleHrgJualPerPiece);
-                            
-                            itemOut.setOutputCanDDeliveryOrderItemDetailPK(itemOutPK);
-                            list.add(itemOut);
-                            
-                            itemNumber++;
+                                OutputCanDDeliveryOrderItemDetail itemOut = new OutputCanDDeliveryOrderItemDetail();
+                                OutputCanDDeliveryOrderItemDetailPK itemOutPK = new OutputCanDDeliveryOrderItemDetailPK();
+
+                                Row dataRow = sheet.createRow(lastRow); 
+                                dataRow.createCell(0).setCellValue(prefixFaktur + itm.getJpcodePK().getIdOrder()); itemOutPK.setSzDocId(prefixFaktur + itm.getJpcodePK().getIdOrder());
+                                dataRow.createCell(1).setCellValue(itemNumber); itemOutPK.setShItemNumber(itemNumber);
+                                dataRow.createCell(2).setCellValue(itm.getMappingProduct().getSzProductId()); itemOutPK.setSzProductId(itm.getMappingProduct().getSzProductId());
+                                dataRow.createCell(3).setCellValue(itm.getQtyInSat()); itemOut.setDecQty(itm.getQtyInSat());
+
+                                //PERHITUNGAN NET DAN DISKON
+                                Double doubleHargaNoPpn = Double.valueOf(String.valueOf(itm.getHargaNoPpn()));                            
+                                Double grossValueFromNoPpn =  doubleHargaNoPpn ;
+                                Double grossValueFromWithPpn = doubleHargaNoPpn + (doubleHargaNoPpn*0.1);
+
+                                Double doubleDiskonAtasFakturPecahan = (double)doubleDiskonAtasFakturPersen/100;
+                                //OTOMATIS MINUS KARENA  itmJPcode.getHargaNoPpn() bernilai Plus atau Minus
+                                Double doubleDiskonAtasFakturBarangTertentuRupiah = doubleDiskonAtasFakturPecahan * itm.getHargaNoPpn();
+                                Integer intDiskonAtasFakturBarangTertentuRupiah = doubleDiskonAtasFakturBarangTertentuRupiah.intValue();                           
+                                Integer intTotalDisc = intDiskonAtasFakturBarangTertentuRupiah;
+
+                                Double doubleTotalDisc = (double) intTotalDisc;
+                                Double doubleNetSalesNoPpn = grossValueFromNoPpn - doubleTotalDisc;
+                                Double doubleNetSalesWithPpn = doubleNetSalesNoPpn + (doubleNetSalesNoPpn * 0.1);
+
+                                Integer intHrgJualPerPiece = itm.getHrgJualLsnNoPpn()/12;
+                                Double doubleHrgJualPerPiece = intHrgJualPerPiece.doubleValue();
+                                dataRow.createCell(4).setCellValue(intHrgJualPerPiece);  itemOut.setDecPrice(doubleHrgJualPerPiece);
+
+                                itemOut.setOutputCanDDeliveryOrderItemDetailPK(itemOutPK);
+                                list.add(itemOut);
+
+                                itemNumber++;
+//                            }
                         } catch(Exception ex){                         
                             logger.error(ex.toString());
                         }
 //                        data.put(lastRow, new Object[] {"","szDocId", "shItemNumber", "szProductId", "decQty", "decPrice"});
                         
-                    }
+                }
               }
   
             file.close();

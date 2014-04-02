@@ -70,27 +70,27 @@ public class ExportCanDDeliveryOrderItemDisc {
             String pattern = "dd-MM-yyyy"; // 10-09-2013            
             SimpleDateFormat sdf = new SimpleDateFormat(pattern, localeId);
             
-              int lastRow= 1;
+              int lastRow= 0;
               for (JHeader item: lst){
-                    
                     int itemNumber = 0;
                     List<JTprb> lstDetail = new ArrayList<>(item.getJtprbSet());
                     for (JTprb itm: lstDetail){
                         try {
-                            lastRow++;
-                            
-                            OutputCanDDeliveryOrderItemDisc itemOut = new OutputCanDDeliveryOrderItemDisc();
-                            OutputCanDDeliveryOrderItemDiscPK itemOutPK = new OutputCanDDeliveryOrderItemDiscPK();
-                            
-                            Row dataRow = sheet.createRow(lastRow);
-                            dataRow.createCell(1).setCellValue(prefixFaktur + itm.getJtprbPK().getIdOrder()); itemOutPK.setSzDocId( prefixFaktur + itm.getJtprbPK().getIdOrder());
-                            dataRow.createCell(2).setCellValue(itemNumber); itemOutPK.setShItemNumber(itemNumber);
-                            dataRow.createCell(6).setCellValue(itm.getHargaNoPpn()); itemOut.setDecDisc(itm.getHargaNoPpn().doubleValue());
-                            
-                            itemOut.setOutputCanDDeliveryOrderItemDiscPK(itemOutPK);
-                            list.add(itemOut);
-                            
-                            itemNumber ++;    
+//                            if (item.getArCustomer().getAllowTransfer() == Boolean.TRUE && item.getSpEmployee().getAllowTransfer() == Boolean.TRUE){                    
+                                lastRow++;
+                                OutputCanDDeliveryOrderItemDisc itemOut = new OutputCanDDeliveryOrderItemDisc();
+                                OutputCanDDeliveryOrderItemDiscPK itemOutPK = new OutputCanDDeliveryOrderItemDiscPK();
+
+                                Row dataRow = sheet.createRow(lastRow);
+                                dataRow.createCell(0).setCellValue(prefixFaktur + itm.getJtprbPK().getIdOrder()); itemOutPK.setSzDocId( prefixFaktur + itm.getJtprbPK().getIdOrder());
+                                dataRow.createCell(1).setCellValue(itemNumber); itemOutPK.setShItemNumber(itemNumber);
+                                dataRow.createCell(2).setCellValue(itm.getHargaNoPpn()); itemOut.setDecDisc(itm.getHargaNoPpn().doubleValue());
+
+                                itemOut.setOutputCanDDeliveryOrderItemDiscPK(itemOutPK);
+                                list.add(itemOut);
+
+                                itemNumber ++;    
+//                            }
                         } catch(Exception ex){                         
                             logger.error(ex.toString());
                         }
@@ -99,20 +99,22 @@ public class ExportCanDDeliveryOrderItemDisc {
                     List<JTpru> lstDetail2 = new ArrayList<>(item.getJtpruSet());
                     for (JTpru itm: lstDetail2){
                         try {
-                            lastRow++;
-                            
-                            OutputCanDDeliveryOrderItemDisc itemOut = new OutputCanDDeliveryOrderItemDisc();
-                            OutputCanDDeliveryOrderItemDiscPK itemOutPK = new OutputCanDDeliveryOrderItemDiscPK();
-                            
-                            Row dataRow = sheet.createRow(lastRow);
-                            dataRow.createCell(1).setCellValue(itm.getJtpruPK().getIdOrder()); itemOutPK.setSzDocId(itm.getJtpruPK().getIdOrder());                 
-                            dataRow.createCell(2).setCellValue(itemNumber); itemOutPK.setShItemNumber(itemNumber);
-                            dataRow.createCell(6).setCellValue(itm.getHargaNoPpn()); itemOut.setDecDisc(itm.getHargaNoPpn().doubleValue());
-                            
-                            itemOut.setOutputCanDDeliveryOrderItemDiscPK(itemOutPK);
-                            list.add(itemOut);
-                            
-                            itemNumber++;    
+//                            if (item.getArCustomer().getAllowTransfer() == Boolean.TRUE && item.getSpEmployee().getAllowTransfer() == Boolean.TRUE){                    
+                                lastRow++;
+
+                                OutputCanDDeliveryOrderItemDisc itemOut = new OutputCanDDeliveryOrderItemDisc();
+                                OutputCanDDeliveryOrderItemDiscPK itemOutPK = new OutputCanDDeliveryOrderItemDiscPK();
+
+                                Row dataRow = sheet.createRow(lastRow);
+                                dataRow.createCell(0).setCellValue(itm.getJtpruPK().getIdOrder()); itemOutPK.setSzDocId(itm.getJtpruPK().getIdOrder());                 
+                                dataRow.createCell(1).setCellValue(itemNumber); itemOutPK.setShItemNumber(itemNumber);
+                                dataRow.createCell(2).setCellValue(itm.getHargaNoPpn()); itemOut.setDecDisc(itm.getHargaNoPpn().doubleValue());
+
+                                itemOut.setOutputCanDDeliveryOrderItemDiscPK(itemOutPK);
+                                list.add(itemOut);
+
+                                itemNumber++;    
+//                            }
                         } catch(Exception ex){                         
                             logger.error(ex.toString());
                         }

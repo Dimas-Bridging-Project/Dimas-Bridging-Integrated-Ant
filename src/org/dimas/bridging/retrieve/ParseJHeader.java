@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import org.config.spring.hibernate.model.JHeader;
+import org.config.spring.hibernate.model.enumgeneral.EnumPrincipal;
+import org.config.spring.hibernate.model.pokari.ArCustomer;
 import org.dimas.bridging.app.controller.BridgingController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -119,6 +121,79 @@ public class ParseJHeader {
 
                     //if (pencacah>2) break;
                     //System.out.println();
+                    
+                    /**
+                     * MENCOBA MEMASUKKAN KE MASTER OUTLET POKARI
+                     */
+                    
+//                            ArCustomer arCustomer = new ArCustomer();
+//                            arCustomer.setScyCustomerId(item.getOutlet().trim());
+//                            arCustomer.setSzCustomerId(item.getOutlet().trim());
+//                            arCustomer.setScyName(item.gettMasterOutlet().);
+//                            arCustomer.setSzName(item.getNama().trim());
+//                            
+//                            Double doubleLimitKredit = 0.0;
+//                            try {
+//                                doubleLimitKredit = Double.parseDouble(String.valueOf(item.getLimitK()));
+//                            } catch(Exception ex){}
+//                            arCustomer.setDecLimitCredit(doubleLimitKredit);
+//                            arCustomer.setDtmRegisterDate(null);                            
+//                            
+//                            arCustomer.setSzAddress(item.getAlm1Toko().trim() + " " + item.getAlm2Toko().trim());
+//                            arCustomer.setSzCity(item.getKotaToko());
+//                            arCustomer.setSzContact(item.getContactPr());
+//                            
+//                            arCustomer.setSzCustomerGroupId("");
+//                            arCustomer.setSzDistrChannelId("");
+//                            arCustomer.setSzDistrict("");
+//                            
+//                            arCustomer.setSzEmail("");
+//                            arCustomer.setSzEmployeeId("");
+//                            arCustomer.setSzFax(item.getNoFax());
+//                            arCustomer.setSzHirarchyId("");
+//                            arCustomer.setSzNPWP("");
+//                            arCustomer.setSzPaymentTermId("");
+//                            arCustomer.setSzPhone1(item.getTlpToko());
+//                            arCustomer.setSzPhone2("");
+//                            arCustomer.setSzSalesTerritoryId("");
+//                            arCustomer.setSzState("");
+//                            arCustomer.setSzStatus("");
+//                            arCustomer.setSzWorkplaceId("");
+//                            arCustomer.setSzZipCode("");
+//                            
+//                                    
+//                            arCustomer.setBaru(true);
+//                            arCustomer.setAllowTransfer(false);
+//                            arCustomer.setAktif(true);
+                            
+//                    if (principal.equalsIgnoreCase(EnumPrincipal.KEK.getStrCode())){                    
+//                        try {
+//
+//                            controller.getModel().tMasterOutletDao.save(tMasterOutlet);
+//                            /**
+//                             * DUMMY FOR POKARI AND BAYGON >> TO MEMORY : KARENA KITA MASIH BELUM TAHU RELASI HIBERNATE-NYA
+//                             */
+//                            controller.getModel().arCustomerDaoMem.saveOrUpdate(arCustomer);
+//
+//                        } catch (Exception ex) {
+//                             logger.error(item.getOutlet() + " " + item.getNama() +  " KEK sudah ada");
+//                        }
+//                    }else if (principal.equalsIgnoreCase(EnumPrincipal.POKARI.getStrCode())){
+//                        try {
+//                            
+//                            controller.getModel().arCustomerDao.save(arCustomer);
+//                            /**
+//                             * DUMMY FOR KEK AND BAYGON >> TO MEMORY : KARENA KITA MASIH BELUM TAHU RELASI HIBERNATENYA
+//                             */
+//                            controller.getModel().tMasterOutletDaoMem.saveOrUpdate(tMasterOutlet);
+//                        }catch(Exception ex){
+//                             logger.error(item.getOutlet() + " " + item.getNama() +  " POKARI sudah ada");
+//                        }
+//                    
+//                    }else if (principal.equalsIgnoreCase(EnumPrincipal.BAYGON.getStrCode())){
+//                    }
+                    
+                    
                 }
             }    
             

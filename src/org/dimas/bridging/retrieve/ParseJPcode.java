@@ -62,12 +62,36 @@ public class ParseJPcode {
                     //karena dipake dibawahnya
                     item.setTipeFakturRetur(data[9]);                    
                     
-                    if (! data[4].equals(""))
+                    if (! data[4].equals("")){
                         item.setQtyInSat(Integer.parseInt(data[4]));
-                    if(! data[5].equals("")) 
+                        try {
+                            if (item.getTipeFakturRetur().trim().equalsIgnoreCase("R")){
+                                item.setQtyInSat(-Integer.parseInt(data[4]));                            
+                            }   
+                        }catch(Exception ex){
+                            logger.error("JPCode Gagal Set Minus pada Qty");
+                        }                        
+                    }
+                    if(! data[5].equals("")) {
                         item.setHrgJualKartonNoPpn(Integer.parseInt(data[5]));
-                    if (! data[6].equals(""))
+                        try {
+                            if (item.getTipeFakturRetur().trim().equalsIgnoreCase("R")){
+                                item.setHrgJualKartonNoPpn(-Integer.parseInt(data[5]));
+                            }   
+                        }catch(Exception ex){
+                            logger.error("JPCode Gagal Set Minus pada HargaJual Per karton");
+                        }   
+                    }    
+                    if (! data[6].equals("")){
                         item.setHrgJualLsnNoPpn(Integer.parseInt(data[6]));
+                        try {
+                            if (item.getTipeFakturRetur().trim().equalsIgnoreCase("R")){
+                                item.setHrgJualLsnNoPpn(-Integer.parseInt(data[6]));
+                            }   
+                        }catch(Exception ex){
+                            logger.error("JPCode Gagal Set Minus pada HargaJual Per Lusin");
+                        }                       
+                    }    
                     if (! data[7].equals("")){
                         item.setHargaNoPpn(Integer.parseInt(data[7]));                        
                         try {
@@ -81,7 +105,7 @@ public class ParseJPcode {
                     
                     
                     item.setJenis(data[8]);
-                    item.setTipeFakturRetur(data[9]);
+                    //item.setTipeFakturRetur(data[9]); ditaruh diatas bos karena kepakenya diatas
 
                     if (item !=null) 
                             lst.add(item);
